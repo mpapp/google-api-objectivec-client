@@ -1,4 +1,4 @@
-google-api-objectivec-client
-============================
+Information on using the Google APIs Objective-C Client Library 
+is available at:
 
-SVN Mirror of https://code.google.com/p/google-api-objectivec-client/
+https://code.google.com/p/google-api-objectivec-client/
