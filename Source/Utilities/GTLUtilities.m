@@ -247,10 +247,6 @@ const CFStringRef kCharsToForceEscape = CFSTR("!*'();:@&=+$,/?%#[]");
 + (NSMutableDictionary *)newStaticDictionary {
   NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 
-  // make the dictionary ineligible for garbage collection
-#if !GTL_IPHONE
-  [[NSGarbageCollector defaultCollector] disableCollectorForPointer:dict];
-#endif
   return dict;
 }
 
