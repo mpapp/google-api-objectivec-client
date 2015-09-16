@@ -18,10 +18,10 @@
 @implementation GTMGatherInputStream
 
 + (NSInputStream *)streamWithArray:(NSArray *)dataArray {
-  return [[[self alloc] initWithArray:dataArray] autorelease];
+  return [[[self alloc] initStreamWithArray:dataArray] autorelease];
 }
 
-- (id)initWithArray:(NSArray *)dataArray {
+- (id)initStreamWithArray:(NSArray *)dataArray {
   self = [super init];
   if (self) {
     dataArray_ = [dataArray retain];

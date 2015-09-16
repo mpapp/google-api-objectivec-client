@@ -797,7 +797,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "GTL" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1036,6 +1036,7 @@
 				DEAD_CODE_STRIPPING = NO;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -1129,6 +1130,7 @@
 					"-framework",
 					Cocoa,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.GTLUnitTests;
 				PRODUCT_NAME = GTLUnitTests;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				STRIP_STYLE = "non-global";
@@ -1157,6 +1159,7 @@
 					"-framework",
 					Cocoa,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.GTLUnitTests;
 				PRODUCT_NAME = GTLUnitTests;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				STRIP_STYLE = "non-global";
@@ -1169,6 +1172,7 @@
 				GCC_ENABLE_OBJC_GC = unsupported;
 				INFOPLIST_FILE = "Resources/DevTestTool-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.DevelopmentTestApplication;
 				PRODUCT_NAME = DevelopmentTestTool;
 			};
 			name = Debug;
@@ -1179,6 +1183,7 @@
 				GCC_ENABLE_OBJC_GC = unsupported;
 				INFOPLIST_FILE = "Resources/DevTestTool-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.DevelopmentTestApplication;
 				PRODUCT_NAME = DevelopmentTestTool;
 			};
 			name = Release;
@@ -1217,6 +1222,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Resources/GTLFramework-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				OTHER_LDFLAGS = (
@@ -1225,6 +1231,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.GTLFramework;
 				PRODUCT_NAME = GTL;
 				STRIP_STYLE = "non-global";
 			};
@@ -1240,6 +1247,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Resources/GTLFramework-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				OTHER_LDFLAGS = (
@@ -1248,6 +1256,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.GTLFramework;
 				PRODUCT_NAME = GTL;
 				STRIP_STYLE = "non-global";
 			};
@@ -1302,6 +1311,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "Resources/GTLFramework-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				OTHER_LDFLAGS = (
@@ -1310,6 +1320,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.GTLFramework;
 				PRODUCT_NAME = GTL;
 				STRIP_STYLE = "non-global";
 			};
@@ -1349,6 +1360,7 @@
 					"-framework",
 					Cocoa,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.GTLUnitTests;
 				PRODUCT_NAME = GTLUnitTests;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				STRIP_STYLE = "non-global";
@@ -1361,6 +1373,7 @@
 				GCC_ENABLE_OBJC_GC = unsupported;
 				INFOPLIST_FILE = "Resources/DevTestTool-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.DevelopmentTestApplication;
 				PRODUCT_NAME = DevelopmentTestTool;
 			};
 			name = Internal;
