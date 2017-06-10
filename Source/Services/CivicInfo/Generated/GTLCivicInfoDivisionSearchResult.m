@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +24,11 @@
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
+<<<<<<< HEAD
 //   Google Civic Information API (civicinfo/v1)
+=======
+//   Google Civic Information API (civicinfo/v2)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Description:
 //   An API for accessing civic information.
 // Documentation:
@@ -39,9 +47,15 @@
 @dynamic aliases, name, ocdId;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[NSString class]
                                 forKey:@"aliases"];
+=======
+  NSDictionary *map = @{
+    @"aliases" : [NSString class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   QPX Express API (qpxExpress/v1)
 // Description:
+<<<<<<< HEAD
 //   Lets you find the least expensive flights between an origin and a
 //   destination.
+=======
+//   Finds the least expensive flights between an origin and a destination.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   http://developers.google.com/qpx-express
 // Classes:
@@ -46,6 +54,7 @@
 @interface GTLQPXExpressCityData : GTLObject
 
 // The IATA character ID of a city. For example, for Boston this is BOS.
+<<<<<<< HEAD
 @property (copy) NSString *code;
 
 // The two-character country code of the country the city is located in. For
@@ -58,5 +67,19 @@
 
 // The full name of a city. An example would be: New York.
 @property (copy) NSString *name;
+=======
+@property (nonatomic, copy) NSString *code;
+
+// The two-character country code of the country the city is located in. For
+// example, US for the United States of America.
+@property (nonatomic, copy) NSString *country;
+
+// Identifies this as a city, typically with one or more airports. Value: the
+// fixed string qpxexpress#cityData.
+@property (nonatomic, copy) NSString *kind;
+
+// The full name of a city. An example would be: New York.
+@property (nonatomic, copy) NSString *name;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

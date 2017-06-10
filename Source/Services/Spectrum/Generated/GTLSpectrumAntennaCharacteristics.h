@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +52,7 @@
 // The antenna height in meters. Whether the antenna height is required depends
 // on the device type and the regulatory domain. Note that the height may be
 // negative.
+<<<<<<< HEAD
 @property (retain) NSNumber *height;  // doubleValue
 
 // If the height is required, then the height type (AGL for above ground level
@@ -57,5 +62,16 @@
 // The height uncertainty in meters. Whether this is required depends on the
 // regulatory domain.
 @property (retain) NSNumber *heightUncertainty;  // doubleValue
+=======
+@property (nonatomic, retain) NSNumber *height;  // doubleValue
+
+// If the height is required, then the height type (AGL for above ground level
+// or AMSL for above mean sea level) is also required. The default is AGL.
+@property (nonatomic, copy) NSString *heightType;
+
+// The height uncertainty in meters. Whether this is required depends on the
+// regulatory domain.
+@property (nonatomic, retain) NSNumber *heightUncertainty;  // doubleValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

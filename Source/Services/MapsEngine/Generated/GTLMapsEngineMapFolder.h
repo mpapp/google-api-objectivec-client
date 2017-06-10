@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +47,16 @@
 //
 
 @interface GTLMapsEngineMapFolder : GTLObject
+<<<<<<< HEAD
 @property (retain) NSArray *contents;  // of GTLMapsEngineMapItem
+=======
+@property (nonatomic, retain) NSArray *contents;  // of GTLMapsEngineMapItem
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // An array of four numbers (west, south, east, north) which defines the
 // rectangular bounding box of the default viewport. The numbers represent
 // latitude and longitude in decimal degrees.
+<<<<<<< HEAD
 @property (retain) NSArray *defaultViewport;  // of NSNumber (doubleValue)
 
 // The expandability setting of this MapFolder. If true, the folder can be
@@ -65,5 +74,24 @@
 
 // The visibility setting of this MapFolder. One of "defaultOn" or "defaultOff".
 @property (copy) NSString *visibility;
+=======
+@property (nonatomic, retain) NSArray *defaultViewport;  // of NSNumber (doubleValue)
+
+// The expandability setting of this MapFolder. If true, the folder can be
+// expanded.
+@property (nonatomic, retain) NSNumber *expandable;  // boolValue
+
+// A user defined alias for this MapFolder, specific to this Map.
+@property (nonatomic, copy) NSString *key;
+
+// The name of this MapFolder.
+@property (nonatomic, copy) NSString *name;
+
+// Identifies this object as a MapFolder.
+@property (nonatomic, copy) NSString *type;
+
+// The visibility setting of this MapFolder. One of "defaultOn" or "defaultOff".
+@property (nonatomic, copy) NSString *visibility;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

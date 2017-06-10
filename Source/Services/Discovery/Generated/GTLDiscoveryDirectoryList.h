@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +55,7 @@
 @interface GTLDiscoveryDirectoryList : GTLCollectionObject
 
 // Indicate the version of the Discovery API used to generate this doc.
+<<<<<<< HEAD
 @property (copy) NSString *discoveryVersion;
 
 // The individual directory entries. One entry per api/version pair.
@@ -58,6 +63,15 @@
 
 // The kind for this response.
 @property (copy) NSString *kind;
+=======
+@property (nonatomic, copy) NSString *discoveryVersion;
+
+// The individual directory entries. One entry per api/version pair.
+@property (nonatomic, retain) NSArray *items;  // of GTLDiscoveryDirectoryListItemsItem
+
+// The kind for this response.
+@property (nonatomic, copy) NSString *kind;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -71,6 +85,7 @@
 
 // The description of this API.
 // Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+<<<<<<< HEAD
 @property (copy) NSString *descriptionProperty;
 
 // A link to the discovery document.
@@ -106,6 +121,43 @@
 
 // The version of the API.
 @property (copy) NSString *version;
+=======
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// A link to the discovery document.
+@property (nonatomic, copy) NSString *discoveryLink;
+
+// The URL for the discovery REST document.
+@property (nonatomic, copy) NSString *discoveryRestUrl;
+
+// A link to human readable documentation for the API.
+@property (nonatomic, copy) NSString *documentationLink;
+
+// Links to 16x16 and 32x32 icons representing the API.
+@property (nonatomic, retain) GTLDiscoveryDirectoryListItemsItemIcons *icons;
+
+// The id of this API.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The kind for this response.
+@property (nonatomic, copy) NSString *kind;
+
+// Labels for the status of this API, such as labs or deprecated.
+@property (nonatomic, retain) NSArray *labels;  // of NSString
+
+// The name of the API.
+@property (nonatomic, copy) NSString *name;
+
+// True if this version is the preferred version to use.
+@property (nonatomic, retain) NSNumber *preferred;  // boolValue
+
+// The title of this API.
+@property (nonatomic, copy) NSString *title;
+
+// The version of the API.
+@property (nonatomic, copy) NSString *version;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -118,9 +170,16 @@
 @interface GTLDiscoveryDirectoryListItemsItemIcons : GTLObject
 
 // The URL of the 16x16 icon.
+<<<<<<< HEAD
 @property (copy) NSString *x16;
 
 // The URL of the 32x32 icon.
 @property (copy) NSString *x32;
+=======
+@property (nonatomic, copy) NSString *x16;
+
+// The URL of the 32x32 icon.
+@property (nonatomic, copy) NSString *x32;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -67,6 +76,7 @@
 
 // The contentDetails object is included in the resource if the included item is
 // a YouTube video. The object contains additional information about the video.
+<<<<<<< HEAD
 @property (retain) GTLYouTubePlaylistItemContentDetails *contentDetails;
 
 // Etag of this resource.
@@ -87,5 +97,27 @@
 // The status object contains information about the playlist item's privacy
 // status.
 @property (retain) GTLYouTubePlaylistItemStatus *status;
+=======
+@property (nonatomic, retain) GTLYouTubePlaylistItemContentDetails *contentDetails;
+
+// Etag of this resource.
+@property (nonatomic, copy) NSString *ETag;
+
+// The ID that YouTube uses to uniquely identify the playlist item.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Identifies what kind of resource this is. Value: the fixed string
+// "youtube#playlistItem".
+@property (nonatomic, copy) NSString *kind;
+
+// The snippet object contains basic details about the playlist item, such as
+// its title and position in the playlist.
+@property (nonatomic, retain) GTLYouTubePlaylistItemSnippet *snippet;
+
+// The status object contains information about the playlist item's privacy
+// status.
+@property (nonatomic, retain) GTLYouTubePlaylistItemStatus *status;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

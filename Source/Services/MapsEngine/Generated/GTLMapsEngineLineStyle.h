@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,12 +54,17 @@
 @interface GTLMapsEngineLineStyle : GTLObject
 
 // Border of the line. 0 < border.width <= 5.
+<<<<<<< HEAD
 @property (retain) GTLMapsEngineBorder *border;
+=======
+@property (nonatomic, retain) GTLMapsEngineBorder *border;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Dash defines the pattern of the line, the values are pixel lengths of
 // alternating dash and gap. If dash is not provided, then it means a solid
 // line. Dash can contain up to 10 values and must contain even number of
 // values.
+<<<<<<< HEAD
 @property (retain) NSArray *dash;  // of NSNumber (doubleValue)
 
 // Label style for the line.
@@ -63,6 +72,15 @@
 
 // Stroke of the line.
 @property (retain) GTLMapsEngineLineStyleStroke *stroke;
+=======
+@property (nonatomic, retain) NSArray *dash;  // of NSNumber (doubleValue)
+
+// Label style for the line.
+@property (nonatomic, retain) GTLMapsEngineLabelStyle *label;
+
+// Stroke of the line.
+@property (nonatomic, retain) GTLMapsEngineLineStyleStroke *stroke;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -75,6 +93,7 @@
 @interface GTLMapsEngineLineStyleStroke : GTLObject
 
 // Color of the line.
+<<<<<<< HEAD
 @property (copy) NSString *color;
 
 // Opacity of the line.
@@ -83,5 +102,15 @@
 // Width of the line, in pixels. 0 <= width <= 10. If width is set to 0, the
 // line will be invisible.
 @property (retain) NSNumber *width;  // doubleValue
+=======
+@property (nonatomic, copy) NSString *color;
+
+// Opacity of the line.
+@property (nonatomic, retain) NSNumber *opacity;  // doubleValue
+
+// Width of the line, in pixels. 0 <= width <= 10. If width is set to 0, the
+// line will be invisible.
+@property (nonatomic, retain) NSNumber *width;  // doubleValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

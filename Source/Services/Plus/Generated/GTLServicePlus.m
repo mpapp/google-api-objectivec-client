@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google+ API (plus/v1)
 // Description:
+<<<<<<< HEAD
 //   The Google+ API enables developers to build on top of the Google+ platform.
+=======
+//   Builds on top of the Google+ platform.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/+/api/
 // Classes:
@@ -36,6 +44,7 @@
 // Method compiled in debug builds just to check that all the needed support
 // classes are present at link time.
 + (NSArray *)checkClasses {
+<<<<<<< HEAD
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryPlus class],
                       [GTLPlusAcl class],
@@ -51,11 +60,29 @@
                       [GTLPlusPerson class],
                       [GTLPlusPlace class],
                       nil];
+=======
+  NSArray *classes = @[
+    [GTLQueryPlus class],
+    [GTLPlusAcl class],
+    [GTLPlusAclentryResource class],
+    [GTLPlusActivity class],
+    [GTLPlusActivityFeed class],
+    [GTLPlusComment class],
+    [GTLPlusCommentFeed class],
+    [GTLPlusPeopleFeed class],
+    [GTLPlusPerson class],
+    [GTLPlusPlace class]
+  ];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return classes;
 }
 #endif  // DEBUG
 
+<<<<<<< HEAD
 - (id)init {
+=======
+- (instancetype)init {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   self = [super init];
   if (self) {
     // Version from discovery.

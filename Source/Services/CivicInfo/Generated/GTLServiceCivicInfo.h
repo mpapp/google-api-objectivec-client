@@ -20,7 +20,11 @@
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
+<<<<<<< HEAD
 //   Google Civic Information API (civicinfo/v1)
+=======
+//   Google Civic Information API (civicinfo/v2)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Description:
 //   An API for accessing civic information.
 // Documentation:

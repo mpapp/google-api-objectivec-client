@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +40,7 @@
 // Method compiled in debug builds just to check that all the needed support
 // classes are present at link time.
 + (NSArray *)checkClasses {
+<<<<<<< HEAD
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryMirror class],
                       [GTLMirrorAccount class],
@@ -59,11 +64,40 @@
                       [GTLMirrorUserAction class],
                       [GTLMirrorUserData class],
                       nil];
+=======
+  NSArray *classes = @[
+    [GTLQueryMirror class],
+    [GTLMirrorAccount class],
+    [GTLMirrorAttachment class],
+    [GTLMirrorAttachmentsListResponse class],
+    [GTLMirrorAuthToken class],
+    [GTLMirrorCommand class],
+    [GTLMirrorContact class],
+    [GTLMirrorContactsListResponse class],
+    [GTLMirrorLocation class],
+    [GTLMirrorLocationsListResponse class],
+    [GTLMirrorMenuItem class],
+    [GTLMirrorMenuValue class],
+    [GTLMirrorNotification class],
+    [GTLMirrorNotificationConfig class],
+    [GTLMirrorSetting class],
+    [GTLMirrorSubscription class],
+    [GTLMirrorSubscriptionsListResponse class],
+    [GTLMirrorTimelineItem class],
+    [GTLMirrorTimelineListResponse class],
+    [GTLMirrorUserAction class],
+    [GTLMirrorUserData class]
+  ];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return classes;
 }
 #endif  // DEBUG
 
+<<<<<<< HEAD
 - (id)init {
+=======
+- (instancetype)init {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   self = [super init];
   if (self) {
     // Version from discovery.

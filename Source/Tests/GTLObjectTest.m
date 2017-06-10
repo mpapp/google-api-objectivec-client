@@ -19,7 +19,10 @@
 
 #import "GTLObject.h"
 #import "GTLDateTime.h"
+<<<<<<< HEAD
 #import "GTLJSONParser.h"
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Custom subclass for testing the property handling.
 @class GTLTestingObject;
@@ -123,6 +126,18 @@ static Class gAdditionalPropsClass = Nil;
 
 @implementation GTLObjectTest
 
+<<<<<<< HEAD
+=======
+- (NSMutableDictionary *)objectWithString:(NSString *)jsonStr error:(NSError **)error {
+  // Convert the string to NSData, and the data to a JSON dictionary.
+  NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+  NSMutableDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
+                                                              options:NSJSONReadingMutableContainers
+                                                                error:error];
+  return dict;
+}
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (void)testCreation {
   GTLTestingObject *obj;
 
@@ -164,12 +179,68 @@ static Class gAdditionalPropsClass = Nil;
   XCTAssertEqualObjects(obj.JSON, expected);
 }
 
+<<<<<<< HEAD
+=======
+- (GTLTestingObject *)objectFromRoundTripArchiveDearchiveWithObject:(GTLTestingObject *)obj {
+  NSString *key = @"Red iguana";
+  NSMutableData *data = [NSMutableData data];
+
+  NSKeyedArchiver *archiver =
+      [[[NSKeyedArchiver alloc] initForWritingWithMutableData:data] autorelease];
+  [archiver encodeObject:obj forKey:key];
+  [archiver finishEncoding];
+
+  NSKeyedUnarchiver *unarchiver =
+      [[[NSKeyedUnarchiver alloc] initForReadingWithData:data] autorelease];
+  GTLTestingObject *obj2 = [unarchiver decodeObjectForKey:key];
+  [unarchiver finishDecoding];
+
+  return obj2;
+}
+
+- (void)testSecureCodingEmptyObject {
+  GTLTestingObject *obj = [GTLTestingObject object];
+  XCTAssertNotNil(obj);
+  XCTAssertNil(obj.JSON);
+
+  GTLTestingObject *obj2 = [self objectFromRoundTripArchiveDearchiveWithObject:obj];
+  XCTAssertNotNil(obj2);
+
+  XCTAssertEqualObjects(obj2.JSON, obj.JSON);
+  XCTAssertNotEqual(obj2, obj);
+  XCTAssertNil(obj2.JSON);
+}
+
+- (void)testSecureCoding {
+  NSString * const jsonStr =
+      @"{\"a_date\":\"2011-01-14T15:00:00-01:00\",\"a.num\":1234,\"a_str\":\"foo bar\"}";
+  NSError *err = nil;
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+  XCTAssertNotNil(json);
+  GTLTestingObject *obj = [GTLTestingObject objectWithJSON:json];
+  XCTAssertNotNil(obj);
+
+  GTLTestingObject *obj2 = [self objectFromRoundTripArchiveDearchiveWithObject:obj];
+  XCTAssertNotNil(obj2);
+
+  XCTAssertEqualObjects(obj2.JSON, obj.JSON);
+  XCTAssertNotEqual(obj2.JSON, obj.JSON);
+  XCTAssert([obj2.JSON isKindOfClass:[NSMutableDictionary class]]);
+}
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (void)testGetBasicTypes {
   NSString * const jsonStr =
     @"{\"a_date\":\"2011-01-14T15:00:00-01:00\",\"a.num\":1234,\"a_str\":\"foo bar\"}";
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -220,8 +291,13 @@ static Class gAdditionalPropsClass = Nil;
   NSString * const jsonStr =
     @"{\"arrayDate\":[\"2011-01-14T15:00:00-01:00\"],\"arrayNumber\":[1234],\"arrayString\":[\"foo bar\"]}";
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -296,8 +372,13 @@ static Class gAdditionalPropsClass = Nil;
 
   // string
 
+<<<<<<< HEAD
   json = [GTLJSONParser objectWithString:jsonStrAnyString
                                    error:&err];
+=======
+  json = [self objectWithString:jsonStrAnyString
+                          error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -308,8 +389,13 @@ static Class gAdditionalPropsClass = Nil;
 
   // number
 
+<<<<<<< HEAD
   json = [GTLJSONParser objectWithString:jsonStrAnyNumber
                                    error:&err];
+=======
+  json = [self objectWithString:jsonStrAnyNumber
+                          error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -321,8 +407,13 @@ static Class gAdditionalPropsClass = Nil;
   // date (there is nothing in the JSON to know it's a date, so it comes
   // back as a string.
 
+<<<<<<< HEAD
   json = [GTLJSONParser objectWithString:jsonStrAnyDate
                                    error:&err];
+=======
+  json = [self objectWithString:jsonStrAnyDate
+                          error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -336,8 +427,13 @@ static Class gAdditionalPropsClass = Nil;
 
   // array (just test of string as plumbing is generic)
 
+<<<<<<< HEAD
   json = [GTLJSONParser objectWithString:jsonStrAnyArray
                                    error:&err];
+=======
+  json = [self objectWithString:jsonStrAnyArray
+                          error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -393,8 +489,13 @@ static Class gAdditionalPropsClass = Nil;
 
   // string
 
+<<<<<<< HEAD
   json = [GTLJSONParser objectWithString:jsonStrArrayAnyString
                                    error:&err];
+=======
+  json = [self objectWithString:jsonStrArrayAnyString
+                          error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -405,8 +506,13 @@ static Class gAdditionalPropsClass = Nil;
 
   // number
 
+<<<<<<< HEAD
   json = [GTLJSONParser objectWithString:jsonStrArrayAnyNumber
                                    error:&err];
+=======
+  json = [self objectWithString:jsonStrArrayAnyNumber
+                          error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -418,8 +524,13 @@ static Class gAdditionalPropsClass = Nil;
   // date (there is nothing in the JSON to know it's a date, so it comes
   // back as a string.
 
+<<<<<<< HEAD
   json = [GTLJSONParser objectWithString:jsonStrArrayAnyDate
                                    error:&err];
+=======
+  json = [self objectWithString:jsonStrArrayAnyDate
+                          error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -452,8 +563,13 @@ static Class gAdditionalPropsClass = Nil;
   NSString *jsonStr = obj.JSONString;
   XCTAssertNotNil(jsonStr);
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -522,8 +638,13 @@ static Class gAdditionalPropsClass = Nil;
   NSString *jsonStr = obj.JSONString;
   XCTAssertNotNil(jsonStr);
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -619,8 +740,13 @@ static Class gAdditionalPropsClass = Nil;
     @" \"arrayAnything\" : [[\"a string\"]]"
     @"}";
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err, @"got error parsing: %@", err);
   XCTAssertNotNil(json);
 
@@ -658,7 +784,11 @@ static Class gAdditionalPropsClass = Nil;
   NSString * const jsonStr2 =
     @"{\"arrayAnything\" : [[{\"a_str\" : \"I'm a any kid\"}]]}";
   err = nil;
+<<<<<<< HEAD
   json = [GTLJSONParser objectWithString:jsonStr2 error:&err];
+=======
+  json = [self objectWithString:jsonStr2 error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err, @"got error parsing: %@", err);
   XCTAssertNotNil(json);
   obj = [GTLTestingObject objectWithJSON:json];
@@ -687,8 +817,13 @@ static Class gAdditionalPropsClass = Nil;
   // Decode from string and get it.
   NSString * const jsonStr = @"{\"initFoo\":1234}";
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -733,12 +868,22 @@ static Class gAdditionalPropsClass = Nil;
   NSString * const jsonStr =
     @"{\"ap3\":\"2011-01-14T15:00:00-01:00\",\"ap2\":1234,\"ap1\":\"foo bar\"}";
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
   GTLTestingObject *obj = [GTLTestingAdditionalPropertiesObject objectWithJSON:json];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+  XCTAssertNil(err);
+  XCTAssertNotNil(json);
+
+  GTLTestingAdditionalPropertiesObject *obj =
+      [GTLTestingAdditionalPropertiesObject objectWithJSON:json];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNotNil(obj);
 
   // test getting basic types
@@ -781,12 +926,22 @@ static Class gAdditionalPropsClass = Nil;
   NSString * const jsonStr =
     @"{\"aKid\":{ \"a_str\": \"I'm a kid\" } }";
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
   GTLTestingObject *obj = [GTLTestingAdditionalPropertiesObject objectWithJSON:json];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+  XCTAssertNil(err);
+  XCTAssertNotNil(json);
+
+  GTLTestingAdditionalPropertiesObject *obj =
+      [GTLTestingAdditionalPropertiesObject objectWithJSON:json];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNotNil(obj);
 
   [GTLTestingAdditionalPropertiesObject setAdditionalPropsClass:[GTLTestingObject class]];
@@ -838,12 +993,22 @@ static Class gAdditionalPropsClass = Nil;
   NSString * const jsonStr =
     @"{\"ap3\":\"2011-01-14T15:00:00-01:00\",\"ap2\":1234,\"ap1\":\"foo bar\", \"aKid\":{ \"a_str\": \"I'm a kid\" } }";
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
   GTLTestingObject *obj = [GTLTestingAdditionalPropertiesObject objectWithJSON:json];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+  XCTAssertNil(err);
+  XCTAssertNotNil(json);
+
+  GTLTestingAdditionalPropertiesObject *obj =
+      [GTLTestingAdditionalPropertiesObject objectWithJSON:json];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNotNil(obj);
 
   // test getting when it can be anything
@@ -904,12 +1069,22 @@ static Class gAdditionalPropsClass = Nil;
   NSString * const jsonStr =
     @"{\"apArray3\":[\"2011-01-14T15:00:00-01:00\"],\"apArray2\":[1234],\"apArray1\":[\"foo bar\"]}";
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
   GTLTestingObject *obj = [GTLTestingAdditionalPropertiesObject objectWithJSON:json];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+  XCTAssertNil(err);
+  XCTAssertNotNil(json);
+
+  GTLTestingAdditionalPropertiesObject *obj =
+      [GTLTestingAdditionalPropertiesObject objectWithJSON:json];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNotNil(obj);
 
   // test getting arrays of basic types
@@ -953,12 +1128,22 @@ static Class gAdditionalPropsClass = Nil;
   NSString * const jsonStr =
     @"{\"aKidArray\":[ { \"a_str\": \"I'm a kid\" } ] }";
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
   GTLTestingObject *obj = [GTLTestingAdditionalPropertiesObject objectWithJSON:json];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+  XCTAssertNil(err);
+  XCTAssertNotNil(json);
+
+  GTLTestingAdditionalPropertiesObject *obj =
+      [GTLTestingAdditionalPropertiesObject objectWithJSON:json];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNotNil(obj);
 
   [GTLTestingAdditionalPropertiesObject setAdditionalPropsClass:[GTLTestingObject class]];
@@ -1001,12 +1186,22 @@ static Class gAdditionalPropsClass = Nil;
   NSString * const jsonStr =
     @"{\"apArray2\":[[[\"bar\"]]],\"apArray1\":[[\"foo\"]]}";
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
   GTLTestingObject *obj = [GTLTestingAdditionalPropertiesObject objectWithJSON:json];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+  XCTAssertNil(err);
+  XCTAssertNotNil(json);
+
+  GTLTestingAdditionalPropertiesObject *obj =
+      [GTLTestingAdditionalPropertiesObject objectWithJSON:json];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNotNil(obj);
 
   // test getting arrays of arrays of...
@@ -1192,8 +1387,13 @@ static Class gAdditionalPropsClass = Nil;
   NSString *jsonStr = obj.JSONString;
 
   XCTAssertNil(error);
+<<<<<<< HEAD
   NSMutableDictionary *jsonDict = [GTLJSONParser objectWithString:jsonStr
                                                             error:&error];
+=======
+  NSMutableDictionary *jsonDict = [self objectWithString:jsonStr
+                                                   error:&error];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(error);
 
   GTLTestingObject *obj2 = [GTLTestingObject objectWithJSON:jsonDict];
@@ -1274,8 +1474,13 @@ static Class gAdditionalPropsClass = Nil;
   NSString * const jsonStr =
     @"[ {\"a_str\":\"obj 1\"}, {\"a_str\":\"obj 2\"} ]";
   NSError *err = nil;
+<<<<<<< HEAD
   NSMutableDictionary *json = [GTLJSONParser objectWithString:jsonStr
                                                         error:&err];
+=======
+  NSMutableDictionary *json = [self objectWithString:jsonStr
+                                               error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 
@@ -1300,7 +1505,11 @@ static Class gAdditionalPropsClass = Nil;
 
   NSString * const jsonStr2 = @"[ \"str 1\", \"str 2\" ]";
   err = nil;
+<<<<<<< HEAD
   json = [GTLJSONParser objectWithString:jsonStr2 error:&err];
+=======
+  json = [self objectWithString:jsonStr2 error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   XCTAssertNil(err);
   XCTAssertNotNil(json);
 

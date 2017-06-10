@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +31,11 @@
 // Documentation:
 //   https://developers.google.com/discovery/
 // Classes:
+<<<<<<< HEAD
 //   GTLDiscoveryRestMethod (0 custom class methods, 14 custom properties)
+=======
+//   GTLDiscoveryRestMethod (0 custom class methods, 15 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLDiscoveryRestMethodMediaUpload (0 custom class methods, 3 custom properties)
 //   GTLDiscoveryRestMethodParameters (0 custom class methods, 0 custom properties)
 //   GTLDiscoveryRestMethodRequest (0 custom class methods, 2 custom properties)
@@ -60,6 +68,7 @@
 
 // Description of this method.
 // Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+<<<<<<< HEAD
 @property (copy) NSString *descriptionProperty;
 
 // Whether this method requires an ETag to be specified. The ETag is sent as an
@@ -68,18 +77,36 @@
 
 // HTTP method used by this method.
 @property (copy) NSString *httpMethod;
+=======
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// Whether this method requires an ETag to be specified. The ETag is sent as an
+// HTTP If-Match or If-None-Match header.
+@property (nonatomic, retain) NSNumber *etagRequired;  // boolValue
+
+// HTTP method used by this method.
+@property (nonatomic, copy) NSString *httpMethod;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // A unique ID for this method. This property can be used to match methods
 // between different versions of Discovery.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+<<<<<<< HEAD
 @property (copy) NSString *identifier;
 
 // Media upload parameters.
 @property (retain) GTLDiscoveryRestMethodMediaUpload *mediaUpload;
+=======
+@property (nonatomic, copy) NSString *identifier;
+
+// Media upload parameters.
+@property (nonatomic, retain) GTLDiscoveryRestMethodMediaUpload *mediaUpload;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Ordered list of required parameters, serves as a hint to clients on how to
 // structure their method signatures. The array is ordered such that the
 // "most-significant" parameter appears first.
+<<<<<<< HEAD
 @property (retain) NSArray *parameterOrder;  // of NSString
 
 // Details for all parameters in this method.
@@ -106,6 +133,38 @@
 
 // Whether this method supports subscriptions.
 @property (retain) NSNumber *supportsSubscription;  // boolValue
+=======
+@property (nonatomic, retain) NSArray *parameterOrder;  // of NSString
+
+// Details for all parameters in this method.
+@property (nonatomic, retain) GTLDiscoveryRestMethodParameters *parameters;
+
+// The URI path of this REST method. Should be used in conjunction with the
+// basePath property at the api-level.
+@property (nonatomic, copy) NSString *path;
+
+// The schema for the request.
+@property (nonatomic, retain) GTLDiscoveryRestMethodRequest *request;
+
+// The schema for the response.
+@property (nonatomic, retain) GTLDiscoveryRestMethodResponse *response;
+
+// OAuth 2.0 scopes applicable to this method.
+@property (nonatomic, retain) NSArray *scopes;  // of NSString
+
+// Whether this method supports media downloads.
+@property (nonatomic, retain) NSNumber *supportsMediaDownload;  // boolValue
+
+// Whether this method supports media uploads.
+@property (nonatomic, retain) NSNumber *supportsMediaUpload;  // boolValue
+
+// Whether this method supports subscriptions.
+@property (nonatomic, retain) NSNumber *supportsSubscription;  // boolValue
+
+// Indicates that downloads from this method should use the download service URL
+// (i.e. "/download"). Only applies if the method supports media download.
+@property (nonatomic, retain) NSNumber *useMediaDownloadService;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -118,6 +177,7 @@
 @interface GTLDiscoveryRestMethodMediaUpload : GTLObject
 
 // MIME Media Ranges for acceptable media uploads to this method.
+<<<<<<< HEAD
 @property (retain) NSArray *accept;  // of NSString
 
 // Maximum size of a media upload, such as "1MB", "2GB" or "3TB".
@@ -125,6 +185,15 @@
 
 // Supported upload protocols.
 @property (retain) GTLDiscoveryRestMethodMediaUploadProtocols *protocols;
+=======
+@property (nonatomic, retain) NSArray *accept;  // of NSString
+
+// Maximum size of a media upload, such as "1MB", "2GB" or "3TB".
+@property (nonatomic, copy) NSString *maxSize;
+
+// Supported upload protocols.
+@property (nonatomic, retain) GTLDiscoveryRestMethodMediaUploadProtocols *protocols;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -150,10 +219,17 @@
 @interface GTLDiscoveryRestMethodRequest : GTLObject
 
 // Schema ID for the request schema.
+<<<<<<< HEAD
 @property (copy) NSString *xRef;
 
 // parameter name.
 @property (copy) NSString *parameterName;
+=======
+@property (nonatomic, copy) NSString *xRef;
+
+// parameter name.
+@property (nonatomic, copy) NSString *parameterName;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -166,7 +242,11 @@
 @interface GTLDiscoveryRestMethodResponse : GTLObject
 
 // Schema ID for the response schema.
+<<<<<<< HEAD
 @property (copy) NSString *xRef;
+=======
+@property (nonatomic, copy) NSString *xRef;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -179,10 +259,17 @@
 @interface GTLDiscoveryRestMethodMediaUploadProtocols : GTLObject
 
 // Supports the Resumable Media Upload protocol.
+<<<<<<< HEAD
 @property (retain) GTLDiscoveryRestMethodMediaUploadProtocolsResumable *resumable;
 
 // Supports uploading as a single HTTP request.
 @property (retain) GTLDiscoveryRestMethodMediaUploadProtocolsSimple *simple;
+=======
+@property (nonatomic, retain) GTLDiscoveryRestMethodMediaUploadProtocolsResumable *resumable;
+
+// Supports uploading as a single HTTP request.
+@property (nonatomic, retain) GTLDiscoveryRestMethodMediaUploadProtocolsSimple *simple;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -195,11 +282,19 @@
 @interface GTLDiscoveryRestMethodMediaUploadProtocolsResumable : GTLObject
 
 // True if this endpoint supports uploading multipart media.
+<<<<<<< HEAD
 @property (retain) NSNumber *multipart;  // boolValue
 
 // The URI path to be used for upload. Should be used in conjunction with the
 // basePath property at the api-level.
 @property (copy) NSString *path;
+=======
+@property (nonatomic, retain) NSNumber *multipart;  // boolValue
+
+// The URI path to be used for upload. Should be used in conjunction with the
+// basePath property at the api-level.
+@property (nonatomic, copy) NSString *path;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -212,10 +307,18 @@
 @interface GTLDiscoveryRestMethodMediaUploadProtocolsSimple : GTLObject
 
 // True if this endpoint supports upload multipart media.
+<<<<<<< HEAD
 @property (retain) NSNumber *multipart;  // boolValue
 
 // The URI path to be used for upload. Should be used in conjunction with the
 // basePath property at the api-level.
 @property (copy) NSString *path;
+=======
+@property (nonatomic, retain) NSNumber *multipart;  // boolValue
+
+// The URI path to be used for upload. Should be used in conjunction with the
+// basePath property at the api-level.
+@property (nonatomic, copy) NSString *path;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

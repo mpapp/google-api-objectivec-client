@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,14 +46,28 @@
 //   GTLMapsEngineLayersListResponse
 //
 
+<<<<<<< HEAD
 // The response returned by a call to layers.List.
+=======
+// The response returned by a call to layers.List. Note: The list response does
+// not include all the fields available in a layer. Refer to the layer resource
+// description for details of the fields that are not included. You'll need to
+// send a get request to retrieve the additional fields for each layer.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @interface GTLMapsEngineLayersListResponse : GTLObject
 
 // Resources returned.
+<<<<<<< HEAD
 @property (retain) NSArray *layers;  // of GTLMapsEngineLayer
 
 // Next page token.
 @property (copy) NSString *nextPageToken;  // GTLBase64 can encode/decode (probably web-safe format)
+=======
+@property (nonatomic, retain) NSArray *layers;  // of GTLMapsEngineLayer
+
+// Next page token.
+@property (nonatomic, copy) NSString *nextPageToken;  // GTLBase64 can encode/decode (probably web-safe format)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

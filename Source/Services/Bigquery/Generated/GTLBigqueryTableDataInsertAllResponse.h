@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +28,11 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
+=======
+//   https://cloud.google.com/bigquery/
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Classes:
 //   GTLBigqueryTableDataInsertAllResponse (0 custom class methods, 2 custom properties)
 //   GTLBigqueryTableDataInsertAllResponseInsertErrorsItem (0 custom class methods, 2 custom properties)
@@ -46,10 +54,17 @@
 @interface GTLBigqueryTableDataInsertAllResponse : GTLObject
 
 // An array of errors for rows that were not inserted.
+<<<<<<< HEAD
 @property (retain) NSArray *insertErrors;  // of GTLBigqueryTableDataInsertAllResponseInsertErrorsItem
 
 // The resource type of the response.
 @property (copy) NSString *kind;
+=======
+@property (nonatomic, retain) NSArray *insertErrors;  // of GTLBigqueryTableDataInsertAllResponseInsertErrorsItem
+
+// The resource type of the response.
+@property (nonatomic, copy) NSString *kind;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -62,9 +77,16 @@
 @interface GTLBigqueryTableDataInsertAllResponseInsertErrorsItem : GTLObject
 
 // Error information for the row indicated by the index property.
+<<<<<<< HEAD
 @property (retain) NSArray *errors;  // of GTLBigqueryErrorProto
 
 // The index of the row that error applies to.
 @property (retain) NSNumber *index;  // unsignedIntValue
+=======
+@property (nonatomic, retain) NSArray *errors;  // of GTLBigqueryErrorProto
+
+// The index of the row that error applies to.
+@property (nonatomic, retain) NSNumber *index;  // unsignedIntValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

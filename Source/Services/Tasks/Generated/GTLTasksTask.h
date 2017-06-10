@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +50,7 @@
 
 // Completion date of the task (as a RFC 3339 timestamp). This field is omitted
 // if the task has not been completed.
+<<<<<<< HEAD
 @property (retain) GTLDateTime *completed;
 
 // Flag indicating whether the task has been deleted. The default if False.
@@ -56,10 +61,23 @@
 
 // ETag of the resource.
 @property (copy) NSString *ETag;
+=======
+@property (nonatomic, retain) GTLDateTime *completed;
+
+// Flag indicating whether the task has been deleted. The default if False.
+@property (nonatomic, retain) NSNumber *deleted;  // boolValue
+
+// Due date of the task (as a RFC 3339 timestamp). Optional.
+@property (nonatomic, retain) GTLDateTime *due;
+
+// ETag of the resource.
+@property (nonatomic, copy) NSString *ETag;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Flag indicating whether the task is hidden. This is the case if the task had
 // been marked completed when the task list was last cleared. The default is
 // False. This field is read-only.
+<<<<<<< HEAD
 @property (retain) NSNumber *hidden;  // boolValue
 
 // Task identifier.
@@ -74,11 +92,31 @@
 
 // Notes describing the task. Optional.
 @property (copy) NSString *notes;
+=======
+@property (nonatomic, retain) NSNumber *hidden;  // boolValue
+
+// Task identifier.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Type of the resource. This is always "tasks#task".
+@property (nonatomic, copy) NSString *kind;
+
+// Collection of links. This collection is read-only.
+@property (nonatomic, retain) NSArray *links;  // of GTLTasksTaskLinksItem
+
+// Notes describing the task. Optional.
+@property (nonatomic, copy) NSString *notes;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Parent task identifier. This field is omitted if it is a top-level task. This
 // field is read-only. Use the "move" method to move the task under a different
 // parent or to the top level.
+<<<<<<< HEAD
 @property (copy) NSString *parent;
+=======
+@property (nonatomic, copy) NSString *parent;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // String indicating the position of the task among its sibling tasks under the
 // same parent task or at the top level. If this string is greater than another
@@ -86,6 +124,7 @@
 // the task is positioned after the other task under the same parent task (or at
 // the top level). This field is read-only. Use the "move" method to move the
 // task to another position.
+<<<<<<< HEAD
 @property (copy) NSString *position;
 
 // URL pointing to this task. Used to retrieve, update, or delete this task.
@@ -99,6 +138,21 @@
 
 // Last modification time of the task (as a RFC 3339 timestamp).
 @property (retain) GTLDateTime *updated;
+=======
+@property (nonatomic, copy) NSString *position;
+
+// URL pointing to this task. Used to retrieve, update, or delete this task.
+@property (nonatomic, copy) NSString *selfLink;
+
+// Status of the task. This is either "needsAction" or "completed".
+@property (nonatomic, copy) NSString *status;
+
+// Title of the task.
+@property (nonatomic, copy) NSString *title;
+
+// Last modification time of the task (as a RFC 3339 timestamp).
+@property (nonatomic, retain) GTLDateTime *updated;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -112,6 +166,7 @@
 
 // The description. In HTML speak: Everything between <a> and </a>.
 // Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+<<<<<<< HEAD
 @property (copy) NSString *descriptionProperty;
 
 // The URL.
@@ -119,5 +174,14 @@
 
 // Type of the link, e.g. "email".
 @property (copy) NSString *type;
+=======
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// The URL.
+@property (nonatomic, copy) NSString *link;
+
+// Type of the link, e.g. "email".
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +31,11 @@
 // Documentation:
 //   https://developers.google.com/discovery/
 // Classes:
+<<<<<<< HEAD
 //   GTLDiscoveryRpcDescription (0 custom class methods, 25 custom properties)
+=======
+//   GTLDiscoveryRpcDescription (0 custom class methods, 26 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLDiscoveryRpcDescriptionAuth (0 custom class methods, 1 custom properties)
 //   GTLDiscoveryRpcDescriptionIcons (0 custom class methods, 2 custom properties)
 //   GTLDiscoveryRpcDescriptionMethods (0 custom class methods, 0 custom properties)
@@ -62,6 +70,7 @@
 @interface GTLDiscoveryRpcDescription : GTLObject
 
 // Authentication information.
+<<<<<<< HEAD
 @property (retain) GTLDiscoveryRpcDescriptionAuth *auth;
 
 // Indicates how the API name should be capitalized and split into various
@@ -102,10 +111,56 @@
 
 // The name of this API.
 @property (copy) NSString *name;
+=======
+@property (nonatomic, retain) GTLDiscoveryRpcDescriptionAuth *auth;
+
+// Indicates how the API name should be capitalized and split into various
+// parts. Useful for generating pretty class names.
+@property (nonatomic, copy) NSString *canonicalName;
+
+// The description of the API.
+// Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// Indicate the version of the Discovery API used to generate this doc.
+@property (nonatomic, copy) NSString *discoveryVersion;
+
+// A link to human readable documentation for the API.
+@property (nonatomic, copy) NSString *documentationLink;
+
+// The ETag for this response.
+@property (nonatomic, copy) NSString *ETag;
+
+// Enable exponential backoff for suitable methods in the generated clients.
+@property (nonatomic, retain) NSNumber *exponentialBackoffDefault;  // boolValue
+
+// A list of supported features for this API.
+@property (nonatomic, retain) NSArray *features;  // of NSString
+
+// Links to 16x16 and 32x32 icons representing the API.
+@property (nonatomic, retain) GTLDiscoveryRpcDescriptionIcons *icons;
+
+// The ID of this API.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The kind for this response.
+@property (nonatomic, copy) NSString *kind;
+
+// Labels for the status of this API, such as labs or deprecated.
+@property (nonatomic, retain) NSArray *labels;  // of NSString
+
+// API-level methods for this API.
+@property (nonatomic, retain) GTLDiscoveryRpcDescriptionMethods *methods;
+
+// The name of this API.
+@property (nonatomic, copy) NSString *name;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The domain of the owner of the API. Together with the ownerName and a
 // packagePath values, this can be used to generate a library for the API which
 // would have a unique fully qualified name.
+<<<<<<< HEAD
 @property (copy) NSString *ownerDomain;
 
 // The name of the owner of the API. See ownerDomain
@@ -140,6 +195,42 @@
 
 // The version of the API.
 @property (copy) NSString *version;
+=======
+@property (nonatomic, copy) NSString *ownerDomain;
+
+// The name of the owner of the API. See ownerDomain
+@property (nonatomic, copy) NSString *ownerName;
+
+// The package of the owner of the API. See ownerDomain
+@property (nonatomic, copy) NSString *packagePath;
+
+// Common parameters that apply across all apis.
+@property (nonatomic, retain) GTLDiscoveryRpcDescriptionParameters *parameters;
+
+// The protocol described by this document.
+@property (nonatomic, copy) NSString *protocol;
+
+// The version of the API.
+@property (nonatomic, copy) NSString *revision;
+
+// The root URL under which all API services live.
+@property (nonatomic, copy) NSString *rootUrl;
+
+// The path for JSON-RPC requests.
+@property (nonatomic, copy) NSString *rpcPath;
+
+// [DEPRECATED] The URL for JSON-RPC requests.
+@property (nonatomic, copy) NSString *rpcUrl;
+
+// The schemas for this API.
+@property (nonatomic, retain) GTLDiscoveryRpcDescriptionSchemas *schemas;
+
+// The title of the API.
+@property (nonatomic, copy) NSString *title;
+
+// The version of the API.
+@property (nonatomic, copy) NSString *version;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -152,7 +243,11 @@
 @interface GTLDiscoveryRpcDescriptionAuth : GTLObject
 
 // OAuth 2.0 authentication information.
+<<<<<<< HEAD
 @property (retain) GTLDiscoveryRpcDescriptionAuthOauth2 *oauth2;
+=======
+@property (nonatomic, retain) GTLDiscoveryRpcDescriptionAuthOauth2 *oauth2;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -165,10 +260,17 @@
 @interface GTLDiscoveryRpcDescriptionIcons : GTLObject
 
 // The URL of the 16x16 icon.
+<<<<<<< HEAD
 @property (copy) NSString *x16;
 
 // The URL of the 32x32 icon.
 @property (copy) NSString *x32;
+=======
+@property (nonatomic, copy) NSString *x16;
+
+// The URL of the 32x32 icon.
+@property (nonatomic, copy) NSString *x32;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -220,7 +322,11 @@
 @interface GTLDiscoveryRpcDescriptionAuthOauth2 : GTLObject
 
 // Available OAuth 2.0 scopes.
+<<<<<<< HEAD
 @property (retain) GTLDiscoveryRpcDescriptionAuthOauth2Scopes *scopes;
+=======
+@property (nonatomic, retain) GTLDiscoveryRpcDescriptionAuthOauth2Scopes *scopes;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -247,6 +353,10 @@
 
 // Description of scope.
 // Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+<<<<<<< HEAD
 @property (copy) NSString *descriptionProperty;
+=======
+@property (nonatomic, copy) NSString *descriptionProperty;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

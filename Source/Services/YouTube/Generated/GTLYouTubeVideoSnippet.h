@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,20 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
 //   GTLYouTubeVideoSnippet (0 custom class methods, 9 custom properties)
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+// Documentation:
+//   https://developers.google.com/youtube/v3
+// Classes:
+//   GTLYouTubeVideoSnippet (0 custom class methods, 12 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -35,6 +48,10 @@
 #endif
 
 @class GTLYouTubeThumbnailDetails;
+<<<<<<< HEAD
+=======
+@class GTLYouTubeVideoLocalization;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // ----------------------------------------------------------------------------
 //
@@ -47,6 +64,7 @@
 @interface GTLYouTubeVideoSnippet : GTLObject
 
 // The YouTube video category associated with the video.
+<<<<<<< HEAD
 @property (copy) NSString *categoryId;
 
 // The ID that YouTube uses to uniquely identify the channel that the video was
@@ -71,13 +89,56 @@
 // A list of keyword tags associated with the video. Tags may contain spaces.
 // This field is only visible to the video's uploader.
 @property (retain) NSArray *tags;  // of NSString
+=======
+@property (nonatomic, copy) NSString *categoryId;
+
+// The ID that YouTube uses to uniquely identify the channel that the video was
+// uploaded to.
+@property (nonatomic, copy) NSString *channelId;
+
+// Channel title for the channel that the video belongs to.
+@property (nonatomic, copy) NSString *channelTitle;
+
+// The default_audio_language property specifies the language spoken in the
+// video's default audio track.
+@property (nonatomic, copy) NSString *defaultAudioLanguage;
+
+// The language of the videos's default snippet.
+@property (nonatomic, copy) NSString *defaultLanguage;
+
+// The video's description.
+// Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// Indicates if the video is an upcoming/active live broadcast. Or it's "none"
+// if the video is not an upcoming/active live broadcast.
+@property (nonatomic, copy) NSString *liveBroadcastContent;
+
+// Localized snippet selected with the hl parameter. If no such localization
+// exists, this field is populated with the default snippet. (Read-only)
+@property (nonatomic, retain) GTLYouTubeVideoLocalization *localized;
+
+// The date and time that the video was uploaded. The value is specified in ISO
+// 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+@property (nonatomic, retain) GTLDateTime *publishedAt;
+
+// A list of keyword tags associated with the video. Tags may contain spaces.
+@property (nonatomic, retain) NSArray *tags;  // of NSString
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // A map of thumbnail images associated with the video. For each object in the
 // map, the key is the name of the thumbnail image, and the value is an object
 // that contains other information about the thumbnail.
+<<<<<<< HEAD
 @property (retain) GTLYouTubeThumbnailDetails *thumbnails;
 
 // The video's title.
 @property (copy) NSString *title;
+=======
+@property (nonatomic, retain) GTLYouTubeThumbnailDetails *thumbnails;
+
+// The video's title.
+@property (nonatomic, copy) NSString *title;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

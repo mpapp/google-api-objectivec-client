@@ -236,6 +236,7 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
   GTLCalendarCalendarListEntry *calendar = [self selectedCalendarListEntry];
   NSString *title = calendar.summary;
 
+<<<<<<< HEAD
   NSBeginAlertSheet(@"Delete", nil, @"Cancel", nil,
                     [self window], self,
                     @selector(deleteCalendarSheetDidEnd:returnCode:contextInfo:),
@@ -248,6 +249,18 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
   if (returnCode == NSAlertDefaultReturn) {
     [self deleteSelectedCalendar];
   }
+=======
+  NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+  alert.messageText = [NSString stringWithFormat:@"Delete \"%@\"?", title];
+  [alert addButtonWithTitle:@"Delete"];
+  [alert addButtonWithTitle:@"Cancel"];
+  [alert beginSheetModalForWindow:[self window]
+                completionHandler:^(NSModalResponse returnCode) {
+    if (returnCode == NSAlertFirstButtonReturn) {
+      [self deleteSelectedCalendar];
+    }
+  }];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 - (IBAction)addEntry:(id)sender {
@@ -286,7 +299,11 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
 }
 
 - (IBAction)APIConsoleClicked:(id)sender {
+<<<<<<< HEAD
   NSURL *url = [NSURL URLWithString:@"https://code.google.com/apis/console"];
+=======
+  NSURL *url = [NSURL URLWithString:@"https://console.developers.google.com/"];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
@@ -581,7 +598,11 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
                           event:newEvent
               completionHandler:^(NSInteger returnCode, GTLCalendarEvent *event) {
                 // Callback
+<<<<<<< HEAD
                 if (returnCode == NSOKButton) {
+=======
+                if (returnCode == NSModalResponseOK) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
                   [self addEvent:event];
                 }
               }];
@@ -622,7 +643,11 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
                             event:eventToEdit
                 completionHandler:^(NSInteger returnCode, GTLCalendarEvent *event) {
                   // Callback
+<<<<<<< HEAD
                   if (returnCode == NSOKButton) {
+=======
+                  if (returnCode == NSModalResponseOK) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
                     [self editSelectedEventWithEvent:event];
                   }
                 }];
@@ -699,10 +724,18 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
                                  minute:(int)minute
                                  second:(int)second {
 
+<<<<<<< HEAD
   int const kComponentBits = (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
                               | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit);
 
   NSCalendar *cal = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+=======
+  NSUInteger const kComponentBits = (NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay
+      | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond);
+
+  NSCalendar *cal =
+      [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian] autorelease];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
   NSDateComponents *dateComponents = [cal components:kComponentBits
                                             fromDate:[NSDate date]];
@@ -839,7 +872,11 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
                         ACLRule:newRule
               completionHandler:^(NSInteger returnCode, GTLCalendarAclRule *rule) {
                 // Callback
+<<<<<<< HEAD
                 if (returnCode == NSOKButton) {
+=======
+                if (returnCode == NSModalResponseOK) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
                   [self addACLRule:rule];
                 }
               }];
@@ -880,7 +917,11 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
                           ACLRule:ruleToEdit
                 completionHandler:^(NSInteger returnCode, GTLCalendarAclRule *rule) {
                   // Callback
+<<<<<<< HEAD
                   if (returnCode == NSOKButton) {
+=======
+                  if (returnCode == NSModalResponseOK) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
                     [self editSelectedACLRuleWithRule:rule];
                   }
                 }];
@@ -1170,8 +1211,16 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
                                      arguments:argList] autorelease];
     va_end(argList);
   }
+<<<<<<< HEAD
   NSBeginAlertSheet(title, nil, nil, nil, [self window], nil, nil,
                     nil, nil, @"%@", result);
+=======
+  NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+  alert.messageText = title;
+  alert.informativeText = result;
+  [alert beginSheetModalForWindow:[self window]
+                completionHandler:nil];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark Client ID Sheet
@@ -1185,6 +1234,7 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
 // into the source rather than ask the user for them.
 //
 // The string values are obtained from the API Console,
+<<<<<<< HEAD
 // https://code.google.com/apis/console
 
 - (IBAction)clientIDClicked:(id)sender {
@@ -1203,6 +1253,17 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
 - (void)clientIDSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
   [sheet orderOut:self];
   [self updateUI];
+=======
+// https://console.developers.google.com/
+
+- (IBAction)clientIDClicked:(id)sender {
+  // Show the sheet for developers to enter their client ID and client secret
+  [[self window] beginSheet:clientIDSheet_ completionHandler:nil];
+}
+
+- (IBAction)clientIDDoneClicked:(id)sender {
+  [[self window] endSheet:[sender window]];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark Text field delegate methods

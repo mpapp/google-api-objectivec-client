@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,13 +52,20 @@
          trainingInstances, utility;
 
 + (NSDictionary *)parameterNameMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"id"
                                 forKey:@"identifier"];
+=======
+  NSDictionary *map = @{
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       [NSObject class], @"csvInstance",
@@ -70,6 +81,21 @@
 
 + (id)queryForHostedmodelsPredictWithProject:(NSString *)project
                              hostedModelName:(NSString *)hostedModelName {
+=======
+  NSDictionary *map = @{
+    @"csvInstance" : [NSObject class],
+    @"trainingInstances" : [GTLPredictionTrainedmodelsInsertTrainingInstancesItem class],
+    @"utility" : [GTLPredictionTrainedmodelsInsertUtilityItem class]
+  };
+  return map;
+}
+
+#pragma mark - "hostedmodels" methods
+// These create a GTLQueryPrediction object.
+
++ (instancetype)queryForHostedmodelsPredictWithProject:(NSString *)project
+                                       hostedModelName:(NSString *)hostedModelName {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"prediction.hostedmodels.predict";
   GTLQueryPrediction *query = [self queryWithMethodName:methodName];
   query.project = project;
@@ -78,12 +104,20 @@
   return query;
 }
 
+<<<<<<< HEAD
 #pragma mark -
 #pragma mark "trainedmodels" methods
 // These create a GTLQueryPrediction object.
 
 + (id)queryForTrainedmodelsAnalyzeWithProject:(NSString *)project
                                    identifier:(NSString *)identifier {
+=======
+#pragma mark - "trainedmodels" methods
+// These create a GTLQueryPrediction object.
+
++ (instancetype)queryForTrainedmodelsAnalyzeWithProject:(NSString *)project
+                                             identifier:(NSString *)identifier {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"prediction.trainedmodels.analyze";
   GTLQueryPrediction *query = [self queryWithMethodName:methodName];
   query.project = project;
@@ -92,8 +126,13 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTrainedmodelsDeleteWithProject:(NSString *)project
                                   identifier:(NSString *)identifier {
+=======
++ (instancetype)queryForTrainedmodelsDeleteWithProject:(NSString *)project
+                                            identifier:(NSString *)identifier {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"prediction.trainedmodels.delete";
   GTLQueryPrediction *query = [self queryWithMethodName:methodName];
   query.project = project;
@@ -101,8 +140,13 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTrainedmodelsGetWithProject:(NSString *)project
                                identifier:(NSString *)identifier {
+=======
++ (instancetype)queryForTrainedmodelsGetWithProject:(NSString *)project
+                                         identifier:(NSString *)identifier {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"prediction.trainedmodels.get";
   GTLQueryPrediction *query = [self queryWithMethodName:methodName];
   query.project = project;
@@ -111,7 +155,11 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTrainedmodelsInsertWithProject:(NSString *)project {
+=======
++ (instancetype)queryForTrainedmodelsInsertWithProject:(NSString *)project {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"prediction.trainedmodels.insert";
   GTLQueryPrediction *query = [self queryWithMethodName:methodName];
   query.project = project;
@@ -119,7 +167,11 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTrainedmodelsListWithProject:(NSString *)project {
+=======
++ (instancetype)queryForTrainedmodelsListWithProject:(NSString *)project {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"prediction.trainedmodels.list";
   GTLQueryPrediction *query = [self queryWithMethodName:methodName];
   query.project = project;
@@ -127,8 +179,13 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTrainedmodelsPredictWithProject:(NSString *)project
                                    identifier:(NSString *)identifier {
+=======
++ (instancetype)queryForTrainedmodelsPredictWithProject:(NSString *)project
+                                             identifier:(NSString *)identifier {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"prediction.trainedmodels.predict";
   GTLQueryPrediction *query = [self queryWithMethodName:methodName];
   query.project = project;
@@ -137,8 +194,13 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTrainedmodelsUpdateWithProject:(NSString *)project
                                   identifier:(NSString *)identifier {
+=======
++ (instancetype)queryForTrainedmodelsUpdateWithProject:(NSString *)project
+                                            identifier:(NSString *)identifier {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"prediction.trainedmodels.update";
   GTLQueryPrediction *query = [self queryWithMethodName:methodName];
   query.project = project;
@@ -149,8 +211,12 @@
 
 @end
 
+<<<<<<< HEAD
 #pragma mark -
 #pragma mark method parameter objects
+=======
+#pragma mark - method parameter objects
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These object are used only to pass a collection of parameters to a
 // method as a single item.
 
@@ -163,9 +229,15 @@
 @dynamic csvInstance;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[NSObject class]
                                 forKey:@"csvInstance"];
+=======
+  NSDictionary *map = @{
+    @"csvInstance" : [NSObject class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -180,9 +252,15 @@
 @dynamic csvInstance, output;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[NSObject class]
                                 forKey:@"csvInstance"];
+=======
+  NSDictionary *map = @{
+    @"csvInstance" : [NSObject class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -210,9 +288,15 @@
 @dynamic csvInstance;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[NSObject class]
                                 forKey:@"csvInstance"];
+=======
+  NSDictionary *map = @{
+    @"csvInstance" : [NSObject class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

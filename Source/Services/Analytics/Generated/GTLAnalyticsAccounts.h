@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
+=======
+//   Views and manages your Google Analytics data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
@@ -52,12 +60,17 @@
 @interface GTLAnalyticsAccounts : GTLCollectionObject
 
 // A list of accounts.
+<<<<<<< HEAD
 @property (retain) NSArray *items;  // of GTLAnalyticsAccount
+=======
+@property (nonatomic, retain) NSArray *items;  // of GTLAnalyticsAccount
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The maximum number of entries the response can contain, regardless of the
 // actual number of entries returned. Its value ranges from 1 to 1000 with a
 // value of 1000 by default, or otherwise specified by the max-results query
 // parameter.
+<<<<<<< HEAD
 @property (retain) NSNumber *itemsPerPage;  // intValue
 
 // Collection type.
@@ -79,5 +92,28 @@
 
 // Email ID of the authenticated user
 @property (copy) NSString *username;
+=======
+@property (nonatomic, retain) NSNumber *itemsPerPage;  // intValue
+
+// Collection type.
+@property (nonatomic, copy) NSString *kind;
+
+// Next link for this account collection.
+@property (nonatomic, copy) NSString *nextLink;
+
+// Previous link for this account collection.
+@property (nonatomic, copy) NSString *previousLink;
+
+// The starting index of the entries, which is 1 by default or otherwise
+// specified by the start-index query parameter.
+@property (nonatomic, retain) NSNumber *startIndex;  // intValue
+
+// The total number of results for the query, regardless of the number of
+// results in the response.
+@property (nonatomic, retain) NSNumber *totalResults;  // intValue
+
+// Email ID of the authenticated user
+@property (nonatomic, copy) NSString *username;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

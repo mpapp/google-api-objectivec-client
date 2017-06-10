@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +31,11 @@
 // Documentation:
 //   https://developers.google.com/maps-engine/
 // Classes:
+<<<<<<< HEAD
 //   GTLMapsEngineIconStyle (0 custom class methods, 2 custom properties)
+=======
+//   GTLMapsEngineIconStyle (0 custom class methods, 4 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -35,6 +43,12 @@
   #import "GTLObject.h"
 #endif
 
+<<<<<<< HEAD
+=======
+@class GTLMapsEngineScaledShape;
+@class GTLMapsEngineScalingFunction;
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // ----------------------------------------------------------------------------
 //
 //   GTLMapsEngineIconStyle
@@ -46,11 +60,25 @@
 
 // Custom icon id.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+<<<<<<< HEAD
 @property (copy) NSString *identifier;
+=======
+@property (nonatomic, copy) NSString *identifier;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Stock icon name. To use a stock icon, prefix it with 'gx_'. See Stock icon
 // names for valid icon names. For example, to specify small_red, set name to
 // 'gx_small_red'.
+<<<<<<< HEAD
 @property (copy) NSString *name;
+=======
+@property (nonatomic, copy) NSString *name;
+
+// A scalable shape.
+@property (nonatomic, retain) GTLMapsEngineScaledShape *scaledShape;
+
+// The function used to scale shapes. Required when a scaledShape is specified.
+@property (nonatomic, retain) GTLMapsEngineScalingFunction *scalingFunction;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,19 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
 //   GTLAnalyticsWebproperty (0 custom class methods, 16 custom properties)
+=======
+//   Views and manages your Google Analytics data.
+// Documentation:
+//   https://developers.google.com/analytics/
+// Classes:
+//   GTLAnalyticsWebproperty (0 custom class methods, 17 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLAnalyticsWebpropertyChildLink (0 custom class methods, 2 custom properties)
 //   GTLAnalyticsWebpropertyParentLink (0 custom class methods, 2 custom properties)
 //   GTLAnalyticsWebpropertyPermissions (0 custom class methods, 1 custom properties)
@@ -51,6 +63,7 @@
 @interface GTLAnalyticsWebproperty : GTLObject
 
 // Account ID to which this web property belongs.
+<<<<<<< HEAD
 @property (copy) NSString *accountId;
 
 // Child link for this web property. Points to the list of views (profiles) for
@@ -100,6 +113,60 @@
 
 // Website url for this web property.
 @property (copy) NSString *websiteUrl;
+=======
+@property (nonatomic, copy) NSString *accountId;
+
+// Child link for this web property. Points to the list of views (profiles) for
+// this web property.
+@property (nonatomic, retain) GTLAnalyticsWebpropertyChildLink *childLink;
+
+// Time this web property was created.
+@property (nonatomic, retain) GTLDateTime *created;
+
+// Default view (profile) ID.
+@property (nonatomic, retain) NSNumber *defaultProfileId;  // longLongValue
+
+// Web property ID of the form UA-XXXXX-YY.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The industry vertical/category selected for this web property.
+@property (nonatomic, copy) NSString *industryVertical;
+
+// Internal ID for this web property.
+@property (nonatomic, copy) NSString *internalWebPropertyId;
+
+// Resource type for Analytics WebProperty.
+@property (nonatomic, copy) NSString *kind;
+
+// Level for this web property. Possible values are STANDARD or PREMIUM.
+@property (nonatomic, copy) NSString *level;
+
+// Name of this web property.
+@property (nonatomic, copy) NSString *name;
+
+// Parent link for this web property. Points to the account to which this web
+// property belongs.
+@property (nonatomic, retain) GTLAnalyticsWebpropertyParentLink *parentLink;
+
+// Permissions the user has for this web property.
+@property (nonatomic, retain) GTLAnalyticsWebpropertyPermissions *permissions;
+
+// View (Profile) count for this web property.
+@property (nonatomic, retain) NSNumber *profileCount;  // intValue
+
+// Link for this web property.
+@property (nonatomic, copy) NSString *selfLink;
+
+// Indicates whether this web property is starred or not.
+@property (nonatomic, retain) NSNumber *starred;  // boolValue
+
+// Time this web property was last modified.
+@property (nonatomic, retain) GTLDateTime *updated;
+
+// Website url for this web property.
+@property (nonatomic, copy) NSString *websiteUrl;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -112,10 +179,17 @@
 @interface GTLAnalyticsWebpropertyChildLink : GTLObject
 
 // Link to the list of views (profiles) for this web property.
+<<<<<<< HEAD
 @property (copy) NSString *href;
 
 // Type of the parent link. Its value is "analytics#profiles".
 @property (copy) NSString *type;
+=======
+@property (nonatomic, copy) NSString *href;
+
+// Type of the parent link. Its value is "analytics#profiles".
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -128,10 +202,17 @@
 @interface GTLAnalyticsWebpropertyParentLink : GTLObject
 
 // Link to the account for this web property.
+<<<<<<< HEAD
 @property (copy) NSString *href;
 
 // Type of the parent link. Its value is "analytics#account".
 @property (copy) NSString *type;
+=======
+@property (nonatomic, copy) NSString *href;
+
+// Type of the parent link. Its value is "analytics#account".
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -146,6 +227,10 @@
 // All the permissions that the user has for this web property. These include
 // any implied permissions (e.g., EDIT implies VIEW) or inherited permissions
 // from the parent account.
+<<<<<<< HEAD
 @property (retain) NSArray *effective;  // of NSString
+=======
+@property (nonatomic, retain) NSArray *effective;  // of NSString
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

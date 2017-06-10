@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -46,6 +55,7 @@
 @interface GTLYouTubeI18nRegion : GTLObject
 
 // Etag of this resource.
+<<<<<<< HEAD
 @property (copy) NSString *ETag;
 
 // The ID that YouTube uses to uniquely identify the i18n region.
@@ -59,5 +69,20 @@
 // The snippet object contains basic details about the i18n region, such as
 // region code and human-readable name.
 @property (retain) GTLYouTubeI18nRegionSnippet *snippet;
+=======
+@property (nonatomic, copy) NSString *ETag;
+
+// The ID that YouTube uses to uniquely identify the i18n region.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Identifies what kind of resource this is. Value: the fixed string
+// "youtube#i18nRegion".
+@property (nonatomic, copy) NSString *kind;
+
+// The snippet object contains basic details about the i18n region, such as
+// region code and human-readable name.
+@property (nonatomic, retain) GTLYouTubeI18nRegionSnippet *snippet;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

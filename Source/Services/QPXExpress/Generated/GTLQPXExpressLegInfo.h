@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   QPX Express API (qpxExpress/v1)
 // Description:
+<<<<<<< HEAD
 //   Lets you find the least expensive flights between an origin and a
 //   destination.
+=======
+//   Finds the least expensive flights between an origin and a destination.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   http://developers.google.com/qpx-express
 // Classes:
@@ -48,6 +56,7 @@
 
 // The aircraft (or bus, ferry, railcar, etc) travelling between the two points
 // of this leg.
+<<<<<<< HEAD
 @property (copy) NSString *aircraft;
 
 // The scheduled time of arrival at the destination of the leg, local to the
@@ -76,11 +85,42 @@
 // An identifier that uniquely identifies this leg in the solution.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
 @property (copy) NSString *identifier;
+=======
+@property (nonatomic, copy) NSString *aircraft;
+
+// The scheduled time of arrival at the destination of the leg, local to the
+// point of arrival.
+@property (nonatomic, copy) NSString *arrivalTime;
+
+// Whether you have to change planes following this leg. Only applies to the
+// next leg.
+@property (nonatomic, retain) NSNumber *changePlane;  // boolValue
+
+// Duration of a connection following this leg, in minutes.
+@property (nonatomic, retain) NSNumber *connectionDuration;  // intValue
+
+// The scheduled departure time of the leg, local to the point of departure.
+@property (nonatomic, copy) NSString *departureTime;
+
+// The leg destination as a city and airport.
+@property (nonatomic, copy) NSString *destination;
+
+// The terminal the flight is scheduled to arrive at.
+@property (nonatomic, copy) NSString *destinationTerminal;
+
+// The scheduled travelling time from the origin to the destination.
+@property (nonatomic, retain) NSNumber *duration;  // intValue
+
+// An identifier that uniquely identifies this leg in the solution.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Identifies this as a leg object. A leg is the smallest unit of travel, in the
 // case of a flight a takeoff immediately followed by a landing at two set
 // points on a particular carrier with a particular flight number. Value: the
 // fixed string qpxexpress#legInfo.
+<<<<<<< HEAD
 @property (copy) NSString *kind;
 
 // A simple, general description of the meal(s) served on the flight, for
@@ -92,11 +132,25 @@
 
 // In percent, the published on time performance on this leg.
 @property (retain) NSNumber *onTimePerformance;  // intValue
+=======
+@property (nonatomic, copy) NSString *kind;
+
+// A simple, general description of the meal(s) served on the flight, for
+// example: "Hot meal".
+@property (nonatomic, copy) NSString *meal;
+
+// The number of miles in this leg.
+@property (nonatomic, retain) NSNumber *mileage;  // intValue
+
+// In percent, the published on time performance on this leg.
+@property (nonatomic, retain) NSNumber *onTimePerformance;  // intValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Department of Transportation disclosure information on the actual operator of
 // a flight in a code share. (A code share refers to a marketing agreement
 // between two carriers, where one carrier will list in its schedules (and take
 // bookings for) flights that are actually operated by another carrier.)
+<<<<<<< HEAD
 @property (copy) NSString *operatingDisclosure;
 
 // The leg origin as a city and airport.
@@ -108,5 +162,18 @@
 // Whether passenger information must be furnished to the United States
 // Transportation Security Administration (TSA) prior to departure.
 @property (retain) NSNumber *secure;  // boolValue
+=======
+@property (nonatomic, copy) NSString *operatingDisclosure;
+
+// The leg origin as a city and airport.
+@property (nonatomic, copy) NSString *origin;
+
+// The terminal the flight is scheduled to depart from.
+@property (nonatomic, copy) NSString *originTerminal;
+
+// Whether passenger information must be furnished to the United States
+// Transportation Security Administration (TSA) prior to departure.
+@property (nonatomic, retain) NSNumber *secure;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   QPX Express API (qpxExpress/v1)
 // Description:
+<<<<<<< HEAD
 //   Lets you find the least expensive flights between an origin and a
 //   destination.
+=======
+//   Finds the least expensive flights between an origin and a destination.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   http://developers.google.com/qpx-express
 // Classes:
@@ -48,9 +56,16 @@
 
 // Identifies this as a QPX Express API search response resource. Value: the
 // fixed string qpxExpress#tripsSearch.
+<<<<<<< HEAD
 @property (copy) NSString *kind;
 
 // All possible solutions to the QPX Express search request.
 @property (retain) GTLQPXExpressTripOptionsResponse *trips;
+=======
+@property (nonatomic, copy) NSString *kind;
+
+// All possible solutions to the QPX Express search request.
+@property (nonatomic, retain) GTLQPXExpressTripOptionsResponse *trips;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

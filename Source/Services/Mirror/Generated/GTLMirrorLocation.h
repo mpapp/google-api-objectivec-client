@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +48,7 @@
 @interface GTLMirrorLocation : GTLObject
 
 // The accuracy of the location fix in meters.
+<<<<<<< HEAD
 @property (retain) NSNumber *accuracy;  // doubleValue
 
 // The full address of the location.
@@ -69,5 +74,32 @@
 // The time at which this location was captured, formatted according to RFC
 // 3339.
 @property (retain) GTLDateTime *timestamp;
+=======
+@property (nonatomic, retain) NSNumber *accuracy;  // doubleValue
+
+// The full address of the location.
+@property (nonatomic, copy) NSString *address;
+
+// The name to be displayed. This may be a business name or a user-defined
+// place, such as "Home".
+@property (nonatomic, copy) NSString *displayName;
+
+// The ID of the location.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The type of resource. This is always mirror#location.
+@property (nonatomic, copy) NSString *kind;
+
+// The latitude, in degrees.
+@property (nonatomic, retain) NSNumber *latitude;  // doubleValue
+
+// The longitude, in degrees.
+@property (nonatomic, retain) NSNumber *longitude;  // doubleValue
+
+// The time at which this location was captured, formatted according to RFC
+// 3339.
+@property (nonatomic, retain) GTLDateTime *timestamp;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

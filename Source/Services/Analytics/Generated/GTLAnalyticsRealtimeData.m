@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
+=======
+//   Views and manages your Google Analytics data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
@@ -44,18 +52,31 @@
          totalResults, totalsForAllResults;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"id"
                                 forKey:@"identifier"];
+=======
+  NSDictionary *map = @{
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       [GTLAnalyticsRealtimeDataColumnHeadersItem class], @"columnHeaders",
       [NSString class], @"rows",
       nil];
+=======
+  NSDictionary *map = @{
+    @"columnHeaders" : [GTLAnalyticsRealtimeDataColumnHeadersItem class],
+    @"rows" : [NSString class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -96,18 +117,31 @@
 @dynamic dimensions, filters, ids, maxResults, metrics, sort;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"max-results"
                                 forKey:@"maxResults"];
+=======
+  NSDictionary *map = @{
+    @"maxResults" : @"max-results"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       [NSString class], @"metrics",
       [NSString class], @"sort",
       nil];
+=======
+  NSDictionary *map = @{
+    @"metrics" : [NSString class],
+    @"sort" : [NSString class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

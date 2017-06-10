@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google+ Domains API (plusDomains/v1)
 // Description:
+<<<<<<< HEAD
 //   The Google+ API enables developers to build on top of the Google+ platform.
+=======
+//   Builds on top of the Google+ platform for Google Apps Domains.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/+/domains/
 

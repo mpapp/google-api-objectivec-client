@@ -24,7 +24,11 @@
 @interface GTLErrorObject : GTLObject
 @property (retain) NSNumber *code;
 @property (retain) NSString *message;
+<<<<<<< HEAD
 @property (retain) NSArray *data; // of GTLErrorObjectData
+=======
+@property (retain) GTL_NSArrayOf(GTLErrorObjectData *) *data;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Convenience accessor for creating an NSError from a GTLErrorObject.
 @property (readonly) NSError *foundationError;

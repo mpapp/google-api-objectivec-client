@@ -193,16 +193,25 @@
 
 #pragma mark -
 
+<<<<<<< HEAD
 + (NSString *)dictionaryStringFromPairs:(NSDictionary *)pairs
                             quoteValues:(BOOL)quoteValues {
+=======
++ (NSString *)classMapForMethodNamed:(NSString *)methodName
+                               pairs:(NSDictionary *)pairs
+                         quoteValues:(BOOL)quoteValues {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if ([pairs count] == 0) {
     return nil;
   }
 
   NSMutableString *result = [NSMutableString string];
+<<<<<<< HEAD
   NSArray *sortedKeys =
     [[pairs allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
 
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *valueBefore = @"";
   NSString *valueAfter = @"";
   if (quoteValues) {
@@ -210,6 +219,7 @@
     valueAfter = @"\"";
   }
 
+<<<<<<< HEAD
   if ([sortedKeys count] == 1) {
     // One item, dictionaryWithObject:forKey:
     NSString *key = [sortedKeys objectAtIndex:0];
@@ -245,6 +255,19 @@
   NSString *dictStr = [self dictionaryStringFromPairs:pairs
                                           quoteValues:quoteValues];
   [result appendString:dictStr];
+=======
+  NSArray *sortedKeys =
+    [[pairs allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+  [result appendFormat:@"+ (NSDictionary *)%@ {\n", methodName];
+  [result appendString:@"  NSDictionary *map = @{\n"];
+  NSString *lastKey = sortedKeys.lastObject;
+  for (NSString *key in sortedKeys) {
+    NSString *value = [pairs objectForKey:key];
+    [result appendFormat:@"    @\"%@\" : %@%@%@%@\n",
+     key, valueBefore, value, valueAfter, (key == lastKey ? @"" : @",")];
+  }
+  [result appendString:@"  };\n"];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [result appendString:@"  return map;\n"];
   [result appendString:@"}\n"];
   return result;
@@ -319,10 +342,16 @@
   if (urlString == nil) {
     return nil;
   }
+<<<<<<< HEAD
   NSDictionary *dict =
     [NSDictionary dictionaryWithObject:value forKey:paramName];
   NSURL *resultURL = [GTLUtilities URLWithString:urlString
                                     queryParameters:dict];
+=======
+  NSDictionary *params = @{ paramName : value };
+  NSURL *resultURL = [GTLUtilities URLWithString:urlString
+                                    queryParameters:params];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *result = [resultURL absoluteString];
   return result;
 }

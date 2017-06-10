@@ -20,7 +20,11 @@
 #import "TasksSampleWindowController.h"
 
 #import "GTL/GTLUtilities.h"
+<<<<<<< HEAD
 #import "GTL/GTMHTTPFetcherLogging.h"
+=======
+#import "GTL/GTMSessionFetcherLogging.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @interface TasksSampleWindowController ()
 
@@ -97,6 +101,12 @@ NSString *const kKeychainItemName = @"TasksSample: Google Tasks";
   // Load the OAuth token from the keychain, if it was previously saved
   NSString *clientID = [clientIDField_ stringValue];
   NSString *clientSecret = [clientSecretField_ stringValue];
+<<<<<<< HEAD
+=======
+  if (clientSecret.length == 0) {
+    clientSecret = nil;
+  }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
   GTMOAuth2Authentication *auth;
   auth = [GTMOAuth2WindowController authForGoogleFromKeychainForName:kKeychainItemName
@@ -206,6 +216,7 @@ NSString *const kKeychainItemName = @"TasksSample: Google Tasks";
   GTLTasksTaskList *tasklist = [self selectedTaskList];
   NSString *title = tasklist.title;
 
+<<<<<<< HEAD
   NSBeginAlertSheet(@"Delete", nil, @"Cancel", nil,
                     [self window], self,
                     @selector(deleteTaskListSheetDidEnd:returnCode:contextInfo:),
@@ -218,6 +229,18 @@ NSString *const kKeychainItemName = @"TasksSample: Google Tasks";
   if (returnCode == NSAlertDefaultReturn) {
     [self deleteSelectedTaskList];
   }
+=======
+  NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+  alert.messageText = [NSString stringWithFormat:@"Delete \"%@\"?", title];
+  [alert addButtonWithTitle:@"Delete"];
+  [alert addButtonWithTitle:@"Cancel"];
+  [alert beginSheetModalForWindow:[self window]
+                completionHandler:^(NSModalResponse returnCode) {
+    if (returnCode == NSAlertFirstButtonReturn) {
+      [self deleteSelectedTaskList];
+    }
+  }];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 - (IBAction)addTaskClicked:(id)sender {
@@ -232,6 +255,7 @@ NSString *const kKeychainItemName = @"TasksSample: Google Tasks";
   GTLTasksTask *task = [self selectedTask];
   NSString *title = task.title;
 
+<<<<<<< HEAD
   NSBeginAlertSheet(@"Delete", nil, @"Cancel", nil,
                     [self window], self,
                     @selector(deleteTaskSheetDidEnd:returnCode:contextInfo:),
@@ -244,6 +268,18 @@ NSString *const kKeychainItemName = @"TasksSample: Google Tasks";
   if (returnCode == NSAlertDefaultReturn) {
     [self deleteSelectedTask];
   }
+=======
+  NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+  alert.messageText = [NSString stringWithFormat:@"Delete \"%@\"?", title];
+  [alert addButtonWithTitle:@"Delete"];
+  [alert addButtonWithTitle:@"Cancel"];
+  [alert beginSheetModalForWindow:[self window]
+                completionHandler:^(NSModalResponse returnCode) {
+    if (returnCode == NSAlertFirstButtonReturn) {
+      [self deleteSelectedTask];
+    }
+  }];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 - (IBAction)completeTaskClicked:(id)sender {
@@ -267,12 +303,20 @@ NSString *const kKeychainItemName = @"TasksSample: Google Tasks";
 }
 
 - (IBAction)APIConsoleClicked:(id)sender {
+<<<<<<< HEAD
   NSURL *url = [NSURL URLWithString:@"https://code.google.com/apis/console"];
+=======
+  NSURL *url = [NSURL URLWithString:@"https://console.developers.google.com/"];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
 - (IBAction)loggingCheckboxClicked:(id)sender {
+<<<<<<< HEAD
   [GTMHTTPFetcher setLoggingEnabled:[sender state]];
+=======
+  [GTMSessionFetcher setLoggingEnabled:[sender state]];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark -
@@ -885,6 +929,7 @@ static NSString *const kGTLChildTasksProperty = @"childTasks";
 #pragma mark Sign In
 
 - (void)runSigninThenInvokeSelector:(SEL)signInDoneSel {
+<<<<<<< HEAD
   // Applications should have client ID and client secret strings
   // hardcoded into the source, but the sample application asks the
   // developer for the strings
@@ -892,6 +937,13 @@ static NSString *const kGTLChildTasksProperty = @"childTasks";
   NSString *clientSecret = [clientSecretField_ stringValue];
 
   if ([clientID length] == 0 || [clientSecret length] == 0) {
+=======
+  // Applications should have client ID string hardcoded into the source, but
+  // the sample application asks the developer for the strings.
+  NSString *clientID = [clientIDField_ stringValue];
+
+  if ([clientID length] == 0) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     // Remind the developer that client ID and client secret are needed
     [clientIDButton_ performSelector:@selector(performClick:)
                           withObject:self
@@ -899,6 +951,15 @@ static NSString *const kGTLChildTasksProperty = @"childTasks";
     return;
   }
 
+<<<<<<< HEAD
+=======
+  // Client secrets are optional for Google services and can be nil.
+  NSString *clientSecret = [clientSecretField_ stringValue];
+  if (clientSecret.length == 0) {
+    clientSecret = nil;
+  }
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   // Show the OAuth 2 sign-in controller
   NSBundle *frameworkBundle = [NSBundle bundleForClass:[GTMOAuth2WindowController class]];
   GTMOAuth2WindowController *windowController;
@@ -951,7 +1012,11 @@ static NSString *const kGTLChildTasksProperty = @"childTasks";
     resultStr = [self.taskListsFetchError description];
 
     // Also display any server data present
+<<<<<<< HEAD
     NSData *errData = [[self.taskListsFetchError userInfo] objectForKey:kGTMHTTPFetcherStatusDataKey];
+=======
+    NSData *errData = [[self.taskListsFetchError userInfo] objectForKey:kGTMSessionFetcherStatusDataKey];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     if (errData) {
       NSString *dataStr = [[[NSString alloc] initWithData:errData
                                                  encoding:NSUTF8StringEncoding] autorelease];
@@ -1032,10 +1097,15 @@ static NSString *const kGTLChildTasksProperty = @"childTasks";
   BOOL isEditingTask = (self.editTaskTicket != nil);
   [tasksCancelButton_ setEnabled:(isFetchingTasks || isEditingTask)];
 
+<<<<<<< HEAD
   // Show or hide the text indicating that the client ID or client secret are
   // needed
   BOOL hasClientIDStrings = [[clientIDField_ stringValue] length] > 0
     && [[clientSecretField_ stringValue] length] > 0;
+=======
+  // Show or hide the text indicating that the client ID is needed
+  BOOL hasClientIDStrings = [[clientIDField_ stringValue] length] > 0;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [clientIDRequiredTextField_ setHidden:hasClientIDStrings];
 }
 
@@ -1048,8 +1118,16 @@ static NSString *const kGTLChildTasksProperty = @"childTasks";
                                      arguments:argList] autorelease];
     va_end(argList);
   }
+<<<<<<< HEAD
   NSBeginAlertSheet(title, nil, nil, nil, [self window], nil, nil,
                     nil, nil, @"%@", result);
+=======
+  NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+  alert.messageText = title;
+  alert.informativeText = result;
+  [alert beginSheetModalForWindow:[self window]
+                completionHandler:nil];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark Client ID Sheet
@@ -1063,6 +1141,7 @@ static NSString *const kGTLChildTasksProperty = @"childTasks";
 // into the source rather than ask the user for them.
 //
 // The string values are obtained from the API Console,
+<<<<<<< HEAD
 // https://code.google.com/apis/console
 
 - (IBAction)clientIDClicked:(id)sender {
@@ -1081,6 +1160,17 @@ static NSString *const kGTLChildTasksProperty = @"childTasks";
 - (void)clientIDSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
   [sheet orderOut:self];
   [self updateUI];
+=======
+// https://console.developers.google.com/
+
+- (IBAction)clientIDClicked:(id)sender {
+  // Show the sheet for developers to enter their client ID and client secret
+  [[self window] beginSheet:clientIDSheet_ completionHandler:nil];
+}
+
+- (IBAction)clientIDDoneClicked:(id)sender {
+  [[self window] endSheet:[sender window]];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark Text field delegate methods

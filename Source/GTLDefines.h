@@ -65,14 +65,20 @@
 #endif
 
 //
+<<<<<<< HEAD
 // GTL_ASSERT is like NSAssert, but takes a variable number of arguments:
 //
 //     GTL_ASSERT(condition, @"Problem in argument %@", argStr);
 //
+=======
+// GTL_ASSERT defaults to bridging to NSAssert. This macro exists just in case
+// it needs to be remapped.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // GTL_DEBUG_ASSERT is similar, but compiles in only for debug builds
 //
 
 #ifndef GTL_ASSERT
+<<<<<<< HEAD
   // we directly invoke the NSAssert handler so we can pass on the varargs
   #if !defined(NS_BLOCK_ASSERTIONS)
     #define GTL_ASSERT(condition, ...)                                       \
@@ -93,6 +99,18 @@
 #ifndef GTL_DEBUG_ASSERT
   #if DEBUG
     #define GTL_DEBUG_ASSERT(condition, ...) GTL_ASSERT(condition, __VA_ARGS__)
+=======
+  // NSCAssert to avoid capturing self if used in a block.
+  #define GTL_ASSERT(condition, ...) NSCAssert(condition, __VA_ARGS__)
+#endif // GTL_ASSERT
+
+#ifndef GTL_DEBUG_ASSERT
+  #if DEBUG && !defined(NS_BLOCK_ASSERTIONS)
+    #define GTL_DEBUG_ASSERT(condition, ...) GTL_ASSERT(condition, __VA_ARGS__)
+  #elif DEBUG
+    // In DEBUG builds with assertions blocked, log to avoid unused variable warnings.
+    #define GTL_DEBUG_ASSERT(condition, ...) if (!(condition)) { NSLog(__VA_ARGS__); }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   #else
     #define GTL_DEBUG_ASSERT(condition, ...) do { } while (0)
   #endif
@@ -131,14 +149,43 @@
   #define __has_attribute(x) 0
 #endif
 
+<<<<<<< HEAD
 #if 1
   // We will start using nonnull declarations once the static analyzer seems
   // to support it without false positives.
   #define GTL_NONNULL(x)
 #else
+=======
+#ifndef GTL_NONNULL
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   #if __has_attribute(nonnull)
     #define GTL_NONNULL(x) __attribute__((nonnull x))
   #else
     #define GTL_NONNULL(x)
   #endif
 #endif
+<<<<<<< HEAD
+=======
+
+#ifndef GTL_DECLARE_GENERICS
+  #if __has_feature(objc_generics) \
+    && ((!TARGET_OS_IPHONE && defined(MAC_OS_X_VERSION_10_11) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_11) \
+      || (TARGET_OS_IPHONE && defined(__IPHONE_9_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_9_0))
+    #define GTL_DECLARE_GENERICS 1
+  #else
+    #define GTL_DECLARE_GENERICS 0
+  #endif
+#endif
+
+#ifndef GTL_NSArrayOf
+  #if GTL_DECLARE_GENERICS
+    #define GTL_NSArrayOf(value) NSArray<value>
+    #define GTL_NSDictionaryOf(key, value) NSDictionary<key, value>
+    #define GTL_NSMutableDictionaryOf(key, value) NSMutableDictionary<key, value>
+  #else
+    #define GTL_NSArrayOf(value) NSArray
+    #define GTL_NSDictionaryOf(key, value) NSDictionary
+    #define GTL_NSMutableDictionaryOf(key, value) NSMutableDictionary
+  #endif // GTL_DECLARE_GENERICS
+#endif  // GTL_NSArrayOf
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,8 +53,14 @@ NSString * const kGTLBooksActionScroll   = @"scroll";
 NSString * const kGTLBooksActionSearch   = @"search";
 
 // GTLQueryBooks - Association
+<<<<<<< HEAD
 NSString * const kGTLBooksAssociationEndOfSample = @"end-of-sample";
 NSString * const kGTLBooksAssociationEndOfVolume = @"end-of-volume";
+=======
+NSString * const kGTLBooksAssociationEndOfSample    = @"end-of-sample";
+NSString * const kGTLBooksAssociationEndOfVolume    = @"end-of-volume";
+NSString * const kGTLBooksAssociationRelatedForPlay = @"related-for-play";
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // GTLQueryBooks - Download
 NSString * const kGTLBooksDownloadEpub = @"epub";
@@ -74,6 +84,13 @@ NSString * const kGTLBooksLicenseTypesBoth       = @"BOTH";
 NSString * const kGTLBooksLicenseTypesConcurrent = @"CONCURRENT";
 NSString * const kGTLBooksLicenseTypesDownload   = @"DOWNLOAD";
 
+<<<<<<< HEAD
+=======
+// GTLQueryBooks - MaxAllowedMaturityRating
+NSString * const kGTLBooksMaxAllowedMaturityRatingMature    = @"mature";
+NSString * const kGTLBooksMaxAllowedMaturityRatingNotMature = @"not-mature";
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // GTLQueryBooks - OrderBy
 NSString * const kGTLBooksOrderByNewest    = @"newest";
 NSString * const kGTLBooksOrderByRelevance = @"relevance";
@@ -95,3 +112,11 @@ NSString * const kGTLBooksProjectionLite = @"lite";
 // GTLQueryBooks - Rating
 NSString * const kGTLBooksRatingHaveIt        = @"HAVE_IT";
 NSString * const kGTLBooksRatingNotInterested = @"NOT_INTERESTED";
+<<<<<<< HEAD
+=======
+
+// GTLQueryBooks - Reason
+NSString * const kGTLBooksReasonIosPrex    = @"IOS_PREX";
+NSString * const kGTLBooksReasonIosSearch  = @"IOS_SEARCH";
+NSString * const kGTLBooksReasonOnboarding = @"ONBOARDING";
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd

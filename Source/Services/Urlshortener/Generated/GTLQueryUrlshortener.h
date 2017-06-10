@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2011 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +28,11 @@
 // Description:
 //   Lets you create, inspect, and manage goo.gl short URLs
 // Documentation:
+<<<<<<< HEAD
 //   http://code.google.com/apis/urlshortener/v1/getting_started.html
+=======
+//   https://developers.google.com/url-shortener/v1/getting_started
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Classes:
 //   GTLQueryUrlshortener (3 custom class methods, 4 custom properties)
 
@@ -43,17 +51,29 @@
 //
 
 // Selector specifying which fields to include in a partial response.
+<<<<<<< HEAD
 @property (copy) NSString *fields;
+=======
+@property (nonatomic, copy) NSString *fields;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 //
 // Method-specific parameters; see the comments below for more information.
 //
+<<<<<<< HEAD
 @property (copy) NSString *projection;
 @property (copy) NSString *shortUrl;
 @property (copy) NSString *startToken;
 
 #pragma mark -
 #pragma mark "url" methods
+=======
+@property (nonatomic, copy) NSString *projection;
+@property (nonatomic, copy) NSString *shortUrl;
+@property (nonatomic, copy) NSString *startToken;
+
+#pragma mark - "url" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryUrlshortener object.
 
 // Method: urlshortener.url.get
@@ -67,15 +87,26 @@
 //        counts.
 //      kGTLUrlshortenerProjectionFull: Returns the creation timestamp and all
 //        available analytics.
+<<<<<<< HEAD
 // Fetches a GTLUrlshortenerUrl.
 + (id)queryForUrlGetWithShortUrl:(NSString *)shortUrl;
+=======
+//  Authorization scope(s):
+//   kGTLAuthScopeUrlshortener
+// Fetches a GTLUrlshortenerUrl.
++ (instancetype)queryForUrlGetWithShortUrl:(NSString *)shortUrl;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: urlshortener.url.insert
 // Creates a new short URL.
 //  Authorization scope(s):
 //   kGTLAuthScopeUrlshortener
 // Fetches a GTLUrlshortenerUrl.
+<<<<<<< HEAD
 + (id)queryForUrlInsertWithObject:(GTLUrlshortenerUrl *)object;
+=======
++ (instancetype)queryForUrlInsertWithObject:(GTLUrlshortenerUrl *)object;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: urlshortener.url.list
 // Retrieves a list of URLs shortened by a user.
@@ -88,6 +119,10 @@
 //  Authorization scope(s):
 //   kGTLAuthScopeUrlshortener
 // Fetches a GTLUrlshortenerUrlHistory.
+<<<<<<< HEAD
 + (id)queryForUrlList;
+=======
++ (instancetype)queryForUrlList;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +50,7 @@
 @interface GTLMirrorNotification : GTLObject
 
 // The collection that generated the notification.
+<<<<<<< HEAD
 @property (copy) NSString *collection;
 
 // The ID of the item that generated the notification.
@@ -63,5 +68,24 @@
 // The secret verify token provided by the service when it subscribed for
 // notifications.
 @property (copy) NSString *verifyToken;
+=======
+@property (nonatomic, copy) NSString *collection;
+
+// The ID of the item that generated the notification.
+@property (nonatomic, copy) NSString *itemId;
+
+// The type of operation that generated the notification.
+@property (nonatomic, copy) NSString *operation;
+
+// A list of actions taken by the user that triggered the notification.
+@property (nonatomic, retain) NSArray *userActions;  // of GTLMirrorUserAction
+
+// The user token provided by the service when it subscribed for notifications.
+@property (nonatomic, copy) NSString *userToken;
+
+// The secret verify token provided by the service when it subscribed for
+// notifications.
+@property (nonatomic, copy) NSString *verifyToken;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

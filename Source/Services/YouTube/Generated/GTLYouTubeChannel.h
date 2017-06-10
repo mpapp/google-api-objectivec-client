@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,21 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
 //   GTLYouTubeChannel (0 custom class methods, 13 custom properties)
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+// Documentation:
+//   https://developers.google.com/youtube/v3
+// Classes:
+//   GTLYouTubeChannel (0 custom class methods, 14 custom properties)
+//   GTLYouTubeChannelLocalizations (0 custom class methods, 0 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -39,6 +53,11 @@
 @class GTLYouTubeChannelContentDetails;
 @class GTLYouTubeChannelContentOwnerDetails;
 @class GTLYouTubeChannelConversionPings;
+<<<<<<< HEAD
+=======
+@class GTLYouTubeChannelLocalization;
+@class GTLYouTubeChannelLocalizations;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @class GTLYouTubeChannelSnippet;
 @class GTLYouTubeChannelStatistics;
 @class GTLYouTubeChannelStatus;
@@ -56,6 +75,7 @@
 
 // The auditionDetails object encapsulates channel data that is relevant for
 // YouTube Partners during the audition process.
+<<<<<<< HEAD
 @property (retain) GTLYouTubeChannelAuditDetails *auditDetails;
 
 // The brandingSettings object encapsulates information about the branding of
@@ -104,4 +124,70 @@
 // associated with the channel.
 @property (retain) GTLYouTubeChannelTopicDetails *topicDetails;
 
+=======
+@property (nonatomic, retain) GTLYouTubeChannelAuditDetails *auditDetails;
+
+// The brandingSettings object encapsulates information about the branding of
+// the channel.
+@property (nonatomic, retain) GTLYouTubeChannelBrandingSettings *brandingSettings;
+
+// The contentDetails object encapsulates information about the channel's
+// content.
+@property (nonatomic, retain) GTLYouTubeChannelContentDetails *contentDetails;
+
+// The contentOwnerDetails object encapsulates channel data that is relevant for
+// YouTube Partners linked with the channel.
+@property (nonatomic, retain) GTLYouTubeChannelContentOwnerDetails *contentOwnerDetails;
+
+// The conversionPings object encapsulates information about conversion pings
+// that need to be respected by the channel.
+@property (nonatomic, retain) GTLYouTubeChannelConversionPings *conversionPings;
+
+// Etag of this resource.
+@property (nonatomic, copy) NSString *ETag;
+
+// The ID that YouTube uses to uniquely identify the channel.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The invideoPromotion object encapsulates information about promotion campaign
+// associated with the channel.
+@property (nonatomic, retain) GTLYouTubeInvideoPromotion *invideoPromotion;
+
+// Identifies what kind of resource this is. Value: the fixed string
+// "youtube#channel".
+@property (nonatomic, copy) NSString *kind;
+
+// Localizations for different languages
+@property (nonatomic, retain) GTLYouTubeChannelLocalizations *localizations;
+
+// The snippet object contains basic details about the channel, such as its
+// title, description, and thumbnail images.
+@property (nonatomic, retain) GTLYouTubeChannelSnippet *snippet;
+
+// The statistics object encapsulates statistics for the channel.
+@property (nonatomic, retain) GTLYouTubeChannelStatistics *statistics;
+
+// The status object encapsulates information about the privacy status of the
+// channel.
+@property (nonatomic, retain) GTLYouTubeChannelStatus *status;
+
+// The topicDetails object encapsulates information about Freebase topics
+// associated with the channel.
+@property (nonatomic, retain) GTLYouTubeChannelTopicDetails *topicDetails;
+
+@end
+
+
+// ----------------------------------------------------------------------------
+//
+//   GTLYouTubeChannelLocalizations
+//
+
+@interface GTLYouTubeChannelLocalizations : GTLObject
+// This object is documented as having more properties that are
+// GTLYouTubeChannelLocalization. Use -additionalJSONKeys and
+// -additionalPropertyForName: to get the list of properties and then fetch
+// them; or -additionalProperties to fetch them all at once.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end

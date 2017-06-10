@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,12 +45,20 @@
 @dynamic filters, groupBys, includeInviteData, metrics, type;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       [GTLDoubleClickBidManagerFilterPair class], @"filters",
       [NSString class], @"groupBys",
       [NSString class], @"metrics",
       nil];
+=======
+  NSDictionary *map = @{
+    @"filters" : [GTLDoubleClickBidManagerFilterPair class],
+    @"groupBys" : [NSString class],
+    @"metrics" : [NSString class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

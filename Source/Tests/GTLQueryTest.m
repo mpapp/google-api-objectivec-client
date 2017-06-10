@@ -68,9 +68,12 @@
 - (void)testBasics {
   GTLTestingQuery *query;
 
+<<<<<<< HEAD
   query = [GTLTestingQuery queryWithMethodName:nil];
   XCTAssertNil(query, @"nil method name");
 
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   query = [GTLTestingQuery queryWithMethodName:@""];
   XCTAssertNil(query, @"empty method name");
 

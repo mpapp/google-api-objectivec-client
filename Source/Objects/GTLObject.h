@@ -26,19 +26,32 @@
 #import "GTLUtilities.h"
 #import "GTLDateTime.h"
 
+<<<<<<< HEAD
 @protocol GTLCollectionProtocol
 @optional
 @property (retain) NSArray *items;
+=======
+@class GTLObject;
+
+@protocol GTLCollectionProtocol
+@optional
+@property (retain) GTL_NSArrayOf(GTLObject *) *items;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 @protocol GTLBatchItemCreationProtocol
 - (void)createItemsWithClassMap:(NSDictionary *)batchClassMap;
 @end
 
+<<<<<<< HEAD
 @interface GTLObject : NSObject <NSCopying> {
 
  @private
 
+=======
+@interface GTLObject : NSObject <NSCopying, NSSecureCoding> {
+ @private
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSMutableDictionary *json_;
 
   // Used when creating the subobjects from this one.
@@ -54,9 +67,15 @@
   NSMutableDictionary *userProperties_;
 }
 
+<<<<<<< HEAD
 @property (nonatomic, retain) NSMutableDictionary *JSON;
 @property (nonatomic, retain) NSDictionary *surrogates;
 @property (nonatomic, retain) NSMutableDictionary *userProperties;
+=======
+@property (nonatomic, retain) GTL_NSMutableDictionaryOf(id, id) *JSON;
+@property (nonatomic, retain) GTL_NSDictionaryOf(Class, Class) *surrogates;
+@property (nonatomic, retain) GTL_NSMutableDictionaryOf(NSString *, id) *userProperties;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -65,8 +84,13 @@
 // These methods are intended for users of the library
 //
 
+<<<<<<< HEAD
 + (id)object;
 + (id)objectWithJSON:(NSMutableDictionary *)dict;
+=======
++ (instancetype)object;
++ (instancetype)objectWithJSON:(NSMutableDictionary *)dict;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 - (id)copyWithZone:(NSZone *)zone;
 
@@ -78,13 +102,21 @@
 
 // Returns the list of keys in this object's JSON that aren't listed as
 // properties on the object.
+<<<<<<< HEAD
 - (NSArray *)additionalJSONKeys;
+=======
+- (GTL_NSArrayOf(NSString *) *)additionalJSONKeys;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Any keys in the JSON that aren't listed as @properties on the object
 // are counted as "additional properties".  These allow you to get/set them.
 - (id)additionalPropertyForName:(NSString *)name;
 - (void)setAdditionalProperty:(id)obj forName:(NSString *)name GTL_NONNULL((2));
+<<<<<<< HEAD
 - (NSDictionary *)additionalProperties;
+=======
+- (GTL_NSDictionaryOf(NSString *, id) *)additionalProperties;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // User properties are supported for client convenience, but are not copied by
 // copyWithZone.  User Properties keys beginning with _ are reserved by the library.
@@ -147,6 +179,13 @@
 // The default class for additional JSON keys
 + (Class)classForAdditionalProperties;
 
+<<<<<<< HEAD
+=======
+// Indicates if a "kind" property on this class can be used for the class
+// registry or if it appears to be non standard.
++ (BOOL)isKindValidForClassRegistry;
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 // Collection objects with an "items" property should derive from GTLCollection
@@ -186,7 +225,11 @@
 @end
 
 @interface GTLCollectionObject (DynamicMethods)
+<<<<<<< HEAD
 - (NSArray *)items;
+=======
+- (GTL_NSArrayOf(GTLObject *) *)items;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 // Base object use for when an service method directly returns an array instead

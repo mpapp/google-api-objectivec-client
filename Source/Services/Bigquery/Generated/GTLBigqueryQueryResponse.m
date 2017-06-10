@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,12 +28,22 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
 // Classes:
 //   GTLBigqueryQueryResponse (0 custom class methods, 9 custom properties)
 
 #import "GTLBigqueryQueryResponse.h"
 
+=======
+//   https://cloud.google.com/bigquery/
+// Classes:
+//   GTLBigqueryQueryResponse (0 custom class methods, 10 custom properties)
+
+#import "GTLBigqueryQueryResponse.h"
+
+#import "GTLBigqueryErrorProto.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBigqueryJobReference.h"
 #import "GTLBigqueryTableRow.h"
 #import "GTLBigqueryTableSchema.h"
@@ -40,6 +54,7 @@
 //
 
 @implementation GTLBigqueryQueryResponse
+<<<<<<< HEAD
 @dynamic cacheHit, jobComplete, jobReference, kind, pageToken, rows, schema,
          totalBytesProcessed, totalRows;
 
@@ -47,6 +62,16 @@
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[GTLBigqueryTableRow class]
                                 forKey:@"rows"];
+=======
+@dynamic cacheHit, errors, jobComplete, jobReference, kind, pageToken, rows,
+         schema, totalBytesProcessed, totalRows;
+
++ (NSDictionary *)arrayPropertyToClassMap {
+  NSDictionary *map = @{
+    @"errors" : [GTLBigqueryErrorProto class],
+    @"rows" : [GTLBigqueryTableRow class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

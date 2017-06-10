@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,14 +46,28 @@
 //   GTLMapsEngineTablesListResponse
 //
 
+<<<<<<< HEAD
 // The response returned by a call to tables.List.
+=======
+// The response returned by a call to tables.List. Note: The list response does
+// not include all the fields available in a table. Refer to the table resource
+// description for details of the fields that are not included. You'll need to
+// send a get request to retrieve the additional fields for each table.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @interface GTLMapsEngineTablesListResponse : GTLObject
 
 // Next page token.
+<<<<<<< HEAD
 @property (copy) NSString *nextPageToken;  // GTLBase64 can encode/decode (probably web-safe format)
 
 // Resources returned.
 @property (retain) NSArray *tables;  // of GTLMapsEngineTable
+=======
+@property (nonatomic, copy) NSString *nextPageToken;  // GTLBase64 can encode/decode (probably web-safe format)
+
+// Resources returned.
+@property (nonatomic, retain) NSArray *tables;  // of GTLMapsEngineTable
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

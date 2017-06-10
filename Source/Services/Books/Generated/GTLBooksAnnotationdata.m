@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,11 +44,18 @@
          updated, volumeId;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       @"encoded_data", @"encodedData",
       @"id", @"identifier",
       nil];
+=======
+  NSDictionary *map = @{
+    @"encodedData" : @"encoded_data",
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

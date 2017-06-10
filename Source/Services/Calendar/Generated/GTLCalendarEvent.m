@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,19 @@
 // Service:
 //   Calendar API (calendar/v3)
 // Description:
+<<<<<<< HEAD
 //   Lets you manipulate events and other calendar data.
 // Documentation:
 //   https://developers.google.com/google-apps/calendar/firstapp
 // Classes:
 //   GTLCalendarEvent (0 custom class methods, 36 custom properties)
+=======
+//   Manipulates events and other calendar data.
+// Documentation:
+//   https://developers.google.com/google-apps/calendar/firstapp
+// Classes:
+//   GTLCalendarEvent (0 custom class methods, 37 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLCalendarEventCreator (0 custom class methods, 4 custom properties)
 //   GTLCalendarEventExtendedProperties (0 custom class methods, 2 custom properties)
 //   GTLCalendarEventGadget (0 custom class methods, 8 custom properties)
@@ -39,6 +51,10 @@
 
 #import "GTLCalendarEvent.h"
 
+<<<<<<< HEAD
+=======
+#import "GTLCalendarEventAttachment.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLCalendarEventAttendee.h"
 #import "GTLCalendarEventDateTime.h"
 #import "GTLCalendarEventReminder.h"
@@ -49,8 +65,13 @@
 //
 
 @implementation GTLCalendarEvent
+<<<<<<< HEAD
 @dynamic anyoneCanAddSelf, attendees, attendeesOmitted, colorId, created,
          creator, descriptionProperty, end, endTimeUnspecified, ETag,
+=======
+@dynamic anyoneCanAddSelf, attachments, attendees, attendeesOmitted, colorId,
+         created, creator, descriptionProperty, end, endTimeUnspecified, ETag,
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
          extendedProperties, gadget, guestsCanInviteOthers, guestsCanModify,
          guestsCanSeeOtherGuests, hangoutLink, htmlLink, iCalUID, identifier,
          kind, location, locked, organizer, originalStartTime, privateCopy,
@@ -58,21 +79,37 @@
          status, summary, transparency, updated, visibility;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       @"description", @"descriptionProperty",
       @"etag", @"ETag",
       @"id", @"identifier",
       nil];
+=======
+  NSDictionary *map = @{
+    @"descriptionProperty" : @"description",
+    @"ETag" : @"etag",
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       [GTLCalendarEventAttendee class], @"attendees",
       [NSString class], @"recurrence",
       nil];
+=======
+  NSDictionary *map = @{
+    @"attachments" : [GTLCalendarEventAttachment class],
+    @"attendees" : [GTLCalendarEventAttendee class],
+    @"recurrence" : [NSString class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -92,11 +129,18 @@
 @dynamic displayName, email, identifier, selfProperty;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       @"id", @"identifier",
       @"self", @"selfProperty",
       nil];
+=======
+  NSDictionary *map = @{
+    @"identifier" : @"id",
+    @"selfProperty" : @"self"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -112,9 +156,15 @@
 @dynamic privateProperty, shared;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"private"
                                 forKey:@"privateProperty"];
+=======
+  NSDictionary *map = @{
+    @"privateProperty" : @"private"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -140,11 +190,18 @@
 @dynamic displayName, email, identifier, selfProperty;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       @"id", @"identifier",
       @"self", @"selfProperty",
       nil];
+=======
+  NSDictionary *map = @{
+    @"identifier" : @"id",
+    @"selfProperty" : @"self"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -160,9 +217,15 @@
 @dynamic overrides, useDefault;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[GTLCalendarEventReminder class]
                                 forKey:@"overrides"];
+=======
+  NSDictionary *map = @{
+    @"overrides" : [GTLCalendarEventReminder class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

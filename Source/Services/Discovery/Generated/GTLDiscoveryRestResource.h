@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,10 +54,17 @@
 @interface GTLDiscoveryRestResource : GTLObject
 
 // Methods on this resource.
+<<<<<<< HEAD
 @property (retain) GTLDiscoveryRestResourceMethods *methods;
 
 // Sub-resources on this resource.
 @property (retain) GTLDiscoveryRestResourceResources *resources;
+=======
+@property (nonatomic, retain) GTLDiscoveryRestResourceMethods *methods;
+
+// Sub-resources on this resource.
+@property (nonatomic, retain) GTLDiscoveryRestResourceResources *resources;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +46,7 @@
 @interface GTLBooksLayersummary : GTLObject
 
 // The number of annotations for this layer.
+<<<<<<< HEAD
 @property (retain) NSNumber *annotationCount;  // intValue
 
 // Link to get data for this annotation.
@@ -75,13 +80,55 @@
 // Timestamp for the last time an item in this layer was updated. (RFC 3339 UTC
 // date-time format).
 @property (retain) GTLDateTime *updated;
+=======
+@property (nonatomic, retain) NSNumber *annotationCount;  // intValue
+
+// Link to get data for this annotation.
+@property (nonatomic, copy) NSString *annotationsDataLink;
+
+// The link to get the annotations for this layer.
+@property (nonatomic, copy) NSString *annotationsLink;
+
+// The list of annotation types contained for this layer.
+@property (nonatomic, retain) NSArray *annotationTypes;  // of NSString
+
+// The content version this resource is for.
+@property (nonatomic, copy) NSString *contentVersion;
+
+// The number of data items for this layer.
+@property (nonatomic, retain) NSNumber *dataCount;  // intValue
+
+// Unique id of this layer summary.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Resource Type
+@property (nonatomic, copy) NSString *kind;
+
+// The layer id for this summary.
+@property (nonatomic, copy) NSString *layerId;
+
+// URL to this resource.
+@property (nonatomic, copy) NSString *selfLink;
+
+// Timestamp for the last time an item in this layer was updated. (RFC 3339 UTC
+// date-time format).
+@property (nonatomic, retain) GTLDateTime *updated;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The current version of this layer's volume annotations. Note that this
 // version applies only to the data in the books.layers.volumeAnnotations.*
 // responses. The actual annotation data is versioned separately.
+<<<<<<< HEAD
 @property (copy) NSString *volumeAnnotationsVersion;
 
 // The volume id this resource is for.
 @property (copy) NSString *volumeId;
+=======
+@property (nonatomic, copy) NSString *volumeAnnotationsVersion;
+
+// The volume id this resource is for.
+@property (nonatomic, copy) NSString *volumeId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,8 +47,13 @@
 //
 
 @interface GTLBooksAnnotationsSummary : GTLObject
+<<<<<<< HEAD
 @property (copy) NSString *kind;
 @property (retain) NSArray *layers;  // of GTLBooksAnnotationsSummaryLayersItem
+=======
+@property (nonatomic, copy) NSString *kind;
+@property (nonatomic, retain) NSArray *layers;  // of GTLBooksAnnotationsSummaryLayersItem
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 
@@ -54,9 +63,17 @@
 //
 
 @interface GTLBooksAnnotationsSummaryLayersItem : GTLObject
+<<<<<<< HEAD
 @property (retain) NSNumber *allowedCharacterCount;  // intValue
 @property (copy) NSString *layerId;
 @property (copy) NSString *limitType;
 @property (retain) NSNumber *remainingCharacterCount;  // intValue
 @property (retain) GTLDateTime *updated;
+=======
+@property (nonatomic, retain) NSNumber *allowedCharacterCount;  // intValue
+@property (nonatomic, copy) NSString *layerId;
+@property (nonatomic, copy) NSString *limitType;
+@property (nonatomic, retain) NSNumber *remainingCharacterCount;  // intValue
+@property (nonatomic, retain) GTLDateTime *updated;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end

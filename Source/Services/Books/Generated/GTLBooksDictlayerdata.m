@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,9 +85,15 @@
 @dynamic source, words;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[GTLBooksDictlayerdataDictWordsItem class]
                                 forKey:@"words"];
+=======
+  NSDictionary *map = @{
+    @"words" : [GTLBooksDictlayerdataDictWordsItem class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -109,12 +119,20 @@
 @dynamic derivatives, examples, senses, source;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       [GTLBooksDictlayerdataDictWordsItemDerivativesItem class], @"derivatives",
       [GTLBooksDictlayerdataDictWordsItemExamplesItem class], @"examples",
       [GTLBooksDictlayerdataDictWordsItemSensesItem class], @"senses",
       nil];
+=======
+  NSDictionary *map = @{
+    @"derivatives" : [GTLBooksDictlayerdataDictWordsItemDerivativesItem class],
+    @"examples" : [GTLBooksDictlayerdataDictWordsItemExamplesItem class],
+    @"senses" : [GTLBooksDictlayerdataDictWordsItemSensesItem class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -151,12 +169,20 @@
          pronunciationUrl, source, syllabification, synonyms;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       [GTLBooksDictlayerdataDictWordsItemSensesItemConjugationsItem class], @"conjugations",
       [GTLBooksDictlayerdataDictWordsItemSensesItemDefinitionsItem class], @"definitions",
       [GTLBooksDictlayerdataDictWordsItemSensesItemSynonymsItem class], @"synonyms",
       nil];
+=======
+  NSDictionary *map = @{
+    @"conjugations" : [GTLBooksDictlayerdataDictWordsItemSensesItemConjugationsItem class],
+    @"definitions" : [GTLBooksDictlayerdataDictWordsItemSensesItemDefinitionsItem class],
+    @"synonyms" : [GTLBooksDictlayerdataDictWordsItemSensesItemSynonymsItem class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -212,9 +238,15 @@
 @dynamic definition, examples;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[GTLBooksDictlayerdataDictWordsItemSensesItemDefinitionsItemExamplesItem class]
                                 forKey:@"examples"];
+=======
+  NSDictionary *map = @{
+    @"examples" : [GTLBooksDictlayerdataDictWordsItemSensesItemDefinitionsItemExamplesItem class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

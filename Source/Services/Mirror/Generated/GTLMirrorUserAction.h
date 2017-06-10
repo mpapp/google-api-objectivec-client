@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +50,11 @@
 // An optional payload for the action.
 // For actions of type CUSTOM, this is the ID of the custom menu item that was
 // selected.
+<<<<<<< HEAD
 @property (copy) NSString *payload;
+=======
+@property (nonatomic, copy) NSString *payload;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The type of action. The value of this can be:
 // - SHARE - the user shared an item.
@@ -58,6 +66,10 @@
 // - UNPIN - the user unpinned the item.
 // - LAUNCH - the user initiated a voice command. In the future, additional
 // types may be added. UserActions with unrecognized types should be ignored.
+<<<<<<< HEAD
 @property (copy) NSString *type;
+=======
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

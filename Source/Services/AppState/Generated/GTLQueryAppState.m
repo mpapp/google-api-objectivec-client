@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,11 +43,18 @@
 
 @dynamic currentDataVersion, currentStateVersion, fields, includeData, stateKey;
 
+<<<<<<< HEAD
 #pragma mark -
 #pragma mark "states" methods
 // These create a GTLQueryAppState object.
 
 + (id)queryForStatesClearWithStateKey:(NSInteger)stateKey {
+=======
+#pragma mark - "states" methods
+// These create a GTLQueryAppState object.
+
++ (instancetype)queryForStatesClearWithStateKey:(NSInteger)stateKey {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"appstate.states.clear";
   GTLQueryAppState *query = [self queryWithMethodName:methodName];
   query.stateKey = stateKey;
@@ -51,14 +62,22 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForStatesDeleteWithStateKey:(NSInteger)stateKey {
+=======
++ (instancetype)queryForStatesDeleteWithStateKey:(NSInteger)stateKey {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"appstate.states.delete";
   GTLQueryAppState *query = [self queryWithMethodName:methodName];
   query.stateKey = stateKey;
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForStatesGetWithStateKey:(NSInteger)stateKey {
+=======
++ (instancetype)queryForStatesGetWithStateKey:(NSInteger)stateKey {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"appstate.states.get";
   GTLQueryAppState *query = [self queryWithMethodName:methodName];
   query.stateKey = stateKey;
@@ -66,15 +85,24 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForStatesList {
+=======
++ (instancetype)queryForStatesList {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"appstate.states.list";
   GTLQueryAppState *query = [self queryWithMethodName:methodName];
   query.expectedObjectClass = [GTLAppStateListResponse class];
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForStatesUpdateWithObject:(GTLAppStateUpdateRequest *)object
                             stateKey:(NSInteger)stateKey {
+=======
++ (instancetype)queryForStatesUpdateWithObject:(GTLAppStateUpdateRequest *)object
+                                      stateKey:(NSInteger)stateKey {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;

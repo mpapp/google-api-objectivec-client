@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2011 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +28,11 @@
 // Description:
 //   Lets you create, inspect, and manage goo.gl short URLs
 // Documentation:
+<<<<<<< HEAD
 //   http://code.google.com/apis/urlshortener/v1/getting_started.html
+=======
+//   https://developers.google.com/url-shortener/v1/getting_started
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Classes:
 //   GTLUrlshortenerAnalyticsSnapshot (0 custom class methods, 6 custom properties)
 
@@ -45,6 +53,7 @@
 
 // Top browsers, e.g. "Chrome"; sorted by (descending) click counts. Only
 // present if this data is available.
+<<<<<<< HEAD
 @property (retain) NSArray *browsers;  // of GTLUrlshortenerStringCount
 
 // Top countries (expressed as country codes), e.g. "US" or "DE"; sorted by
@@ -64,5 +73,26 @@
 
 // Number of clicks on this short URL.
 @property (retain) NSNumber *shortUrlClicks;  // longLongValue
+=======
+@property (nonatomic, retain) NSArray *browsers;  // of GTLUrlshortenerStringCount
+
+// Top countries (expressed as country codes), e.g. "US" or "DE"; sorted by
+// (descending) click counts. Only present if this data is available.
+@property (nonatomic, retain) NSArray *countries;  // of GTLUrlshortenerStringCount
+
+// Number of clicks on all goo.gl short URLs pointing to this long URL.
+@property (nonatomic, retain) NSNumber *longUrlClicks;  // longLongValue
+
+// Top platforms or OSes, e.g. "Windows"; sorted by (descending) click counts.
+// Only present if this data is available.
+@property (nonatomic, retain) NSArray *platforms;  // of GTLUrlshortenerStringCount
+
+// Top referring hosts, e.g. "www.google.com"; sorted by (descending) click
+// counts. Only present if this data is available.
+@property (nonatomic, retain) NSArray *referrers;  // of GTLUrlshortenerStringCount
+
+// Number of clicks on this short URL.
+@property (nonatomic, retain) NSNumber *shortUrlClicks;  // longLongValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

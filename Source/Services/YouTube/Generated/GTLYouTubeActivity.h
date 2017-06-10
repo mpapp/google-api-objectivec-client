@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -55,6 +64,7 @@
 // The contentDetails object contains information about the content associated
 // with the activity. For example, if the snippet.type value is videoRated, then
 // the contentDetails object's content identifies the rated video.
+<<<<<<< HEAD
 @property (retain) GTLYouTubeActivityContentDetails *contentDetails;
 
 // Etag of this resource.
@@ -71,5 +81,23 @@
 // The snippet object contains basic details about the activity, including the
 // activity's type and group ID.
 @property (retain) GTLYouTubeActivitySnippet *snippet;
+=======
+@property (nonatomic, retain) GTLYouTubeActivityContentDetails *contentDetails;
+
+// Etag of this resource.
+@property (nonatomic, copy) NSString *ETag;
+
+// The ID that YouTube uses to uniquely identify the activity.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Identifies what kind of resource this is. Value: the fixed string
+// "youtube#activity".
+@property (nonatomic, copy) NSString *kind;
+
+// The snippet object contains basic details about the activity, including the
+// activity's type and group ID.
+@property (nonatomic, retain) GTLYouTubeActivitySnippet *snippet;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

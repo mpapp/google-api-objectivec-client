@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -44,6 +53,7 @@
 @interface GTLYouTubeActivityContentDetailsPromotedItem : GTLObject
 
 // The URL the client should fetch to request a promoted item.
+<<<<<<< HEAD
 @property (copy) NSString *adTag;
 
 // The URL the client should ping to indicate that the user clicked through on
@@ -68,10 +78,37 @@
 // The URL the client should direct the user to, if the user chooses to visit
 // the advertiser's website.
 @property (copy) NSString *destinationUrl;
+=======
+@property (nonatomic, copy) NSString *adTag;
+
+// The URL the client should ping to indicate that the user clicked through on
+// this promoted item.
+@property (nonatomic, copy) NSString *clickTrackingUrl;
+
+// The URL the client should ping to indicate that the user was shown this
+// promoted item.
+@property (nonatomic, copy) NSString *creativeViewUrl;
+
+// The type of call-to-action, a message to the user indicating action that can
+// be taken.
+@property (nonatomic, copy) NSString *ctaType;
+
+// The custom call-to-action button text. If specified, it will override the
+// default button text for the cta_type.
+@property (nonatomic, copy) NSString *customCtaButtonText;
+
+// The text description to accompany the promoted item.
+@property (nonatomic, copy) NSString *descriptionText;
+
+// The URL the client should direct the user to, if the user chooses to visit
+// the advertiser's website.
+@property (nonatomic, copy) NSString *destinationUrl;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The list of forecasting URLs. The client should ping all of these URLs when a
 // promoted item is not available, to indicate that a promoted item could have
 // been shown.
+<<<<<<< HEAD
 @property (retain) NSArray *forecastingUrl;  // of NSString
 
 // The list of impression URLs. The client should ping all of these URLs to
@@ -80,5 +117,15 @@
 
 // The ID that YouTube uses to uniquely identify the promoted video.
 @property (copy) NSString *videoId;
+=======
+@property (nonatomic, retain) NSArray *forecastingUrl;  // of NSString
+
+// The list of impression URLs. The client should ping all of these URLs to
+// indicate that the user was shown this promoted item.
+@property (nonatomic, retain) NSArray *impressionUrl;  // of NSString
+
+// The ID that YouTube uses to uniquely identify the promoted video.
+@property (nonatomic, copy) NSString *videoId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

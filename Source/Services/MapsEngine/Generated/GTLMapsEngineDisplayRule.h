@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +56,7 @@
 
 // This display rule will only be applied to features that match all of the
 // filters here. If filters is empty, then the rule applies to all features.
+<<<<<<< HEAD
 @property (retain) NSArray *filters;  // of GTLMapsEngineFilter
 
 // Style applied to lines. Required for LineString Geometry.
@@ -69,5 +74,24 @@
 
 // The zoom levels that this display rule apply.
 @property (retain) GTLMapsEngineZoomLevels *zoomLevels;
+=======
+@property (nonatomic, retain) NSArray *filters;  // of GTLMapsEngineFilter
+
+// Style applied to lines. Required for LineString Geometry.
+@property (nonatomic, retain) GTLMapsEngineLineStyle *lineOptions;
+
+// Display rule name. Name is not unique and cannot be used for identification
+// purpose.
+@property (nonatomic, copy) NSString *name;
+
+// Style applied to points. Required for Point Geometry.
+@property (nonatomic, retain) GTLMapsEnginePointStyle *pointOptions;
+
+// Style applied to polygons. Required for Polygon Geometry.
+@property (nonatomic, retain) GTLMapsEnginePolygonStyle *polygonOptions;
+
+// The zoom levels that this display rule apply.
+@property (nonatomic, retain) GTLMapsEngineZoomLevels *zoomLevels;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

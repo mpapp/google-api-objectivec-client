@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +50,19 @@
 // A required floating-point number that expresses the latitude in degrees using
 // the WGS84 datum. For details on this encoding, see the National Imagery and
 // Mapping Agency's Technical Report TR8350.2.
+<<<<<<< HEAD
 @property (retain) NSNumber *latitude;  // doubleValue
+=======
+@property (nonatomic, retain) NSNumber *latitude;  // doubleValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // A required floating-point number that expresses the longitude in degrees
 // using the WGS84 datum. For details on this encoding, see the National Imagery
 // and Mapping Agency's Technical Report TR8350.2.
+<<<<<<< HEAD
 @property (retain) NSNumber *longitude;  // doubleValue
+=======
+@property (nonatomic, retain) NSNumber *longitude;  // doubleValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

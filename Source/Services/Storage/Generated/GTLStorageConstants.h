@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +24,15 @@
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
+<<<<<<< HEAD
 //   Cloud Storage API (storage/v1)
 // Description:
 //   Lets you store and retrieve potentially-large, immutable data objects.
+=======
+//   Cloud Storage JSON API (storage/v1)
+// Description:
+//   Stores and retrieves potentially large, immutable data objects.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/storage/docs/json_api/
 
@@ -35,6 +45,13 @@
 #endif
 
 // Authorization scope
+<<<<<<< HEAD
+=======
+// View and manage your data across Google Cloud Platform services
+GTL_EXTERN NSString * const kGTLAuthScopeStorageCloudPlatform;  // "https://www.googleapis.com/auth/cloud-platform"
+// View your data across Google Cloud Platform services
+GTL_EXTERN NSString * const kGTLAuthScopeStorageCloudPlatformReadOnly;  // "https://www.googleapis.com/auth/cloud-platform.read-only"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Manage your data and permissions in Google Cloud Storage
 GTL_EXTERN NSString * const kGTLAuthScopeStorageDevstorageFullControl;  // "https://www.googleapis.com/auth/devstorage.full_control"
 // View your data in Google Cloud Storage
@@ -59,6 +76,17 @@ GTL_EXTERN NSString * const kGTLStoragePredefinedAclProjectPrivate;  // "project
 GTL_EXTERN NSString * const kGTLStoragePredefinedAclPublicRead;  // "publicRead"
 GTL_EXTERN NSString * const kGTLStoragePredefinedAclPublicReadWrite;  // "publicReadWrite"
 
+<<<<<<< HEAD
+=======
+// GTLQueryStorage - PredefinedDefaultObjectAcl
+GTL_EXTERN NSString * const kGTLStoragePredefinedDefaultObjectAclAuthenticatedRead;  // "authenticatedRead"
+GTL_EXTERN NSString * const kGTLStoragePredefinedDefaultObjectAclBucketOwnerFullControl;  // "bucketOwnerFullControl"
+GTL_EXTERN NSString * const kGTLStoragePredefinedDefaultObjectAclBucketOwnerRead;  // "bucketOwnerRead"
+GTL_EXTERN NSString * const kGTLStoragePredefinedDefaultObjectAclPrivate;  // "private"
+GTL_EXTERN NSString * const kGTLStoragePredefinedDefaultObjectAclProjectPrivate;  // "projectPrivate"
+GTL_EXTERN NSString * const kGTLStoragePredefinedDefaultObjectAclPublicRead;  // "publicRead"
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // GTLQueryStorage - Projection
 GTL_EXTERN NSString * const kGTLStorageProjectionFull;   // "full"
 GTL_EXTERN NSString * const kGTLStorageProjectionNoAcl;  // "noAcl"

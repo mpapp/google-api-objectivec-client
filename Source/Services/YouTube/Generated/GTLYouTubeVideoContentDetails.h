@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,20 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
 //   GTLYouTubeVideoContentDetails (0 custom class methods, 8 custom properties)
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+// Documentation:
+//   https://developers.google.com/youtube/v3
+// Classes:
+//   GTLYouTubeVideoContentDetails (0 custom class methods, 9 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -48,6 +61,7 @@
 @interface GTLYouTubeVideoContentDetails : GTLObject
 
 // The value of captions indicates whether the video has captions or not.
+<<<<<<< HEAD
 @property (copy) NSString *caption;
 
 // Specifies the ratings that the video received under various rating schemes.
@@ -64,6 +78,24 @@
 // The value of dimension indicates whether the video is available in 3D or in
 // 2D.
 @property (copy) NSString *dimension;
+=======
+@property (nonatomic, copy) NSString *caption;
+
+// Specifies the ratings that the video received under various rating schemes.
+@property (nonatomic, retain) GTLYouTubeContentRating *contentRating;
+
+// The countryRestriction object contains information about the countries where
+// a video is (or is not) viewable.
+@property (nonatomic, retain) GTLYouTubeAccessPolicy *countryRestriction;
+
+// The value of definition indicates whether the video is available in high
+// definition or only in standard definition.
+@property (nonatomic, copy) NSString *definition;
+
+// The value of dimension indicates whether the video is available in 3D or in
+// 2D.
+@property (nonatomic, copy) NSString *dimension;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The length of the video. The tag value is an ISO 8601 duration in the format
 // PT#M#S, in which the letters PT indicate that the value specifies a period of
@@ -72,16 +104,31 @@
 // integers that specify the number of minutes (or seconds) of the video. For
 // example, a value of PT15M51S indicates that the video is 15 minutes and 51
 // seconds long.
+<<<<<<< HEAD
 @property (copy) NSString *duration;
 
 // The value of is_license_content indicates whether the video is licensed
 // content.
 @property (retain) NSNumber *licensedContent;  // boolValue
+=======
+@property (nonatomic, copy) NSString *duration;
+
+// The value of is_license_content indicates whether the video is licensed
+// content.
+@property (nonatomic, retain) NSNumber *licensedContent;  // boolValue
+
+// Specifies the projection format of the video.
+@property (nonatomic, copy) NSString *projection;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The regionRestriction object contains information about the countries where a
 // video is (or is not) viewable. The object will contain either the
 // contentDetails.regionRestriction.allowed property or the
 // contentDetails.regionRestriction.blocked property.
+<<<<<<< HEAD
 @property (retain) GTLYouTubeVideoContentDetailsRegionRestriction *regionRestriction;
+=======
+@property (nonatomic, retain) GTLYouTubeVideoContentDetailsRegionRestriction *regionRestriction;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

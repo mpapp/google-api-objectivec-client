@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +28,11 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
+=======
+//   https://cloud.google.com/bigquery/
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Classes:
 //   GTLBigqueryJobConfigurationTableCopy (0 custom class methods, 5 custom properties)
 
@@ -49,6 +57,7 @@
 // exist. If it does not, a 'notFound' error is returned in the job result. The
 // default value is CREATE_IF_NEEDED. Creation, truncation and append actions
 // occur as one atomic update upon job completion.
+<<<<<<< HEAD
 @property (copy) NSString *createDisposition;
 
 // [Required] The destination table
@@ -59,6 +68,18 @@
 
 // [Pick one] Source tables to copy.
 @property (retain) NSArray *sourceTables;  // of GTLBigqueryTableReference
+=======
+@property (nonatomic, copy) NSString *createDisposition;
+
+// [Required] The destination table
+@property (nonatomic, retain) GTLBigqueryTableReference *destinationTable;
+
+// [Pick one] Source table to copy.
+@property (nonatomic, retain) GTLBigqueryTableReference *sourceTable;
+
+// [Pick one] Source tables to copy.
+@property (nonatomic, retain) NSArray *sourceTables;  // of GTLBigqueryTableReference
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // [Optional] Specifies the action that occurs if the destination table already
 // exists. The following values are supported: WRITE_TRUNCATE: If the table
@@ -69,6 +90,10 @@
 // and only occurs if BigQuery is able to complete the job successfully.
 // Creation, truncation and append actions occur as one atomic update upon job
 // completion.
+<<<<<<< HEAD
 @property (copy) NSString *writeDisposition;
+=======
+@property (nonatomic, copy) NSString *writeDisposition;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

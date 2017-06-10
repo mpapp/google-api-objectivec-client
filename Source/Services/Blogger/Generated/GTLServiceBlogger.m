@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +40,7 @@
 // Method compiled in debug builds just to check that all the needed support
 // classes are present at link time.
 + (NSArray *)checkClasses {
+<<<<<<< HEAD
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryBlogger class],
                       [GTLBloggerBlog class],
@@ -54,11 +59,35 @@
                       [GTLBloggerPostUserInfosList class],
                       [GTLBloggerUser class],
                       nil];
+=======
+  NSArray *classes = @[
+    [GTLQueryBlogger class],
+    [GTLBloggerBlog class],
+    [GTLBloggerBlogList class],
+    [GTLBloggerBlogPerUserInfo class],
+    [GTLBloggerBlogUserInfo class],
+    [GTLBloggerComment class],
+    [GTLBloggerCommentList class],
+    [GTLBloggerPage class],
+    [GTLBloggerPageList class],
+    [GTLBloggerPageviews class],
+    [GTLBloggerPost class],
+    [GTLBloggerPostList class],
+    [GTLBloggerPostPerUserInfo class],
+    [GTLBloggerPostUserInfo class],
+    [GTLBloggerPostUserInfosList class],
+    [GTLBloggerUser class]
+  ];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return classes;
 }
 #endif  // DEBUG
 
+<<<<<<< HEAD
 - (id)init {
+=======
+- (instancetype)init {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   self = [super init];
   if (self) {
     // Version from discovery.

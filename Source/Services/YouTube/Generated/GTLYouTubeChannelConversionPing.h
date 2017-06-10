@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -46,7 +55,11 @@
 @interface GTLYouTubeChannelConversionPing : GTLObject
 
 // Defines the context of the ping.
+<<<<<<< HEAD
 @property (copy) NSString *context;
+=======
+@property (nonatomic, copy) NSString *context;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The url (without the schema) that the player shall send the ping to. It's at
 // caller's descretion to decide which schema to use (http vs https) Example of
@@ -55,6 +68,10 @@
 // cview%3Butuid%3DGISQtTNGYqaYl4sKxoVvKA&labe=default The caller must append
 // biscotti authentication (ms param in case of mobile, for example) to this
 // ping.
+<<<<<<< HEAD
 @property (copy) NSString *conversionUrl;
+=======
+@property (nonatomic, copy) NSString *conversionUrl;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

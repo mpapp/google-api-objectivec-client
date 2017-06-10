@@ -20,7 +20,11 @@
 #import "BloggerSampleWindowController.h"
 
 #import "GTL/GTLUtilities.h"
+<<<<<<< HEAD
 #import "GTL/GTMHTTPFetcherLogging.h"
+=======
+#import "GTL/GTMSessionFetcherLogging.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @interface BloggerSampleWindowController ()
 
@@ -77,6 +81,12 @@ NSString *const kKeychainItemName = @"BloggerSample: Google Blogger";
   // Load the OAuth token from the keychain, if it was previously saved.
   NSString *clientID = [clientIDField_ stringValue];
   NSString *clientSecret = [clientSecretField_ stringValue];
+<<<<<<< HEAD
+=======
+  if (clientSecret.length == 0) {
+    clientSecret = nil;
+  }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
   GTMOAuth2Authentication *auth;
   auth = [GTMOAuth2WindowController authForGoogleFromKeychainForName:kKeychainItemName
@@ -179,6 +189,7 @@ NSString *const kKeychainItemName = @"BloggerSample: Google Blogger";
 - (IBAction)deletePostClicked:(id)sender {
   GTLBloggerPost *selectedPost = [self selectedPost];
 
+<<<<<<< HEAD
   NSBeginAlertSheet(@"Delete", nil, @"Cancel", nil,
                     [self window], self,
                     @selector(deletePostSheetDidEnd:returnCode:contextInfo:),
@@ -191,11 +202,24 @@ NSString *const kKeychainItemName = @"BloggerSample: Google Blogger";
   if (returnCode == NSAlertDefaultReturn) {
     [self deleteSelectedPost];
   }
+=======
+  NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+  alert.messageText = [NSString stringWithFormat:@"Delete \"%@\"?", selectedPost.title];
+  [alert addButtonWithTitle:@"Delete"];
+  [alert addButtonWithTitle:@"Cancel"];
+  [alert beginSheetModalForWindow:[self window]
+                completionHandler:^(NSModalResponse returnCode) {
+    if (returnCode == NSAlertFirstButtonReturn) {
+      [self deleteSelectedPost];
+    }
+  }];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 - (IBAction)deleteAllPostsClicked:(id)sender {
   GTLBloggerBlog *selectedBlog = [self selectedBlog];
 
+<<<<<<< HEAD
   NSBeginAlertSheet(@"Delete", nil, @"Cancel", nil,
                     [self window], self,
                     @selector(deleteAllPostsSheetDidEnd:returnCode:contextInfo:),
@@ -213,11 +237,32 @@ NSString *const kKeychainItemName = @"BloggerSample: Google Blogger";
 
 - (IBAction)APIConsoleClicked:(id)sender {
   NSURL *url = [NSURL URLWithString:@"https://code.google.com/apis/console"];
+=======
+  NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+  alert.messageText = [NSString stringWithFormat:@"Permanently delete ALL posts for blog \"%@\"?",
+                       selectedBlog.name];
+  [alert addButtonWithTitle:@"Delete"];
+  [alert addButtonWithTitle:@"Cancel"];
+  [alert beginSheetModalForWindow:[self window]
+                completionHandler:^(NSModalResponse returnCode) {
+    if (returnCode == NSAlertFirstButtonReturn) {
+      [self deleteAllPosts];
+    }
+  }];
+}
+
+- (IBAction)APIConsoleClicked:(id)sender {
+  NSURL *url = [NSURL URLWithString:@"https://console.developers.google.com/"];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
 - (IBAction)loggingCheckboxClicked:(id)sender {
+<<<<<<< HEAD
   [GTMHTTPFetcher setLoggingEnabled:[sender state]];
+=======
+  [GTMSessionFetcher setLoggingEnabled:[sender state]];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark -
@@ -484,6 +529,7 @@ NSString *const kKeychainItemName = @"BloggerSample: Google Blogger";
 #pragma mark Sign In
 
 - (void)runSigninThenInvokeSelector:(SEL)signInDoneSel {
+<<<<<<< HEAD
   // Applications should have client ID and client secret strings
   // hardcoded into the source, but the sample application asks the
   // developer for the strings.
@@ -491,6 +537,13 @@ NSString *const kKeychainItemName = @"BloggerSample: Google Blogger";
   NSString *clientSecret = [clientSecretField_ stringValue];
 
   if ([clientID length] == 0 || [clientSecret length] == 0) {
+=======
+  // Applications should have client ID string hardcoded into the source, but
+  // the sample application asks the developer for the strings.
+  NSString *clientID = [clientIDField_ stringValue];
+
+  if ([clientID length] == 0) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     // Remind the developer that client ID and client secret are needed
     [clientIDButton_ performSelector:@selector(performClick:)
                           withObject:self
@@ -498,6 +551,15 @@ NSString *const kKeychainItemName = @"BloggerSample: Google Blogger";
     return;
   }
 
+<<<<<<< HEAD
+=======
+  // Client secrets are optional for Google services and can be nil.
+  NSString *clientSecret = [clientIDField_ stringValue];
+  if (clientSecret.length == 0) {
+    clientSecret = nil;
+  }
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   // Show the OAuth 2 sign-in controller
   NSBundle *frameworkBundle = [NSBundle bundleForClass:[GTMOAuth2WindowController class]];
   GTMOAuth2WindowController *windowController;
@@ -603,10 +665,15 @@ NSString *const kKeychainItemName = @"BloggerSample: Google Blogger";
   [postTitleField_ setEnabled:isBlogSelected];
   [postBodyField_ setEnabled:isBlogSelected];
 
+<<<<<<< HEAD
   // Show or hide the text indicating that the client ID or client secret are
   // needed.
   BOOL hasClientIDStrings = [[clientIDField_ stringValue] length] > 0
     && [[clientSecretField_ stringValue] length] > 0;
+=======
+  // Show or hide the text indicating that the client ID is needed
+  BOOL hasClientIDStrings = [[clientIDField_ stringValue] length] > 0;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [clientIDRequiredTextField_ setHidden:hasClientIDStrings];
 }
 
@@ -619,8 +686,16 @@ NSString *const kKeychainItemName = @"BloggerSample: Google Blogger";
                                      arguments:argList] autorelease];
     va_end(argList);
   }
+<<<<<<< HEAD
   NSBeginAlertSheet(title, nil, nil, nil, [self window], nil, nil,
                     nil, nil, @"%@", result);
+=======
+  NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+  alert.messageText = title;
+  alert.informativeText = result;
+  [alert beginSheetModalForWindow:[self window]
+                completionHandler:nil];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark Client ID Sheet
@@ -634,6 +709,7 @@ NSString *const kKeychainItemName = @"BloggerSample: Google Blogger";
 // into the source rather than ask the user for them.
 //
 // The string values are obtained from the API Console,
+<<<<<<< HEAD
 // https://code.google.com/apis/console
 
 - (IBAction)clientIDClicked:(id)sender {
@@ -654,6 +730,17 @@ NSString *const kKeychainItemName = @"BloggerSample: Google Blogger";
                 contextInfo:(void *)contextInfo {
   [sheet orderOut:self];
   [self updateUI];
+=======
+// https://console.developers.google.com/
+
+- (IBAction)clientIDClicked:(id)sender {
+  // Show the sheet for developers to enter their client ID and client secret
+  [[self window] beginSheet:clientIDSheet_ completionHandler:nil];
+}
+
+- (IBAction)clientIDDoneClicked:(id)sender {
+  [[self window] endSheet:[sender window]];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark Text field delegate methods

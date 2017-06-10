@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2011 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +28,11 @@
 // Description:
 //   Lets you create, inspect, and manage goo.gl short URLs
 // Documentation:
+<<<<<<< HEAD
 //   http://code.google.com/apis/urlshortener/v1/getting_started.html
+=======
+//   https://developers.google.com/url-shortener/v1/getting_started
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Classes:
 //   GTLUrlshortenerUrl (0 custom class methods, 6 custom properties)
 
@@ -45,6 +53,7 @@
 
 // A summary of the click analytics for the short and long URL. Might not be
 // present if not requested or currently unavailable.
+<<<<<<< HEAD
 @property (retain) GTLUrlshortenerAnalyticsSummary *analytics;
 
 // Time the short URL was created; ISO 8601 representation using the
@@ -61,10 +70,32 @@
 // Long URL, e.g. "http://www.google.com/". Might not be present if the status
 // is "REMOVED".
 @property (copy) NSString *longUrl;
+=======
+@property (nonatomic, retain) GTLUrlshortenerAnalyticsSummary *analytics;
+
+// Time the short URL was created; ISO 8601 representation using the
+// yyyy-MM-dd'T'HH:mm:ss.SSSZZ format, e.g. "2010-10-14T19:01:24.944+00:00".
+@property (nonatomic, copy) NSString *created;
+
+// Short URL, e.g. "http://goo.gl/l6MS".
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The fixed string "urlshortener#url".
+@property (nonatomic, copy) NSString *kind;
+
+// Long URL, e.g. "http://www.google.com/". Might not be present if the status
+// is "REMOVED".
+@property (nonatomic, copy) NSString *longUrl;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Status of the target URL. Possible values: "OK", "MALWARE", "PHISHING", or
 // "REMOVED". A URL might be marked "REMOVED" if it was flagged as spam, for
 // example.
+<<<<<<< HEAD
 @property (copy) NSString *status;
+=======
+@property (nonatomic, copy) NSString *status;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,13 +24,21 @@
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
+<<<<<<< HEAD
 //   Google Civic Information API (civicinfo/v1)
+=======
+//   Google Civic Information API (civicinfo/v2)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Description:
 //   An API for accessing civic information.
 // Documentation:
 //   https://developers.google.com/civic-information
 // Classes:
+<<<<<<< HEAD
 //   GTLCivicInfoOffice (0 custom class methods, 5 custom properties)
+=======
+//   GTLCivicInfoOffice (0 custom class methods, 6 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLCivicInfoOffice.h"
 
@@ -38,6 +50,7 @@
 //
 
 @implementation GTLCivicInfoOffice
+<<<<<<< HEAD
 @dynamic divisionId, level, name, officialIds, sources;
 
 + (NSDictionary *)arrayPropertyToClassMap {
@@ -46,6 +59,17 @@
       [NSString class], @"officialIds",
       [GTLCivicInfoSource class], @"sources",
       nil];
+=======
+@dynamic divisionId, levels, name, officialIndices, roles, sources;
+
++ (NSDictionary *)arrayPropertyToClassMap {
+  NSDictionary *map = @{
+    @"levels" : [NSString class],
+    @"officialIndices" : [NSNumber class],
+    @"roles" : [NSString class],
+    @"sources" : [GTLCivicInfoSource class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

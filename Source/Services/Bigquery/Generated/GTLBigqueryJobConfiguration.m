@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,14 +28,23 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
 // Classes:
 //   GTLBigqueryJobConfiguration (0 custom class methods, 6 custom properties)
+=======
+//   https://cloud.google.com/bigquery/
+// Classes:
+//   GTLBigqueryJobConfiguration (0 custom class methods, 5 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLBigqueryJobConfiguration.h"
 
 #import "GTLBigqueryJobConfigurationExtract.h"
+<<<<<<< HEAD
 #import "GTLBigqueryJobConfigurationLink.h"
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBigqueryJobConfigurationLoad.h"
 #import "GTLBigqueryJobConfigurationQuery.h"
 #import "GTLBigqueryJobConfigurationTableCopy.h"
@@ -42,12 +55,21 @@
 //
 
 @implementation GTLBigqueryJobConfiguration
+<<<<<<< HEAD
 @dynamic copyProperty, dryRun, extract, link, load, query;
 
 + (NSDictionary *)propertyToJSONKeyMap {
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"copy"
                                 forKey:@"copyProperty"];
+=======
+@dynamic copyProperty, dryRun, extract, load, query;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"copyProperty" : @"copy"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

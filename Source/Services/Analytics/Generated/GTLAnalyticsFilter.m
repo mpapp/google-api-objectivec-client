@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,16 +26,28 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
+=======
+//   Views and manages your Google Analytics data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
 //   GTLAnalyticsFilter (0 custom class methods, 15 custom properties)
+<<<<<<< HEAD
 //   GTLAnalyticsFilterAdvancedDetails (0 custom class methods, 10 custom properties)
 //   GTLAnalyticsFilterLowercaseDetails (0 custom class methods, 1 custom properties)
 //   GTLAnalyticsFilterParentLink (0 custom class methods, 2 custom properties)
 //   GTLAnalyticsFilterSearchAndReplaceDetails (0 custom class methods, 4 custom properties)
 //   GTLAnalyticsFilterUppercaseDetails (0 custom class methods, 1 custom properties)
+=======
+//   GTLAnalyticsFilterAdvancedDetails (0 custom class methods, 13 custom properties)
+//   GTLAnalyticsFilterLowercaseDetails (0 custom class methods, 2 custom properties)
+//   GTLAnalyticsFilterParentLink (0 custom class methods, 2 custom properties)
+//   GTLAnalyticsFilterSearchAndReplaceDetails (0 custom class methods, 5 custom properties)
+//   GTLAnalyticsFilterUppercaseDetails (0 custom class methods, 2 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLAnalyticsFilter.h"
 
@@ -48,9 +64,15 @@
          searchAndReplaceDetails, selfLink, type, updated, uppercaseDetails;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"id"
                                 forKey:@"identifier"];
+=======
+  NSDictionary *map = @{
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -67,8 +89,14 @@
 //
 
 @implementation GTLAnalyticsFilterAdvancedDetails
+<<<<<<< HEAD
 @dynamic caseSensitive, extractA, extractB, fieldA, fieldARequired, fieldB,
          fieldBRequired, outputConstructor, outputToField, overrideOutputField;
+=======
+@dynamic caseSensitive, extractA, extractB, fieldA, fieldAIndex, fieldARequired,
+         fieldB, fieldBIndex, fieldBRequired, outputConstructor, outputToField,
+         outputToFieldIndex, overrideOutputField;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 
@@ -78,7 +106,11 @@
 //
 
 @implementation GTLAnalyticsFilterLowercaseDetails
+<<<<<<< HEAD
 @dynamic field;
+=======
+@dynamic field, fieldIndex;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 
@@ -98,7 +130,11 @@
 //
 
 @implementation GTLAnalyticsFilterSearchAndReplaceDetails
+<<<<<<< HEAD
 @dynamic caseSensitive, field, replaceString, searchString;
+=======
+@dynamic caseSensitive, field, fieldIndex, replaceString, searchString;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 
@@ -108,5 +144,9 @@
 //
 
 @implementation GTLAnalyticsFilterUppercaseDetails
+<<<<<<< HEAD
 @dynamic field;
+=======
+@dynamic field, fieldIndex;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end

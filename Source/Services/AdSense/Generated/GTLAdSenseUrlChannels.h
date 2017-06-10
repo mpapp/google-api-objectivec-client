@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   AdSense Management API (adsense/v1.4)
 // Description:
+<<<<<<< HEAD
 //   Gives AdSense publishers access to their inventory and the ability to
 //   generate reports
+=======
+//   Accesses AdSense publishers' inventory and generates performance reports.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/adsense/management/
 // Classes:
@@ -48,6 +56,7 @@
 @interface GTLAdSenseUrlChannels : GTLCollectionObject
 
 // ETag of this response for caching purposes.
+<<<<<<< HEAD
 @property (copy) NSString *ETag;
 
 // The URL channels returned in this list response.
@@ -59,5 +68,18 @@
 // Continuation token used to page through URL channels. To retrieve the next
 // page of results, set the next request's "pageToken" value to this.
 @property (copy) NSString *nextPageToken;
+=======
+@property (nonatomic, copy) NSString *ETag;
+
+// The URL channels returned in this list response.
+@property (nonatomic, retain) NSArray *items;  // of GTLAdSenseUrlChannel
+
+// Kind of list this is, in this case adsense#urlChannels.
+@property (nonatomic, copy) NSString *kind;
+
+// Continuation token used to page through URL channels. To retrieve the next
+// page of results, set the next request's "pageToken" value to this.
+@property (nonatomic, copy) NSString *nextPageToken;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

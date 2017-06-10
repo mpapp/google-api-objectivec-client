@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +40,7 @@
 // Method compiled in debug builds just to check that all the needed support
 // classes are present at link time.
 + (NSArray *)checkClasses {
+<<<<<<< HEAD
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryBooks class],
                       [GTLBooksAnnotation class],
@@ -64,11 +69,51 @@
                       [GTLBooksVolumes class],
                       [GTLBooksVolumesRecommendedRateResponse class],
                       nil];
+=======
+  NSArray *classes = @[
+    [GTLQueryBooks class],
+    [GTLBooksAnnotation class],
+    [GTLBooksAnnotationdata class],
+    [GTLBooksAnnotations class],
+    [GTLBooksAnnotationsdata class],
+    [GTLBooksAnnotationsRange class],
+    [GTLBooksAnnotationsSummary class],
+    [GTLBooksBookshelf class],
+    [GTLBooksBookshelves class],
+    [GTLBooksCategory class],
+    [GTLBooksCloudloadingResource class],
+    [GTLBooksConcurrentAccessRestriction class],
+    [GTLBooksDictlayerdata class],
+    [GTLBooksDiscoveryclusters class],
+    [GTLBooksDownloadAccesses class],
+    [GTLBooksDownloadAccessRestriction class],
+    [GTLBooksGeolayerdata class],
+    [GTLBooksLayersummaries class],
+    [GTLBooksLayersummary class],
+    [GTLBooksMetadata class],
+    [GTLBooksNotification class],
+    [GTLBooksOffers class],
+    [GTLBooksReadingPosition class],
+    [GTLBooksRequestAccess class],
+    [GTLBooksReview class],
+    [GTLBooksUsersettings class],
+    [GTLBooksVolume class],
+    [GTLBooksVolume2 class],
+    [GTLBooksVolumeannotation class],
+    [GTLBooksVolumeannotations class],
+    [GTLBooksVolumes class],
+    [GTLBooksVolumesRecommendedRateResponse class]
+  ];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return classes;
 }
 #endif  // DEBUG
 
+<<<<<<< HEAD
 - (id)init {
+=======
+- (instancetype)init {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   self = [super init];
   if (self) {
     // Version from discovery.

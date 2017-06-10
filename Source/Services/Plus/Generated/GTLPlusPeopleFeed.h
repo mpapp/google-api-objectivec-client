@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google+ API (plus/v1)
 // Description:
+<<<<<<< HEAD
 //   The Google+ API enables developers to build on top of the Google+ platform.
+=======
+//   Builds on top of the Google+ platform.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/+/api/
 // Classes:
@@ -47,19 +55,31 @@
 @interface GTLPlusPeopleFeed : GTLCollectionObject
 
 // ETag of this response for caching purposes.
+<<<<<<< HEAD
 @property (copy) NSString *ETag;
+=======
+@property (nonatomic, copy) NSString *ETag;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The people in this page of results. Each item includes the id, displayName,
 // image, and url for the person. To retrieve additional profile data, see the
 // people.get method.
+<<<<<<< HEAD
 @property (retain) NSArray *items;  // of GTLPlusPerson
 
 // Identifies this resource as a collection of people. Value: "plus#peopleFeed".
 @property (copy) NSString *kind;
+=======
+@property (nonatomic, retain) NSArray *items;  // of GTLPlusPerson
+
+// Identifies this resource as a collection of people. Value: "plus#peopleFeed".
+@property (nonatomic, copy) NSString *kind;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The continuation token, which is used to page through large result sets.
 // Provide this value in a subsequent request to return the next page of
 // results.
+<<<<<<< HEAD
 @property (copy) NSString *nextPageToken;
 
 // Link to this resource.
@@ -67,10 +87,23 @@
 
 // The title of this collection of people.
 @property (copy) NSString *title;
+=======
+@property (nonatomic, copy) NSString *nextPageToken;
+
+// Link to this resource.
+@property (nonatomic, copy) NSString *selfLink;
+
+// The title of this collection of people.
+@property (nonatomic, copy) NSString *title;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The total number of people available in this list. The number of people in a
 // response might be smaller due to paging. This might not be set for all
 // collections.
+<<<<<<< HEAD
 @property (retain) NSNumber *totalItems;  // intValue
+=======
+@property (nonatomic, retain) NSNumber *totalItems;  // intValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

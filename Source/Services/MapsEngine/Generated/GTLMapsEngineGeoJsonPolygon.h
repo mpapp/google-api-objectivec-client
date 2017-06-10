@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +46,7 @@
 
 @interface GTLMapsEngineGeoJsonPolygon : GTLObject
 
+<<<<<<< HEAD
 // An array of LinearRings, each of which is an array of four or more
 // GeoJsonPositions. The first and last coordinates in each LinearRing must be
 // the same. For polygons with multiple rings, the first LinearRing is the
@@ -51,5 +56,16 @@
 
 // Identifies this object as a GeoJsonPolygon.
 @property (copy) NSString *type;
+=======
+// An array of LinearRings. A LinearRing is a GeoJsonLineString which is closed
+// (that is, the first and last GeoJsonPositions are equal), and which contains
+// at least four GeoJsonPositions. For polygons with multiple rings, the first
+// LinearRing is the exterior ring, and any subsequent rings are interior rings
+// (that is, holes).
+@property (nonatomic, retain) NSArray *coordinates;  // of NSArray of NSArray of NSNumber (doubleValue)
+
+// Identifies this object as a GeoJsonPolygon.
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

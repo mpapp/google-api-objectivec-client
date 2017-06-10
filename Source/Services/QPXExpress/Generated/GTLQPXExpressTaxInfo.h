@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   QPX Express API (qpxExpress/v1)
 // Description:
+<<<<<<< HEAD
 //   Lets you find the least expensive flights between an origin and a
 //   destination.
+=======
+//   Finds the least expensive flights between an origin and a destination.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   http://developers.google.com/qpx-express
 // Classes:
@@ -45,6 +53,7 @@
 @interface GTLQPXExpressTaxInfo : GTLObject
 
 // Whether this is a government charge or a carrier surcharge.
+<<<<<<< HEAD
 @property (copy) NSString *chargeType;
 
 // The code to enter in the ticket's tax box.
@@ -52,10 +61,20 @@
 
 // For government charges, the country levying the charge.
 @property (copy) NSString *country;
+=======
+@property (nonatomic, copy) NSString *chargeType;
+
+// The code to enter in the ticket's tax box.
+@property (nonatomic, copy) NSString *code;
+
+// For government charges, the country levying the charge.
+@property (nonatomic, copy) NSString *country;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Identifier uniquely identifying this tax in a response. Not present for
 // unnamed carrier surcharges.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+<<<<<<< HEAD
 @property (copy) NSString *identifier;
 
 // Identifies this as a tax information object. Value: the fixed string
@@ -64,5 +83,15 @@
 
 // The price of the tax in the sales or equivalent currency.
 @property (copy) NSString *salePrice;
+=======
+@property (nonatomic, copy) NSString *identifier;
+
+// Identifies this as a tax information object. Value: the fixed string
+// qpxexpress#taxInfo.
+@property (nonatomic, copy) NSString *kind;
+
+// The price of the tax in the sales or equivalent currency.
+@property (nonatomic, copy) NSString *salePrice;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

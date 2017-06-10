@@ -27,12 +27,20 @@
 // Documentation:
 //   https://developers.google.com/maps-engine/
 // Classes:
+<<<<<<< HEAD
 //   GTLMapsEnginePolygonStyle (0 custom class methods, 2 custom properties)
+=======
+//   GTLMapsEnginePolygonStyle (0 custom class methods, 3 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLMapsEnginePolygonStyle.h"
 
 #import "GTLMapsEngineBorder.h"
 #import "GTLMapsEngineColor.h"
+<<<<<<< HEAD
+=======
+#import "GTLMapsEngineLabelStyle.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // ----------------------------------------------------------------------------
 //
@@ -40,5 +48,9 @@
 //
 
 @implementation GTLMapsEnginePolygonStyle
+<<<<<<< HEAD
 @dynamic fill, stroke;
+=======
+@dynamic fill, label, stroke;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end

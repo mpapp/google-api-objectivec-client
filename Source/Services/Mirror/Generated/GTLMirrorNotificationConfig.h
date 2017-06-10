@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +48,19 @@
 @interface GTLMirrorNotificationConfig : GTLObject
 
 // The time at which the notification should be delivered.
+<<<<<<< HEAD
 @property (retain) GTLDateTime *deliveryTime;
+=======
+@property (nonatomic, retain) GTLDateTime *deliveryTime;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Describes how important the notification is. Allowed values are:
 // - DEFAULT - Notifications of default importance. A chime will be played to
 // alert users.
+<<<<<<< HEAD
 @property (copy) NSString *level;
+=======
+@property (nonatomic, copy) NSString *level;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

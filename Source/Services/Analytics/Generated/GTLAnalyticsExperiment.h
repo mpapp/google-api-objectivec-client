@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
+=======
+//   Views and manages your Google Analytics data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
@@ -49,6 +57,7 @@
 @interface GTLAnalyticsExperiment : GTLObject
 
 // Account ID to which this experiment belongs. This field is read-only.
+<<<<<<< HEAD
 @property (copy) NSString *accountId;
 
 // Time the experiment was created. This field is read-only.
@@ -61,17 +70,36 @@
 // If true, the end user will be able to edit the experiment via the Google
 // Analytics user interface.
 @property (retain) NSNumber *editableInGaUi;  // boolValue
+=======
+@property (nonatomic, copy) NSString *accountId;
+
+// Time the experiment was created. This field is read-only.
+@property (nonatomic, retain) GTLDateTime *created;
+
+// Notes about this experiment.
+// Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// If true, the end user will be able to edit the experiment via the Google
+// Analytics user interface.
+@property (nonatomic, retain) NSNumber *editableInGaUi;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The ending time of the experiment (the time the status changed from RUNNING
 // to ENDED). This field is present only if the experiment has ended. This field
 // is read-only.
+<<<<<<< HEAD
 @property (retain) GTLDateTime *endTime;
+=======
+@property (nonatomic, retain) GTLDateTime *endTime;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Boolean specifying whether to distribute traffic evenly across all
 // variations. If the value is False, content experiments follows the default
 // behavior of adjusting traffic dynamically based on variation performance.
 // Optional -- defaults to False. This field may not be changed for an
 // experiment whose status is ENDED.
+<<<<<<< HEAD
 @property (retain) NSNumber *equalWeighting;  // boolValue
 
 // Experiment ID. Required for patch and update. Disallowed for create.
@@ -84,27 +112,54 @@
 
 // Resource type for an Analytics experiment. This field is read-only.
 @property (copy) NSString *kind;
+=======
+@property (nonatomic, retain) NSNumber *equalWeighting;  // boolValue
+
+// Experiment ID. Required for patch and update. Disallowed for create.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Internal ID for the web property to which this experiment belongs. This field
+// is read-only.
+@property (nonatomic, copy) NSString *internalWebPropertyId;
+
+// Resource type for an Analytics experiment. This field is read-only.
+@property (nonatomic, copy) NSString *kind;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // An integer number in [3, 90]. Specifies the minimum length of the experiment.
 // Can be changed for a running experiment. This field may not be changed for an
 // experiments whose status is ENDED.
+<<<<<<< HEAD
 @property (retain) NSNumber *minimumExperimentLengthInDays;  // intValue
 
 // Experiment name. This field may not be changed for an experiment whose status
 // is ENDED. This field is required when creating an experiment.
 @property (copy) NSString *name;
+=======
+@property (nonatomic, retain) NSNumber *minimumExperimentLengthInDays;  // intValue
+
+// Experiment name. This field may not be changed for an experiment whose status
+// is ENDED. This field is required when creating an experiment.
+@property (nonatomic, copy) NSString *name;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The metric that the experiment is optimizing. Valid values:
 // "ga:goal(n)Completions", "ga:adsenseAdsClicks", "ga:adsenseAdsViewed",
 // "ga:adsenseRevenue", "ga:bounces", "ga:pageviews", "ga:sessionDuration",
 // "ga:transactions", "ga:transactionRevenue". This field is required if status
 // is "RUNNING" and servingFramework is one of "REDIRECT" or "API".
+<<<<<<< HEAD
 @property (copy) NSString *objectiveMetric;
+=======
+@property (nonatomic, copy) NSString *objectiveMetric;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Whether the objectiveMetric should be minimized or maximized. Possible
 // values: "MAXIMUM", "MINIMUM". Optional--defaults to "MAXIMUM". Cannot be
 // specified without objectiveMetric. Cannot be modified when status is
 // "RUNNING" or "ENDED".
+<<<<<<< HEAD
 @property (copy) NSString *optimizationType;
 
 // Parent link for an experiment. Points to the view (profile) to which this
@@ -113,21 +168,42 @@
 
 // View (Profile) ID to which this experiment belongs. This field is read-only.
 @property (copy) NSString *profileId;
+=======
+@property (nonatomic, copy) NSString *optimizationType;
+
+// Parent link for an experiment. Points to the view (profile) to which this
+// experiment belongs.
+@property (nonatomic, retain) GTLAnalyticsExperimentParentLink *parentLink;
+
+// View (Profile) ID to which this experiment belongs. This field is read-only.
+@property (nonatomic, copy) NSString *profileId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Why the experiment ended. Possible values: "STOPPED_BY_USER", "WINNER_FOUND",
 // "EXPERIMENT_EXPIRED", "ENDED_WITH_NO_WINNER", "GOAL_OBJECTIVE_CHANGED".
 // "ENDED_WITH_NO_WINNER" means that the experiment didn't expire but no winner
 // was projected to be found. If the experiment status is changed via the API to
 // ENDED this field is set to STOPPED_BY_USER. This field is read-only.
+<<<<<<< HEAD
 @property (copy) NSString *reasonExperimentEnded;
+=======
+@property (nonatomic, copy) NSString *reasonExperimentEnded;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Boolean specifying whether variations URLS are rewritten to match those of
 // the original. This field may not be changed for an experiments whose status
 // is ENDED.
+<<<<<<< HEAD
 @property (retain) NSNumber *rewriteVariationUrlsAsOriginal;  // boolValue
 
 // Link for this experiment. This field is read-only.
 @property (copy) NSString *selfLink;
+=======
+@property (nonatomic, retain) NSNumber *rewriteVariationUrlsAsOriginal;  // boolValue
+
+// Link for this experiment. This field is read-only.
+@property (nonatomic, copy) NSString *selfLink;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The framework used to serve the experiment variations and evaluate the
 // results. One of:
@@ -139,20 +215,33 @@
 // - EXTERNAL: The variations will be served externally and the chosen variation
 // reported to Google Analytics. The caller is responsible for serving the
 // selected variation and evaluating the results.
+<<<<<<< HEAD
 @property (copy) NSString *servingFramework;
 
 // The snippet of code to include on the control page(s). This field is
 // read-only.
 @property (copy) NSString *snippet;
+=======
+@property (nonatomic, copy) NSString *servingFramework;
+
+// The snippet of code to include on the control page(s). This field is
+// read-only.
+@property (nonatomic, copy) NSString *snippet;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The starting time of the experiment (the time the status changed from
 // READY_TO_RUN to RUNNING). This field is present only if the experiment has
 // started. This field is read-only.
+<<<<<<< HEAD
 @property (retain) GTLDateTime *startTime;
+=======
+@property (nonatomic, retain) GTLDateTime *startTime;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Experiment status. Possible values: "DRAFT", "READY_TO_RUN", "RUNNING",
 // "ENDED". Experiments can be created in the "DRAFT", "READY_TO_RUN" or
 // "RUNNING" state. This field is required when creating an experiment.
+<<<<<<< HEAD
 @property (copy) NSString *status;
 
 // A floating-point number between 0 and 1. Specifies the fraction of the
@@ -163,11 +252,23 @@
 
 // Time the experiment was last modified. This field is read-only.
 @property (retain) GTLDateTime *updated;
+=======
+@property (nonatomic, copy) NSString *status;
+
+// A floating-point number in (0, 1]. Specifies the fraction of the traffic that
+// participates in the experiment. Can be changed for a running experiment. This
+// field may not be changed for an experiments whose status is ENDED.
+@property (nonatomic, retain) NSNumber *trafficCoverage;  // doubleValue
+
+// Time the experiment was last modified. This field is read-only.
+@property (nonatomic, retain) GTLDateTime *updated;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Array of variations. The first variation in the array is the original. The
 // number of variations may not change once an experiment is in the RUNNING
 // state. At least two variations are required before status can be set to
 // RUNNING.
+<<<<<<< HEAD
 @property (retain) NSArray *variations;  // of GTLAnalyticsExperimentVariationsItem
 
 // Web property ID to which this experiment belongs. The web property ID is of
@@ -182,6 +283,22 @@
 // Boolean specifying whether a winner has been found for this experiment. This
 // field is read-only.
 @property (retain) NSNumber *winnerFound;  // boolValue
+=======
+@property (nonatomic, retain) NSArray *variations;  // of GTLAnalyticsExperimentVariationsItem
+
+// Web property ID to which this experiment belongs. The web property ID is of
+// the form UA-XXXXX-YY. This field is read-only.
+@property (nonatomic, copy) NSString *webPropertyId;
+
+// A floating-point number in (0, 1). Specifies the necessary confidence level
+// to choose a winner. This field may not be changed for an experiments whose
+// status is ENDED.
+@property (nonatomic, retain) NSNumber *winnerConfidenceLevel;  // doubleValue
+
+// Boolean specifying whether a winner has been found for this experiment. This
+// field is read-only.
+@property (nonatomic, retain) NSNumber *winnerFound;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -195,10 +312,17 @@
 
 // Link to the view (profile) to which this experiment belongs. This field is
 // read-only.
+<<<<<<< HEAD
 @property (copy) NSString *href;
 
 // Value is "analytics#profile". This field is read-only.
 @property (copy) NSString *type;
+=======
+@property (nonatomic, copy) NSString *href;
+
+// Value is "analytics#profile". This field is read-only.
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -213,11 +337,16 @@
 // The name of the variation. This field is required when creating an
 // experiment. This field may not be changed for an experiment whose status is
 // ENDED.
+<<<<<<< HEAD
 @property (copy) NSString *name;
+=======
+@property (nonatomic, copy) NSString *name;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Status of the variation. Possible values: "ACTIVE", "INACTIVE". INACTIVE
 // variations are not served. This field may not be changed for an experiment
 // whose status is ENDED.
+<<<<<<< HEAD
 @property (copy) NSString *status;
 
 // The URL of the variation. This field may not be changed for an experiment
@@ -231,5 +360,20 @@
 // True if the experiment has ended and this variation performed (statistically)
 // significantly better than the original. This field is read-only.
 @property (retain) NSNumber *won;  // boolValue
+=======
+@property (nonatomic, copy) NSString *status;
+
+// The URL of the variation. This field may not be changed for an experiment
+// whose status is RUNNING or ENDED.
+@property (nonatomic, copy) NSString *url;
+
+// Weight that this variation should receive. Only present if the experiment is
+// running. This field is read-only.
+@property (nonatomic, retain) NSNumber *weight;  // doubleValue
+
+// True if the experiment has ended and this variation performed (statistically)
+// significantly better than the original. This field is read-only.
+@property (nonatomic, retain) NSNumber *won;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

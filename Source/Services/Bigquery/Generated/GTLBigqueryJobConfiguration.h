@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +28,15 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
 // Classes:
 //   GTLBigqueryJobConfiguration (0 custom class methods, 6 custom properties)
+=======
+//   https://cloud.google.com/bigquery/
+// Classes:
+//   GTLBigqueryJobConfiguration (0 custom class methods, 5 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -35,7 +45,10 @@
 #endif
 
 @class GTLBigqueryJobConfigurationExtract;
+<<<<<<< HEAD
 @class GTLBigqueryJobConfigurationLink;
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @class GTLBigqueryJobConfigurationLoad;
 @class GTLBigqueryJobConfigurationQuery;
 @class GTLBigqueryJobConfigurationTableCopy;
@@ -49,12 +62,17 @@
 
 // [Pick one] Copies a table.
 // Remapped to 'copyProperty' to avoid NSObject's 'copy'.
+<<<<<<< HEAD
 @property (retain) GTLBigqueryJobConfigurationTableCopy *copyProperty NS_RETURNS_NOT_RETAINED;
+=======
+@property (nonatomic, retain) GTLBigqueryJobConfigurationTableCopy *copyProperty NS_RETURNS_NOT_RETAINED;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // [Optional] If set, don't actually run this job. A valid query will return a
 // mostly empty response with some processing statistics, while an invalid query
 // will return the same error it would if it wasn't a dry run. Behavior of
 // non-query jobs is undefined.
+<<<<<<< HEAD
 @property (retain) NSNumber *dryRun;  // boolValue
 
 // [Pick one] Configures an extract job.
@@ -68,5 +86,17 @@
 
 // [Pick one] Configures a query job.
 @property (retain) GTLBigqueryJobConfigurationQuery *query;
+=======
+@property (nonatomic, retain) NSNumber *dryRun;  // boolValue
+
+// [Pick one] Configures an extract job.
+@property (nonatomic, retain) GTLBigqueryJobConfigurationExtract *extract;
+
+// [Pick one] Configures a load job.
+@property (nonatomic, retain) GTLBigqueryJobConfigurationLoad *load;
+
+// [Pick one] Configures a query job.
+@property (nonatomic, retain) GTLBigqueryJobConfigurationQuery *query;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +40,7 @@
 // Method compiled in debug builds just to check that all the needed support
 // classes are present at link time.
 + (NSArray *)checkClasses {
+<<<<<<< HEAD
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQuerySpectrum class],
                       [GTLSpectrumAntennaCharacteristics class],
@@ -66,11 +71,47 @@
                       [GTLSpectrumVcardTelephone class],
                       [GTLSpectrumVcardTypedText class],
                       nil];
+=======
+  NSArray *classes = @[
+    [GTLQuerySpectrum class],
+    [GTLSpectrumAntennaCharacteristics class],
+    [GTLSpectrumDatabaseSpec class],
+    [GTLSpectrumDbUpdateSpec class],
+    [GTLSpectrumDeviceCapabilities class],
+    [GTLSpectrumDeviceDescriptor class],
+    [GTLSpectrumDeviceOwner class],
+    [GTLSpectrumDeviceValidity class],
+    [GTLSpectrumEventTime class],
+    [GTLSpectrumFrequencyRange class],
+    [GTLSpectrumGeoLocation class],
+    [GTLSpectrumGeoLocationEllipse class],
+    [GTLSpectrumGeoLocationPoint class],
+    [GTLSpectrumGeoLocationPolygon class],
+    [GTLSpectrumGeoSpectrumSchedule class],
+    [GTLSpectrumMessage class],
+    [GTLSpectrumPawsGetSpectrumBatchResponse class],
+    [GTLSpectrumPawsGetSpectrumResponse class],
+    [GTLSpectrumPawsInitResponse class],
+    [GTLSpectrumPawsNotifySpectrumUseResponse class],
+    [GTLSpectrumPawsRegisterResponse class],
+    [GTLSpectrumPawsVerifyDeviceResponse class],
+    [GTLSpectrumRulesetInfo class],
+    [GTLSpectrumSchedule class],
+    [GTLSpectrumVcard class],
+    [GTLSpectrumVcardAddress class],
+    [GTLSpectrumVcardTelephone class],
+    [GTLSpectrumVcardTypedText class]
+  ];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return classes;
 }
 #endif  // DEBUG
 
+<<<<<<< HEAD
 - (id)init {
+=======
+- (instancetype)init {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   self = [super init];
   if (self) {
     // Version from discovery.

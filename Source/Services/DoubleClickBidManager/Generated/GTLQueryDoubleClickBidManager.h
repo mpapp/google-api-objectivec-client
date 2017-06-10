@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +30,11 @@
 // Documentation:
 //   https://developers.google.com/bid-manager/
 // Classes:
+<<<<<<< HEAD
 //   GTLQueryDoubleClickBidManager (8 custom class methods, 12 custom properties)
+=======
+//   GTLQueryDoubleClickBidManager (9 custom class methods, 18 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLQuery.h"
@@ -34,6 +42,10 @@
   #import "GTLQuery.h"
 #endif
 
+<<<<<<< HEAD
+=======
+@class GTLDoubleClickBidManagerNote;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @class GTLDoubleClickBidManagerQuery;
 
 @interface GTLQueryDoubleClickBidManager : GTLQuery
@@ -43,11 +55,16 @@
 //
 
 // Selector specifying which fields to include in a partial response.
+<<<<<<< HEAD
 @property (copy) NSString *fields;
+=======
+@property (nonatomic, copy) NSString *fields;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 //
 // Method-specific parameters; see the comments below for more information.
 //
+<<<<<<< HEAD
 @property (copy) NSString *dataRange;
 @property (assign) BOOL dryRun;
 @property (retain) NSArray *filterIds;  // of NSNumber (longLongValue)
@@ -62,11 +79,40 @@
 
 #pragma mark -
 #pragma mark "lineitems" methods
+=======
+@property (nonatomic, copy) NSString *action;
+@property (nonatomic, copy) NSString *dataRange;
+@property (nonatomic, assign) BOOL dryRun;
+@property (nonatomic, copy) NSString *fileSpec;
+@property (nonatomic, retain) NSArray *filterIds;  // of NSNumber (longLongValue)
+@property (nonatomic, copy) NSString *filterType;
+@property (nonatomic, copy) NSString *format;
+@property (nonatomic, copy) NSString *href;
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, assign) long long identifier;
+@property (nonatomic, copy) NSString *lineItems;
+@property (nonatomic, retain) NSArray *notes;  // of GTLDoubleClickBidManagerNote
+@property (nonatomic, retain) GTLDoubleClickBidManagerQuery *query;
+@property (nonatomic, assign) long long queryId;
+@property (nonatomic, assign) long long reportDataEndTimeMs;
+@property (nonatomic, assign) long long reportDataStartTimeMs;
+@property (nonatomic, copy) NSString *timezoneCode;
+@property (nonatomic, copy) NSString *token;
+
+#pragma mark - "lineitems" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryDoubleClickBidManager object.
 
 // Method: doubleclickbidmanager.lineitems.downloadlineitems
 // Retrieves line items in CSV format.
 //  Optional:
+<<<<<<< HEAD
+=======
+//   fileSpec: File specification (column names, types, order) in which the line
+//     items will be returned. Default to EWF.
+//      kGTLDoubleClickBidManagerFileSpecEwf: "EWF"
+//      kGTLDoubleClickBidManagerFileSpecSdf: "SDF"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   filterIds: Ids of the specified filter type used to filter line items to
 //     fetch. If omitted, all the line items will be returned.
 //   filterType: Filter type used to filter line items to fetch.
@@ -76,7 +122,11 @@
 //   format: Format in which the line items will be returned. Default to CSV.
 //      kGTLDoubleClickBidManagerFormatCsv: "CSV"
 // Fetches a GTLDoubleClickBidManagerDownloadLineItemsResponse.
+<<<<<<< HEAD
 + (id)queryForLineitemsDownloadlineitems;
+=======
++ (instancetype)queryForLineitemsDownloadlineitems;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: doubleclickbidmanager.lineitems.uploadlineitems
 // Uploads line items in CSV format.
@@ -88,10 +138,16 @@
 //   lineItems: Line items in CSV to upload. Refer to Entity Write File Format
 //     for more information on file format.
 // Fetches a GTLDoubleClickBidManagerUploadLineItemsResponse.
+<<<<<<< HEAD
 + (id)queryForLineitemsUploadlineitems;
 
 #pragma mark -
 #pragma mark "queries" methods
+=======
++ (instancetype)queryForLineitemsUploadlineitems;
+
+#pragma mark - "queries" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryDoubleClickBidManager object.
 
 // Method: doubleclickbidmanager.queries.createquery
@@ -99,25 +155,41 @@
 //  Optional:
 //   query: GTLDoubleClickBidManagerQuery
 // Fetches a GTLDoubleClickBidManagerQuery.
+<<<<<<< HEAD
 + (id)queryForQueriesCreatequery;
+=======
++ (instancetype)queryForQueriesCreatequery;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: doubleclickbidmanager.queries.deletequery
 // Deletes a stored query as well as the associated stored reports.
 //  Required:
 //   queryId: Query ID to delete.
+<<<<<<< HEAD
 + (id)queryForQueriesDeletequeryWithQueryId:(long long)queryId;
+=======
++ (instancetype)queryForQueriesDeletequeryWithQueryId:(long long)queryId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: doubleclickbidmanager.queries.getquery
 // Retrieves a stored query.
 //  Required:
 //   queryId: Query ID to retrieve.
 // Fetches a GTLDoubleClickBidManagerQuery.
+<<<<<<< HEAD
 + (id)queryForQueriesGetqueryWithQueryId:(long long)queryId;
+=======
++ (instancetype)queryForQueriesGetqueryWithQueryId:(long long)queryId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: doubleclickbidmanager.queries.listqueries
 // Retrieves stored queries.
 // Fetches a GTLDoubleClickBidManagerListQueriesResponse.
+<<<<<<< HEAD
 + (id)queryForQueriesListqueries;
+=======
++ (instancetype)queryForQueriesListqueries;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: doubleclickbidmanager.queries.runquery
 // Runs a stored query to generate a report.
@@ -141,6 +213,10 @@
 //      kGTLDoubleClickBidManagerDataRangePreviousWeek: "PREVIOUS_WEEK"
 //      kGTLDoubleClickBidManagerDataRangePreviousYear: "PREVIOUS_YEAR"
 //      kGTLDoubleClickBidManagerDataRangeQuarterToDate: "QUARTER_TO_DATE"
+<<<<<<< HEAD
+=======
+//      kGTLDoubleClickBidManagerDataRangeTypeNotSupported: "TYPE_NOT_SUPPORTED"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //      kGTLDoubleClickBidManagerDataRangeWeekToDate: "WEEK_TO_DATE"
 //      kGTLDoubleClickBidManagerDataRangeYearToDate: "YEAR_TO_DATE"
 //   reportDataEndTimeMs: The ending time for the data that is shown in the
@@ -151,10 +227,16 @@
 //     CUSTOM_DATES and ignored otherwise.
 //   timezoneCode: Canonical timezone code for report data time. Defaults to
 //     America/New_York.
+<<<<<<< HEAD
 + (id)queryForQueriesRunqueryWithQueryId:(long long)queryId;
 
 #pragma mark -
 #pragma mark "reports" methods
+=======
++ (instancetype)queryForQueriesRunqueryWithQueryId:(long long)queryId;
+
+#pragma mark - "reports" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryDoubleClickBidManager object.
 
 // Method: doubleclickbidmanager.reports.listreports
@@ -162,6 +244,23 @@
 //  Required:
 //   queryId: Query ID with which the reports are associated.
 // Fetches a GTLDoubleClickBidManagerListReportsResponse.
+<<<<<<< HEAD
 + (id)queryForReportsListreportsWithQueryId:(long long)queryId;
+=======
++ (instancetype)queryForReportsListreportsWithQueryId:(long long)queryId;
+
+#pragma mark - "rubicon" methods
+// These create a GTLQueryDoubleClickBidManager object.
+
+// Method: doubleclickbidmanager.rubicon.notifyproposalchange
+// Update proposal upon actions of Rubicon publisher.
+//  Optional:
+//   action: Action taken by publisher. One of: Accept, Decline, Append
+//   href: URL to access proposal detail.
+//   identifier: Below are contents of notification from Rubicon. Proposal id.
+//   notes: Notes from publisher
+//   token: Deal token, available when proposal is accepted by publisher.
++ (instancetype)queryForRubiconNotifyproposalchange;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

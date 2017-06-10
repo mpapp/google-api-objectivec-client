@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Gmail API (gmail/v1)
 // Description:
+<<<<<<< HEAD
 //   The Gmail REST API.
+=======
+//   Access Gmail mailboxes including sending user email.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/gmail/api/
 
@@ -31,8 +39,16 @@
 // Authorization scope
 NSString * const kGTLAuthScopeGmail         = @"https://mail.google.com/";
 NSString * const kGTLAuthScopeGmailCompose  = @"https://www.googleapis.com/auth/gmail.compose";
+<<<<<<< HEAD
 NSString * const kGTLAuthScopeGmailModify   = @"https://www.googleapis.com/auth/gmail.modify";
 NSString * const kGTLAuthScopeGmailReadonly = @"https://www.googleapis.com/auth/gmail.readonly";
+=======
+NSString * const kGTLAuthScopeGmailInsert   = @"https://www.googleapis.com/auth/gmail.insert";
+NSString * const kGTLAuthScopeGmailLabels   = @"https://www.googleapis.com/auth/gmail.labels";
+NSString * const kGTLAuthScopeGmailModify   = @"https://www.googleapis.com/auth/gmail.modify";
+NSString * const kGTLAuthScopeGmailReadonly = @"https://www.googleapis.com/auth/gmail.readonly";
+NSString * const kGTLAuthScopeGmailSend     = @"https://www.googleapis.com/auth/gmail.send";
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // GTLGmailLabel - LabelListVisibility
 NSString * const kGTLGmailLabel_LabelListVisibility_LabelHide  = @"labelHide";
@@ -48,6 +64,21 @@ NSString * const kGTLGmailLabel_Type_System = @"system";
 NSString * const kGTLGmailLabel_Type_User   = @"user";
 
 // GTLQueryGmail - Format
+<<<<<<< HEAD
 NSString * const kGTLGmailFormatFull    = @"full";
 NSString * const kGTLGmailFormatMinimal = @"minimal";
 NSString * const kGTLGmailFormatRaw     = @"raw";
+=======
+NSString * const kGTLGmailFormatFull     = @"full";
+NSString * const kGTLGmailFormatMetadata = @"metadata";
+NSString * const kGTLGmailFormatMinimal  = @"minimal";
+NSString * const kGTLGmailFormatRaw      = @"raw";
+
+// GTLQueryGmail - InternalDateSource
+NSString * const kGTLGmailInternalDateSourceDateHeader   = @"dateHeader";
+NSString * const kGTLGmailInternalDateSourceReceivedTime = @"receivedTime";
+
+// GTLQueryGmail - LabelFilterAction
+NSString * const kGTLGmailLabelFilterActionExclude = @"exclude";
+NSString * const kGTLGmailLabelFilterActionInclude = @"include";
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd

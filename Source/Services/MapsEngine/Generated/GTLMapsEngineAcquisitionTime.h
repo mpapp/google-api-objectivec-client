@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +50,7 @@
 
 // The end time if acquisition time is a range. The value is an RFC 3339
 // formatted date-time value (1970-01-01T00:00:00Z).
+<<<<<<< HEAD
 @property (retain) GTLDateTime *end;
 
 // The precision of acquisition time.
@@ -54,5 +59,15 @@
 // The acquisition time, or start time if acquisition time is a range. The value
 // is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).
 @property (retain) GTLDateTime *start;
+=======
+@property (nonatomic, retain) GTLDateTime *end;
+
+// The precision of acquisition time.
+@property (nonatomic, copy) NSString *precision;
+
+// The acquisition time, or start time if acquisition time is a range. The value
+// is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).
+@property (nonatomic, retain) GTLDateTime *start;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

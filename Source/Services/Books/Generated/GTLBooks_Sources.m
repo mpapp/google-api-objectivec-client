@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,19 +43,38 @@
 #import "GTLBooksAnnotationsSummary.m"
 #import "GTLBooksBookshelf.m"
 #import "GTLBooksBookshelves.m"
+<<<<<<< HEAD
 #import "GTLBooksCloudloadingResource.m"
 #import "GTLBooksConcurrentAccessRestriction.m"
 #import "GTLBooksDictlayerdata.m"
+=======
+#import "GTLBooksCategory.m"
+#import "GTLBooksCloudloadingResource.m"
+#import "GTLBooksConcurrentAccessRestriction.m"
+#import "GTLBooksDictlayerdata.m"
+#import "GTLBooksDiscoveryclusters.m"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBooksDownloadAccesses.m"
 #import "GTLBooksDownloadAccessRestriction.m"
 #import "GTLBooksGeolayerdata.m"
 #import "GTLBooksLayersummaries.m"
 #import "GTLBooksLayersummary.m"
+<<<<<<< HEAD
+=======
+#import "GTLBooksMetadata.m"
+#import "GTLBooksNotification.m"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBooksOffers.m"
 #import "GTLBooksReadingPosition.m"
 #import "GTLBooksRequestAccess.m"
 #import "GTLBooksReview.m"
+<<<<<<< HEAD
 #import "GTLBooksVolume.m"
+=======
+#import "GTLBooksUsersettings.m"
+#import "GTLBooksVolume.m"
+#import "GTLBooksVolume2.m"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBooksVolumeannotation.m"
 #import "GTLBooksVolumeannotations.m"
 #import "GTLBooksVolumes.m"

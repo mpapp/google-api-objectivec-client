@@ -1,5 +1,34 @@
+<<<<<<< HEAD
 !.svn
 .DS_Store
 xcuserdata
 Source/build
 Carthage/Build
+=======
+## Build generated
+build/
+DerivedData/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+
+# Any place they exist.
+.DS_Store
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,9 +48,16 @@
 @interface GTLBooksDownloadAccesses : GTLObject
 
 // A list of download access responses.
+<<<<<<< HEAD
 @property (retain) NSArray *downloadAccessList;  // of GTLBooksDownloadAccessRestriction
 
 // Resource type.
 @property (copy) NSString *kind;
+=======
+@property (nonatomic, retain) NSArray *downloadAccessList;  // of GTLBooksDownloadAccessRestriction
+
+// Resource type.
+@property (nonatomic, copy) NSString *kind;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

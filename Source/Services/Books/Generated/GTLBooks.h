@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,19 +40,38 @@
 #import "GTLBooksAnnotationsSummary.h"
 #import "GTLBooksBookshelf.h"
 #import "GTLBooksBookshelves.h"
+<<<<<<< HEAD
 #import "GTLBooksCloudloadingResource.h"
 #import "GTLBooksConcurrentAccessRestriction.h"
 #import "GTLBooksDictlayerdata.h"
+=======
+#import "GTLBooksCategory.h"
+#import "GTLBooksCloudloadingResource.h"
+#import "GTLBooksConcurrentAccessRestriction.h"
+#import "GTLBooksDictlayerdata.h"
+#import "GTLBooksDiscoveryclusters.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBooksDownloadAccesses.h"
 #import "GTLBooksDownloadAccessRestriction.h"
 #import "GTLBooksGeolayerdata.h"
 #import "GTLBooksLayersummaries.h"
 #import "GTLBooksLayersummary.h"
+<<<<<<< HEAD
+=======
+#import "GTLBooksMetadata.h"
+#import "GTLBooksNotification.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBooksOffers.h"
 #import "GTLBooksReadingPosition.h"
 #import "GTLBooksRequestAccess.h"
 #import "GTLBooksReview.h"
+<<<<<<< HEAD
 #import "GTLBooksVolume.h"
+=======
+#import "GTLBooksUsersettings.h"
+#import "GTLBooksVolume.h"
+#import "GTLBooksVolume2.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBooksVolumeannotation.h"
 #import "GTLBooksVolumeannotations.h"
 #import "GTLBooksVolumes.h"

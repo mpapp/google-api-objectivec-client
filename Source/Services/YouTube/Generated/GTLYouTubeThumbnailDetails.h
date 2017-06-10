@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -47,6 +56,7 @@
 
 // The default image for this resource.
 // Remapped to 'defaultProperty' to avoid language reserved word 'default'.
+<<<<<<< HEAD
 @property (retain) GTLYouTubeThumbnail *defaultProperty;
 
 // The high quality image for this resource.
@@ -60,5 +70,20 @@
 
 // The standard quality image for this resource.
 @property (retain) GTLYouTubeThumbnail *standard;
+=======
+@property (nonatomic, retain) GTLYouTubeThumbnail *defaultProperty;
+
+// The high quality image for this resource.
+@property (nonatomic, retain) GTLYouTubeThumbnail *high;
+
+// The maximum resolution quality image for this resource.
+@property (nonatomic, retain) GTLYouTubeThumbnail *maxres;
+
+// The medium quality image for this resource.
+@property (nonatomic, retain) GTLYouTubeThumbnail *medium;
+
+// The standard quality image for this resource.
+@property (nonatomic, retain) GTLYouTubeThumbnail *standard;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

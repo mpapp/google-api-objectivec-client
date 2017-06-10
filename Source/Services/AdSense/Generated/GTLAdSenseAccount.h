@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,12 +26,20 @@
 // Service:
 //   AdSense Management API (adsense/v1.4)
 // Description:
+<<<<<<< HEAD
 //   Gives AdSense publishers access to their inventory and the ability to
 //   generate reports
 // Documentation:
 //   https://developers.google.com/adsense/management/
 // Classes:
 //   GTLAdSenseAccount (0 custom class methods, 6 custom properties)
+=======
+//   Accesses AdSense publishers' inventory and generates performance reports.
+// Documentation:
+//   https://developers.google.com/adsense/management/
+// Classes:
+//   GTLAdSenseAccount (0 custom class methods, 7 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -43,6 +55,7 @@
 //
 
 @interface GTLAdSenseAccount : GTLObject
+<<<<<<< HEAD
 
 // Unique identifier of this account.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
@@ -62,5 +75,27 @@
 
 // AdSense timezone of this account.
 @property (copy) NSString *timezone;
+=======
+@property (nonatomic, retain) NSNumber *creationTime;  // longLongValue
+
+// Unique identifier of this account.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Kind of resource this is, in this case adsense#account.
+@property (nonatomic, copy) NSString *kind;
+
+// Name of this account.
+@property (nonatomic, copy) NSString *name;
+
+// Whether this account is premium.
+@property (nonatomic, retain) NSNumber *premium;  // boolValue
+
+// Sub accounts of the this account.
+@property (nonatomic, retain) NSArray *subAccounts;  // of GTLAdSenseAccount
+
+// AdSense timezone of this account.
+@property (nonatomic, copy) NSString *timezone;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

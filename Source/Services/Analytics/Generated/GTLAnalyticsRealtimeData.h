@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
+=======
+//   Views and manages your Google Analytics data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
@@ -54,6 +62,7 @@
 
 // Column headers that list dimension names followed by the metric names. The
 // order of dimensions and metrics is same as specified in the request.
+<<<<<<< HEAD
 @property (retain) NSArray *columnHeaders;  // of GTLAnalyticsRealtimeDataColumnHeadersItem
 
 // Unique ID for this data response.
@@ -69,10 +78,28 @@
 
 // Real time data request query parameters.
 @property (retain) GTLAnalyticsRealtimeDataQuery *query;
+=======
+@property (nonatomic, retain) NSArray *columnHeaders;  // of GTLAnalyticsRealtimeDataColumnHeadersItem
+
+// Unique ID for this data response.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Resource type.
+@property (nonatomic, copy) NSString *kind;
+
+// Information for the view (profile), for which the real time data was
+// requested.
+@property (nonatomic, retain) GTLAnalyticsRealtimeDataProfileInfo *profileInfo;
+
+// Real time data request query parameters.
+@property (nonatomic, retain) GTLAnalyticsRealtimeDataQuery *query;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Real time data rows, where each row contains a list of dimension values
 // followed by the metric values. The order of dimensions and metrics is same as
 // specified in the request.
+<<<<<<< HEAD
 @property (retain) NSArray *rows;  // of NSArray of NSString
 
 // Link to this page.
@@ -81,11 +108,25 @@
 // The total number of rows for the query, regardless of the number of rows in
 // the response.
 @property (retain) NSNumber *totalResults;  // intValue
+=======
+@property (nonatomic, retain) NSArray *rows;  // of NSArray of NSString
+
+// Link to this page.
+@property (nonatomic, copy) NSString *selfLink;
+
+// The total number of rows for the query, regardless of the number of rows in
+// the response.
+@property (nonatomic, retain) NSNumber *totalResults;  // intValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Total values for the requested metrics over all the results, not just the
 // results returned in this response. The order of the metric totals is same as
 // the metric order specified in the request.
+<<<<<<< HEAD
 @property (retain) GTLAnalyticsRealtimeDataTotalsForAllResults *totalsForAllResults;
+=======
+@property (nonatomic, retain) GTLAnalyticsRealtimeDataTotalsForAllResults *totalsForAllResults;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -98,15 +139,26 @@
 @interface GTLAnalyticsRealtimeDataColumnHeadersItem : GTLObject
 
 // Column Type. Either DIMENSION or METRIC.
+<<<<<<< HEAD
 @property (copy) NSString *columnType;
+=======
+@property (nonatomic, copy) NSString *columnType;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Data type. Dimension column headers have only STRING as the data type. Metric
 // column headers have data types for metric values such as INTEGER, DOUBLE,
 // CURRENCY etc.
+<<<<<<< HEAD
 @property (copy) NSString *dataType;
 
 // Column name.
 @property (copy) NSString *name;
+=======
+@property (nonatomic, copy) NSString *dataType;
+
+// Column name.
+@property (nonatomic, copy) NSString *name;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -119,6 +171,7 @@
 @interface GTLAnalyticsRealtimeDataProfileInfo : GTLObject
 
 // Account ID to which this view (profile) belongs.
+<<<<<<< HEAD
 @property (copy) NSString *accountId;
 
 // Internal ID for the web property to which this view (profile) belongs.
@@ -135,6 +188,24 @@
 
 // Web Property ID to which this view (profile) belongs.
 @property (copy) NSString *webPropertyId;
+=======
+@property (nonatomic, copy) NSString *accountId;
+
+// Internal ID for the web property to which this view (profile) belongs.
+@property (nonatomic, copy) NSString *internalWebPropertyId;
+
+// View (Profile) ID.
+@property (nonatomic, copy) NSString *profileId;
+
+// View (Profile) name.
+@property (nonatomic, copy) NSString *profileName;
+
+// Table ID for view (profile).
+@property (nonatomic, copy) NSString *tableId;
+
+// Web Property ID to which this view (profile) belongs.
+@property (nonatomic, copy) NSString *webPropertyId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -147,6 +218,7 @@
 @interface GTLAnalyticsRealtimeDataQuery : GTLObject
 
 // List of real time dimensions.
+<<<<<<< HEAD
 @property (copy) NSString *dimensions;
 
 // Comma-separated list of dimension or metric filters.
@@ -163,6 +235,24 @@
 
 // List of dimensions or metrics based on which real time data is sorted.
 @property (retain) NSArray *sort;  // of NSString
+=======
+@property (nonatomic, copy) NSString *dimensions;
+
+// Comma-separated list of dimension or metric filters.
+@property (nonatomic, copy) NSString *filters;
+
+// Unique table ID.
+@property (nonatomic, copy) NSString *ids;
+
+// Maximum results per page.
+@property (nonatomic, retain) NSNumber *maxResults;  // intValue
+
+// List of real time metrics.
+@property (nonatomic, retain) NSArray *metrics;  // of NSString
+
+// List of dimensions or metrics based on which real time data is sorted.
+@property (nonatomic, retain) NSArray *sort;  // of NSString
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 

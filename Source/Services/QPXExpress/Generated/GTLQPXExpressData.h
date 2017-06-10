@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   QPX Express API (qpxExpress/v1)
 // Description:
+<<<<<<< HEAD
 //   Lets you find the least expensive flights between an origin and a
 //   destination.
+=======
+//   Finds the least expensive flights between an origin and a destination.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   http://developers.google.com/qpx-express
 // Classes:
@@ -52,6 +60,7 @@
 @interface GTLQPXExpressData : GTLObject
 
 // The aircraft that is flying between an origin and destination.
+<<<<<<< HEAD
 @property (retain) NSArray *aircraft;  // of GTLQPXExpressAircraftData
 
 // The airport of an origin or destination.
@@ -70,5 +79,25 @@
 
 // The taxes due for flying between an origin and a destination.
 @property (retain) NSArray *tax;  // of GTLQPXExpressTaxData
+=======
+@property (nonatomic, retain) NSArray *aircraft;  // of GTLQPXExpressAircraftData
+
+// The airport of an origin or destination.
+@property (nonatomic, retain) NSArray *airport;  // of GTLQPXExpressAirportData
+
+// The airline carrier of the aircraft flying between an origin and destination.
+// Allowed values are IATA carrier codes.
+@property (nonatomic, retain) NSArray *carrier;  // of GTLQPXExpressCarrierData
+
+// The city that is either the origin or destination of part of a trip.
+@property (nonatomic, retain) NSArray *city;  // of GTLQPXExpressCityData
+
+// Identifies this as QPX Express response resource, including a trip's airport,
+// city, taxes, airline, and aircraft. Value: the fixed string qpxexpress#data.
+@property (nonatomic, copy) NSString *kind;
+
+// The taxes due for flying between an origin and a destination.
+@property (nonatomic, retain) NSArray *tax;  // of GTLQPXExpressTaxData
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

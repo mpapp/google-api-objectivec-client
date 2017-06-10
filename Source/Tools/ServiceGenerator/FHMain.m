@@ -24,7 +24,11 @@
 
 #import "GTLDiscovery.h"
 #import "GTLUtilities.h"
+<<<<<<< HEAD
 #import "GTMHTTPFetcherLogging.h"
+=======
+#import "GTMSessionFetcherLogging.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "FHGenerator.h"
 #import "FHUtils.h"
@@ -47,6 +51,14 @@ static ArgInfo optionalFlags[] = {
     " to send the JSON-RPC requests.  This is useful for running against a"
     " custom or prerelease server."
   },
+<<<<<<< HEAD
+=======
+  { "--gtlFrameworkName NAME",
+    "Will generate sources that include GTL's headers as if they are in a"
+    " framework with the given name.  If you are using GTL via CocoaPods,"
+    " you'll likely want to pass \"GoogleAPIClient\" as the value for this."
+  },
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   { "--apiLogDir DIR",
     "Write out a file into DIR for each JSON API description processed.  These"
     " can be useful for reporting bugs if generation fails with an error."
@@ -103,7 +115,11 @@ static ArgInfo optionalArgs[] = {
       " the files for it are generated.  When using --generatePreferred"
       " version can be '-' to skip generating the name service." },
   { "http[s]://url/to/rpc_description_json",
+<<<<<<< HEAD
       "A URL to download containing the descripiton of a service to"
+=======
+      "A URL to download containing the description of a service to"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       " generate." },
   { "path/to/rpc_description.json",
       "The path to a text file containing the description of a service to"
@@ -149,7 +165,11 @@ typedef enum {
 @property (assign) int argc;
 @property (assign) char * const *argv;
 
+<<<<<<< HEAD
 - (id)initWithArgc:(int)argc argv:(char * const *)argv;
+=======
+- (instancetype)initWithArgc:(int)argc argv:(char * const *)argv;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (int)run;
 
 @end
@@ -159,6 +179,10 @@ typedef enum {
 @property (copy) NSString *appName;
 @property (copy) NSString *outputDir;
 @property (copy) NSString *discoveryServiceURLString;
+<<<<<<< HEAD
+=======
+@property(copy) NSString *gtlFrameworkName;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @property (copy) NSString *apiLogDir;
 @property (copy) NSString *httpLogDir;
 @property (assign) BOOL generatePreferred;
@@ -172,6 +196,10 @@ typedef enum {
 
 @property (retain) GTLServiceDiscovery *discoveryService;
 @property (retain) NSMutableArray *apisToFetch;
+<<<<<<< HEAD
+=======
+@property (retain) NSMutableArray *apisFromDiscovery;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @property (retain) NSMutableSet *apisToSkip;
 @property (retain) NSMutableArray *collectedApis;
 @property (retain) NSMutableDictionary *generatedData;
@@ -181,6 +209,7 @@ typedef enum {
 @property (assign) FHMainState postWaitState;
 @property (assign) int status;
 
+<<<<<<< HEAD
 - (void)printUsage:(FILE *)outputFile;
 
 - (BOOL)collectAPIFromURL:(NSURL *)url reportingName:(NSString *)reportingName;
@@ -192,6 +221,8 @@ typedef enum {
 - (void)stateGenerate;
 - (void)stateWriteFiles;
 
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 // Compares two files allowing differences for the year.
@@ -250,6 +281,10 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
             discoveryService = discoveryService_,
             numberOfActiveNetworkActions = numberOfActiveNetworkActions_,
             apisToFetch = apisToFetch_,
+<<<<<<< HEAD
+=======
+            apisFromDiscovery = apisFromDiscovery_,
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
             apisToSkip = apisToSkip_,
             collectedApis = collectedApis_,
             generatedData = generatedData_,
@@ -257,7 +292,11 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
             postWaitState = postWaitState_,
             status = status_;
 
+<<<<<<< HEAD
 - (id)initWithArgc:(int)argc argv:(char * const *)argv {
+=======
+- (instancetype)initWithArgc:(int)argc argv:(char * const *)argv {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   self = [super init];
   if (self != nil) {
     argc_ = argc;
@@ -266,14 +305,25 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
     additionalHTTPHeaders_ = [[NSMutableDictionary alloc] init];
     formattedNames_ = [[NSMutableDictionary alloc] init];
     apisToFetch_ = [[NSMutableArray alloc] init];
+<<<<<<< HEAD
+=======
+    apisFromDiscovery_ = [[NSMutableArray alloc] init];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     apisToSkip_ = [[NSMutableSet alloc] init];
     collectedApis_ = [[NSMutableArray alloc] init];
     generatedData_ = [[NSMutableDictionary alloc] init];
     rootURLOverrides_ = YES;
 
     discoveryService_ = [[GTLServiceDiscovery alloc] init];
+<<<<<<< HEAD
     // We aren't bundled, so add a good UA.
     discoveryService_.userAgent = @"com.google.ServiceGenerator";
+=======
+    discoveryService_.allowInsecureQueries = YES;
+
+    // We aren't bundled, so add a good UA.
+    discoveryService_.userAgent = @"com.google.ServiceGeneratorRPC";
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   }
   return self;
 }
@@ -290,6 +340,10 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
 
   [discoveryService_ release];
   [apisToFetch_ release];
+<<<<<<< HEAD
+=======
+  [apisFromDiscovery_ release];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [apisToSkip_ release];
   [collectedApis_ release];
   [generatedData_ release];
@@ -337,7 +391,11 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
           [self.appName UTF8String]);
   fprintf(outputFile, "\n");
 
+<<<<<<< HEAD
   fprintf(outputFile, "  Requried Flags:\n\n");
+=======
+  fprintf(outputFile, "  Required Flags:\n\n");
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   for (uint32_t idx = 0; idx < ARRAY_COUNT(requiredFlags); ++idx) {
     ArgInfo *info = &requiredFlags[idx];
 
@@ -374,10 +432,21 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
     fprintf(outputFile, "%s\n", [wrapped UTF8String]);
   }
 
+<<<<<<< HEAD
+=======
+  // Report the path so when the tool is run in Xcode, it's easy to find its built location.
+  uint32_t pathLen = MAXPATHLEN;
+  char path[MAXPATHLEN];
+  if (_NSGetExecutablePath(path, &pathLen) == 0) {
+    fprintf(outputFile, "ServiceGenerator path:\n\n");
+    fprintf(outputFile, "  %s\n", path);
+  }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   self.status = 2;
   self.state = FHMain_Done;
 }
 
+<<<<<<< HEAD
 - (BOOL)collectAPIFromURL:(NSURL *)url reportingName:(NSString *)reportingName {
   printf(" + Fetching %s\n", [reportingName UTF8String]);
 
@@ -386,6 +455,18 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
   fetcher.comment = [@"Fetching: " stringByAppendingString:reportingName];
   fetcher.allowLocalhostRequest = YES;
   BOOL started = [fetcher beginFetchWithCompletionHandler:^(NSData *data, NSError *error) {
+=======
+- (void)collectAPIFromURL:(NSURL *)url reportingName:(NSString *)reportingName {
+  printf(" + Fetching %s\n", [reportingName UTF8String]);
+
+  GTMSessionFetcherService *fetcherService = self.discoveryService.fetcherService;
+  GTMSessionFetcher *fetcher = [fetcherService fetcherWithURL:url];
+  fetcher.comment = [@"Fetching: " stringByAppendingString:reportingName];
+  fetcher.allowLocalhostRequest = YES;
+  fetcher.allowedInsecureSchemes = @[ @"file", @"http" ];
+  self.numberOfActiveNetworkActions += 1;
+  [fetcher beginFetchWithCompletionHandler:^(NSData *data, NSError *error) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     self.numberOfActiveNetworkActions -= 1;
 
     if (error) {
@@ -398,8 +479,15 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
     }
 
     NSError *err = nil;
+<<<<<<< HEAD
     NSMutableDictionary *json = [GTLJSONParser objectWithData:data
                                                         error:&err];
+=======
+    NSMutableDictionary *json =
+      [NSJSONSerialization JSONObjectWithData:data
+                                      options:NSJSONReadingMutableContainers
+                                        error:&err];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     if (err != nil) {
       fprintf(stderr,
               "%s Failed to parse the api description %s, error: %s\n",
@@ -429,6 +517,7 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
     [self.collectedApis addObject:api];
     printf(" +-- Loaded: %s:%s\n", [api.name UTF8String], [api.version UTF8String]);
   }];
+<<<<<<< HEAD
   if (started) {
     self.numberOfActiveNetworkActions += 1;
   } else {
@@ -439,6 +528,8 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
   }
 
   return YES;
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 - (void)stateParseArgs {
@@ -450,6 +541,10 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
   struct option longopts[] = {
     { "outputDir",          required_argument,  NULL,               'o' },
     { "discoveryService",   required_argument,  NULL,               'd' },
+<<<<<<< HEAD
+=======
+    { "gtlFrameworkName",   required_argument,  NULL,               'n' },
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     { "apiLogDir",          required_argument,  NULL,               'a' },
     { "httpLogDir",         required_argument,  NULL,               'h' },
     { "generatePreferred",  no_argument,        &generatePreferred, 1 },
@@ -473,6 +568,12 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
       case 'd':
         self.discoveryServiceURLString = [NSString stringWithUTF8String:optarg];
         break;
+<<<<<<< HEAD
+=======
+      case 'n':
+        self.gtlFrameworkName = @(optarg);
+        break;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       case 'a':
         self.apiLogDir = [NSString stringWithUTF8String:optarg];
         break;
@@ -566,6 +667,12 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
   if ([self.discoveryServiceURLString length] == 0) {
     self.discoveryServiceURLString = nil;
   }
+<<<<<<< HEAD
+=======
+  if (self.gtlFrameworkName.length == 0) {
+    self.gtlFrameworkName = nil;
+  }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
   // Make sure output dir exists.
   NSFileManager *fm = [NSFileManager defaultManager];
@@ -631,8 +738,13 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
     NSString *shortHTTPLogDir = [self.httpLogDir stringByAbbreviatingWithTildeInPath];
     NSError *err = nil;
     if ([FHUtils createDir:self.httpLogDir error:&err]) {
+<<<<<<< HEAD
       [GTMHTTPFetcher setLoggingEnabled:YES];
       [GTMHTTPFetcher setLoggingDirectory:self.httpLogDir];
+=======
+      [GTMSessionFetcher setLoggingEnabled:YES];
+      [GTMSessionFetcher setLoggingDirectory:self.httpLogDir];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       printf("  HTTPFetcher Log Dir: %s\n", [shortHTTPLogDir UTF8String]);
     } else {
       fprintf(stderr,
@@ -685,7 +797,11 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
       if ([version isEqual:@"-"]) {
         [self.apisToSkip addObject:apiName];
       } else {
+<<<<<<< HEAD
         NSArray *pair = [NSArray arrayWithObjects:apiName, version, nil];
+=======
+        NSArray *pair = @[ apiName, version ];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
         [self.apisToFetch addObject:pair];
       }
       self.state = FHMain_Describe;
@@ -710,6 +826,7 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
         self.state = FHMain_Done;
         return;
       }
+<<<<<<< HEAD
       if ([self collectAPIFromURL:asURL reportingName:urlString]) {
         if (self.state != FHMain_Wait) {
           self.postWaitState = self.state;
@@ -717,6 +834,12 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
         }
       } else {
         return;
+=======
+      [self collectAPIFromURL:asURL reportingName:urlString];
+      if (self.state != FHMain_Wait) {
+        self.postWaitState = self.state;
+        self.state = FHMain_Wait;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       }
     }
   }
@@ -726,6 +849,7 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
     for (NSString *fullPath in filesToLoad) {
       NSString *shortPath = [fullPath stringByAbbreviatingWithTildeInPath];
       NSURL *asURL = [NSURL fileURLWithPath:fullPath];
+<<<<<<< HEAD
       if ([self collectAPIFromURL:asURL reportingName:shortPath]) {
         if (self.state != FHMain_Wait) {
           self.postWaitState = self.state;
@@ -733,6 +857,12 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
         }
       } else {
         return;
+=======
+      [self collectAPIFromURL:asURL reportingName:shortPath];
+      if (self.state != FHMain_Wait) {
+        self.postWaitState = self.state;
+        self.state = FHMain_Wait;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       }
     }
   }
@@ -779,6 +909,7 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
           }
         }
         // Collect the server version pairs to describe.
+<<<<<<< HEAD
         for (GTLDiscoveryDirectoryListItemsItem *listItem in apiList) {
           NSString *apiName = listItem.name;
           if ([self.apisToSkip containsObject:apiName]) {
@@ -789,6 +920,34 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
             [self.apisToFetch addObject:pair];
           }
         }
+=======
+        NSMutableSet *apisLeftToSkip = [[self.apisToSkip mutableCopy] autorelease];
+        for (GTLDiscoveryDirectoryListItemsItem *listItem in apiList) {
+          NSString *apiName = listItem.name;
+          if ([self.apisToSkip containsObject:apiName]) {
+            fprintf(stderr, " - %s Discovery included '%s', but skipping as requested.\n",
+                    kINFO, [apiName UTF8String]);
+            [apisLeftToSkip removeObject:apiName];
+          } else if ([listItem.discoveryRestUrl containsString:@"/$discovery/"]) {
+            // Discovery has started returning some ESF apis that don't actually
+            // work with the api fetching calls. Try to pick them off via a
+            // magic value in discoveryRestUrl.
+            fprintf(stderr, " - %s Skipping '%s:%s', it appears to be REST only.\n",
+                    kWARNING, apiName.UTF8String, listItem.version.UTF8String);
+          } else {
+            NSArray *pair = @[ apiName, listItem.version ];
+            [self.apisToFetch addObject:pair];
+            [self.apisFromDiscovery addObject:pair];
+          }
+        }
+        // Report anything that was supposed to be skipped but was missing.
+        NSArray *skipsNotFound =
+          [[apisLeftToSkip allObjects] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+        for (NSString *apiName in skipsNotFound) {
+          fprintf(stderr, " - %s Discovery did NOT include '%s', but you indicated it should be skipped.\n",
+                  kWARNING, [apiName UTF8String]);
+        }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       }
     }];
   self.numberOfActiveNetworkActions += 1;
@@ -939,15 +1098,26 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
       // Apply any name override.
       NSString *formattedNameOverride = nil;
       NSString *apiVersion =
+<<<<<<< HEAD
       [NSString stringWithFormat:@"%@:%@", api.name, api.version];
+=======
+          [NSString stringWithFormat:@"%@:%@", api.name, api.version];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       formattedNameOverride = [formattedNames_ objectForKey:apiVersion];
       if (formattedNameOverride == nil) {
         formattedNameOverride = [formattedNames_ objectForKey:api.name];
       }
+<<<<<<< HEAD
+=======
+      // If we get REST only apis from discover, we skip them without failing.
+      NSArray *pair = @[ api.name, api.version ];
+      BOOL fromDiscovery = [self.apisFromDiscovery containsObject:pair];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
       FHGenerator *aGenerator = [FHGenerator generatorForApi:api
                                                 verboseLevel:self.verboseLevel
                                        allowRootURLOverrides:self.rootURLOverrides
+<<<<<<< HEAD
                                        formattedNameOverride:formattedNameOverride];
 
       NSDictionary *generatedFiles =
@@ -992,6 +1162,58 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
           self.status = 23;
         }
         self.state = FHMain_Done;
+=======
+                                       formattedNameOverride:formattedNameOverride
+                                            skipIfLikelyREST:fromDiscovery
+                                            useFrameworkName:self.gtlFrameworkName];
+      if (fromDiscovery && [aGenerator likelyRESTOnlyAPI]) {
+        fprintf(stderr,
+                "    %s Skipping this api. It appears to be a REST only and can't be supported via JSON-RPC\n", kWARNING);
+      } else {
+        NSDictionary *generatedFiles =
+          [aGenerator generateFilesWithHandler:^(FHGeneratorHandlerMessageType msgType,
+                                                 NSString *message) {
+            NSString *wrappedMessage;
+            switch (msgType) {
+              case kFHGeneratorHandlerMessageError:
+                wrappedMessage = [message stringByReplacingOccurrencesOfString:@"\n" withString:@"\n  "];
+                fprintf(stderr,"%s %s\n", kERROR, [wrappedMessage UTF8String]);
+                self.status = 21;
+                self.state = FHMain_Done;
+                break;
+              case kFHGeneratorHandlerMessageWarning:
+                wrappedMessage = [message stringByReplacingOccurrencesOfString:@"\n" withString:@"\n      "];
+                fprintf(stderr,"    %s %s\n", kWARNING, [wrappedMessage UTF8String]);
+                break;
+              case kFHGeneratorHandlerMessageInfo:
+                wrappedMessage = [message stringByReplacingOccurrencesOfString:@"\n" withString:@"\n      "];
+                fprintf(stderr,"    %s %s\n", kINFO, [wrappedMessage UTF8String]);
+                break;
+            }
+          }];
+        if (generatedFiles) {
+          if ([self.generatedData objectForKey:aGenerator.formattedApiName] != nil) {
+            NSString *err =
+              [NSString stringWithFormat:@"Two APIs trying to use the same formatted name of %@, nothing will be written out.",
+               aGenerator.formattedApiName];
+            fprintf(stderr,"%s %s\n", kERROR, [err UTF8String]);
+            if (self.status == 0) {
+              self.status = 24;
+            }
+            self.state = FHMain_Done;
+          } else {
+            [self.generatedData setObject:generatedFiles
+                                   forKey:aGenerator.formattedApiName];
+          }
+        } else {
+          // If we didn't get any generated files, we should have gotten an error
+          // callback also. But just to be safe, force out state.
+          if (self.status == 0) {
+            self.status = 23;
+          }
+          self.state = FHMain_Done;
+        }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       }
     }
     @catch (NSException * e) {
@@ -1170,7 +1392,11 @@ static BOOL HaveFileStringsChanged(NSString *oldFile, NSString *newFile) {
 
 @end
 
+<<<<<<< HEAD
 int main (int argc, char * const *argv) {
+=======
+int main(int argc, char * const *argv) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
   // If stdout/stderr are ttys and "color" is in the terminal, assume color
@@ -1196,6 +1422,14 @@ int main (int argc, char * const *argv) {
 
   FHMain *fh = [[[FHMain alloc] initWithArgc:argc argv:argv] autorelease];
   int status = [fh run];
+<<<<<<< HEAD
+=======
+  if (status) {
+    fprintf(stderr,
+            "%s There was one or more errors; check the full output for details.\n",
+            kERROR);
+  }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
   [pool drain];
   return status;

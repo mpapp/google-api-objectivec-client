@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +50,7 @@
 // The setting's ID. The following IDs are valid:
 // - locale - The key to the user’s language/locale (BCP 47 identifier) that
 // Glassware should use to render localized content.
+<<<<<<< HEAD
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
 @property (copy) NSString *identifier;
 
@@ -54,5 +59,17 @@
 
 // The setting value, as a string.
 @property (copy) NSString *value;
+=======
+// - timezone - The key to the user’s current time zone region as defined in the
+// tz database. Example: America/Los_Angeles.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The type of resource. This is always mirror#setting.
+@property (nonatomic, copy) NSString *kind;
+
+// The setting value, as a string.
+@property (nonatomic, copy) NSString *value;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

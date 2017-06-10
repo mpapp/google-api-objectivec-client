@@ -36,9 +36,15 @@
 #endif
 
 // Authorization scope
+<<<<<<< HEAD
 // View and manage your Google Maps Engine data
 GTL_EXTERN NSString * const kGTLAuthScopeMapsEngine;          // "https://www.googleapis.com/auth/mapsengine"
 // View your Google Maps Engine data
+=======
+// View and manage your Google My Maps data
+GTL_EXTERN NSString * const kGTLAuthScopeMapsEngine;          // "https://www.googleapis.com/auth/mapsengine"
+// View your Google My Maps data
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 GTL_EXTERN NSString * const kGTLAuthScopeMapsEngineReadonly;  // "https://www.googleapis.com/auth/mapsengine.readonly"
 
 // GTLMapsEngineAcquisitionTime - Precision
@@ -101,6 +107,13 @@ GTL_EXTERN NSString * const kGTLMapsEngineLabelStyle_FontWeight_Normal;  // "nor
 GTL_EXTERN NSString * const kGTLMapsEngineLayer_DatasourceType_Image;  // "image"
 GTL_EXTERN NSString * const kGTLMapsEngineLayer_DatasourceType_Table;  // "table"
 
+<<<<<<< HEAD
+=======
+// GTLMapsEngineLayer - LayerType
+GTL_EXTERN NSString * const kGTLMapsEngineLayer_LayerType_Image;  // "image"
+GTL_EXTERN NSString * const kGTLMapsEngineLayer_LayerType_Vector;  // "vector"
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // GTLMapsEngineLayer - ProcessingStatus
 GTL_EXTERN NSString * const kGTLMapsEngineLayer_ProcessingStatus_Complete;  // "complete"
 GTL_EXTERN NSString * const kGTLMapsEngineLayer_ProcessingStatus_Failed;  // "failed"
@@ -108,6 +121,13 @@ GTL_EXTERN NSString * const kGTLMapsEngineLayer_ProcessingStatus_NotReady;  // "
 GTL_EXTERN NSString * const kGTLMapsEngineLayer_ProcessingStatus_Processing;  // "processing"
 GTL_EXTERN NSString * const kGTLMapsEngineLayer_ProcessingStatus_Ready;  // "ready"
 
+<<<<<<< HEAD
+=======
+// GTLMapsEngineLayer - PublishingStatus
+GTL_EXTERN NSString * const kGTLMapsEngineLayer_PublishingStatus_NotPublished;  // "notPublished"
+GTL_EXTERN NSString * const kGTLMapsEngineLayer_PublishingStatus_Published;  // "published"
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // GTLMapsEngineMap - ProcessingStatus
 GTL_EXTERN NSString * const kGTLMapsEngineMap_ProcessingStatus_Complete;  // "complete"
 GTL_EXTERN NSString * const kGTLMapsEngineMap_ProcessingStatus_Failed;  // "failed"
@@ -115,9 +135,15 @@ GTL_EXTERN NSString * const kGTLMapsEngineMap_ProcessingStatus_NotReady;  // "no
 GTL_EXTERN NSString * const kGTLMapsEngineMap_ProcessingStatus_Processing;  // "processing"
 GTL_EXTERN NSString * const kGTLMapsEngineMap_ProcessingStatus_Ready;  // "ready"
 
+<<<<<<< HEAD
 // GTLMapsEngineMap - Versions
 GTL_EXTERN NSString * const kGTLMapsEngineMap_Versions_Draft;   // "draft"
 GTL_EXTERN NSString * const kGTLMapsEngineMap_Versions_Published;  // "published"
+=======
+// GTLMapsEngineMap - PublishingStatus
+GTL_EXTERN NSString * const kGTLMapsEngineMap_PublishingStatus_NotPublished;  // "notPublished"
+GTL_EXTERN NSString * const kGTLMapsEngineMap_PublishingStatus_Published;  // "published"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // GTLMapsEngineMapFolder - Type
 GTL_EXTERN NSString * const kGTLMapsEngineMapFolder_Type_Folder;  // "folder"
@@ -128,6 +154,24 @@ GTL_EXTERN NSString * const kGTLMapsEngineMapKmlLink_Type_KmlLink;  // "kmlLink"
 // GTLMapsEngineMapLayer - Type
 GTL_EXTERN NSString * const kGTLMapsEngineMapLayer_Type_Layer;  // "layer"
 
+<<<<<<< HEAD
+=======
+// GTLMapsEnginePermission - Role
+GTL_EXTERN NSString * const kGTLMapsEnginePermission_Role_Owner;  // "owner"
+GTL_EXTERN NSString * const kGTLMapsEnginePermission_Role_Reader;  // "reader"
+GTL_EXTERN NSString * const kGTLMapsEnginePermission_Role_Viewer;  // "viewer"
+GTL_EXTERN NSString * const kGTLMapsEnginePermission_Role_Writer;  // "writer"
+
+// GTLMapsEnginePermission - Type
+GTL_EXTERN NSString * const kGTLMapsEnginePermission_Type_Anyone;  // "anyone"
+GTL_EXTERN NSString * const kGTLMapsEnginePermission_Type_Group;  // "group"
+GTL_EXTERN NSString * const kGTLMapsEnginePermission_Type_User;  // "user"
+
+// GTLMapsEnginePublishedLayer - LayerType
+GTL_EXTERN NSString * const kGTLMapsEnginePublishedLayer_LayerType_Image;  // "image"
+GTL_EXTERN NSString * const kGTLMapsEnginePublishedLayer_LayerType_Vector;  // "vector"
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // GTLMapsEngineRaster - ProcessingStatus
 GTL_EXTERN NSString * const kGTLMapsEngineRaster_ProcessingStatus_Complete;  // "complete"
 GTL_EXTERN NSString * const kGTLMapsEngineRaster_ProcessingStatus_Failed;  // "failed"
@@ -148,6 +192,16 @@ GTL_EXTERN NSString * const kGTLMapsEngineRasterCollection_ProcessingStatus_Read
 // GTLMapsEngineRasterCollection - RasterType
 GTL_EXTERN NSString * const kGTLMapsEngineRasterCollection_RasterType_Image;  // "image"
 
+<<<<<<< HEAD
+=======
+// GTLMapsEngineScaledShape - Shape
+GTL_EXTERN NSString * const kGTLMapsEngineScaledShape_Shape_Circle;  // "circle"
+
+// GTLMapsEngineScalingFunction - ScalingType
+GTL_EXTERN NSString * const kGTLMapsEngineScalingFunction_ScalingType_Linear;  // "linear"
+GTL_EXTERN NSString * const kGTLMapsEngineScalingFunction_ScalingType_Sqrt;  // "sqrt"
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // GTLMapsEngineTable - ProcessingStatus
 GTL_EXTERN NSString * const kGTLMapsEngineTable_ProcessingStatus_Complete;  // "complete"
 GTL_EXTERN NSString * const kGTLMapsEngineTable_ProcessingStatus_Failed;  // "failed"
@@ -156,7 +210,10 @@ GTL_EXTERN NSString * const kGTLMapsEngineTable_ProcessingStatus_Processing;  //
 GTL_EXTERN NSString * const kGTLMapsEngineTable_ProcessingStatus_Ready;  // "ready"
 
 // GTLMapsEngineTableColumn - Type
+<<<<<<< HEAD
 GTL_EXTERN NSString * const kGTLMapsEngineTableColumn_Type_Boolean;  // "boolean"
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 GTL_EXTERN NSString * const kGTLMapsEngineTableColumn_Type_Datetime;  // "datetime"
 GTL_EXTERN NSString * const kGTLMapsEngineTableColumn_Type_Double;  // "double"
 GTL_EXTERN NSString * const kGTLMapsEngineTableColumn_Type_Integer;  // "integer"
@@ -169,11 +226,25 @@ GTL_EXTERN NSString * const kGTLMapsEngineTableColumn_Type_String;  // "string"
 // GTLMapsEngineVectorStyle - Type
 GTL_EXTERN NSString * const kGTLMapsEngineVectorStyle_Type_DisplayRule;  // "displayRule"
 
+<<<<<<< HEAD
 // GTLQueryMapsEngine - Type
 GTL_EXTERN NSString * const kGTLMapsEngineTypeLayer;            // "layer"
 GTL_EXTERN NSString * const kGTLMapsEngineTypeMap;              // "map"
 GTL_EXTERN NSString * const kGTLMapsEngineTypeRasterCollection;  // "rasterCollection"
 GTL_EXTERN NSString * const kGTLMapsEngineTypeTable;            // "table"
+=======
+// GTLQueryMapsEngine - ProcessingStatus
+GTL_EXTERN NSString * const kGTLMapsEngineProcessingStatusComplete;  // "complete"
+GTL_EXTERN NSString * const kGTLMapsEngineProcessingStatusFailed;  // "failed"
+GTL_EXTERN NSString * const kGTLMapsEngineProcessingStatusNotReady;  // "notReady"
+GTL_EXTERN NSString * const kGTLMapsEngineProcessingStatusProcessing;  // "processing"
+GTL_EXTERN NSString * const kGTLMapsEngineProcessingStatusReady;  // "ready"
+
+// GTLQueryMapsEngine - Role
+GTL_EXTERN NSString * const kGTLMapsEngineRoleOwner;   // "owner"
+GTL_EXTERN NSString * const kGTLMapsEngineRoleReader;  // "reader"
+GTL_EXTERN NSString * const kGTLMapsEngineRoleWriter;  // "writer"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // GTLQueryMapsEngine - Version
 GTL_EXTERN NSString * const kGTLMapsEngineVersionDraft;      // "draft"

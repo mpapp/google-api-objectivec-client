@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,20 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
 //   GTLYouTubeInvideoPromotion (0 custom class methods, 3 custom properties)
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+// Documentation:
+//   https://developers.google.com/youtube/v3
+// Classes:
+//   GTLYouTubeInvideoPromotion (0 custom class methods, 4 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -53,6 +66,7 @@
 
 // The default temporal position within the video where the promoted item will
 // be displayed. Can be overriden by more specific timing in the item.
+<<<<<<< HEAD
 @property (retain) GTLYouTubeInvideoTiming *defaultTiming;
 
 // List of promoted items in decreasing priority.
@@ -61,5 +75,22 @@
 // The spatial position within the video where the promoted item will be
 // displayed.
 @property (retain) GTLYouTubeInvideoPosition *position;
+=======
+@property (nonatomic, retain) GTLYouTubeInvideoTiming *defaultTiming;
+
+// List of promoted items in decreasing priority.
+@property (nonatomic, retain) NSArray *items;  // of GTLYouTubePromotedItem
+
+// The spatial position within the video where the promoted item will be
+// displayed.
+@property (nonatomic, retain) GTLYouTubeInvideoPosition *position;
+
+// Indicates whether the channel's promotional campaign uses "smart timing."
+// This feature attempts to show promotions at a point in the video when they
+// are more likely to be clicked and less likely to disrupt the viewing
+// experience. This feature also picks up a single promotion to show on each
+// video.
+@property (nonatomic, retain) NSNumber *useSmartTiming;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

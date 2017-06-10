@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +49,7 @@
 @interface GTLBloggerPageviews : GTLObject
 
 // Blog Id
+<<<<<<< HEAD
 @property (retain) NSNumber *blogId;  // longLongValue
 
 // The container of posts in this blog.
@@ -52,6 +57,15 @@
 
 // The kind of this entry. Always blogger#page_views
 @property (copy) NSString *kind;
+=======
+@property (nonatomic, copy) NSString *blogId;
+
+// The container of posts in this blog.
+@property (nonatomic, retain) NSArray *counts;  // of GTLBloggerPageviewsCountsItem
+
+// The kind of this entry. Always blogger#page_views
+@property (nonatomic, copy) NSString *kind;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -64,9 +78,16 @@
 @interface GTLBloggerPageviewsCountsItem : GTLObject
 
 // Count of page views for the given time range
+<<<<<<< HEAD
 @property (retain) NSNumber *count;  // longLongValue
 
 // Time range the given count applies to
 @property (copy) NSString *timeRange;
+=======
+@property (nonatomic, retain) NSNumber *count;  // longLongValue
+
+// Time range the given count applies to
+@property (nonatomic, copy) NSString *timeRange;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

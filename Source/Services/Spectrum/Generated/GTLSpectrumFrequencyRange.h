@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +51,11 @@
 // The database may include a channel identifier, when applicable. When it is
 // included, the device should treat it as informative. The length of the
 // identifier should not exceed 16 characters.
+<<<<<<< HEAD
 @property (copy) NSString *channelId;
+=======
+@property (nonatomic, copy) NSString *channelId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The maximum total power level (EIRP)—computed over the corresponding
 // operating bandwidth—that is permitted within the frequency range. Depending
@@ -56,6 +64,7 @@
 // available-spectrum-batch response, and spectrum-use notification message, but
 // it should not be present (it is not applicable) when the frequency range
 // appears inside a device-capabilities message.
+<<<<<<< HEAD
 @property (retain) NSNumber *maxPowerDBm;  // doubleValue
 
 // The required inclusive start of the frequency range (in Hertz).
@@ -63,5 +72,14 @@
 
 // The required exclusive end of the frequency range (in Hertz).
 @property (retain) NSNumber *stopHz;  // doubleValue
+=======
+@property (nonatomic, retain) NSNumber *maxPowerDBm;  // doubleValue
+
+// The required inclusive start of the frequency range (in Hertz).
+@property (nonatomic, retain) NSNumber *startHz;  // doubleValue
+
+// The required exclusive end of the frequency range (in Hertz).
+@property (nonatomic, retain) NSNumber *stopHz;  // doubleValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

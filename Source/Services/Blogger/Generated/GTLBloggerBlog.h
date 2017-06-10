@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +54,7 @@
 @interface GTLBloggerBlog : GTLObject
 
 // The JSON custom meta-data for the Blog
+<<<<<<< HEAD
 @property (copy) NSString *customMetaData;
 
 // The description of this blog. This is displayed underneath the title.
@@ -89,6 +94,47 @@
 
 // The URL where this blog is published.
 @property (copy) NSString *url;
+=======
+@property (nonatomic, copy) NSString *customMetaData;
+
+// The description of this blog. This is displayed underneath the title.
+// Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// The identifier for this resource.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The kind of this entry. Always blogger#blog
+@property (nonatomic, copy) NSString *kind;
+
+// The locale this Blog is set to.
+@property (nonatomic, retain) GTLBloggerBlogLocale *locale;
+
+// The name of this blog. This is displayed as the title.
+@property (nonatomic, copy) NSString *name;
+
+// The container of pages in this blog.
+@property (nonatomic, retain) GTLBloggerBlogPages *pages;
+
+// The container of posts in this blog.
+@property (nonatomic, retain) GTLBloggerBlogPosts *posts;
+
+// RFC 3339 date-time when this blog was published.
+@property (nonatomic, retain) GTLDateTime *published;
+
+// The API REST URL to fetch this resource from.
+@property (nonatomic, copy) NSString *selfLink;
+
+// The status of the blog.
+@property (nonatomic, copy) NSString *status;
+
+// RFC 3339 date-time when this blog was last updated.
+@property (nonatomic, retain) GTLDateTime *updated;
+
+// The URL where this blog is published.
+@property (nonatomic, copy) NSString *url;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -101,6 +147,7 @@
 @interface GTLBloggerBlogLocale : GTLObject
 
 // The country this blog's locale is set to.
+<<<<<<< HEAD
 @property (copy) NSString *country;
 
 // The language this blog is authored in.
@@ -108,6 +155,15 @@
 
 // The language variant this blog is authored in.
 @property (copy) NSString *variant;
+=======
+@property (nonatomic, copy) NSString *country;
+
+// The language this blog is authored in.
+@property (nonatomic, copy) NSString *language;
+
+// The language variant this blog is authored in.
+@property (nonatomic, copy) NSString *variant;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -120,10 +176,17 @@
 @interface GTLBloggerBlogPages : GTLObject
 
 // The URL of the container for pages in this blog.
+<<<<<<< HEAD
 @property (copy) NSString *selfLink;
 
 // The count of pages in this blog.
 @property (retain) NSNumber *totalItems;  // intValue
+=======
+@property (nonatomic, copy) NSString *selfLink;
+
+// The count of pages in this blog.
+@property (nonatomic, retain) NSNumber *totalItems;  // intValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -139,6 +202,7 @@
 @interface GTLBloggerBlogPosts : GTLCollectionObject
 
 // The List of Posts for this Blog.
+<<<<<<< HEAD
 @property (retain) NSArray *items;  // of GTLBloggerPost
 
 // The URL of the container for posts in this blog.
@@ -146,5 +210,14 @@
 
 // The count of posts in this blog.
 @property (retain) NSNumber *totalItems;  // intValue
+=======
+@property (nonatomic, retain) NSArray *items;  // of GTLBloggerPost
+
+// The URL of the container for posts in this blog.
+@property (nonatomic, copy) NSString *selfLink;
+
+// The count of posts in this blog.
+@property (nonatomic, retain) NSNumber *totalItems;  // intValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

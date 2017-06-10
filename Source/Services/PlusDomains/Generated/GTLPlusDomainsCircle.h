@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google+ Domains API (plusDomains/v1)
 // Description:
+<<<<<<< HEAD
 //   The Google+ API enables developers to build on top of the Google+ platform.
+=======
+//   Builds on top of the Google+ platform for Google Apps Domains.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/+/domains/
 // Classes:
@@ -46,6 +54,7 @@
 
 // The description of this circle.
 // Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+<<<<<<< HEAD
 @property (copy) NSString *descriptionProperty;
 
 // The circle name.
@@ -66,6 +75,28 @@
 
 // Link to this circle resource
 @property (copy) NSString *selfLink;
+=======
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// The circle name.
+@property (nonatomic, copy) NSString *displayName;
+
+// ETag of this response for caching purposes.
+@property (nonatomic, copy) NSString *ETag;
+
+// The ID of the circle.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Identifies this resource as a circle. Value: "plus#circle".
+@property (nonatomic, copy) NSString *kind;
+
+// The people in this circle.
+@property (nonatomic, retain) GTLPlusDomainsCirclePeople *people;
+
+// Link to this circle resource
+@property (nonatomic, copy) NSString *selfLink;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -78,6 +109,10 @@
 @interface GTLPlusDomainsCirclePeople : GTLObject
 
 // The total number of people in this circle.
+<<<<<<< HEAD
 @property (retain) NSNumber *totalItems;  // unsignedIntValue
+=======
+@property (nonatomic, retain) NSNumber *totalItems;  // unsignedIntValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

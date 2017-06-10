@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +24,7 @@
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
+<<<<<<< HEAD
 //   Drive API (drive/v2)
 // Description:
 //   The API to interact with Drive.
@@ -34,6 +39,20 @@
 //   GTLDriveAboutMaxUploadSizesItem (0 custom class methods, 2 custom properties)
 //   GTLDriveAboutQuotaBytesByServiceItem (0 custom class methods, 2 custom properties)
 //   GTLDriveAboutAdditionalRoleInfoItemRoleSetsItem (0 custom class methods, 2 custom properties)
+=======
+//   Drive API (drive/v3)
+// Description:
+//   Manages files in Drive including uploading, downloading, searching,
+//   detecting changes, and updating sharing permissions.
+// Documentation:
+//   https://developers.google.com/drive/
+// Classes:
+//   GTLDriveAbout (0 custom class methods, 9 custom properties)
+//   GTLDriveAboutExportFormats (0 custom class methods, 0 custom properties)
+//   GTLDriveAboutImportFormats (0 custom class methods, 0 custom properties)
+//   GTLDriveAboutMaxImportSizes (0 custom class methods, 0 custom properties)
+//   GTLDriveAboutStorageQuota (0 custom class methods, 4 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -41,6 +60,7 @@
   #import "GTLObject.h"
 #endif
 
+<<<<<<< HEAD
 @class GTLDriveAboutAdditionalRoleInfoItem;
 @class GTLDriveAboutAdditionalRoleInfoItemRoleSetsItem;
 @class GTLDriveAboutExportFormatsItem;
@@ -48,6 +68,12 @@
 @class GTLDriveAboutImportFormatsItem;
 @class GTLDriveAboutMaxUploadSizesItem;
 @class GTLDriveAboutQuotaBytesByServiceItem;
+=======
+@class GTLDriveAboutExportFormats;
+@class GTLDriveAboutImportFormats;
+@class GTLDriveAboutMaxImportSizes;
+@class GTLDriveAboutStorageQuota;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @class GTLDriveUser;
 
 // ----------------------------------------------------------------------------
@@ -55,6 +81,7 @@
 //   GTLDriveAbout
 //
 
+<<<<<<< HEAD
 // An item with user information and settings.
 
 @interface GTLDriveAbout : GTLObject
@@ -133,12 +160,45 @@
 
 // The authenticated user.
 @property (retain) GTLDriveUser *user;
+=======
+// Information about the user, the user's Drive, and system capabilities.
+
+@interface GTLDriveAbout : GTLObject
+
+// Whether the user has installed the requesting app.
+@property (nonatomic, retain) NSNumber *appInstalled;  // boolValue
+
+// A map of source MIME type to possible targets for all supported exports.
+@property (nonatomic, retain) GTLDriveAboutExportFormats *exportFormats;
+
+// The currently supported folder colors as RGB hex strings.
+@property (nonatomic, retain) NSArray *folderColorPalette;  // of NSString
+
+// A map of source MIME type to possible targets for all supported imports.
+@property (nonatomic, retain) GTLDriveAboutImportFormats *importFormats;
+
+// This is always drive#about.
+@property (nonatomic, copy) NSString *kind;
+
+// A map of maximum import sizes by MIME type, in bytes.
+@property (nonatomic, retain) GTLDriveAboutMaxImportSizes *maxImportSizes;
+
+// The maximum upload size in bytes.
+@property (nonatomic, retain) NSNumber *maxUploadSize;  // longLongValue
+
+// The user's storage quota limits and usage. All fields are measured in bytes.
+@property (nonatomic, retain) GTLDriveAboutStorageQuota *storageQuota;
+
+// The authenticated user.
+@property (nonatomic, retain) GTLDriveUser *user;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
 
 // ----------------------------------------------------------------------------
 //
+<<<<<<< HEAD
 //   GTLDriveAboutAdditionalRoleInfoItem
 //
 
@@ -150,11 +210,22 @@
 // The content type that this additional role info applies to.
 @property (copy) NSString *type;
 
+=======
+//   GTLDriveAboutExportFormats
+//
+
+@interface GTLDriveAboutExportFormats : GTLObject
+// This object is documented as having more properties that are NSArrays of
+// NSString. Use -additionalJSONKeys and -additionalPropertyForName: to get the
+// list of properties and then fetch them; or -additionalProperties to fetch
+// them all at once.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 
 // ----------------------------------------------------------------------------
 //
+<<<<<<< HEAD
 //   GTLDriveAboutExportFormatsItem
 //
 
@@ -166,11 +237,22 @@
 // The possible content types to convert to.
 @property (retain) NSArray *targets;  // of NSString
 
+=======
+//   GTLDriveAboutImportFormats
+//
+
+@interface GTLDriveAboutImportFormats : GTLObject
+// This object is documented as having more properties that are NSArrays of
+// NSString. Use -additionalJSONKeys and -additionalPropertyForName: to get the
+// list of properties and then fetch them; or -additionalProperties to fetch
+// them all at once.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 
 // ----------------------------------------------------------------------------
 //
+<<<<<<< HEAD
 //   GTLDriveAboutFeaturesItem
 //
 
@@ -182,11 +264,22 @@
 // The request limit rate for this feature, in queries per second.
 @property (retain) NSNumber *featureRate;  // doubleValue
 
+=======
+//   GTLDriveAboutMaxImportSizes
+//
+
+@interface GTLDriveAboutMaxImportSizes : GTLObject
+// This object is documented as having more properties that are NSNumber
+// (longLongValue). Use -additionalJSONKeys and -additionalPropertyForName: to
+// get the list of properties and then fetch them; or -additionalProperties to
+// fetch them all at once.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 
 // ----------------------------------------------------------------------------
 //
+<<<<<<< HEAD
 //   GTLDriveAboutImportFormatsItem
 //
 
@@ -245,5 +338,24 @@
 
 // A primary permission role.
 @property (copy) NSString *primaryRole;
+=======
+//   GTLDriveAboutStorageQuota
+//
+
+@interface GTLDriveAboutStorageQuota : GTLObject
+
+// The usage limit, if applicable. This will not be present if the user has
+// unlimited storage.
+@property (nonatomic, retain) NSNumber *limit;  // longLongValue
+
+// The total usage across all services.
+@property (nonatomic, retain) NSNumber *usage;  // longLongValue
+
+// The usage by all files in Google Drive.
+@property (nonatomic, retain) NSNumber *usageInDrive;  // longLongValue
+
+// The usage by trashed files in Google Drive.
+@property (nonatomic, retain) NSNumber *usageInDriveTrash;  // longLongValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

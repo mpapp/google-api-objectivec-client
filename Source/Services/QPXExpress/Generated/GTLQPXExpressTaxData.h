@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   QPX Express API (qpxExpress/v1)
 // Description:
+<<<<<<< HEAD
 //   Lets you find the least expensive flights between an origin and a
 //   destination.
+=======
+//   Finds the least expensive flights between an origin and a destination.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   http://developers.google.com/qpx-express
 // Classes:
@@ -46,6 +54,7 @@
 
 // An identifier uniquely identifying a tax in a response.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+<<<<<<< HEAD
 @property (copy) NSString *identifier;
 
 // Identifies this as a tax data object, representing some tax. Value: the fixed
@@ -54,5 +63,15 @@
 
 // The name of a tax.
 @property (copy) NSString *name;
+=======
+@property (nonatomic, copy) NSString *identifier;
+
+// Identifies this as a tax data object, representing some tax. Value: the fixed
+// string qpxexpress#taxData.
+@property (nonatomic, copy) NSString *kind;
+
+// The name of a tax.
+@property (nonatomic, copy) NSString *name;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

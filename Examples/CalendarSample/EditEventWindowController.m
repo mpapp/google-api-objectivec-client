@@ -121,19 +121,26 @@
   completionHandler_ = [handler copy];
   event_ = [event retain];
 
+<<<<<<< HEAD
   [NSApp beginSheet:[self window]
      modalForWindow:window
       modalDelegate:self
      didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:)
         contextInfo:nil];
+=======
+  [window beginSheet:[self window] completionHandler:nil];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
   [self retain];
 }
 
+<<<<<<< HEAD
 - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode  contextInfo:(void  *)contextInfo {
 
 }
 
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (void)closeDialogWithReturnCode:(NSInteger)returnCode {
   // Call the handler to say we're done
   if (completionHandler_) {
@@ -143,17 +150,32 @@
     completionHandler_ = nil;
   }
 
+<<<<<<< HEAD
   [[self window] orderOut:self];
   [NSApp endSheet:[self window]];
+=======
+  NSWindow *sheet = [self window];
+  NSWindow *parent = [sheet sheetParent];
+  [parent endSheet:sheet];
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [self autorelease];
 }
 
 - (IBAction)saveButtonClicked:(id)sender {
+<<<<<<< HEAD
   [self closeDialogWithReturnCode:NSOKButton];
 }
 
 - (IBAction)cancelButtonClicked:(id)sender {
   [self closeDialogWithReturnCode:NSCancelButton];
+=======
+  [self closeDialogWithReturnCode:NSModalResponseOK];
+}
+
+- (IBAction)cancelButtonClicked:(id)sender {
+  [self closeDialogWithReturnCode:NSModalResponseCancel];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 @end

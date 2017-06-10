@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -46,6 +55,7 @@
 @interface GTLYouTubeActivityContentDetailsRecommendation : GTLObject
 
 // The reason that the resource is recommended to the user.
+<<<<<<< HEAD
 @property (copy) NSString *reason;
 
 // The resourceId object contains information that identifies the recommended
@@ -55,5 +65,16 @@
 // The seedResourceId object contains information about the resource that caused
 // the recommendation.
 @property (retain) GTLYouTubeResourceId *seedResourceId;
+=======
+@property (nonatomic, copy) NSString *reason;
+
+// The resourceId object contains information that identifies the recommended
+// resource.
+@property (nonatomic, retain) GTLYouTubeResourceId *resourceId;
+
+// The seedResourceId object contains information about the resource that caused
+// the recommendation.
+@property (nonatomic, retain) GTLYouTubeResourceId *seedResourceId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

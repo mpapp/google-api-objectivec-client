@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
+=======
+//   Views and manages your Google Analytics data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
@@ -49,6 +57,7 @@
 @interface GTLAnalyticsUnsampledReport : GTLObject
 
 // Account ID to which this unsampled report belongs.
+<<<<<<< HEAD
 @property (copy) NSString *accountId;
 
 // Download details for a file stored in Google Cloud Storage.
@@ -107,6 +116,66 @@
 // Web property ID to which this unsampled report belongs. The web property ID
 // is of the form UA-XXXXX-YY.
 @property (copy) NSString *webPropertyId;
+=======
+@property (nonatomic, copy) NSString *accountId;
+
+// Download details for a file stored in Google Cloud Storage.
+@property (nonatomic, retain) GTLAnalyticsUnsampledReportCloudStorageDownloadDetails *cloudStorageDownloadDetails;
+
+// Time this unsampled report was created.
+@property (nonatomic, retain) GTLDateTime *created;
+
+// The dimensions for the unsampled report.
+@property (nonatomic, copy) NSString *dimensions;
+
+// The type of download you need to use for the report data file.
+@property (nonatomic, copy) NSString *downloadType;
+
+// Download details for a file stored in Google Drive.
+@property (nonatomic, retain) GTLAnalyticsUnsampledReportDriveDownloadDetails *driveDownloadDetails;
+
+// The end date for the unsampled report.
+@property (nonatomic, copy) NSString *endDate;
+
+// The filters for the unsampled report.
+@property (nonatomic, copy) NSString *filters;
+
+// Unsampled report ID.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Resource type for an Analytics unsampled report.
+@property (nonatomic, copy) NSString *kind;
+
+// The metrics for the unsampled report.
+@property (nonatomic, copy) NSString *metrics;
+
+// View (Profile) ID to which this unsampled report belongs.
+@property (nonatomic, copy) NSString *profileId;
+
+// The segment for the unsampled report.
+@property (nonatomic, copy) NSString *segment;
+
+// Link for this unsampled report.
+@property (nonatomic, copy) NSString *selfLink;
+
+// The start date for the unsampled report.
+@property (nonatomic, copy) NSString *startDate;
+
+// Status of this unsampled report. Possible values are PENDING, COMPLETED, or
+// FAILED.
+@property (nonatomic, copy) NSString *status;
+
+// Title of the unsampled report.
+@property (nonatomic, copy) NSString *title;
+
+// Time this unsampled report was last modified.
+@property (nonatomic, retain) GTLDateTime *updated;
+
+// Web property ID to which this unsampled report belongs. The web property ID
+// is of the form UA-XXXXX-YY.
+@property (nonatomic, copy) NSString *webPropertyId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -119,10 +188,17 @@
 @interface GTLAnalyticsUnsampledReportCloudStorageDownloadDetails : GTLObject
 
 // Id of the bucket the file object is stored in.
+<<<<<<< HEAD
 @property (copy) NSString *bucketId;
 
 // Id of the file object containing the report data.
 @property (copy) NSString *objectId;
+=======
+@property (nonatomic, copy) NSString *bucketId;
+
+// Id of the file object containing the report data.
+@property (nonatomic, copy) NSString *objectId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -135,6 +211,10 @@
 @interface GTLAnalyticsUnsampledReportDriveDownloadDetails : GTLObject
 
 // Id of the document/file containing the report data.
+<<<<<<< HEAD
 @property (copy) NSString *documentId;
+=======
+@property (nonatomic, copy) NSString *documentId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

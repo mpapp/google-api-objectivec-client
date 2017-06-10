@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +50,11 @@
 @interface GTLSpectrumGeoLocationEllipse : GTLObject
 
 // A required geo-spatial point representing the center of the ellipse.
+<<<<<<< HEAD
 @property (retain) GTLSpectrumGeoLocationPoint *center;
+=======
+@property (nonatomic, retain) GTLSpectrumGeoLocationPoint *center;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // A floating-point number that expresses the orientation of the ellipse,
 // representing the rotation, in degrees, of the semi-major axis from North
@@ -54,16 +62,28 @@
 // North-South direction, orientation is 0 degrees; conversely, if the
 // uncertainty is greatest along the East-West direction, orientation is 90
 // degrees. When orientation is not present, the orientation is assumed to be 0.
+<<<<<<< HEAD
 @property (retain) NSNumber *orientation;  // doubleValue
+=======
+@property (nonatomic, retain) NSNumber *orientation;  // doubleValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // A floating-point number that expresses the location uncertainty along the
 // major axis of the ellipse. May be required by the regulatory domain. When the
 // uncertainty is optional, the default value is 0.
+<<<<<<< HEAD
 @property (retain) NSNumber *semiMajorAxis;  // doubleValue
+=======
+@property (nonatomic, retain) NSNumber *semiMajorAxis;  // doubleValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // A floating-point number that expresses the location uncertainty along the
 // minor axis of the ellipse. May be required by the regulatory domain. When the
 // uncertainty is optional, the default value is 0.
+<<<<<<< HEAD
 @property (retain) NSNumber *semiMinorAxis;  // doubleValue
+=======
+@property (nonatomic, retain) NSNumber *semiMinorAxis;  // doubleValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

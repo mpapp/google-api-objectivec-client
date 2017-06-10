@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +24,7 @@
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
+<<<<<<< HEAD
 //   Drive API (drive/v2)
 // Description:
 //   The API to interact with Drive.
@@ -28,6 +33,17 @@
 // Classes:
 //   GTLDriveComment (0 custom class methods, 15 custom properties)
 //   GTLDriveCommentContext (0 custom class methods, 2 custom properties)
+=======
+//   Drive API (drive/v3)
+// Description:
+//   Manages files in Drive including uploading, downloading, searching,
+//   detecting changes, and updating sharing permissions.
+// Documentation:
+//   https://developers.google.com/drive/
+// Classes:
+//   GTLDriveComment (0 custom class methods, 12 custom properties)
+//   GTLDriveCommentQuotedFileContent (0 custom class methods, 2 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -35,8 +51,13 @@
   #import "GTLObject.h"
 #endif
 
+<<<<<<< HEAD
 @class GTLDriveCommentContext;
 @class GTLDriveCommentReply;
+=======
+@class GTLDriveCommentQuotedFileContent;
+@class GTLDriveReply;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @class GTLDriveUser;
 
 // ----------------------------------------------------------------------------
@@ -44,12 +65,17 @@
 //   GTLDriveComment
 //
 
+<<<<<<< HEAD
 // A JSON representation of a comment on a file in Google Drive.
+=======
+// A comment on a file.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @interface GTLDriveComment : GTLObject
 
 // A region of the document represented as a JSON string. See anchor
 // documentation for details on how to define and interpret anchor properties.
+<<<<<<< HEAD
 @property (copy) NSString *anchor;
 
 // The user who wrote this comment.
@@ -99,12 +125,54 @@
 // - "open" - The comment is still open.
 // - "resolved" - The comment has been resolved by one of its replies.
 @property (copy) NSString *status;
+=======
+@property (nonatomic, copy) NSString *anchor;
+
+// The user who created the comment.
+@property (nonatomic, retain) GTLDriveUser *author;
+
+// The plain text content of the comment. This field is used for setting the
+// content, while htmlContent should be displayed.
+@property (nonatomic, copy) NSString *content;
+
+// The time at which the comment was created (RFC 3339 date-time).
+@property (nonatomic, retain) GTLDateTime *createdTime;
+
+// Whether the comment has been deleted. A deleted comment has no content.
+@property (nonatomic, retain) NSNumber *deleted;  // boolValue
+
+// The content of the comment with HTML formatting.
+@property (nonatomic, copy) NSString *htmlContent;
+
+// The ID of the comment.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// This is always drive#comment.
+@property (nonatomic, copy) NSString *kind;
+
+// The last time the comment or any of its replies was modified (RFC 3339
+// date-time).
+@property (nonatomic, retain) GTLDateTime *modifiedTime;
+
+// The file content to which the comment refers, typically within the anchor
+// region. For a text file, for example, this would be the text at the location
+// of the comment.
+@property (nonatomic, retain) GTLDriveCommentQuotedFileContent *quotedFileContent;
+
+// The full list of replies to the comment in chronological order.
+@property (nonatomic, retain) NSArray *replies;  // of GTLDriveReply
+
+// Whether the comment has been resolved by one of its replies.
+@property (nonatomic, retain) NSNumber *resolved;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
 
 // ----------------------------------------------------------------------------
 //
+<<<<<<< HEAD
 //   GTLDriveCommentContext
 //
 
@@ -117,5 +185,18 @@
 // case of a text file for example, this would be the actual text that the
 // comment is about.
 @property (copy) NSString *value;
+=======
+//   GTLDriveCommentQuotedFileContent
+//
+
+@interface GTLDriveCommentQuotedFileContent : GTLObject
+
+// The MIME type of the quoted content.
+@property (nonatomic, copy) NSString *mimeType;
+
+// The quoted content itself. This is interpreted as plain text if set through
+// the API.
+@property (nonatomic, copy) NSString *value;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

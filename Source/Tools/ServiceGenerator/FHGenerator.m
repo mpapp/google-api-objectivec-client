@@ -37,6 +37,10 @@ static NSString *kObjCNameKey                     = @"objcName";
 static NSString *kForcedNameCommentKey            = @"forcedNameComment";
 static NSString *kCapObjCNameKey                  = @"capObjCName";
 static NSString *kUniqueParamsKey                 = @"uniqueParams";
+<<<<<<< HEAD
+=======
+static NSString *kUniqueRepeatedParamsKey         = @"uniqueRepeatedParams";
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 static NSString *kAllParamsKey                    = @"allParameters";
 static NSString *kAllMethodsKey                   = @"allMethods";
 static NSString *kEnumsMapKey                     = @"enumsMap";
@@ -57,6 +61,10 @@ static NSString *kReturnsSchemaParameterKey       = @"returnsSchema";
 static NSString *kAllMethodObjectParametersKey    = @"allMethodObjectParameters";
 static NSString *kAllMethodObjectParameterRefsKey = @"allMethodObjectParameterRefs";
 static NSString *kSameNamedParametersKey          = @"sameNamedParameters";
+<<<<<<< HEAD
+=======
+static NSString *kSameNamedRepeatedParametersKey  = @"sameNamedRepeatedParameters";
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 static NSString *kBuiltRPCUrlStringKey            = @"builtRPCUrlString";
 static NSString *kIsItemsSchemaKey                = @"isItemsSchema";
 
@@ -74,6 +82,10 @@ typedef enum {
 @interface GTLDiscoveryRpcDescription (FHGeneratorAdditions)
 @property (readonly) NSArray *allMethods;
 @property (readonly) NSArray *uniqueParameters;
+<<<<<<< HEAD
+=======
+@property (readonly) NSArray *uniqueRepeatedParameters;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @property (readonly) NSArray *allParameters;
 @property (readonly) NSDictionary *enumsMap;
 @property (readonly) NSArray *allSchemas;
@@ -84,6 +96,10 @@ typedef enum {
 - (BOOL)buildParameterLists:(void (^)(FHGeneratorHandlerMessageType msgType,
                                       NSString *message))messageHandler;
 - (NSString *)builtRPCUrlString;
+<<<<<<< HEAD
+=======
+- (BOOL)likelyRESTOnlyAPI;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (BOOL)isGoogleService;
 - (BOOL)hasMediaUploadMethods;
 @end
@@ -93,6 +109,10 @@ typedef enum {
 @property (readonly) NSString *objcName;
 @property (readonly) NSString *capObjCName;
 @property (readonly) NSString *forceNameComment;
+<<<<<<< HEAD
+=======
+@property (readonly) GTLDiscoveryJsonSchema *methodParam;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @property (readonly) GTLDiscoveryRpcMethod *method;
 @property (readonly, getter=isParameter) BOOL parameter;
 @property (readonly) GTLDiscoveryJsonSchema *parentSchema;
@@ -102,7 +122,13 @@ typedef enum {
 @property (readonly) GTLDiscoveryJsonSchema *resolvedSchema;
 @property (readonly, getter=hasItemsArrayProperty) BOOL itemsArrayProperty;
 @property (readonly) NSString *kindToRegister;
+<<<<<<< HEAD
 @property (readonly) NSString *rangeAndDefaultDescription;
+=======
+@property (readonly) BOOL likelyInvalidUseOfKind;
+@property (readonly) NSString *rangeAndDefaultDescription;
+@property (readonly) BOOL isQueryRequestObject;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 - (GTLDiscoveryJsonSchema *)itemsSchemaResolving:(BOOL)resolving
                                            depth:(NSUInteger *)depth;
@@ -119,6 +145,10 @@ typedef enum {
         objcPropertySemantics:(NSString **)objcPropertySemantics
                       comment:(NSString **)comment
                itemsClassName:(NSString **)itemsClassName;
+<<<<<<< HEAD
+=======
+@property (readonly) NSString *queryParamPseudoObjCType;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 @interface GTLDiscoveryRpcMethod (FHGeneratorAdditions)
@@ -165,10 +195,19 @@ typedef enum {
 - (NSString *)headerForSchema:(GTLDiscoveryJsonSchema *)schema;
 - (NSString *)sourceForSchema:(GTLDiscoveryJsonSchema *)schema;
 
+<<<<<<< HEAD
 - (id)initWithApi:(GTLDiscoveryRpcDescription *)api
              verboseLevel:(NSUInteger)verboseLevel
     allowRootURLOverrides:(BOOL)allowRootURLOverrides
     formattedNameOverride:(NSString *)formattedNameOverride;
+=======
+- (instancetype)initWithApi:(GTLDiscoveryRpcDescription *)api
+               verboseLevel:(NSUInteger)verboseLevel
+      allowRootURLOverrides:(BOOL)allowRootURLOverrides
+      formattedNameOverride:(NSString *)formattedNameOverride
+           skipIfLikelyREST:(BOOL)skipIfLikelyREST
+           useFrameworkName:(NSString *)frameworkName;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 - (void)adornMethods:(GTLDiscoveryRpcDescriptionMethods *)methods;
 - (void)adornSchema:(GTLDiscoveryJsonSchema *)schema
@@ -182,9 +221,17 @@ typedef enum {
 - (NSString *)serviceClassGeneratedInfo;
 - (NSString *)queryClassesGeneratedInfo;
 - (NSString *)schemaClassesGeneratedInfo:(GTLDiscoveryJsonSchema *)schema;
+<<<<<<< HEAD
 - (NSString *)generateQueryMethodParametersBlockForMode:(GeneratorMode)mode;
 - (NSString *)generateQueryClassForMode:(GeneratorMode)mode;
 - (NSSet *)neededClassesForSchema:(GTLDiscoveryJsonSchema *)schema;
+=======
+- (NSSet *)methodObjectTopLevelClassDeps;
+- (NSString *)generateQueryMethodParametersBlockForMode:(GeneratorMode)mode;
+- (NSString *)generateQueryClassForMode:(GeneratorMode)mode;
+- (NSSet *)neededClassesForSchema:(GTLDiscoveryJsonSchema *)schema;
+- (NSArray *)recursivelyNeededClassesForSchemaSorted:(GTLDiscoveryJsonSchema *)schema;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (NSString *)generateObjectClassForSchema:(GTLDiscoveryJsonSchema *)schema
                                    forMode:(GeneratorMode)mode
                    includeClassDescription:(BOOL)includeClassDescription
@@ -231,11 +278,17 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
 
 @synthesize api = api_,
             verboseLevel = verboseLevel_,
+<<<<<<< HEAD
             allowRootURLOverrides = allowRootURLOverrides_;
+=======
+            allowRootURLOverrides = allowRootURLOverrides_,
+            frameworkName = frameworkName_;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @synthesize warnings = warnings_,
             infos = infos_;
 
+<<<<<<< HEAD
 + (id)generatorForApi:(GTLDiscoveryRpcDescription *)api
              verboseLevel:(NSUInteger)verboseLevel
     allowRootURLOverrides:(BOOL)allowRootURLOverrides
@@ -250,12 +303,38 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
              verboseLevel:(NSUInteger)verboseLevel
     allowRootURLOverrides:(BOOL)allowRootURLOverrides
     formattedNameOverride:(NSString *)formattedNameOverride {
+=======
++ (instancetype)generatorForApi:(GTLDiscoveryRpcDescription *)api
+                   verboseLevel:(NSUInteger)verboseLevel
+          allowRootURLOverrides:(BOOL)allowRootURLOverrides
+          formattedNameOverride:(NSString *)formattedNameOverride
+               skipIfLikelyREST:(BOOL)skipIfLikelyREST
+               useFrameworkName:(NSString *)frameworkName {
+  return [[[self alloc] initWithApi:api
+                       verboseLevel:verboseLevel
+              allowRootURLOverrides:allowRootURLOverrides
+              formattedNameOverride:formattedNameOverride
+                   skipIfLikelyREST:skipIfLikelyREST
+                   useFrameworkName:frameworkName] autorelease];
+}
+
+- (instancetype)initWithApi:(GTLDiscoveryRpcDescription *)api
+               verboseLevel:(NSUInteger)verboseLevel
+      allowRootURLOverrides:(BOOL)allowRootURLOverrides
+      formattedNameOverride:(NSString *)formattedNameOverride
+           skipIfLikelyREST:(BOOL)skipIfLikelyREST
+           useFrameworkName:(NSString *)frameworkName {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   self = [super init];
   if (self != nil) {
     api_ = [api retain];
     verboseLevel_ = verboseLevel;
     allowRootURLOverrides_ = allowRootURLOverrides;
     formattedName_ = [formattedNameOverride copy];
+<<<<<<< HEAD
+=======
+    frameworkName_ = [frameworkName copy];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     if (!api) {
       [self release];
       self = nil;
@@ -263,6 +342,7 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
       NSValue *generatorAsValue = [NSValue valueWithNonretainedObject:self];
       [self.api setProperty:generatorAsValue forKey:kWrappedGeneratorKey];
 
+<<<<<<< HEAD
       // The discovery document is odd in that the names of things are the
       // keys in the dictionary, so the dict that is the item doesn't actually
       // have its name.  So run through the tree setting up the name as
@@ -280,6 +360,31 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
                         forKey:kWrappedMethodKey];
 
       } // Parameters Loop
+=======
+      // Support skipping general setup if the api is likely REST as it won't
+      // be generated over in FHMain, and we don't need the warnings/errors that
+      // could come from doing the setup.
+      BOOL skipSetup = (skipIfLikelyREST && [self.api likelyRESTOnlyAPI]);
+      if (!skipSetup) {
+        // The discovery document is odd in that the names of things are the
+        // keys in the dictionary, so the dict that is the item doesn't actually
+        // have its name.  So run through the tree setting up the name as
+        // a property so we have it.  While we're at it, also give resources
+        // pointers to their parents.
+        [self adornSchemas:self.api.schemas parentSchema:nil];
+        [self adornMethods:self.api.methods];
+
+        // Spin over the common parameters
+        for (NSString *paramName in self.api.parameters.additionalProperties) {
+          GTLDiscoveryJsonSchema *parameter =
+            [self.api.parameters.additionalProperties objectForKey:paramName];
+          [self adornSchema:parameter name:paramName parentSchema:nil];
+          [parameter setProperty:[NSValue valueWithNonretainedObject:nil]
+                          forKey:kWrappedMethodKey];
+
+        } // Parameters Loop
+      }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
       // Anything that starts "new", "copy", or "mutableCopy" (and maybe continues
       // with a capital letter) can trip up a clang warning about not following
@@ -406,6 +511,24 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
     messageHandler(kFHGeneratorHandlerMessageWarning, warning);
   }
 
+<<<<<<< HEAD
+=======
+  // Sanity check anything on the service itself.
+  if ([self.api likelyRESTOnlyAPI]) {
+    NSString *str =
+      [NSString stringWithFormat:@"This appears to be a REST only api, and can't be supported via JSON-RPC (rootUrl: \"%@\", rpcPath: \"%@\", older rpcUrl: \"%@\")",
+       self.api.rootUrl, self.api.rpcPath, self.api.rpcUrl];
+    messageHandler(kFHGeneratorHandlerMessageError, str);
+    gotError = YES;
+  } else if ([[self.api builtRPCUrlString] length] == 0) {
+    NSString *str =
+      [NSString stringWithFormat:@"Unable to determine RPC URL (rootUrl: \"%@\", rpcPath: \"%@\", older rpcUrl: \"%@\")",
+       self.api.rootUrl, self.api.rpcPath, self.api.rpcUrl];
+    messageHandler(kFHGeneratorHandlerMessageError, str);
+    gotError = YES;
+  }
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   // Spin over the methods, checking for things that map to the same name
   NSMutableDictionary *worker = [NSMutableDictionary dictionary];
   NSArray *allUnorderedMethods = [self.api.methods.additionalProperties allValues];
@@ -515,6 +638,7 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
   NSString *querySource = self.querySource;
   NSString *queryFileNameBase = self.objcQueryClassName;
 
+<<<<<<< HEAD
   NSMutableDictionary *result =
     [NSMutableDictionary dictionaryWithObjectsAndKeys:
      serviceHeader, [serviceFileNameBase stringByAppendingPathExtension:@"h"],
@@ -522,6 +646,14 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
      queryHeader, [queryFileNameBase stringByAppendingPathExtension:@"h"],
      querySource, [queryFileNameBase stringByAppendingPathExtension:@"m"],
      nil];
+=======
+  NSMutableDictionary *result = [[@{
+    [serviceFileNameBase stringByAppendingPathExtension:@"h"] : serviceHeader,
+    [serviceFileNameBase stringByAppendingPathExtension:@"m"] : serviceSource,
+    [queryFileNameBase stringByAppendingPathExtension:@"h"] : queryHeader,
+    [queryFileNameBase stringByAppendingPathExtension:@"m"] : querySource,
+  } mutableCopy] autorelease];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
   for (GTLDiscoveryJsonSchema *schema in self.api.topLevelObjectSchemas) {
     NSString *objectClassFileNameBase = schema.objcClassName;
@@ -647,6 +779,13 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
   return formattedName_;
 }
 
+<<<<<<< HEAD
+=======
+- (BOOL)likelyRESTOnlyAPI {
+  return self.api.likelyRESTOnlyAPI;
+}
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (NSString *)objcServiceClassName {
   NSString *result = [NSString stringWithFormat:@"%@Service%@",
                       kProjectPrefix, self.formattedApiName];
@@ -767,6 +906,7 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
                                                    linePrefix:@"// "];
   [initializeMethod appendString:wrappedComment];
   [initializeMethod appendString:@"+ (NSArray *)checkClasses {\n"];
+<<<<<<< HEAD
   [initializeMethod appendString:@"  NSArray *classes = [NSArray arrayWithObjects:\n"];
   [initializeMethod appendFormat:@"                      [%@ class],\n",
    self.objcQueryClassName];
@@ -775,6 +915,14 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
      schema.objcClassName];
   }
   [initializeMethod appendString:@"                      nil];\n"];
+=======
+  [initializeMethod appendString:@"  NSArray *classes = @[\n"];
+  [initializeMethod appendFormat:@"    [%@ class]", self.objcQueryClassName];
+  for (GTLDiscoveryJsonSchema *schema in self.api.topLevelObjectSchemas) {
+    [initializeMethod appendFormat:@",\n    [%@ class]", schema.objcClassName];
+  }
+  [initializeMethod appendString:@"\n  ];\n"];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [initializeMethod appendString:@"  return classes;\n"];
   [initializeMethod appendString:@"}\n"];
   [initializeMethod appendString:@"#endif  // DEBUG\n"];
@@ -819,7 +967,11 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
 
   // Provide -init to set the default values.
   NSMutableString *initMethod = [NSMutableString string];
+<<<<<<< HEAD
   [initMethod appendString:@"- (id)init {\n"];
+=======
+  [initMethod appendString:@"- (instancetype)init {\n"];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [initMethod appendString:@"  self = [super init];\n"];
   [initMethod appendString:@"  if (self) {\n"];
   [initMethod appendString:@"    // Version from discovery.\n"];
@@ -866,6 +1018,7 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
   [parts addObject:importQueryBase];
 
   // Forward declare the classes used in query methods.
+<<<<<<< HEAD
   NSMutableArray *neededSchema = [NSMutableArray array];
   for (GTLDiscoveryJsonSchema *methodParamSchema in self.api.allMethodObjectParameterReferences) {
     // Don't use isEqual: (containsObject:) because two schema could have
@@ -882,6 +1035,17 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
       [classNames sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     NSMutableString *classForwards = [NSMutableString string];
     for (NSString *name in classNames) {
+=======
+  NSMutableSet *neededClasses = [NSMutableSet set];
+  [neededClasses addObjectsFromArray:[self.api.allMethodObjectParameterReferences valueForKey:@"objcClassName"]];
+  [neededClasses unionSet:[self methodObjectTopLevelClassDeps]];
+  if ([neededClasses count] > 0) {
+    // Sort to stablize the order.
+    NSArray *sortedClassNames =
+      [[neededClasses allObjects] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+    NSMutableString *classForwards = [NSMutableString string];
+    for (NSString *name in sortedClassNames) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       [classForwards appendFormat:@"@class %@;\n", name];
     }
     [parts addObject:classForwards];
@@ -918,6 +1082,7 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
 
   // Import the classes used in query methods (here we also need the return
   // classes for the expectedObjectType).
+<<<<<<< HEAD
   NSMutableArray *neededSchema = [NSMutableArray array];
   for (GTLDiscoveryJsonSchema *methodParamSchema in self.api.allMethodObjectParameterReferences) {
     // Don't use isEqual: (containsObject:) because two schema could have
@@ -943,11 +1108,30 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
     // Sort to stablize the order.
     classNames =
       [classNames sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+=======
+  NSMutableSet *neededClasses = [NSMutableSet set];
+  [neededClasses addObjectsFromArray:[self.api.allMethodObjectParameterReferences valueForKey:@"objcClassName"]];
+  for (GTLDiscoveryRpcMethod *method in self.api.allMethods) {
+    GTLDiscoveryJsonSchema *returnsSchema = method.returns.resolvedSchema;
+    if (returnsSchema) {
+      [neededClasses addObject:returnsSchema.objcClassName];
+    }
+  }
+  [neededClasses unionSet:[self methodObjectTopLevelClassDeps]];
+  if ([neededClasses count] > 0) {
+    // Sort to stablize the order.
+    NSArray *sortedClassNames =
+      [[neededClasses allObjects] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     // Only need to import the top level ones as those are files.
     NSArray *topLevelSchemaNames =
       [self.api.topLevelObjectSchemas valueForKey:@"objcClassName"];
     NSMutableString *classImports = [NSMutableString string];
+<<<<<<< HEAD
     for (NSString *name in classNames) {
+=======
+    for (NSString *name in sortedClassNames) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       if ([topLevelSchemaNames containsObject:name]) {
         [classImports appendFormat:@"#import \"%@.h\"\n", name];
       }
@@ -1085,6 +1269,7 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
 
   // Forward-declare the classes needed by the schema so they can reference
   // each other (i.e.-tree structures, etc.)
+<<<<<<< HEAD
   NSMutableSet *allNeededClasses = [NSMutableSet set];
   NSSet *neededClasses = [self neededClassesForSchema:schema];
   [allNeededClasses unionSet:neededClasses];
@@ -1095,6 +1280,10 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
   if ([allNeededClasses count] > 0) {
     NSArray *sortedAllNeededClasses =
       [[allNeededClasses allObjects] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+=======
+  NSArray *sortedAllNeededClasses = [self recursivelyNeededClassesForSchemaSorted:schema];
+  if ([sortedAllNeededClasses count] > 0) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     NSMutableArray *subParts = [NSMutableArray array];
     for (NSString *className in sortedAllNeededClasses) {
       NSString *aLine = [NSString stringWithFormat:@"@class %@;\n", className];
@@ -1147,6 +1336,7 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
   // need to include their headers so things compile.
   // NOTE: really only need the ones used as additional properties or as items
   // in additonal properties, but that's a bit heaver to calculate.
+<<<<<<< HEAD
   NSMutableSet *allNeededClasses = [NSMutableSet set];
   NSSet *neededClasses = [self neededClassesForSchema:schema];
   [allNeededClasses unionSet:neededClasses];
@@ -1157,6 +1347,10 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
   if ([allNeededClasses count] > 0) {
     NSArray *sortedAllNeededClasses =
       [[allNeededClasses allObjects] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+=======
+  NSArray *sortedAllNeededClasses = [self recursivelyNeededClassesForSchemaSorted:schema];
+  if ([sortedAllNeededClasses count] > 0) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     NSArray *topLevelSchemaNames =
       [self.api.topLevelObjectSchemas valueForKey:@"objcClassName"];
     NSMutableArray *subParts = [NSMutableArray array];
@@ -1309,6 +1503,22 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
   return result;
 }
 
+<<<<<<< HEAD
+=======
+- (NSSet *)methodObjectTopLevelClassDeps {
+  NSMutableSet *worker = [NSMutableSet set];
+  for (GTLDiscoveryJsonSchema *param in self.api.allMethodObjectParameters) {
+    [worker addObjectsFromArray:[self recursivelyNeededClassesForSchemaSorted:param]];
+  }
+  if ([worker count]) {
+    NSArray *topLevelSchemaNames =
+        [self.api.topLevelObjectSchemas valueForKey:@"objcClassName"];
+    [worker intersectSet:[NSSet setWithArray:topLevelSchemaNames]];
+  }
+  return worker;
+}
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (NSString *)generateQueryMethodParametersBlockForMode:(GeneratorMode)mode {
   NSString *result = nil;
 
@@ -1318,8 +1528,12 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
     NSMutableArray *classesBlock = [NSMutableArray array];
 
     NSMutableString *sectionBlock = [NSMutableString string];
+<<<<<<< HEAD
     [sectionBlock appendString:@"#pragma mark -\n"];
     [sectionBlock appendString:@"#pragma mark method parameter objects\n"];
+=======
+    [sectionBlock appendString:@"#pragma mark - method parameter objects\n"];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     [sectionBlock appendString:@"// These object are used only to pass a collection of parameters to a\n"];
     [sectionBlock appendString:@"// method as a single item.\n"];
     [classesBlock addObject:sectionBlock];
@@ -1332,6 +1546,7 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
         // to not repeat it.
         // Forward declare the classes needed by the schema so they can reference
         // each other (i.e.-tree structures, etc.)
+<<<<<<< HEAD
         NSMutableSet *allNeededClasses = [NSMutableSet set];
         NSSet *neededClasses = [self neededClassesForSchema:param];
         [allNeededClasses unionSet:neededClasses];
@@ -1358,6 +1573,31 @@ static NSString *ConstantName(NSString *grouping, NSString *name) {
         extraClassComment =
           [NSString stringWithFormat:@"Used for '%@' parameter on '%@'.",
            param.objcName, param.method.name];
+=======
+        NSArray *sortedAllNeededClasses = [self recursivelyNeededClassesForSchemaSorted:param];
+        if ([sortedAllNeededClasses count] > 0) {
+          NSMutableArray *atClasses = [NSMutableArray array];
+          NSArray *topLevelSchemaNames =
+              [self.api.topLevelObjectSchemas valueForKey:@"objcClassName"];
+          for (NSString *className in sortedAllNeededClasses) {
+            if (![topLevelSchemaNames containsObject:className]) {
+              NSString *aLine = [NSString stringWithFormat:@"@class %@;\n", className];
+              [atClasses addObject:aLine];
+            }
+          }
+          if ([atClasses count]) {
+            [aBlock addObject:[atClasses componentsJoinedByString:@""]];
+          }
+        }
+      }
+
+      NSString *extraClassComment = nil;
+      if (mode == kGenerateInterface) {
+        GTLDiscoveryJsonSchema *methodParam = param.methodParam;
+        extraClassComment =
+          [NSString stringWithFormat:@"Used for '%@' parameter on '%@'.",
+           methodParam.objcName, methodParam.method.name];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       }
       NSString *objectClassStr = [self generateObjectClassForSchema:param
                                                             forMode:mode
@@ -1483,7 +1723,11 @@ static NSString *MappedParamName(NSString *name) {
             && [notRetainedPredicate_ evaluateWithObject:paramObjCName]) {
           clangDirective = @" NS_RETURNS_NOT_RETAINED";
         }
+<<<<<<< HEAD
         NSString *propertyLine = [NSString stringWithFormat:@"@property (%@%@) %@%@%@%@;%@\n",
+=======
+        NSString *propertyLine = [NSString stringWithFormat:@"@property (nonatomic, %@%@) %@%@%@%@;%@\n",
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
                                   objcPropertySemantics, extraAttributes, objcType,
                                   (asPtr ? @" *" : @" "),
                                   paramObjCName,
@@ -1533,12 +1777,20 @@ static NSString *MappedParamName(NSString *name) {
       }
 
       // For all repeated parameters, provide a mapping to the default class
+<<<<<<< HEAD
       // contained within the array.
       [pairs removeAllObjects];
       for (GTLDiscoveryJsonSchema *param in uniqueParameters) {
         // TODO: see the note in buildParameterLists: about how there could
         // be arrays that don't make it into the uniqueParameters list.
         if (param.repeated || [param.type isEqual:@"array"]) {
+=======
+      // contained within the array. We skip this if the param was overloaded
+      // because it gets a generic object type instead.
+      [pairs removeAllObjects];
+      for (GTLDiscoveryJsonSchema *param in self.api.uniqueRepeatedParameters) {
+        if (![param propertyForKey:kOverloadedParameterTypeKey]) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
           NSString *objcType = nil;
           NSString *itemsClassName = nil;
           [param getQueryParamObjCType:&objcType
@@ -1574,12 +1826,20 @@ static NSString *MappedParamName(NSString *name) {
       lastGrouping = [method groupingParts];
 
       NSMutableString *sectionBlock = [NSMutableString string];
+<<<<<<< HEAD
       [sectionBlock appendString:@"#pragma mark -\n"];
 
       if ([lastGrouping count] == 0) {
         [sectionBlock appendString:@"#pragma mark Service level methods\n"];
       } else {
         [sectionBlock appendFormat:@"#pragma mark \"%@\" methods\n",
+=======
+
+      if ([lastGrouping count] == 0) {
+        [sectionBlock appendString:@"#pragma mark - Service level methods\n"];
+      } else {
+        [sectionBlock appendFormat:@"#pragma mark - \"%@\" methods\n",
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
          method.groupingName];
       }
 
@@ -1617,6 +1877,7 @@ static NSString *MappedParamName(NSString *name) {
         // to be used for the property.
         if (![param.required boolValue] &&
             [param propertyForKey:kOverloadedParameterTypeKey]) {
+<<<<<<< HEAD
           NSString *objcType = nil;
           [param getQueryParamObjCType:&objcType
                              asPointer:NULL
@@ -1626,6 +1887,11 @@ static NSString *MappedParamName(NSString *name) {
           NSString *overloadNote =
             [NSString stringWithFormat:@"For this method, \"%@\" should be of type %@.",
              param.objcName, objcType];
+=======
+          NSString *overloadNote =
+            [NSString stringWithFormat:@"For this method, \"%@\" should be of type %@.",
+             param.objcName, param.queryParamPseudoObjCType];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
           if ([paramDesc length] > 0) {
             paramDesc = [NSString stringWithFormat:@"%@\nNote: %@",
                          paramDesc, overloadNote];
@@ -1636,6 +1902,7 @@ static NSString *MappedParamName(NSString *name) {
         // If no description and optional, just list the type as a hint that
         // the param applies to this method.
         if (([paramDesc length] == 0) && ![param.required boolValue]) {
+<<<<<<< HEAD
           NSString *objcType = nil;
           [param getQueryParamObjCType:&objcType
                              asPointer:NULL
@@ -1643,6 +1910,9 @@ static NSString *MappedParamName(NSString *name) {
                                comment:NULL
                         itemsClassName:NULL];
           paramDesc = objcType;
+=======
+          paramDesc = param.queryParamPseudoObjCType;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
         }
         if ([paramDesc length] > 0) {
           NSString *firstLinePrefix =
@@ -1749,7 +2019,11 @@ static NSString *MappedParamName(NSString *name) {
       }
     }
 
+<<<<<<< HEAD
     NSString *initialLine = [NSString stringWithFormat:@"+ (id)%@",
+=======
+    NSString *initialLine = [NSString stringWithFormat:@"+ (instancetype)%@",
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
                              method.objcQueryForName];
     [methodStr appendString:initialLine];
     NSUInteger nameWidth = [initialLine length];
@@ -1979,6 +2253,22 @@ static NSString *MappedParamName(NSString *name) {
   return result;
 }
 
+<<<<<<< HEAD
+=======
+- (NSArray *)recursivelyNeededClassesForSchemaSorted:(GTLDiscoveryJsonSchema *)schema {
+  NSMutableSet *allNeededClasses = [NSMutableSet set];
+  NSSet *neededClasses = [self neededClassesForSchema:schema];
+  [allNeededClasses unionSet:neededClasses];
+  for (GTLDiscoveryJsonSchema *subSchema in schema.childObjectSchemas) {
+    neededClasses = [self neededClassesForSchema:subSchema];
+    [allNeededClasses unionSet:neededClasses];
+  }
+  NSArray *sortedAllNeededClasses =
+    [[allNeededClasses allObjects] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+  return sortedAllNeededClasses;
+}
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (NSString *)generateObjectClassForSchema:(GTLDiscoveryJsonSchema *)schema
                                    forMode:(GeneratorMode)mode
                    includeClassDescription:(BOOL)includeClassDescription
@@ -2009,7 +2299,11 @@ static NSString *MappedParamName(NSString *name) {
     // on the property declaration where they are fetched since that better
     // leads developers through the object tree.
     NSString *schemaDescription = schema.descriptionProperty;
+<<<<<<< HEAD
     if (schemaDescription) {
+=======
+    if (schemaDescription.length > 0) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       NSString *wrappedDescription =
         [FHUtils stringOfLinesFromString:schemaDescription linePrefix:@"// "];
       [classHeader appendString:wrappedDescription];
@@ -2063,7 +2357,11 @@ static NSString *MappedParamName(NSString *name) {
       } else {
         comment = [@"  // " stringByAppendingString:comment];
       }
+<<<<<<< HEAD
       NSString *propertyLine = [NSString stringWithFormat:@"@property (%@, readonly) %@%@%@;%@\n",
+=======
+      NSString *propertyLine = [NSString stringWithFormat:@"@property (nonatomic, %@, readonly) %@%@%@;%@\n",
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
                                 objcPropertySemantics, objcType,
                                 (asPtr ? @" *" : @" "),
                                 @"items", comment];
@@ -2145,7 +2443,11 @@ static NSString *MappedParamName(NSString *name) {
         if ([notRetainedPredicate_ evaluateWithObject:propertyObjCName]) {
           clangDirective = @" NS_RETURNS_NOT_RETAINED";
         }
+<<<<<<< HEAD
         NSString *propertyLine = [NSString stringWithFormat:@"@property (%@%@) %@%@%@%@;%@\n",
+=======
+        NSString *propertyLine = [NSString stringWithFormat:@"@property (nonatomic, %@%@) %@%@%@%@;%@\n",
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
                                   objcPropertySemantics, extraAttributes, objcType,
                                   (asPtr ? @" *" : @" "),
                                   propertyObjCName, clangDirective, comment];
@@ -2225,6 +2527,7 @@ static NSString *MappedParamName(NSString *name) {
   // Handle the 'kind' attribute for auto creating the right objects when
   // parsing.
   if (mode == kGenerateImplementation) {
+<<<<<<< HEAD
     NSString *kindToRegister = schema.kindToRegister;
     if (kindToRegister != nil) {
       // Have we suppressed the registered kind?
@@ -2240,6 +2543,33 @@ static NSString *MappedParamName(NSString *name) {
          kindToRegister];
         [loadMethod appendString:@"}\n"];
         [methodParts addObject:loadMethod];
+=======
+    if (schema.likelyInvalidUseOfKind) {
+      NSString *blockKindMethod =
+          @"+ (BOOL)isKindValidForClassRegistry {\n"
+          @"  // This class has a \"kind\" property that doesn't appear to be usable to\n"
+          @"  // determine what type of object was encoded in the JSON.\n"
+          @"  return NO;\n"
+          @"}\n";
+      [methodParts addObject:blockKindMethod];
+    } else {
+      NSString *kindToRegister = schema.kindToRegister;
+      if (kindToRegister != nil) {
+        // Have we suppressed the registered kind?
+        if ([schema propertyForKey:kSkipRegisteringKindKey] != nil) {
+          NSMutableString *loadMethod = [NSMutableString string];
+          [loadMethod appendFormat:@"// +load method not generated as another class also claims kind '%@'.\n",
+           kindToRegister];
+          [methodParts addObject:loadMethod];
+        } else {
+          NSMutableString *loadMethod = [NSMutableString string];
+          [loadMethod appendString:@"+ (void)load {\n"];
+          [loadMethod appendFormat:@"  [self registerObjectClassForKind:@\"%@\"];\n",
+           kindToRegister];
+          [loadMethod appendString:@"}\n"];
+          [methodParts addObject:loadMethod];
+        }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       }
     }
   }
@@ -2454,11 +2784,23 @@ static NSString *MappedParamName(NSString *name) {
 
 - (NSString *)frameworkedImport:(NSString *)headerName {
   NSMutableString *result = [NSMutableString string];
+<<<<<<< HEAD
   [result appendFormat:@"#if %@\n", kFrameworkIncludeGate];
   [result appendFormat:@"  #import \"%@/%@.h\"\n", kProjectPrefix, headerName];
   [result appendString:@"#else\n"];
   [result appendFormat:@"  #import \"%@.h\"\n", headerName];
   [result appendString:@"#endif\n"];
+=======
+  if (self.frameworkName) {
+    [result appendFormat:@"#import <%@/%@.h>\n", self.frameworkName, headerName];
+  } else {
+    [result appendFormat:@"#if %@\n", kFrameworkIncludeGate];
+    [result appendFormat:@"  #import \"%@/%@.h\"\n", kProjectPrefix, headerName];
+    [result appendString:@"#else\n"];
+    [result appendFormat:@"  #import \"%@.h\"\n", headerName];
+    [result appendString:@"#endif\n"];
+  }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return result;
 }
 
@@ -2530,15 +2872,23 @@ static NSString *MappedParamName(NSString *name) {
 
   NSMutableArray *allParams = [NSMutableArray array];
   NSMutableDictionary *uniqueParamsDict = [NSMutableDictionary dictionary];
+<<<<<<< HEAD
   NSMutableSet *objcParamNames = [NSMutableSet set];
+=======
+  NSMutableDictionary *uniqueRepeatedParamsDict = [NSMutableDictionary dictionary];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSMutableArray *commonParams = [NSMutableArray array];
 
   // Common parameters are listed at the service level; they apply to all
   // methods.  However, there are some that come back from discovery that
   // don't make sense at the method level for the GTL library, so we filter
   // those out.
+<<<<<<< HEAD
   NSArray *commonParamsToSkip =
     [NSArray arrayWithObjects:
+=======
+  NSArray *commonParamsToSkip = @[
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
      @"alt", // GTL only supports JSON
      @"key", // GTL handles the API key on the service, per method is need in
              //   the ObjectiveC use case.
@@ -2547,7 +2897,11 @@ static NSString *MappedParamName(NSString *name) {
      @"userIp", // Not needed for client software, only needed for servers
                 // making request on behalf of lots of users.
      @"quotaUser", // Another form of userIp.
+<<<<<<< HEAD
      nil];
+=======
+  ];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
   NSArray *allCommonParams = DictionaryObjectsSortedByKeys(self.parameters.additionalProperties);
   for (GTLDiscoveryJsonSchema *param in allCommonParams) {
@@ -2557,6 +2911,7 @@ static NSString *MappedParamName(NSString *name) {
     [commonParams addObject:param];
     [allParams addObject:param];
     [uniqueParamsDict setObject:param forKey:param.name];
+<<<<<<< HEAD
     NSString *objcName = param.objcName;
     if ([objcParamNames containsObject:objcName]) {
       NSString *errStr =
@@ -2566,6 +2921,10 @@ static NSString *MappedParamName(NSString *name) {
       result = NO;
     } else {
       [objcParamNames addObject:objcName];
+=======
+    if (param.repeated || [param.type isEqual:@"array"]) {
+      [uniqueRepeatedParamsDict setObject:param forKey:param.name];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     }
   }
 
@@ -2574,7 +2933,11 @@ static NSString *MappedParamName(NSString *name) {
     for (GTLDiscoveryJsonSchema *param in methodParameters) {
       // The ObjC library lists the object that goes with the methods
       // independently, so keep it out of the parameters lists.
+<<<<<<< HEAD
       if ([param.name isEqual:kResourceParameterName]) {
+=======
+      if (param.isQueryRequestObject) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
         continue;
       }
 
@@ -2590,7 +2953,11 @@ static NSString *MappedParamName(NSString *name) {
         NSPointerArray *sameNamed =
           [previousParam propertyForKey:kSameNamedParametersKey];
         if (!sameNamed) {
+<<<<<<< HEAD
           sameNamed = [NSPointerArray pointerArrayWithWeakObjects];
+=======
+          sameNamed = [NSPointerArray weakObjectsPointerArray];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
           [previousParam setProperty:sameNamed forKey:kSameNamedParametersKey];
           [sameNamed addPointer:previousParam];
         }
@@ -2611,14 +2978,21 @@ static NSString *MappedParamName(NSString *name) {
                                              itemsClassName:&itemsClassName2];
         // TODO(TVL): the second warning here about itemClass (repeated/arrays)
         // can also fire with a 'null' type if one instance is a basic type
+<<<<<<< HEAD
         // and the other is array of something.  Contacts currently hits this.
+=======
+        // and the other is array of something.  Contacts was hitting this.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
         if (![objcType1 isEqual:objcType2]) {
           // Mark the parameters to be overloaded to handle multiple types.
           for (GTLDiscoveryJsonSchema *sameNamedParam in sameNamed) {
             [sameNamedParam setProperty:@YES forKey:kOverloadedParameterTypeKey];
           }
+<<<<<<< HEAD
           // Messages for this are reported lower so there is one line for all
           // duplicates.
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
         } else {
           // If the previous was overloaded, we have to mark this new one as
           // overloaded also.
@@ -2626,6 +3000,7 @@ static NSString *MappedParamName(NSString *name) {
             [param setProperty:@YES forKey:kOverloadedParameterTypeKey];
           }
         }
+<<<<<<< HEAD
         if (!GTL_AreEqualOrBothNil(itemsClassName1, itemsClassName2)) {
           if (![objcType1 isEqual:@"NSArray"]) {
             // obj2 array, obj1 not
@@ -2645,6 +3020,44 @@ static NSString *MappedParamName(NSString *name) {
                param.method.name,
                previousParam.method.name];
             messageHandler(kFHGeneratorHandlerMessageInfo, errStr);
+=======
+
+        if (param.repeated || [param.type isEqual:@"array"]) {
+          GTLDiscoveryJsonSchema *previousRepeatedParam =
+            [uniqueRepeatedParamsDict objectForKey:param.name];
+          if (previousRepeatedParam) {
+            // Like sameNamed above, track the same named repeateds.
+            NSPointerArray *sameRepeatedNamed =
+              [previousRepeatedParam propertyForKey:kSameNamedRepeatedParametersKey];
+            if (!sameRepeatedNamed) {
+              sameRepeatedNamed = [NSPointerArray weakObjectsPointerArray];
+              [previousRepeatedParam setProperty:sameRepeatedNamed
+                                          forKey:kSameNamedRepeatedParametersKey];
+              [sameRepeatedNamed addPointer:previousRepeatedParam];
+            }
+            [sameRepeatedNamed addPointer:param];
+            [param setProperty:sameRepeatedNamed forKey:kSameNamedRepeatedParametersKey];
+
+            [previousRepeatedParam.resolvedSchema getQueryParamObjCType:&objcType2
+                                                      asPointer:NULL
+                                          objcPropertySemantics:NULL
+                                                        comment:NULL
+                                                 itemsClassName:&itemsClassName2];
+            if (![itemsClassName1 isEqual:itemsClassName2]) {
+              // Mark the parameters to be overloaded to handle multiple types.
+              for (GTLDiscoveryJsonSchema *sameNamedRepeatedParam in sameRepeatedNamed) {
+                [sameNamedRepeatedParam setProperty:@YES forKey:kOverloadedParameterArrayItemKey];
+              }
+            } else {
+              // If the previous was overloaded, we have to mark this new one as
+              // overloaded also.
+              if ([previousRepeatedParam propertyForKey:kOverloadedParameterArrayItemKey]) {
+                [param setProperty:@YES forKey:kOverloadedParameterArrayItemKey];
+              }
+            }
+          } else {
+            [uniqueRepeatedParamsDict setObject:param forKey:param.name];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
           }
         }
 
@@ -2656,6 +3069,7 @@ static NSString *MappedParamName(NSString *name) {
         // though the parameter is named the same.
       } else {
         [uniqueParamsDict setObject:param forKey:param.name];
+<<<<<<< HEAD
         NSString *objcName = param.objcName;
         if ([objcParamNames containsObject:objcName]) {
           NSString *errStr =
@@ -2668,6 +3082,13 @@ static NSString *MappedParamName(NSString *name) {
         }
       }
     }
+=======
+        if (param.repeated || [param.type isEqual:@"array"]) {
+          [uniqueRepeatedParamsDict setObject:param forKey:param.name];
+        }
+      }
+    }  // for(param in methodParameters)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
     // Make sure everyting listed in parameterOrder is actually listed as a
     // parameter.
@@ -2685,7 +3106,12 @@ static NSString *MappedParamName(NSString *name) {
         result = NO;
       }
     }
+<<<<<<< HEAD
   }
+=======
+  }  // for (method in self.allMethods)
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   // Save them sorted for stable iteration.
   NSArray *sortedNames = [[uniqueParamsDict allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
   NSArray *uniqueParams = [uniqueParamsDict objectsForKeys:sortedNames
@@ -2693,6 +3119,7 @@ static NSString *MappedParamName(NSString *name) {
 
   for (GTLDiscoveryJsonSchema *param in uniqueParams) {
     if ([param propertyForKey:kOverloadedParameterTypeKey] != nil) {
+<<<<<<< HEAD
       NSMutableString *msgStr =
         [NSMutableString stringWithFormat:@"Will make parameter '%@' support anything, it has multiple types between methods:",
          param.name];
@@ -2705,12 +3132,126 @@ static NSString *MappedParamName(NSString *name) {
                                             comment:NULL
                                      itemsClassName:NULL];
         [msgStr appendFormat:@"\n        %@: %@", aParam.method.name, paramType];
+=======
+      NSPointerArray *sameNamed = [param propertyForKey:kSameNamedParametersKey];
+      NSMutableDictionary *typeToNames = [NSMutableDictionary dictionary];
+      for (GTLDiscoveryJsonSchema *aParam in sameNamed) {
+        NSString *paramType = aParam.queryParamPseudoObjCType;
+        NSMutableArray *names = typeToNames[paramType];
+        if (names == nil) {
+          names = [NSMutableArray array];
+          typeToNames[paramType] = names;
+        }
+        [names addObject:aParam.method.name];
+      }
+      NSMutableString *msgStr =
+        [NSMutableString stringWithFormat:@"Will make parameter '%@' support anything, it has multiple types between methods:",
+         param.name];
+      for (NSString *paramType in typeToNames) {
+        NSArray *names = typeToNames[paramType];
+        [msgStr appendFormat:@"\n        %@:", paramType];
+        for (NSString *name in names) {
+          [msgStr appendFormat:@"\n            %@", name];
+        }
       }
       messageHandler(kFHGeneratorHandlerMessageInfo, msgStr);
     }
   }
 
+  // Save them sorted for stable iteration.
+  sortedNames =
+    [[uniqueRepeatedParamsDict allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+  NSArray *uniqueRepeatedParams = [uniqueRepeatedParamsDict objectsForKeys:sortedNames
+                                                            notFoundMarker:[NSNull null]];
+
+  for (GTLDiscoveryJsonSchema *param in uniqueRepeatedParams) {
+    // If it is generally overload, nothing special is reported as it was covered above.
+    if ([param propertyForKey:kOverloadedParameterTypeKey] != nil) {
+      continue;
+    }
+
+    if ([param propertyForKey:kOverloadedParameterArrayItemKey] != nil) {
+      NSPointerArray *sameNamed = [param propertyForKey:kSameNamedRepeatedParametersKey];
+      NSMutableDictionary *typeToNames = [NSMutableDictionary dictionary];
+      for (GTLDiscoveryJsonSchema *aParam in sameNamed) {
+        NSString *paramType = aParam.queryParamPseudoObjCType;
+        NSMutableArray *names = typeToNames[paramType];
+        if (names == nil) {
+          names = [NSMutableArray array];
+          typeToNames[paramType] = names;
+        }
+        [names addObject:aParam.method.name];
+      }
+      NSMutableString *msgStr =
+        [NSMutableString stringWithFormat:@"Will make repeated parameter '%@' support NSArrays of anything, it has multiple item types between methods:",
+         param.name];
+      for (NSString *paramType in typeToNames) {
+        NSArray *names = typeToNames[paramType];
+        [msgStr appendFormat:@"\n        %@:", paramType];
+        for (NSString *name in names) {
+          [msgStr appendFormat:@"\n            %@", name];
+        }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
+      }
+      messageHandler(kFHGeneratorHandlerMessageInfo, msgStr);
+    }
+  }
+
+<<<<<<< HEAD
   [self setProperty:uniqueParams forKey:kUniqueParamsKey];
+=======
+  // Check for collisions on objc names.
+  NSMutableDictionary *objcParamNamesDict = [NSMutableDictionary dictionary];
+  for (GTLDiscoveryJsonSchema *param in uniqueParams) {
+    NSString *objcName = param.objcName;
+    NSMutableArray *paramsWithName = objcParamNamesDict[objcName];
+    if (paramsWithName == nil) {
+      paramsWithName = [NSMutableArray array];
+      objcParamNamesDict[objcName] = paramsWithName;
+    }
+    [paramsWithName addObject:param];
+  }
+  for (NSString *objcName in objcParamNamesDict) {
+    NSArray *paramsWithName = objcParamNamesDict[objcName];
+    if (paramsWithName.count == 1) {
+      continue;  // No collisions.
+    }
+    // Collect all the params that collide on this objcName to provide a complete message.
+    NSMutableDictionary *paramNamesToLocation = [NSMutableDictionary dictionary];
+    for (GTLDiscoveryJsonSchema *param in paramsWithName) {
+      NSArray *sameNamed;
+      if ([param propertyForKey:kSameNamedParametersKey] != nil) {
+        sameNamed = [[param propertyForKey:kSameNamedParametersKey] allObjects];
+      } else {
+        sameNamed = @[ param ];
+      }
+      for (GTLDiscoveryJsonSchema *param2 in sameNamed) {
+        NSString *reportName = (param2.method == nil ? @"As common parameter" : param2.method.name);
+        NSMutableArray *names = paramNamesToLocation[param2.name];
+        if (names == nil) {
+          names = [NSMutableArray array];
+          paramNamesToLocation[param2.name] = names;
+        }
+        [names addObject:reportName];
+      }
+    }
+    NSMutableString *errStr =
+        [NSMutableString stringWithFormat:@"Collision for Query object Objective C property name '%@':",
+         objcName];
+    for (NSString *paramName in paramNamesToLocation) {
+      NSArray *names = paramNamesToLocation[paramName];
+      [errStr appendFormat:@"\n        parameter '%@' on:", paramName];
+      for (NSString *name in names) {
+        [errStr appendFormat:@"\n            %@", name];
+      }
+    }
+    messageHandler(kFHGeneratorHandlerMessageError, errStr);
+    result = NO;
+  }
+
+  [self setProperty:uniqueParams forKey:kUniqueParamsKey];
+  [self setProperty:uniqueRepeatedParams forKey:kUniqueRepeatedParamsKey];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [self setProperty:allParams forKey:kAllParamsKey];
 
   return result;
@@ -2722,6 +3263,15 @@ static NSString *MappedParamName(NSString *name) {
   return result;
 }
 
+<<<<<<< HEAD
+=======
+- (NSArray *)uniqueRepeatedParameters {
+  // buildParameterLists: gets called to compute this.
+  NSArray *result = [self propertyForKey:kUniqueRepeatedParamsKey];
+  return result;
+}
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (NSArray *)allParameters {
   // buildParameterLists: gets called to compute this.
   NSArray *result = [self propertyForKey:kAllParamsKey];
@@ -2999,11 +3549,22 @@ static NSString *MappedParamName(NSString *name) {
     if (![result length]) {
       // Fall back to the older rpc URL if need be.
       result = self.rpcUrl;
+<<<<<<< HEAD
 
       NSString *str =
         [NSString stringWithFormat:@"API didn't have a rootUrl and/or rpcPath ('%@' & '%@'), using old rpcUrl (%@).",
          rootUrlString, rpcPathString, result];
       [generator addWarning:str];
+=======
+      if ([result length]) {
+        NSString *str =
+          [NSString stringWithFormat:@"API didn't have a rootUrl and/or rpcPath ('%@' & '%@'), using old rpcUrl (%@).",
+           rootUrlString, rpcPathString, result];
+        [generator addWarning:str];
+      } else {
+        result = nil;  // Avoid storing empty string.
+      }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     } else if (!didOverride) {
       // Warn if the old and new values differ.
       if (self.rpcUrl && ![result isEqual:self.rpcUrl]) {
@@ -3018,10 +3579,40 @@ static NSString *MappedParamName(NSString *name) {
   return result;
 }
 
+<<<<<<< HEAD
 - (BOOL)isGoogleService {
   NSString *rpcUrlString = [self builtRPCUrlString];
   BOOL result = ([rpcUrlString hasPrefix:@"https://www.googleapis.com/"] ||
                  [rpcUrlString hasPrefix:@"http://www.googleapis.com/"]);
+=======
+- (BOOL)likelyRESTOnlyAPI {
+  // Like the logic in -builtRPCUrlString...
+  // If we have a rootUrl & rpcPath, it isn't a OnePlatofrm REST only api.
+  if (([self.rootUrl length] != 0) && ([self.rpcPath length] != 0)) {
+    return NO;
+  }
+  // or, if we have the older rpcUrl, it also isn't REST only.
+  if ([self.rpcUrl length] != 0) {
+    return NO;
+  }
+  // Without one of those two, we can't make a rpc url for the service, so assume it is REST only.
+  return YES;
+}
+
+- (BOOL)isGoogleService {
+  // If the ownerDomain is google.com, it is a google service.
+  if ([self.ownerDomain isEqual:@"google.com"]) {
+    return YES;
+  }
+  // ownerDomain got added along the way, before that existed we figured this out
+  // by looking at the URL for the service. So still use that as a fallback check
+  // if ownerDomain wasn't a google.com match.
+  NSString *rpcUrlString = [self builtRPCUrlString];
+  NSURL *rpcURL = [NSURL URLWithString:rpcUrlString];
+  NSString *rpcURLHost = [rpcURL host];
+  BOOL result = ([rpcURLHost hasSuffix:@".googleapis.com"] ||
+                 [rpcURLHost hasSuffix:@".google.com"]);
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return result;
 }
 
@@ -3327,9 +3918,25 @@ static NSString *OverrideName(NSString *name, EQueryOrObject queryOrObject,
   return result;
 }
 
+<<<<<<< HEAD
 - (GTLDiscoveryRpcMethod *)method {
   GTLDiscoveryRpcMethod *result =
     [[self propertyForKey:kWrappedMethodKey] nonretainedObjectValue];
+=======
+// The direct parameter off a method that is the parent/grandparent of
+// any child schema.
+- (GTLDiscoveryJsonSchema *)methodParam {
+  GTLDiscoveryJsonSchema *parent = self;
+  while (parent.parentSchema != nil) {
+    parent = parent.parentSchema;
+  }
+  return parent;
+}
+
+- (GTLDiscoveryRpcMethod *)method {
+  GTLDiscoveryRpcMethod *result =
+    [[self.methodParam propertyForKey:kWrappedMethodKey] nonretainedObjectValue];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return result;
 }
 
@@ -3580,6 +4187,23 @@ static NSString *OverrideName(NSString *name, EQueryOrObject queryOrObject,
   return result;
 }
 
+<<<<<<< HEAD
+=======
+- (BOOL)likelyInvalidUseOfKind {
+  BOOL result = NO;
+
+  GTLDiscoveryJsonSchema *property =
+    [self.properties additionalPropertyForName:@"kind"];
+  if ([property.type isEqual:@"string"] &&
+      property.defaultProperty.length == 0) {
+    // Has a 'kind', but no default, odds are it is misusing the attribute.
+    result = YES;
+  }
+
+  return result;
+}
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Helper to generate a comment about the range and/or default value for
 // the parameter.
 - (NSString *)rangeAndDefaultDescription {
@@ -3622,6 +4246,27 @@ static NSString *OverrideName(NSString *name, EQueryOrObject queryOrObject,
   return result;
 }
 
+<<<<<<< HEAD
+=======
+// Helper to see if a param is a request object and gets handled as the
+// object parameter instead.
+- (BOOL)isQueryRequestObject {
+  // Check the name
+  if (![self.name isEqual:kResourceParameterName]) {
+    return NO;
+  }
+
+  GTLDiscoveryJsonSchema *resolved = self.resolvedSchema;
+  if (![resolved.type isEqual:@"object"]) {
+    // The api is using "resource" for something other than an object, that
+    // doesn't really make sense for JSON-RPC, but let it work.
+    return NO;
+  }
+
+  return YES;
+}
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Fetching the item's schema even if it is nested (array inside of array...),
 // resolving controls if it also resolves the schema references along the way.
 - (GTLDiscoveryJsonSchema *)itemsSchemaResolving:(BOOL)resolving
@@ -3919,6 +4564,24 @@ static FHTypeInfo *LookupTypeInfo(NSString *typeString,
 
 }
 
+<<<<<<< HEAD
+=======
+// Helper to make a string that sorta is the objc type for a param.
+- (NSString *)queryParamPseudoObjCType {
+  NSString *paramType = nil;
+  NSString *itemsClassName = nil;
+  [self getQueryParamObjCType:&paramType
+                    asPointer:NULL
+        objcPropertySemantics:NULL
+                      comment:NULL
+               itemsClassName:&itemsClassName];
+  if ([itemsClassName length]) {
+    paramType = [paramType stringByAppendingFormat:@"<%@>", itemsClassName];
+  }
+  return paramType;
+}
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 @implementation GTLDiscoveryRpcMethod (FHGeneratorAdditions)
@@ -3962,7 +4625,14 @@ static FHTypeInfo *LookupTypeInfo(NSString *typeString,
   // The request object is the parameter named 'resource'.
   GTLDiscoveryJsonSchema *result =
     [self.parameters.additionalProperties objectForKey:kResourceParameterName];
+<<<<<<< HEAD
   return result;
+=======
+  if (result.isQueryRequestObject) {
+    return result;
+  }
+  return nil;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 // Sorted by parameterOrder first, and then alphabetical for the rest. This
@@ -4001,7 +4671,13 @@ static FHTypeInfo *LookupTypeInfo(NSString *typeString,
 
     // Calculate the value for sortedParameters and save it.
     NSMutableArray *worker = [NSMutableArray arrayWithArray:allOrderedKeys];
+<<<<<<< HEAD
     [worker removeObject:kResourceParameterName];
+=======
+    if (self.request) {
+      [worker removeObject:kResourceParameterName];
+    }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     NSArray *sortedParameters = [paramsDict objectsForKeys:worker
                                             notFoundMarker:[NSNull null]];
     [self setProperty:sortedParameters forKey:kSortedParametersKey];

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
+=======
+//   Views and manages your Google Analytics data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/analytics/
 
@@ -41,6 +49,11 @@ GTL_EXTERN NSString * const kGTLAuthScopeAnalytics;             // "https://www.
 GTL_EXTERN NSString * const kGTLAuthScopeAnalyticsEdit;         // "https://www.googleapis.com/auth/analytics.edit"
 // Manage Google Analytics Account users by email address
 GTL_EXTERN NSString * const kGTLAuthScopeAnalyticsManageUsers;  // "https://www.googleapis.com/auth/analytics.manage.users"
+<<<<<<< HEAD
+=======
+// View Google Analytics user permissions
+GTL_EXTERN NSString * const kGTLAuthScopeAnalyticsManageUsersReadonly;  // "https://www.googleapis.com/auth/analytics.manage.users.readonly"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Create a new Google Analytics account along with its default property and
 // view
 GTL_EXTERN NSString * const kGTLAuthScopeAnalyticsProvision;    // "https://www.googleapis.com/auth/analytics.provision"
@@ -55,6 +68,9 @@ GTL_EXTERN NSString * const kGTLAnalyticsOutputJson;       // "json"
 GTL_EXTERN NSString * const kGTLAnalyticsSamplingLevelDefault;  // "DEFAULT"
 GTL_EXTERN NSString * const kGTLAnalyticsSamplingLevelFaster;   // "FASTER"
 GTL_EXTERN NSString * const kGTLAnalyticsSamplingLevelHigherPrecision;  // "HIGHER_PRECISION"
+<<<<<<< HEAD
 
 // GTLQueryAnalytics - Type
 GTL_EXTERN NSString * const kGTLAnalyticsTypeCost;  // "cost"
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd

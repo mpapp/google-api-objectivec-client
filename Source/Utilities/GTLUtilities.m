@@ -21,12 +21,15 @@
 
 #pragma mark String encoding
 
+<<<<<<< HEAD
 // URL Encoding
 
 + (NSString *)stringByURLEncodingString:(NSString *)str {
   NSString *result = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   return result;
 }
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // NSURL's stringByAddingPercentEscapesUsingEncoding: does not escape
 // some characters that should be escaped in URL parameters, like / and ?;
@@ -34,6 +37,7 @@
 //
 // Reference: http://www.ietf.org/rfc/rfc3986.txt
 
+<<<<<<< HEAD
 const CFStringRef kCharsToForceEscape = CFSTR("!*'();:@&=+$,/?%#[]");
 
 + (NSString *)stringByURLEncodingForURI:(NSString *)str {
@@ -80,6 +84,42 @@ const CFStringRef kCharsToForceEscape = CFSTR("!*'();:@&=+$,/?%#[]");
                                    options:0
                                      range:NSMakeRange(0, [mutableStr length])];
     resultStr = mutableStr;
+=======
++ (NSString *)stringByURLEncodingStringParameter:(NSString *)originalString {
+  // For parameters, we'll explicitly leave spaces unescaped now, and replace
+  // them with +'s
+  NSString *const kForceEscape = @"!*'();:@&=+$,/?%#[]";
+  NSString *const kLeaveUnescaped = @" ";
+
+#if (!TARGET_OS_IPHONE && defined(MAC_OS_X_VERSION_10_9) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_9) \
+    || (TARGET_OS_IPHONE && defined(__IPHONE_7_0) && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0)
+  // Builds targeting iOS 7/OS X 10.9 and higher only.
+  NSMutableCharacterSet *cs =
+      [[[NSCharacterSet URLQueryAllowedCharacterSet] mutableCopy] autorelease];
+  [cs removeCharactersInString:kForceEscape];
+  [cs addCharactersInString:kLeaveUnescaped];
+
+  NSString *escapedStr = [originalString stringByAddingPercentEncodingWithAllowedCharacters:cs];
+#else
+  // Builds targeting iOS 6/OS X 10.8.
+  NSString *escapedStr = nil;
+  CFStringRef escapedStrCF =
+      CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                              (CFStringRef)originalString,
+                                              (CFStringRef)kLeaveUnescaped,
+                                              (CFStringRef)kForceEscape,
+                                              kCFStringEncodingUTF8);
+  if (escapedStrCF) {
+    escapedStr = [NSString stringWithString:(NSString *)escapedStrCF];
+    CFRelease(escapedStrCF);
+  }
+#endif
+  NSString *resultStr = originalString;
+  if (escapedStr) {
+    // replace spaces with plusses
+    resultStr = [escapedStr stringByReplacingOccurrencesOfString:@" "
+                                                      withString:@"+"];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   }
   return resultStr;
 }
@@ -244,12 +284,15 @@ const CFStringRef kCharsToForceEscape = CFSTR("!*'();:@&=+$,/?%#[]");
 
 #pragma mark Collections
 
+<<<<<<< HEAD
 + (NSMutableDictionary *)newStaticDictionary {
   NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 
   return dict;
 }
 
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 + (NSDictionary *)mergedClassDictionaryForSelector:(SEL)selector
                                         startClass:(Class)startClass
                                      ancestorClass:(Class)ancestorClass
@@ -305,7 +348,11 @@ BOOL GTL_AreEqualOrBothNil(id obj1, id obj2) {
     return YES;
   }
   if (obj1 && obj2) {
+<<<<<<< HEAD
     BOOL areEqual = [obj1 isEqual:obj2];
+=======
+    BOOL areEqual = [(NSObject *)obj1 isEqual:obj2];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     return areEqual;
   }
   return NO;
@@ -339,11 +386,19 @@ NSNumber *GTL_EnsureNSNumber(NSNumber *num) {
       // does not correctly create an NSNumber for large values like
       // 71100000000007780.
       if ([str hasPrefix:@"-"]) {
+<<<<<<< HEAD
         newNum = [NSNumber numberWithLongLong:[str longLongValue]];
       } else {
         const char *utf8 = [str UTF8String];
         unsigned long long ull = strtoull(utf8, NULL, 10);
         newNum = [NSNumber numberWithUnsignedLongLong:ull];
+=======
+        newNum = @([str longLongValue]);
+      } else {
+        const char *utf8 = [str UTF8String];
+        unsigned long long ull = strtoull(utf8, NULL, 10);
+        newNum = @(ull);
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       }
     }
     if (newNum) {

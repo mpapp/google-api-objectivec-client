@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,9 +48,16 @@
 @interface GTLDoubleClickBidManagerReportKey : GTLObject
 
 // Query ID.
+<<<<<<< HEAD
 @property (retain) NSNumber *queryId;  // longLongValue
 
 // Report ID.
 @property (retain) NSNumber *reportId;  // longLongValue
+=======
+@property (nonatomic, retain) NSNumber *queryId;  // longLongValue
+
+// Report ID.
+@property (nonatomic, retain) NSNumber *reportId;  // longLongValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

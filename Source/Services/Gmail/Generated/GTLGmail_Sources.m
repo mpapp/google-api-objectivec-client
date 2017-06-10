@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +29,11 @@
 // Service:
 //   Gmail API (gmail/v1)
 // Description:
+<<<<<<< HEAD
 //   The Gmail REST API.
+=======
+//   Access Gmail mailboxes including sending user email.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/gmail/api/
 
@@ -33,6 +41,13 @@
 
 #import "GTLGmailDraft.m"
 #import "GTLGmailHistory.m"
+<<<<<<< HEAD
+=======
+#import "GTLGmailHistoryLabelAdded.m"
+#import "GTLGmailHistoryLabelRemoved.m"
+#import "GTLGmailHistoryMessageAdded.m"
+#import "GTLGmailHistoryMessageDeleted.m"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLGmailLabel.m"
 #import "GTLGmailListDraftsResponse.m"
 #import "GTLGmailListHistoryResponse.m"
@@ -43,7 +58,13 @@
 #import "GTLGmailMessagePart.m"
 #import "GTLGmailMessagePartBody.m"
 #import "GTLGmailMessagePartHeader.m"
+<<<<<<< HEAD
 #import "GTLGmailThread.m"
+=======
+#import "GTLGmailProfile.m"
+#import "GTLGmailThread.m"
+#import "GTLGmailWatchResponse.m"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLQueryGmail.m"
 #import "GTLServiceGmail.m"

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,10 +50,17 @@
 // The name to display for the menu item. If you specify this property for a
 // built-in menu item, the default contextual voice command for that menu item
 // is not shown.
+<<<<<<< HEAD
 @property (copy) NSString *displayName;
 
 // URL of an icon to display with the menu item.
 @property (copy) NSString *iconUrl;
+=======
+@property (nonatomic, copy) NSString *displayName;
+
+// URL of an icon to display with the menu item.
+@property (nonatomic, copy) NSString *iconUrl;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The state that this value applies to. Allowed values are:
 // - DEFAULT - Default value shown when displayed in the menuItems list.
@@ -57,6 +68,10 @@
 // can still be cancelled.
 // - CONFIRMED - Value shown when the menuItem has been selected by the user and
 // can no longer be cancelled.
+<<<<<<< HEAD
 @property (copy) NSString *state;
+=======
+@property (nonatomic, copy) NSString *state;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

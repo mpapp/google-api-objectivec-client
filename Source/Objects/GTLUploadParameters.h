@@ -33,6 +33,10 @@
   NSURL *uploadLocationURL_;
   NSString *slug_;
   BOOL shouldSendUploadOnly_;
+<<<<<<< HEAD
+=======
+  BOOL useBackgroundSession_;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 // Uploading requires MIME type and one of
@@ -54,6 +58,7 @@
 // Uploads may be done without a JSON body in the initial request
 @property (assign) BOOL shouldSendUploadOnly;
 
+<<<<<<< HEAD
 + (instancetype)uploadParametersWithData:(NSData *)data
                                 MIMEType:(NSString *)mimeType GTL_NONNULL((1,2));
 
@@ -63,4 +68,21 @@
 + (instancetype)uploadParametersWithFileURL:(NSURL *)fileHandle
                                    MIMEType:(NSString *)mimeType GTL_NONNULL((1,2));
 
+=======
+// Uploads will use a background session when uploading via GTMSessionUploadFetcher.
+// Default is YES.  Since background session fetches are slower than foreground fetches,
+// it's reasonable for an application to set this to NO when uploading small data or files.
+@property (assign) BOOL useBackgroundSession;
+
++ (instancetype)uploadParametersWithData:(NSData *)data
+                                MIMEType:(NSString *)mimeType GTL_NONNULL((1,2));
+
++ (instancetype)uploadParametersWithFileURL:(NSURL *)fileURL
+                                   MIMEType:(NSString *)mimeType GTL_NONNULL((1,2));
+
+// Provided for compatibility only.  For files, upload using a file URL, not a file handle.
++ (instancetype)uploadParametersWithFileHandle:(NSFileHandle *)fileHandle
+                                      MIMEType:(NSString *)mimeType GTL_NONNULL((1,2));
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end

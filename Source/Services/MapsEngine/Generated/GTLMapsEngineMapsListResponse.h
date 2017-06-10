@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +51,16 @@
 @interface GTLMapsEngineMapsListResponse : GTLObject
 
 // Resources returned.
+<<<<<<< HEAD
 @property (retain) NSArray *maps;  // of GTLMapsEngineMap
 
 // Next page token.
 @property (copy) NSString *nextPageToken;  // GTLBase64 can encode/decode (probably web-safe format)
+=======
+@property (nonatomic, retain) NSArray *maps;  // of GTLMapsEngineMap
+
+// Next page token.
+@property (nonatomic, copy) NSString *nextPageToken;  // GTLBase64 can encode/decode (probably web-safe format)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

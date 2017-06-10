@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +51,7 @@
 @interface GTLBooksReview : GTLObject
 
 // Author of this review.
+<<<<<<< HEAD
 @property (retain) GTLBooksReviewAuthor *author;
 
 // Review text.
@@ -78,6 +83,39 @@
 
 // Volume that this review is for.
 @property (copy) NSString *volumeId;
+=======
+@property (nonatomic, retain) GTLBooksReviewAuthor *author;
+
+// Review text.
+@property (nonatomic, copy) NSString *content;
+
+// Date of this review.
+@property (nonatomic, copy) NSString *date;
+
+// URL for the full review text, for reviews gathered from the web.
+@property (nonatomic, copy) NSString *fullTextUrl;
+
+// Resource type for a review.
+@property (nonatomic, copy) NSString *kind;
+
+// Star rating for this review. Possible values are ONE, TWO, THREE, FOUR, FIVE
+// or NOT_RATED.
+@property (nonatomic, copy) NSString *rating;
+
+// Information regarding the source of this review, when the review is not from
+// a Google Books user.
+@property (nonatomic, retain) GTLBooksReviewSource *source;
+
+// Title for this review.
+@property (nonatomic, copy) NSString *title;
+
+// Source type for this review. Possible values are EDITORIAL, WEB_USER or
+// GOOGLE_USER.
+@property (nonatomic, copy) NSString *type;
+
+// Volume that this review is for.
+@property (nonatomic, copy) NSString *volumeId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -90,7 +128,11 @@
 @interface GTLBooksReviewAuthor : GTLObject
 
 // Name of this person.
+<<<<<<< HEAD
 @property (copy) NSString *displayName;
+=======
+@property (nonatomic, copy) NSString *displayName;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -104,6 +146,7 @@
 
 // Name of the source.
 // Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+<<<<<<< HEAD
 @property (copy) NSString *descriptionProperty;
 
 // Extra text about the source of the review.
@@ -111,5 +154,14 @@
 
 // URL of the source of the review.
 @property (copy) NSString *url;
+=======
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// Extra text about the source of the review.
+@property (nonatomic, copy) NSString *extraDescription;
+
+// URL of the source of the review.
+@property (nonatomic, copy) NSString *url;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

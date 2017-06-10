@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +40,7 @@
 // Method compiled in debug builds just to check that all the needed support
 // classes are present at link time.
 + (NSArray *)checkClasses {
+<<<<<<< HEAD
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryDoubleClickBidManager class],
                       [GTLDoubleClickBidManagerDownloadLineItemsResponse class],
@@ -55,11 +60,37 @@
                       [GTLDoubleClickBidManagerUploadLineItemsResponse class],
                       [GTLDoubleClickBidManagerUploadStatus class],
                       nil];
+=======
+  NSArray *classes = @[
+    [GTLQueryDoubleClickBidManager class],
+    [GTLDoubleClickBidManagerDownloadLineItemsResponse class],
+    [GTLDoubleClickBidManagerFilterPair class],
+    [GTLDoubleClickBidManagerListQueriesResponse class],
+    [GTLDoubleClickBidManagerListReportsResponse class],
+    [GTLDoubleClickBidManagerNote class],
+    [GTLDoubleClickBidManagerParameters class],
+    [GTLDoubleClickBidManagerQuery class],
+    [GTLDoubleClickBidManagerQueryMetadata class],
+    [GTLDoubleClickBidManagerQuerySchedule class],
+    [GTLDoubleClickBidManagerReport class],
+    [GTLDoubleClickBidManagerReportFailure class],
+    [GTLDoubleClickBidManagerReportKey class],
+    [GTLDoubleClickBidManagerReportMetadata class],
+    [GTLDoubleClickBidManagerReportStatus class],
+    [GTLDoubleClickBidManagerRowStatus class],
+    [GTLDoubleClickBidManagerUploadLineItemsResponse class],
+    [GTLDoubleClickBidManagerUploadStatus class]
+  ];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return classes;
 }
 #endif  // DEBUG
 
+<<<<<<< HEAD
 - (id)init {
+=======
+- (instancetype)init {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   self = [super init];
   if (self) {
     // Version from discovery.

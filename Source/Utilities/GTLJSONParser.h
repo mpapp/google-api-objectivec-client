@@ -17,8 +17,14 @@
 //  GTLJSONParser.h
 //
 
+<<<<<<< HEAD
 // This class is a thin wrapper around the JSON parser.  It uses
 // NSJSONSerialization when available, and SBJSON otherwise.
+=======
+// This class was for use with OS X 10.6 and iOS 4, prior to the availability of
+// NSJSONSerialization.  It's still present for compatibility with code using it,
+// but code should no longer use this class.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import <Foundation/Foundation.h>
 

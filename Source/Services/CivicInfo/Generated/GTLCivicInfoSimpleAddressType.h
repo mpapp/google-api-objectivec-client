@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +24,11 @@
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
+<<<<<<< HEAD
 //   Google Civic Information API (civicinfo/v1)
+=======
+//   Google Civic Information API (civicinfo/v2)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Description:
 //   An API for accessing civic information.
 // Documentation:
@@ -44,6 +52,7 @@
 @interface GTLCivicInfoSimpleAddressType : GTLObject
 
 // The city or town for the address.
+<<<<<<< HEAD
 @property (copy) NSString *city;
 
 // The street name and number of this address.
@@ -63,5 +72,26 @@
 
 // The US Postal Zip Code of the address.
 @property (copy) NSString *zip;
+=======
+@property (nonatomic, copy) NSString *city;
+
+// The street name and number of this address.
+@property (nonatomic, copy) NSString *line1;
+
+// The second line the address, if needed.
+@property (nonatomic, copy) NSString *line2;
+
+// The third line of the address, if needed.
+@property (nonatomic, copy) NSString *line3;
+
+// The name of the location.
+@property (nonatomic, copy) NSString *locationName;
+
+// The US two letter state abbreviation of the address.
+@property (nonatomic, copy) NSString *state;
+
+// The US Postal Zip Code of the address.
+@property (nonatomic, copy) NSString *zip;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

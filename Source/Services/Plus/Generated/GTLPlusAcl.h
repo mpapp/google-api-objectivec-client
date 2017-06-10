@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google+ API (plus/v1)
 // Description:
+<<<<<<< HEAD
 //   The Google+ API enables developers to build on top of the Google+ platform.
+=======
+//   Builds on top of the Google+ platform.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/+/api/
 // Classes:
@@ -48,6 +56,7 @@
 
 // Description of the access granted, suitable for display.
 // Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+<<<<<<< HEAD
 @property (copy) NSString *descriptionProperty;
 
 // The list of access entries.
@@ -56,5 +65,15 @@
 // Identifies this resource as a collection of access controls. Value:
 // "plus#acl".
 @property (copy) NSString *kind;
+=======
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// The list of access entries.
+@property (nonatomic, retain) NSArray *items;  // of GTLPlusAclentryResource
+
+// Identifies this resource as a collection of access controls. Value:
+// "plus#acl".
+@property (nonatomic, copy) NSString *kind;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

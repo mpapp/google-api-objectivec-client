@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +28,7 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
 // Classes:
 //   GTLBigqueryTable (0 custom class methods, 15 custom properties)
@@ -32,6 +37,19 @@
 
 #import "GTLBigqueryTableReference.h"
 #import "GTLBigqueryTableSchema.h"
+=======
+//   https://cloud.google.com/bigquery/
+// Classes:
+//   GTLBigqueryTable (0 custom class methods, 20 custom properties)
+
+#import "GTLBigqueryTable.h"
+
+#import "GTLBigqueryExternalDataConfiguration.h"
+#import "GTLBigqueryStreamingbuffer.h"
+#import "GTLBigqueryTableReference.h"
+#import "GTLBigqueryTableSchema.h"
+#import "GTLBigqueryTimePartitioning.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBigqueryViewDefinition.h"
 
 // ----------------------------------------------------------------------------
@@ -40,6 +58,7 @@
 //
 
 @implementation GTLBigqueryTable
+<<<<<<< HEAD
 @dynamic creationTime, descriptionProperty, ETag, expirationTime, friendlyName,
          identifier, kind, lastModifiedTime, numBytes, numRows, schema,
          selfLink, tableReference, type, view;
@@ -51,6 +70,20 @@
       @"etag", @"ETag",
       @"id", @"identifier",
       nil];
+=======
+@dynamic creationTime, descriptionProperty, ETag, expirationTime,
+         externalDataConfiguration, friendlyName, identifier, kind,
+         lastModifiedTime, location, numBytes, numLongTermBytes, numRows,
+         schema, selfLink, streamingBuffer, tableReference, timePartitioning,
+         type, view;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"descriptionProperty" : @"description",
+    @"ETag" : @"etag",
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

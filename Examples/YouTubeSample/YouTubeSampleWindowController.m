@@ -24,8 +24,13 @@
 #import "YouTubeSampleWindowController.h"
 
 #import "GTL/GTLUtilities.h"
+<<<<<<< HEAD
 #import "GTL/GTMHTTPUploadFetcher.h"
 #import "GTL/GTMHTTPFetcherLogging.h"
+=======
+#import "GTL/GTMSessionUploadFetcher.h"
+#import "GTL/GTMSessionFetcherLogging.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTL/GTMOAuth2WindowController.h"
 
 enum {
@@ -170,11 +175,22 @@ NSString *const kKeychainItemName = @"YouTubeSample: YouTube";
   [openPanel beginSheetModalForWindow:[self window]
                     completionHandler:^(NSInteger result) {
     // Callback
+<<<<<<< HEAD
     if (result == NSOKButton) {
+=======
+    if (result == NSFileHandlingPanelOKButton) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       // The user chose a file.
       NSString *path = [[openPanel URL] path];
       [_uploadPathField setStringValue:path];
 
+<<<<<<< HEAD
+=======
+      if ([_uploadTitleField.stringValue length] == 0) {
+        [_uploadTitleField setStringValue:[path lastPathComponent]];
+      }
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       [self updateUI]; // Update UI in case we need to enable the upload button.
     }
   }];
@@ -209,12 +225,20 @@ NSString *const kKeychainItemName = @"YouTubeSample: YouTube";
 }
 
 - (IBAction)APIConsoleClicked:(id)sender {
+<<<<<<< HEAD
   NSURL *url = [NSURL URLWithString:@"https://code.google.com/apis/console"];
+=======
+  NSURL *url = [NSURL URLWithString:@"https://console.developers.google.com/"];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
 - (IBAction)loggingCheckboxClicked:(id)sender {
+<<<<<<< HEAD
   [GTMHTTPFetcher setLoggingEnabled:[sender state]];
+=======
+  [GTMSessionFetcher setLoggingEnabled:[sender state]];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark -
@@ -277,9 +301,15 @@ NSString *const kKeychainItemName = @"YouTubeSample: YouTube";
   // query.fields = @"kind,etag,items(id,etag,kind,contentDetails)";
 
   _channelListTicket = [service executeQuery:query
+<<<<<<< HEAD
                         completionHandler:^(GTLServiceTicket *ticket,
                                             GTLYouTubeChannelListResponse *channelList,
                                             NSError *error) {
+=======
+                           completionHandler:^(GTLServiceTicket *ticket,
+                                               GTLYouTubeChannelListResponse *channelList,
+                                               NSError *error) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     // Callback
 
     // The contentDetails of the response has the playlists available for
@@ -366,6 +396,10 @@ NSString *const kKeychainItemName = @"YouTubeSample: YouTube";
         [_uploadCategoryPopup setMenu:categoryMenu];
         [_uploadCategoryPopup setEnabled:YES];
       }
+<<<<<<< HEAD
+=======
+      [self updateUI];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
    }];
 }
 
@@ -417,6 +451,7 @@ NSString *const kKeychainItemName = @"YouTubeSample: YouTube";
 
 - (void)uploadVideoWithVideoObject:(GTLYouTubeVideo *)video
            resumeUploadLocationURL:(NSURL *)locationURL {
+<<<<<<< HEAD
   // Get a file handle for the upload data.
   NSString *path = [_uploadPathField stringValue];
   NSString *filename = [path lastPathComponent];
@@ -485,6 +520,64 @@ NSString *const kKeychainItemName = @"YouTubeSample: YouTube";
     // Could not read file data.
     [self displayAlert:@"File Not Found" format:@"Path: %@", path];
   }
+=======
+  NSURL *fileToUploadURL = [NSURL fileURLWithPath:[_uploadPathField stringValue]];
+  NSError *fileError;
+  if (![fileToUploadURL checkPromisedItemIsReachableAndReturnError:&fileError]) {
+    [self displayAlert:@"No Upload File Found"
+                format:@"Path: %@", fileToUploadURL.path];
+    return;
+  }
+
+  // Get a file handle for the upload data.
+  NSString *filename = [fileToUploadURL lastPathComponent];
+  NSString *mimeType = [self MIMETypeForFilename:filename
+                                 defaultMIMEType:@"video/mp4"];
+  GTLUploadParameters *uploadParameters =
+      [GTLUploadParameters uploadParametersWithFileURL:fileToUploadURL
+                                              MIMEType:mimeType];
+  uploadParameters.uploadLocationURL = locationURL;
+
+  GTLQueryYouTube *query = [GTLQueryYouTube queryForVideosInsertWithObject:video
+                                                                      part:@"snippet,status"
+                                                          uploadParameters:uploadParameters];
+
+  GTLServiceYouTube *service = self.youTubeService;
+  _uploadFileTicket = [service executeQuery:query
+                          completionHandler:^(GTLServiceTicket *ticket,
+                                              GTLYouTubeVideo *uploadedVideo,
+                                              NSError *error) {
+      // Callback
+      _uploadFileTicket = nil;
+      if (error == nil) {
+        [self displayAlert:@"Uploaded"
+                    format:@"Uploaded file \"%@\"",
+         uploadedVideo.snippet.title];
+
+        if ([_playlistPopup selectedTag] == kUploadsTag) {
+          // Refresh the displayed uploads playlist.
+          [self fetchSelectedPlaylist];
+        }
+      } else {
+        [self displayAlert:@"Upload Failed"
+                    format:@"%@", error];
+      }
+
+      [_uploadProgressIndicator setDoubleValue:0.0];
+      _uploadLocationURL = nil;
+      [self updateUI];
+    }];
+
+  NSProgressIndicator *progressIndicator = _uploadProgressIndicator;
+  _uploadFileTicket.uploadProgressBlock = ^(GTLServiceTicket *ticket,
+                                            unsigned long long numberOfBytesRead,
+                                            unsigned long long dataLength) {
+    [progressIndicator setMaxValue:(double)dataLength];
+    [progressIndicator setDoubleValue:(double)numberOfBytesRead];
+  };
+
+  [self updateUI];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 - (NSString *)MIMETypeForFilename:(NSString *)filename
@@ -579,7 +672,11 @@ NSString *const kKeychainItemName = @"YouTubeSample: YouTube";
 
     // Also display any server data present
     NSDictionary *errorInfo = [error userInfo];
+<<<<<<< HEAD
     NSData *errData = errorInfo[kGTMHTTPFetcherStatusDataKey];
+=======
+    NSData *errData = errorInfo[kGTMSessionFetcherStatusDataKey];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     if (errData) {
       NSString *dataStr = [[NSString alloc] initWithData:errData
                                                 encoding:NSUTF8StringEncoding];
@@ -638,7 +735,12 @@ NSString *const kKeychainItemName = @"YouTubeSample: YouTube";
     gDisplayedURLStr = [thumbnailURLStr copy];
 
     if (thumbnailURLStr) {
+<<<<<<< HEAD
       GTMHTTPFetcher *fetcher = [GTMHTTPFetcher fetcherWithURLString:thumbnailURLStr];
+=======
+      GTMSessionFetcher *fetcher =
+          [self.youTubeService.fetcherService fetcherWithURLString:thumbnailURLStr];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       fetcher.authorizer = self.youTubeService.authorizer;
 
       NSString *title = playlistItem.snippet.title;
@@ -669,8 +771,16 @@ NSString *const kKeychainItemName = @"YouTubeSample: YouTube";
                                     arguments:argList];
     va_end(argList);
   }
+<<<<<<< HEAD
   NSBeginAlertSheet(title, nil, nil, nil, [self window], nil, nil,
                     nil, nil, @"%@", result);
+=======
+  NSAlert *alert = [[NSAlert alloc] init];
+  alert.messageText = title;
+  alert.informativeText = result;
+  [alert beginSheetModalForWindow:[self window]
+                completionHandler:nil];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark - Client ID Sheet
@@ -684,6 +794,7 @@ NSString *const kKeychainItemName = @"YouTubeSample: YouTube";
 // into the source rather than ask the user for them.
 //
 // The string values are obtained from the API Console,
+<<<<<<< HEAD
 // https://code.google.com/apis/console
 
 - (IBAction)clientIDClicked:(id)sender {
@@ -702,6 +813,17 @@ NSString *const kKeychainItemName = @"YouTubeSample: YouTube";
 - (void)clientIDSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
   [sheet orderOut:self];
   [self updateUI];
+=======
+// https://console.developers.google.com/
+
+- (IBAction)clientIDClicked:(id)sender {
+  // Show the sheet for developers to enter their client ID and client secret
+  [[self window] beginSheet:_clientIDSheet completionHandler:nil];
+}
+
+- (IBAction)clientIDDoneClicked:(id)sender {
+  [[self window] endSheet:[sender window]];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark - Text field delegate methods

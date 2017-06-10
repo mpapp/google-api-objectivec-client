@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +28,15 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
 // Classes:
 //   GTLBigqueryJobList (0 custom class methods, 5 custom properties)
+=======
+//   https://cloud.google.com/bigquery/
+// Classes:
+//   GTLBigqueryJobList (0 custom class methods, 4 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLBigqueryJobListJobsItem (0 custom class methods, 9 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
@@ -50,6 +60,7 @@
 @interface GTLBigqueryJobList : GTLObject
 
 // A hash of this page of results.
+<<<<<<< HEAD
 @property (copy) NSString *ETag;
 
 // List of jobs that were requested.
@@ -63,6 +74,18 @@
 
 // Total number of jobs in this collection.
 @property (retain) NSNumber *totalItems;  // intValue
+=======
+@property (nonatomic, copy) NSString *ETag;
+
+// List of jobs that were requested.
+@property (nonatomic, retain) NSArray *jobs;  // of GTLBigqueryJobListJobsItem
+
+// The resource type of the response.
+@property (nonatomic, copy) NSString *kind;
+
+// A token to request the next page of results.
+@property (nonatomic, copy) NSString *nextPageToken;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -75,6 +98,7 @@
 @interface GTLBigqueryJobListJobsItem : GTLObject
 
 // [Full-projection-only] Specifies the job configuration.
+<<<<<<< HEAD
 @property (retain) GTLBigqueryJobConfiguration *configuration;
 
 // A result object that will be present only if the job has failed.
@@ -103,5 +127,35 @@
 
 // [Full-projection-only] User who ran the job.
 @property (copy) NSString *userEmail;
+=======
+@property (nonatomic, retain) GTLBigqueryJobConfiguration *configuration;
+
+// A result object that will be present only if the job has failed.
+@property (nonatomic, retain) GTLBigqueryErrorProto *errorResult;
+
+// Unique opaque ID of the job.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Job reference uniquely identifying the job.
+@property (nonatomic, retain) GTLBigqueryJobReference *jobReference;
+
+// The resource type.
+@property (nonatomic, copy) NSString *kind;
+
+// Running state of the job. When the state is DONE, errorResult can be checked
+// to determine whether the job succeeded or failed.
+@property (nonatomic, copy) NSString *state;
+
+// [Output-only] Information about the job, including starting time and ending
+// time of the job.
+@property (nonatomic, retain) GTLBigqueryJobStatistics *statistics;
+
+// [Full-projection-only] Describes the state of the job.
+@property (nonatomic, retain) GTLBigqueryJobStatus *status;
+
+// [Full-projection-only] Email address of the user who ran the job.
+@property (nonatomic, copy) NSString *userEmail;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

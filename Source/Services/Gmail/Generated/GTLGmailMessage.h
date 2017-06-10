@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,19 @@
 // Service:
 //   Gmail API (gmail/v1)
 // Description:
+<<<<<<< HEAD
 //   The Gmail REST API.
 // Documentation:
 //   https://developers.google.com/gmail/api/
 // Classes:
 //   GTLGmailMessage (0 custom class methods, 8 custom properties)
+=======
+//   Access Gmail mailboxes including sending user email.
+// Documentation:
+//   https://developers.google.com/gmail/api/
+// Classes:
+//   GTLGmailMessage (0 custom class methods, 9 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -46,6 +58,7 @@
 @interface GTLGmailMessage : GTLObject
 
 // The ID of the last history record that modified this message.
+<<<<<<< HEAD
 @property (retain) NSNumber *historyId;  // unsignedLongLongValue
 
 // The immutable ID of the message.
@@ -68,14 +81,51 @@
 
 // A short part of the message text.
 @property (copy) NSString *snippet;
+=======
+@property (nonatomic, retain) NSNumber *historyId;  // unsignedLongLongValue
+
+// The immutable ID of the message.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The internal message creation timestamp (epoch ms), which determines ordering
+// in the inbox. For normal SMTP-received email, this represents the time the
+// message was originally accepted by Google, which is more reliable than the
+// Date header. However, for API-migrated mail, it can be configured by client
+// to be based on the Date header.
+@property (nonatomic, retain) NSNumber *internalDate;  // longLongValue
+
+// List of IDs of labels applied to this message.
+@property (nonatomic, retain) NSArray *labelIds;  // of NSString
+
+// The parsed email structure in the message parts.
+@property (nonatomic, retain) GTLGmailMessagePart *payload;
+
+// The entire email message in an RFC 2822 formatted and base64url encoded
+// string. Returned in messages.get and drafts.get responses when the format=RAW
+// parameter is supplied.
+@property (nonatomic, copy) NSString *raw;  // GTLBase64 can encode/decode (probably web-safe format)
+
+// Estimated size in bytes of the message.
+@property (nonatomic, retain) NSNumber *sizeEstimate;  // intValue
+
+// A short part of the message text.
+@property (nonatomic, copy) NSString *snippet;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The ID of the thread the message belongs to. To add a message or draft to a
 // thread, the following criteria must be met:
 // - The requested threadId must be specified on the Message or Draft.Message
 // you supply with your request.
 // - The References and In-Reply-To headers must be set in compliance with the
+<<<<<<< HEAD
 // <a href="https://tools.ietf.org/html/rfc2822"RFC 2822 standard.
 // - The Subject headers must match.
 @property (copy) NSString *threadId;
+=======
+// RFC 2822 standard.
+// - The Subject headers must match.
+@property (nonatomic, copy) NSString *threadId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

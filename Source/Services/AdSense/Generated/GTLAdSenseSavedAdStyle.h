@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   AdSense Management API (adsense/v1.4)
 // Description:
+<<<<<<< HEAD
 //   Gives AdSense publishers access to their inventory and the ability to
 //   generate reports
+=======
+//   Accesses AdSense publishers' inventory and generates performance reports.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/adsense/management/
 // Classes:
@@ -45,11 +53,16 @@
 @interface GTLAdSenseSavedAdStyle : GTLObject
 
 // The AdStyle itself.
+<<<<<<< HEAD
 @property (retain) GTLAdSenseAdStyle *adStyle;
+=======
+@property (nonatomic, retain) GTLAdSenseAdStyle *adStyle;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Unique identifier of this saved ad style. This should be considered an opaque
 // identifier; it is not safe to rely on it being in any particular format.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+<<<<<<< HEAD
 @property (copy) NSString *identifier;
 
 // Kind of resource this is, in this case adsense#savedAdStyle.
@@ -57,5 +70,14 @@
 
 // The user selected name of this SavedAdStyle.
 @property (copy) NSString *name;
+=======
+@property (nonatomic, copy) NSString *identifier;
+
+// Kind of resource this is, in this case adsense#savedAdStyle.
+@property (nonatomic, copy) NSString *kind;
+
+// The user selected name of this SavedAdStyle.
+@property (nonatomic, copy) NSString *name;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

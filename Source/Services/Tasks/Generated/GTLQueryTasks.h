@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +48,16 @@
 //
 
 // Selector specifying which fields to include in a partial response.
+<<<<<<< HEAD
 @property (copy) NSString *fields;
+=======
+@property (nonatomic, copy) NSString *fields;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 //
 // Method-specific parameters; see the comments below for more information.
 //
+<<<<<<< HEAD
 @property (copy) NSString *completedMax;
 @property (copy) NSString *completedMin;
 @property (copy) NSString *dueMax;
@@ -66,6 +75,24 @@
 
 #pragma mark -
 #pragma mark "tasklists" methods
+=======
+@property (nonatomic, copy) NSString *completedMax;
+@property (nonatomic, copy) NSString *completedMin;
+@property (nonatomic, copy) NSString *dueMax;
+@property (nonatomic, copy) NSString *dueMin;
+@property (nonatomic, assign) long long maxResults;
+@property (nonatomic, copy) NSString *pageToken;
+@property (nonatomic, copy) NSString *parent;
+@property (nonatomic, copy) NSString *previous;
+@property (nonatomic, assign) BOOL showCompleted;
+@property (nonatomic, assign) BOOL showDeleted;
+@property (nonatomic, assign) BOOL showHidden;
+@property (nonatomic, copy) NSString *task;
+@property (nonatomic, copy) NSString *tasklist;
+@property (nonatomic, copy) NSString *updatedMin;
+
+#pragma mark - "tasklists" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryTasks object.
 
 // Method: tasks.tasklists.delete
@@ -74,7 +101,11 @@
 //   tasklist: Task list identifier.
 //  Authorization scope(s):
 //   kGTLAuthScopeTasks
+<<<<<<< HEAD
 + (id)queryForTasklistsDeleteWithTasklist:(NSString *)tasklist;
+=======
++ (instancetype)queryForTasklistsDeleteWithTasklist:(NSString *)tasklist;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: tasks.tasklists.get
 // Returns the authenticated user's specified task list.
@@ -84,14 +115,22 @@
 //   kGTLAuthScopeTasks
 //   kGTLAuthScopeTasksReadonly
 // Fetches a GTLTasksTaskList.
+<<<<<<< HEAD
 + (id)queryForTasklistsGetWithTasklist:(NSString *)tasklist;
+=======
++ (instancetype)queryForTasklistsGetWithTasklist:(NSString *)tasklist;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: tasks.tasklists.insert
 // Creates a new task list and adds it to the authenticated user's task lists.
 //  Authorization scope(s):
 //   kGTLAuthScopeTasks
 // Fetches a GTLTasksTaskList.
+<<<<<<< HEAD
 + (id)queryForTasklistsInsertWithObject:(GTLTasksTaskList *)object;
+=======
++ (instancetype)queryForTasklistsInsertWithObject:(GTLTasksTaskList *)object;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: tasks.tasklists.list
 // Returns all the authenticated user's task lists.
@@ -103,7 +142,11 @@
 //   kGTLAuthScopeTasks
 //   kGTLAuthScopeTasksReadonly
 // Fetches a GTLTasksTaskLists.
+<<<<<<< HEAD
 + (id)queryForTasklistsList;
+=======
++ (instancetype)queryForTasklistsList;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: tasks.tasklists.patch
 // Updates the authenticated user's specified task list. This method supports
@@ -113,8 +156,13 @@
 //  Authorization scope(s):
 //   kGTLAuthScopeTasks
 // Fetches a GTLTasksTaskList.
+<<<<<<< HEAD
 + (id)queryForTasklistsPatchWithObject:(GTLTasksTaskList *)object
                               tasklist:(NSString *)tasklist;
+=======
++ (instancetype)queryForTasklistsPatchWithObject:(GTLTasksTaskList *)object
+                                        tasklist:(NSString *)tasklist;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: tasks.tasklists.update
 // Updates the authenticated user's specified task list.
@@ -123,11 +171,18 @@
 //  Authorization scope(s):
 //   kGTLAuthScopeTasks
 // Fetches a GTLTasksTaskList.
+<<<<<<< HEAD
 + (id)queryForTasklistsUpdateWithObject:(GTLTasksTaskList *)object
                                tasklist:(NSString *)tasklist;
 
 #pragma mark -
 #pragma mark "tasks" methods
+=======
++ (instancetype)queryForTasklistsUpdateWithObject:(GTLTasksTaskList *)object
+                                         tasklist:(NSString *)tasklist;
+
+#pragma mark - "tasks" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryTasks object.
 
 // Method: tasks.tasks.clear
@@ -138,7 +193,11 @@
 //   tasklist: Task list identifier.
 //  Authorization scope(s):
 //   kGTLAuthScopeTasks
+<<<<<<< HEAD
 + (id)queryForTasksClearWithTasklist:(NSString *)tasklist;
+=======
++ (instancetype)queryForTasksClearWithTasklist:(NSString *)tasklist;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: tasks.tasks.delete
 // Deletes the specified task from the task list.
@@ -147,8 +206,13 @@
 //   task: Task identifier.
 //  Authorization scope(s):
 //   kGTLAuthScopeTasks
+<<<<<<< HEAD
 + (id)queryForTasksDeleteWithTasklist:(NSString *)tasklist
                                  task:(NSString *)task;
+=======
++ (instancetype)queryForTasksDeleteWithTasklist:(NSString *)tasklist
+                                           task:(NSString *)task;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: tasks.tasks.get
 // Returns the specified task.
@@ -159,8 +223,13 @@
 //   kGTLAuthScopeTasks
 //   kGTLAuthScopeTasksReadonly
 // Fetches a GTLTasksTask.
+<<<<<<< HEAD
 + (id)queryForTasksGetWithTasklist:(NSString *)tasklist
                               task:(NSString *)task;
+=======
++ (instancetype)queryForTasksGetWithTasklist:(NSString *)tasklist
+                                        task:(NSString *)task;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: tasks.tasks.insert
 // Creates a new task on the specified task list.
@@ -174,8 +243,13 @@
 //  Authorization scope(s):
 //   kGTLAuthScopeTasks
 // Fetches a GTLTasksTask.
+<<<<<<< HEAD
 + (id)queryForTasksInsertWithObject:(GTLTasksTask *)object
                            tasklist:(NSString *)tasklist;
+=======
++ (instancetype)queryForTasksInsertWithObject:(GTLTasksTask *)object
+                                     tasklist:(NSString *)tasklist;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: tasks.tasks.list
 // Returns all tasks in the specified task list.
@@ -208,7 +282,11 @@
 //   kGTLAuthScopeTasks
 //   kGTLAuthScopeTasksReadonly
 // Fetches a GTLTasksTasks.
+<<<<<<< HEAD
 + (id)queryForTasksListWithTasklist:(NSString *)tasklist;
+=======
++ (instancetype)queryForTasksListWithTasklist:(NSString *)tasklist;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: tasks.tasks.move
 // Moves the specified task to another position in the task list. This can
@@ -225,8 +303,13 @@
 //  Authorization scope(s):
 //   kGTLAuthScopeTasks
 // Fetches a GTLTasksTask.
+<<<<<<< HEAD
 + (id)queryForTasksMoveWithTasklist:(NSString *)tasklist
                                task:(NSString *)task;
+=======
++ (instancetype)queryForTasksMoveWithTasklist:(NSString *)tasklist
+                                         task:(NSString *)task;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: tasks.tasks.patch
 // Updates the specified task. This method supports patch semantics.
@@ -236,9 +319,15 @@
 //  Authorization scope(s):
 //   kGTLAuthScopeTasks
 // Fetches a GTLTasksTask.
+<<<<<<< HEAD
 + (id)queryForTasksPatchWithObject:(GTLTasksTask *)object
                           tasklist:(NSString *)tasklist
                               task:(NSString *)task;
+=======
++ (instancetype)queryForTasksPatchWithObject:(GTLTasksTask *)object
+                                    tasklist:(NSString *)tasklist
+                                        task:(NSString *)task;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: tasks.tasks.update
 // Updates the specified task.
@@ -248,8 +337,14 @@
 //  Authorization scope(s):
 //   kGTLAuthScopeTasks
 // Fetches a GTLTasksTask.
+<<<<<<< HEAD
 + (id)queryForTasksUpdateWithObject:(GTLTasksTask *)object
                            tasklist:(NSString *)tasklist
                                task:(NSString *)task;
+=======
++ (instancetype)queryForTasksUpdateWithObject:(GTLTasksTask *)object
+                                     tasklist:(NSString *)tasklist
+                                         task:(NSString *)task;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

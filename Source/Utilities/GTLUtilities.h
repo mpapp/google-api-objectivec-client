@@ -36,6 +36,7 @@ NSNumber *GTL_EnsureNSNumber(NSNumber *num);
 // String encoding
 //
 
+<<<<<<< HEAD
 // URL encoding, different for parts of URLs and parts of URL parameters
 //
 // +stringByURLEncodingString just makes a string legal for a URL
@@ -49,6 +50,14 @@ NSNumber *GTL_EnsureNSNumber(NSNumber *num);
 //
 + (NSString *)stringByURLEncodingString:(NSString *)str;
 + (NSString *)stringByURLEncodingForURI:(NSString *)str;
+=======
+// URL encoding for query parameters.
+//
+// +stringByURLEncodingStringParameter encodes anything inappropriate for a
+// query parameter, and replaces space characters with + characters rather than
+// percent-escaping them
+//
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 + (NSString *)stringByURLEncodingStringParameter:(NSString *)str;
 
 // Percent-encoded UTF-8
@@ -82,9 +91,12 @@ NSNumber *GTL_EnsureNSNumber(NSNumber *num);
 + (NSURL *)URLWithString:(NSString *)urlString
          queryParameters:(NSDictionary *)queryParameters;
 
+<<<<<<< HEAD
 // Allocate a global dictionary
 + (NSMutableDictionary *)newStaticDictionary;
 
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Walk up the class tree merging dictionaries and return the result.
 + (NSDictionary *)mergedClassDictionaryForSelector:(SEL)selector
                                         startClass:(Class)startClass

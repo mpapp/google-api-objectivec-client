@@ -30,6 +30,7 @@
 // GTMSessionFetcher rather than the older GTMHTTPFetcher.  The session
 // fetcher requires iOS 7/OS X 10.9 and supports out-of-process uploads.
 
+<<<<<<< HEAD
 #ifndef GTL_USE_SESSION_FETCHER
   #if GTM_USE_SESSION_FETCHER
     #define GTL_USE_SESSION_FETCHER 1
@@ -38,19 +39,58 @@
   #endif  // GTM_USE_SESSION_FETCHER
 #endif  // GTL_USE_SESSION_FETCHER
 
+=======
+#if (!TARGET_OS_IPHONE && defined(MAC_OS_X_VERSION_10_11) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_11) \
+  || (TARGET_OS_IPHONE && defined(__IPHONE_9_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_9_0)
+  #ifndef GTM_USE_SESSION_FETCHER
+    #define GTM_USE_SESSION_FETCHER 1
+  #endif
+
+  #define GTLSERVICE_DEPRECATE_OLD_ENUMS 1
+#endif
+
+#if !defined(GTL_USE_SESSION_FETCHER) && defined(GTM_USE_SESSION_FETCHER)
+  #define GTL_USE_SESSION_FETCHER GTM_USE_SESSION_FETCHER
+#endif  // GTL_USE_SESSION_FETCHER
+
+#if !defined(GTL_USE_FRAMEWORK_IMPORTS)
+  #define GTL_USE_FRAMEWORK_IMPORTS 0
+#endif
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #if GTL_USE_SESSION_FETCHER
   #define GTLUploadFetcherClass GTMSessionUploadFetcher
   #define GTLUploadFetcherClassStr @"GTMSessionUploadFetcher"
 
+<<<<<<< HEAD
   #import "GTMSessionFetcher.h"
   #import "GTMSessionFetcherService.h"
+=======
+  #if GTL_USE_FRAMEWORK_IMPORTS
+    #import <GTMSessionFetcher/GTMSessionFetcher.h>
+    #import <GTMSessionFetcher/GTMSessionFetcherService.h>
+  #else
+    #import "GTMSessionFetcher.h"
+    #import "GTMSessionFetcherService.h"
+  #endif  // GTL_USE_FRAMEWORK_IMPORTS
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #else
   // !GTL_USE_SESSION_FETCHER
   #define GTLUploadFetcherClass GTMHTTPUploadFetcher
   #define GTLUploadFetcherClassStr @"GTMHTTPUploadFetcher"
 
+<<<<<<< HEAD
   #import "GTMHTTPFetcher.h"
   #import "GTMHTTPFetcherService.h"
+=======
+  #if GTL_USE_FRAMEWORK_IMPORTS
+    #import <GTMHTTPFetcher/GTMHTTPFetcher.h>
+    #import <GTMHTTPFetcher/GTMHTTPFetcherService.h>
+  #else
+    #import "GTMHTTPFetcher.h"
+    #import "GTMHTTPFetcherService.h"
+  #endif  // GTL_USE_FRAMEWORK_IMPORTS
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #endif  // GTL_USE_SESSION_FETCHER
 
 #import "GTLBatchQuery.h"
@@ -65,11 +105,25 @@
 
 // Error domains
 extern NSString *const kGTLServiceErrorDomain;
+<<<<<<< HEAD
 enum {
   kGTLErrorQueryResultMissing = -3000,
   kGTLErrorWaitTimedOut       = -3001
 };
 
+=======
+
+typedef NS_ENUM(NSInteger, GTLServiceError) {
+  GTLServiceErrorQueryResultMissing = -3000,
+  GTLServiceErrorWaitTimedOut       = -3001
+};
+
+#if !GTLSERVICE_DEPRECATE_OLD_ENUMS
+#define kGTLErrorQueryResultMissing GTLServiceErrorQueryResultMissing
+#define kGTLErrorWaitTimedOut       GTLServiceErrorWaitTimedOut
+#endif
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 extern NSString *const kGTLJSONRPCErrorDomain;
 
 // We'll consistently store the server error string in the userInfo under
@@ -100,9 +154,19 @@ extern NSString *const kGTLServiceTicketParsingStoppedNotification ;
 
 typedef void (^GTLServiceCompletionHandler)(GTLServiceTicket *ticket, id object, NSError *error);
 
+<<<<<<< HEAD
 typedef void (^GTLServiceUploadProgressBlock)(GTLServiceTicket *ticket, unsigned long long numberOfBytesRead, unsigned long long dataLength);
 
 typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWillRetry, NSError *error);
+=======
+typedef void (^GTLServiceUploadProgressBlock)(GTLServiceTicket *ticket,
+                                              unsigned long long totalBytesUploaded,
+                                              unsigned long long totalBytesExpectedToUpload);
+
+typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket,
+                                     BOOL suggestedWillRetry,
+                                     NSError *error);
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #pragma mark -
 
@@ -125,6 +189,10 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
 
   GTLServiceRetryBlock retryBlock_;
   GTLServiceUploadProgressBlock uploadProgressBlock_;
+<<<<<<< HEAD
+=======
+  GTLQueryTestBlock testBlock_;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
   NSUInteger uploadChunkSize_;      // zero when uploading via multi-part MIME http body
 
@@ -143,6 +211,14 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
   NSURL *rpcUploadURL_;
   NSDictionary *urlQueryParameters_;
   NSDictionary *additionalHTTPHeaders_;
+<<<<<<< HEAD
+=======
+
+#if GTL_USE_SESSION_FETCHER
+  NSOperationQueue *delegateQueue_;
+  NSArray *runLoopModes_;
+#endif
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark Query Execution
@@ -216,6 +292,14 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
 
 @property (nonatomic, assign) NSTimeInterval maxRetryInterval;
 
+<<<<<<< HEAD
+=======
+// A test block can be provided to test service calls without any network activity.
+//
+// See the description of GTLQueryTestBlock for additional details.
+@property (nonatomic, copy) GTLQueryTestBlock testBlock;
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //
 // Fetches may be done using RPC or REST APIs, without creating
 // a GTLQuery object
@@ -333,10 +417,17 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
 // using MyCalendarItemSubclass instead of GTLItemCalendar and
 // MyCalendarEventSubclass instead of GTLItemCalendarEvent.
 //
+<<<<<<< HEAD
 //  NSDictionary *surrogates = [NSDictionary dictionaryWithObjectsAndKeys:
 //    [MyCalendarEntrySubclass class], [GTLItemCalendar class],
 //    [MyCalendarEventSubclass class], [GTLItemCalendarEvent class],
 //    nil];
+=======
+//  NSDictionary *surrogates = @{
+//    [GTLItemCalendar class] : [MyCalendarEntrySubclass class],
+//    [GTLItemCalendarEvent class] : [MyCalendarEventSubclass class]
+//  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //  [calendarService setServiceSurrogates:surrogates];
 //
 @property (nonatomic, retain) NSDictionary *surrogates;
@@ -366,7 +457,11 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
 // The default value, nil, schedules connections using the current run
 // loop mode.  To use the service during a modal dialog, be sure to specify
 // NSModalPanelRunLoopMode as one of the modes.
+<<<<<<< HEAD
 @property (nonatomic, retain) NSArray *runLoopModes;
+=======
+@property (nonatomic, retain) GTL_NSArrayOf(NSString *) *runLoopModes;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Normally, API requests must be made only via SSL to protect the user's
 // data and the authentication token.  This property allows the application
@@ -381,13 +476,24 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
 
 // Applications have a default user-agent based on the application signature
 // in the Info.plist settings.  Most applications should not explicitly set
+<<<<<<< HEAD
 // this property.
+=======
+// this property.  Any string provided will be cleaned of inappropriate characters.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @property (nonatomic, copy) NSString *userAgent;
 
 // The request user agent includes the library and OS version appended to the
 // base userAgent, along with the optional addition string.
 @property (nonatomic, readonly) NSString *requestUserAgent;
 
+<<<<<<< HEAD
+=======
+// Applications can provide a precise userAgent string identifying the application.
+// No cleaning of characters is done.  Library-specific details will be appended.
+- (void)setExactUserAgent:(NSString *)userAgent;
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Applications may call requestForURL:httpMethod to get a request with the
 // proper user-agent and ETag headers
 //
@@ -431,10 +537,17 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
 
 // Any url query parameters to add to urls (useful for debugging with some
 // services).
+<<<<<<< HEAD
 @property (copy) NSDictionary *urlQueryParameters;
 
 // Any extra http headers to set on requests for GTLObjects.
 @property (copy) NSDictionary *additionalHTTPHeaders;
+=======
+@property (copy) GTL_NSDictionaryOf(NSString *, NSString *) *urlQueryParameters;
+
+// Any extra http headers to set on requests for GTLObjects.
+@property (copy) GTL_NSDictionaryOf(NSString *, NSString *) *additionalHTTPHeaders;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The service API version.
 @property (nonatomic, copy) NSString *apiVersion;
@@ -466,6 +579,28 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
 
 @property (copy) GTLServiceUploadProgressBlock uploadProgressBlock;
 
+<<<<<<< HEAD
+=======
+@end
+
+@interface GTLService (TestingSupport)
+
+// Convenience method to create a mock GTL service just for testing.
+//
+// Queries executed by this mock service will not perform any network operation,
+// but will invoke callbacks and provide the supplied data or error to the
+// completion handler.
+//
+// You can make more customized mocks by setting the test block property of the service
+// or query; the test block can inspect the query as ticket.originalQuery
+//
+// See the description of GTLQueryTestBlock for more details on customized testing.
+//
+// Example usage is in the unit test method testMockServiceConvenienceMethod.
++ (instancetype)mockServiceWithFakedObject:(id)objectOrNil
+                                fakedError:(NSError *)error;
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Wait synchronously for fetch to complete (strongly discouraged)
 //
 // This just runs the current event loop until the fetch completes
@@ -483,6 +618,10 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
               timeout:(NSTimeInterval)timeoutInSeconds
         fetchedObject:(GTLObject **)outObjectOrNil
                 error:(NSError **)outErrorOrNil GTL_NONNULL((1));
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 #pragma mark -
@@ -491,6 +630,10 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
 // Ticket base class
 //
 @interface GTLServiceTicket : NSObject {
+<<<<<<< HEAD
+=======
+ @private
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   GTLService *service_;
 
   NSMutableDictionary *ticketProperties_;
@@ -520,9 +663,15 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
   NSOperation *parseOperation_;
 }
 
+<<<<<<< HEAD
 + (id)ticketForService:(GTLService *)service;
 
 - (id)initWithService:(GTLService *)service;
+=======
++ (instancetype)ticketForService:(GTLService *)service;
+
+- (instancetype)initWithService:(GTLService *)service;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 - (id)service;
 
@@ -552,7 +701,11 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
 - (void)setProperty:(id)obj forKey:(NSString *)key GTL_NONNULL((1)); // pass nil obj to remove property
 - (id)propertyForKey:(NSString *)key;
 
+<<<<<<< HEAD
 @property (nonatomic, copy) NSDictionary *properties;
+=======
+@property (nonatomic, copy) GTL_NSDictionaryOf(NSString *, id) *properties;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @property (nonatomic, retain) id userData;
 
 #pragma mark Payload
@@ -563,7 +716,11 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
 @property (nonatomic, retain) id<GTLQueryProtocol> originalQuery;  // Query used to create this ticket
 - (GTLQuery *)queryForRequestID:(NSString *)requestID GTL_NONNULL((1)); // Returns the query from within the batch with the given id.
 
+<<<<<<< HEAD
 @property (nonatomic, retain) NSDictionary *surrogates;
+=======
+@property (nonatomic, retain) GTL_NSDictionaryOf(Class, Class) *surrogates;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #pragma mark Retry
 
@@ -595,3 +752,13 @@ typedef BOOL (^GTLServiceRetryBlock)(GTLServiceTicket *ticket, BOOL suggestedWil
 - (id)ticket;
 @end
 
+<<<<<<< HEAD
+=======
+// The library doesn't use GTLObjectCollectionImpl, but it provides a concrete
+// implementation of so the methods do not cause private method errors in
+// Xcode/AppStore review.
+@interface GTLObjectCollectionImpl : GTLObject
+@property (nonatomic, retain) NSString *nextPageToken;
+@property (nonatomic, retain) NSNumber *nextStartIndex;
+@end
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd

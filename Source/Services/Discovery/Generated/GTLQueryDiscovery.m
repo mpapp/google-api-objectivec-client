@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,12 +43,20 @@
 
 @dynamic api, fields, name, preferred, version;
 
+<<<<<<< HEAD
 #pragma mark -
 #pragma mark "apis" methods
 // These create a GTLQueryDiscovery object.
 
 + (id)queryForApisGetRestWithApi:(NSString *)api
                          version:(NSString *)version {
+=======
+#pragma mark - "apis" methods
+// These create a GTLQueryDiscovery object.
+
++ (instancetype)queryForApisGetRestWithApi:(NSString *)api
+                                   version:(NSString *)version {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"discovery.apis.getRest";
   GTLQueryDiscovery *query = [self queryWithMethodName:methodName];
   query.api = api;
@@ -53,8 +65,13 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForApisGetRpcWithApi:(NSString *)api
                         version:(NSString *)version {
+=======
++ (instancetype)queryForApisGetRpcWithApi:(NSString *)api
+                                  version:(NSString *)version {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"discovery.apis.getRpc";
   GTLQueryDiscovery *query = [self queryWithMethodName:methodName];
   query.api = api;
@@ -63,7 +80,11 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForApisList {
+=======
++ (instancetype)queryForApisList {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"discovery.apis.list";
   GTLQueryDiscovery *query = [self queryWithMethodName:methodName];
   query.expectedObjectClass = [GTLDiscoveryDirectoryList class];

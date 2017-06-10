@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,15 +52,27 @@
 
 // The descriptor of the device for which the validity check was requested. It
 // will always be present.
+<<<<<<< HEAD
 @property (retain) GTLSpectrumDeviceDescriptor *deviceDesc;
 
 // The validity status: true if the device is valid for operation, false
 // otherwise. It will always be present.
 @property (retain) NSNumber *isValid;  // boolValue
+=======
+@property (nonatomic, retain) GTLSpectrumDeviceDescriptor *deviceDesc;
+
+// The validity status: true if the device is valid for operation, false
+// otherwise. It will always be present.
+@property (nonatomic, retain) NSNumber *isValid;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // If the device identifier is not valid, the database may include a reason. The
 // reason may be in any language. The length of the value should not exceed 128
 // characters.
+<<<<<<< HEAD
 @property (copy) NSString *reason;
+=======
+@property (nonatomic, copy) NSString *reason;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

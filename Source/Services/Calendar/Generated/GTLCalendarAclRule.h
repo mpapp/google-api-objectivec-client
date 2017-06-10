@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Calendar API (calendar/v3)
 // Description:
+<<<<<<< HEAD
 //   Lets you manipulate events and other calendar data.
+=======
+//   Manipulates events and other calendar data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/google-apps/calendar/firstapp
 // Classes:
@@ -45,6 +53,7 @@
 @interface GTLCalendarAclRule : GTLObject
 
 // ETag of the resource.
+<<<<<<< HEAD
 @property (copy) NSString *ETag;
 
 // Identifier of the ACL rule.
@@ -53,6 +62,16 @@
 
 // Type of the resource ("calendar#aclRule").
 @property (copy) NSString *kind;
+=======
+@property (nonatomic, copy) NSString *ETag;
+
+// Identifier of the ACL rule.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Type of the resource ("calendar#aclRule").
+@property (nonatomic, copy) NSString *kind;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The role assigned to the scope. Possible values are:
 // - "none" - Provides no access.
@@ -64,10 +83,17 @@
 // - "owner" - Provides ownership of the calendar. This role has all of the
 // permissions of the writer role with the additional ability to see and
 // manipulate ACLs.
+<<<<<<< HEAD
 @property (copy) NSString *role;
 
 // The scope of the rule.
 @property (retain) GTLCalendarAclRuleScope *scope;
+=======
+@property (nonatomic, copy) NSString *role;
+
+// The scope of the rule.
+@property (nonatomic, retain) GTLCalendarAclRuleScope *scope;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -85,10 +111,18 @@
 // - "group" - Limits the scope to a group.
 // - "domain" - Limits the scope to a domain. Note: The permissions granted to
 // the "default", or public, scope apply to any user, authenticated or not.
+<<<<<<< HEAD
 @property (copy) NSString *type;
 
 // The email address of a user or group, or the name of a domain, depending on
 // the scope type. Omitted for type "default".
 @property (copy) NSString *value;
+=======
+@property (nonatomic, copy) NSString *type;
+
+// The email address of a user or group, or the name of a domain, depending on
+// the scope type. Omitted for type "default".
+@property (nonatomic, copy) NSString *value;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

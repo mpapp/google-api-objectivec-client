@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   QPX Express API (qpxExpress/v1)
 // Description:
+<<<<<<< HEAD
 //   Lets you find the least expensive flights between an origin and a
 //   destination.
+=======
+//   Finds the least expensive flights between an origin and a destination.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   http://developers.google.com/qpx-express
 // Classes:
@@ -38,11 +46,18 @@
 
 @dynamic fields, request;
 
+<<<<<<< HEAD
 #pragma mark -
 #pragma mark "trips" methods
 // These create a GTLQueryQPXExpress object.
 
 + (id)queryForTripsSearch {
+=======
+#pragma mark - "trips" methods
+// These create a GTLQueryQPXExpress object.
+
++ (instancetype)queryForTripsSearch {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"qpxExpress.trips.search";
   GTLQueryQPXExpress *query = [self queryWithMethodName:methodName];
   query.expectedObjectClass = [GTLQPXExpressTripsSearchResponse class];

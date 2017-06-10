@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +31,11 @@
 // Documentation:
 //   https://developers.google.com/maps-engine/
 // Classes:
+<<<<<<< HEAD
 //   GTLMapsEngineTable (0 custom class methods, 15 custom properties)
+=======
+//   GTLMapsEngineTable (0 custom class methods, 18 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLMapsEngineTable.h"
 
@@ -40,6 +48,7 @@
 //
 
 @implementation GTLMapsEngineTable
+<<<<<<< HEAD
 @dynamic bbox, creationTime, descriptionProperty, draftAccessList, ETag, files,
          identifier, lastModifiedTime, name, processingStatus, projectId,
          publishedAccessList, schema, sourceEncoding, tags;
@@ -51,16 +60,37 @@
       @"etag", @"ETag",
       @"id", @"identifier",
       nil];
+=======
+@dynamic bbox, creationTime, creatorEmail, descriptionProperty, draftAccessList,
+         ETag, files, identifier, lastModifiedTime, lastModifierEmail, name,
+         processingStatus, projectId, publishedAccessList, schema,
+         sourceEncoding, tags, writersCanEditPermissions;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"descriptionProperty" : @"description",
+    @"ETag" : @"etag",
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       [NSNumber class], @"bbox",
       [GTLMapsEngineFile class], @"files",
       [NSString class], @"tags",
       nil];
+=======
+  NSDictionary *map = @{
+    @"bbox" : [NSNumber class],
+    @"files" : [GTLMapsEngineFile class],
+    @"tags" : [NSString class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

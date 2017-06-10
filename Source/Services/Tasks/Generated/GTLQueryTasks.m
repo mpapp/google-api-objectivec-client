@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +45,29 @@
          pageToken, parent, previous, showCompleted, showDeleted, showHidden,
          task, tasklist, updatedMin;
 
+<<<<<<< HEAD
 #pragma mark -
 #pragma mark "tasklists" methods
 // These create a GTLQueryTasks object.
 
 + (id)queryForTasklistsDeleteWithTasklist:(NSString *)tasklist {
+=======
+#pragma mark - "tasklists" methods
+// These create a GTLQueryTasks object.
+
++ (instancetype)queryForTasklistsDeleteWithTasklist:(NSString *)tasklist {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"tasks.tasklists.delete";
   GTLQueryTasks *query = [self queryWithMethodName:methodName];
   query.tasklist = tasklist;
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTasklistsGetWithTasklist:(NSString *)tasklist {
+=======
++ (instancetype)queryForTasklistsGetWithTasklist:(NSString *)tasklist {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"tasks.tasklists.get";
   GTLQueryTasks *query = [self queryWithMethodName:methodName];
   query.tasklist = tasklist;
@@ -60,7 +75,11 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTasklistsInsertWithObject:(GTLTasksTaskList *)object {
+=======
++ (instancetype)queryForTasklistsInsertWithObject:(GTLTasksTaskList *)object {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -72,15 +91,24 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTasklistsList {
+=======
++ (instancetype)queryForTasklistsList {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"tasks.tasklists.list";
   GTLQueryTasks *query = [self queryWithMethodName:methodName];
   query.expectedObjectClass = [GTLTasksTaskLists class];
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTasklistsPatchWithObject:(GTLTasksTaskList *)object
                               tasklist:(NSString *)tasklist {
+=======
++ (instancetype)queryForTasklistsPatchWithObject:(GTLTasksTaskList *)object
+                                        tasklist:(NSString *)tasklist {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -93,8 +121,13 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTasklistsUpdateWithObject:(GTLTasksTaskList *)object
                                tasklist:(NSString *)tasklist {
+=======
++ (instancetype)queryForTasklistsUpdateWithObject:(GTLTasksTaskList *)object
+                                         tasklist:(NSString *)tasklist {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -107,19 +140,31 @@
   return query;
 }
 
+<<<<<<< HEAD
 #pragma mark -
 #pragma mark "tasks" methods
 // These create a GTLQueryTasks object.
 
 + (id)queryForTasksClearWithTasklist:(NSString *)tasklist {
+=======
+#pragma mark - "tasks" methods
+// These create a GTLQueryTasks object.
+
++ (instancetype)queryForTasksClearWithTasklist:(NSString *)tasklist {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"tasks.tasks.clear";
   GTLQueryTasks *query = [self queryWithMethodName:methodName];
   query.tasklist = tasklist;
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTasksDeleteWithTasklist:(NSString *)tasklist
                                  task:(NSString *)task {
+=======
++ (instancetype)queryForTasksDeleteWithTasklist:(NSString *)tasklist
+                                           task:(NSString *)task {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"tasks.tasks.delete";
   GTLQueryTasks *query = [self queryWithMethodName:methodName];
   query.tasklist = tasklist;
@@ -127,8 +172,13 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTasksGetWithTasklist:(NSString *)tasklist
                               task:(NSString *)task {
+=======
++ (instancetype)queryForTasksGetWithTasklist:(NSString *)tasklist
+                                        task:(NSString *)task {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"tasks.tasks.get";
   GTLQueryTasks *query = [self queryWithMethodName:methodName];
   query.tasklist = tasklist;
@@ -137,8 +187,13 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTasksInsertWithObject:(GTLTasksTask *)object
                            tasklist:(NSString *)tasklist {
+=======
++ (instancetype)queryForTasksInsertWithObject:(GTLTasksTask *)object
+                                     tasklist:(NSString *)tasklist {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -151,7 +206,11 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTasksListWithTasklist:(NSString *)tasklist {
+=======
++ (instancetype)queryForTasksListWithTasklist:(NSString *)tasklist {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"tasks.tasks.list";
   GTLQueryTasks *query = [self queryWithMethodName:methodName];
   query.tasklist = tasklist;
@@ -159,8 +218,13 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTasksMoveWithTasklist:(NSString *)tasklist
                                task:(NSString *)task {
+=======
++ (instancetype)queryForTasksMoveWithTasklist:(NSString *)tasklist
+                                         task:(NSString *)task {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"tasks.tasks.move";
   GTLQueryTasks *query = [self queryWithMethodName:methodName];
   query.tasklist = tasklist;
@@ -169,9 +233,15 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTasksPatchWithObject:(GTLTasksTask *)object
                           tasklist:(NSString *)tasklist
                               task:(NSString *)task {
+=======
++ (instancetype)queryForTasksPatchWithObject:(GTLTasksTask *)object
+                                    tasklist:(NSString *)tasklist
+                                        task:(NSString *)task {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -185,9 +255,15 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForTasksUpdateWithObject:(GTLTasksTask *)object
                            tasklist:(NSString *)tasklist
                                task:(NSString *)task {
+=======
++ (instancetype)queryForTasksUpdateWithObject:(GTLTasksTask *)object
+                                     tasklist:(NSString *)tasklist
+                                         task:(NSString *)task {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;

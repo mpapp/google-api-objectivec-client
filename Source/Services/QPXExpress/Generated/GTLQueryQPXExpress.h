@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   QPX Express API (qpxExpress/v1)
 // Description:
+<<<<<<< HEAD
 //   Lets you find the least expensive flights between an origin and a
 //   destination.
+=======
+//   Finds the least expensive flights between an origin and a destination.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   http://developers.google.com/qpx-express
 // Classes:
@@ -44,15 +52,25 @@
 //
 
 // Selector specifying which fields to include in a partial response.
+<<<<<<< HEAD
 @property (copy) NSString *fields;
+=======
+@property (nonatomic, copy) NSString *fields;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 //
 // Method-specific parameters; see the comments below for more information.
 //
+<<<<<<< HEAD
 @property (retain) GTLQPXExpressTripOptionsRequest *request;
 
 #pragma mark -
 #pragma mark "trips" methods
+=======
+@property (nonatomic, retain) GTLQPXExpressTripOptionsRequest *request;
+
+#pragma mark - "trips" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryQPXExpress object.
 
 // Method: qpxExpress.trips.search
@@ -61,6 +79,10 @@
 //   request: A QPX Express search request. Required values are at least one
 //     adult or senior passenger, an origin, a destination, and a date.
 // Fetches a GTLQPXExpressTripsSearchResponse.
+<<<<<<< HEAD
 + (id)queryForTripsSearch;
+=======
++ (instancetype)queryForTripsSearch;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -43,9 +52,17 @@
 //
 
 @interface GTLYouTubeInvideoBranding : GTLObject
+<<<<<<< HEAD
 @property (copy) NSString *imageBytes;  // GTLBase64 can encode/decode (probably web-safe format)
 @property (copy) NSString *imageUrl;
 @property (retain) GTLYouTubeInvideoPosition *position;
 @property (copy) NSString *targetChannelId;
 @property (retain) GTLYouTubeInvideoTiming *timing;
+=======
+@property (nonatomic, copy) NSString *imageBytes;  // GTLBase64 can encode/decode (probably web-safe format)
+@property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, retain) GTLYouTubeInvideoPosition *position;
+@property (nonatomic, copy) NSString *targetChannelId;
+@property (nonatomic, retain) GTLYouTubeInvideoTiming *timing;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end

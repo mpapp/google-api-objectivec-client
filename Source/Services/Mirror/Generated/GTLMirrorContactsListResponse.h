@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,9 +54,16 @@
 @interface GTLMirrorContactsListResponse : GTLCollectionObject
 
 // Contact list.
+<<<<<<< HEAD
 @property (retain) NSArray *items;  // of GTLMirrorContact
 
 // The type of resource. This is always mirror#contacts.
 @property (copy) NSString *kind;
+=======
+@property (nonatomic, retain) NSArray *items;  // of GTLMirrorContact
+
+// The type of resource. This is always mirror#contacts.
+@property (nonatomic, copy) NSString *kind;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

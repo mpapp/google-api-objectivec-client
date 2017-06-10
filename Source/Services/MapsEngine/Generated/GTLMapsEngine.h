@@ -50,6 +50,11 @@
 #import "GTLMapsEngineGeoJsonPoint.h"
 #import "GTLMapsEngineGeoJsonPolygon.h"
 #import "GTLMapsEngineGeoJsonProperties.h"
+<<<<<<< HEAD
+=======
+#import "GTLMapsEngineIcon.h"
+#import "GTLMapsEngineIconsListResponse.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLMapsEngineIconStyle.h"
 #import "GTLMapsEngineLabelStyle.h"
 #import "GTLMapsEngineLayer.h"
@@ -63,11 +68,27 @@
 #import "GTLMapsEngineMapsListResponse.h"
 #import "GTLMapsEngineParent.h"
 #import "GTLMapsEngineParentsListResponse.h"
+<<<<<<< HEAD
+=======
+#import "GTLMapsEnginePermission.h"
+#import "GTLMapsEnginePermissionsBatchDeleteRequest.h"
+#import "GTLMapsEnginePermissionsBatchDeleteResponse.h"
+#import "GTLMapsEnginePermissionsBatchUpdateRequest.h"
+#import "GTLMapsEnginePermissionsBatchUpdateResponse.h"
+#import "GTLMapsEnginePermissionsListResponse.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLMapsEnginePointStyle.h"
 #import "GTLMapsEnginePolygonStyle.h"
 #import "GTLMapsEngineProcessResponse.h"
 #import "GTLMapsEngineProject.h"
 #import "GTLMapsEngineProjectsListResponse.h"
+<<<<<<< HEAD
+=======
+#import "GTLMapsEnginePublishedLayer.h"
+#import "GTLMapsEnginePublishedLayersListResponse.h"
+#import "GTLMapsEnginePublishedMap.h"
+#import "GTLMapsEnginePublishedMapsListResponse.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLMapsEnginePublishResponse.h"
 #import "GTLMapsEngineRaster.h"
 #import "GTLMapsEngineRasterCollection.h"
@@ -78,10 +99,22 @@
 #import "GTLMapsEngineRasterCollectionsRastersBatchInsertRequest.h"
 #import "GTLMapsEngineRasterCollectionsRastersBatchInsertResponse.h"
 #import "GTLMapsEngineRasterCollectionsRastersListResponse.h"
+<<<<<<< HEAD
 #import "GTLMapsEngineSchema.h"
 #import "GTLMapsEngineTable.h"
 #import "GTLMapsEngineTableColumn.h"
 #import "GTLMapsEngineTablesListResponse.h"
+=======
+#import "GTLMapsEngineRastersListResponse.h"
+#import "GTLMapsEngineScaledShape.h"
+#import "GTLMapsEngineScalingFunction.h"
+#import "GTLMapsEngineSchema.h"
+#import "GTLMapsEngineSizeRange.h"
+#import "GTLMapsEngineTable.h"
+#import "GTLMapsEngineTableColumn.h"
+#import "GTLMapsEngineTablesListResponse.h"
+#import "GTLMapsEngineValueRange.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLMapsEngineVectorStyle.h"
 #import "GTLMapsEngineZoomLevels.h"
 

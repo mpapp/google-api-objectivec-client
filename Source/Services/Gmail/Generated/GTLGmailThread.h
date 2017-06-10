@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Gmail API (gmail/v1)
 // Description:
+<<<<<<< HEAD
 //   The Gmail REST API.
+=======
+//   Access Gmail mailboxes including sending user email.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/gmail/api/
 // Classes:
@@ -46,6 +54,7 @@
 @interface GTLGmailThread : GTLObject
 
 // The ID of the last history record that modified this thread.
+<<<<<<< HEAD
 @property (retain) NSNumber *historyId;  // unsignedLongLongValue
 
 // The unique ID of the thread.
@@ -57,5 +66,18 @@
 
 // A short part of the message text.
 @property (copy) NSString *snippet;
+=======
+@property (nonatomic, retain) NSNumber *historyId;  // unsignedLongLongValue
+
+// The unique ID of the thread.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The list of messages in the thread.
+@property (nonatomic, retain) NSArray *messages;  // of GTLGmailMessage
+
+// A short part of the message text.
+@property (nonatomic, copy) NSString *snippet;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

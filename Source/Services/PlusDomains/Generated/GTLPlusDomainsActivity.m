@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,28 +26,54 @@
 // Service:
 //   Google+ Domains API (plusDomains/v1)
 // Description:
+<<<<<<< HEAD
 //   The Google+ API enables developers to build on top of the Google+ platform.
+=======
+//   Builds on top of the Google+ platform for Google Apps Domains.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/+/domains/
 // Classes:
 //   GTLPlusDomainsActivity (0 custom class methods, 20 custom properties)
+<<<<<<< HEAD
 //   GTLPlusDomainsActivityActor (0 custom class methods, 5 custom properties)
 //   GTLPlusDomainsActivityObject (0 custom class methods, 11 custom properties)
 //   GTLPlusDomainsActivityProvider (0 custom class methods, 1 custom properties)
 //   GTLPlusDomainsActivityActorImage (0 custom class methods, 1 custom properties)
 //   GTLPlusDomainsActivityActorName (0 custom class methods, 2 custom properties)
 //   GTLPlusDomainsActivityObjectActor (0 custom class methods, 4 custom properties)
+=======
+//   GTLPlusDomainsActivityActor (0 custom class methods, 7 custom properties)
+//   GTLPlusDomainsActivityObject (0 custom class methods, 11 custom properties)
+//   GTLPlusDomainsActivityProvider (0 custom class methods, 1 custom properties)
+//   GTLPlusDomainsActivityActorClientSpecificActorInfo (0 custom class methods, 1 custom properties)
+//   GTLPlusDomainsActivityActorImage (0 custom class methods, 1 custom properties)
+//   GTLPlusDomainsActivityActorName (0 custom class methods, 2 custom properties)
+//   GTLPlusDomainsActivityActorVerification (0 custom class methods, 1 custom properties)
+//   GTLPlusDomainsActivityObjectActor (0 custom class methods, 6 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLPlusDomainsActivityObjectAttachmentsItem (0 custom class methods, 10 custom properties)
 //   GTLPlusDomainsActivityObjectPlusoners (0 custom class methods, 2 custom properties)
 //   GTLPlusDomainsActivityObjectReplies (0 custom class methods, 2 custom properties)
 //   GTLPlusDomainsActivityObjectResharers (0 custom class methods, 2 custom properties)
 //   GTLPlusDomainsActivityObjectStatusForViewer (0 custom class methods, 5 custom properties)
+<<<<<<< HEAD
 //   GTLPlusDomainsActivityObjectActorImage (0 custom class methods, 1 custom properties)
+=======
+//   GTLPlusDomainsActivityActorClientSpecificActorInfoYoutubeActorInfo (0 custom class methods, 1 custom properties)
+//   GTLPlusDomainsActivityObjectActorClientSpecificActorInfo (0 custom class methods, 1 custom properties)
+//   GTLPlusDomainsActivityObjectActorImage (0 custom class methods, 1 custom properties)
+//   GTLPlusDomainsActivityObjectActorVerification (0 custom class methods, 1 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLPlusDomainsActivityObjectAttachmentsItemEmbed (0 custom class methods, 2 custom properties)
 //   GTLPlusDomainsActivityObjectAttachmentsItemFullImage (0 custom class methods, 4 custom properties)
 //   GTLPlusDomainsActivityObjectAttachmentsItemImage (0 custom class methods, 4 custom properties)
 //   GTLPlusDomainsActivityObjectAttachmentsItemPreviewThumbnailsItem (0 custom class methods, 1 custom properties)
 //   GTLPlusDomainsActivityObjectAttachmentsItemThumbnailsItem (0 custom class methods, 3 custom properties)
+<<<<<<< HEAD
+=======
+//   GTLPlusDomainsActivityObjectActorClientSpecificActorInfoYoutubeActorInfo (0 custom class methods, 1 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLPlusDomainsActivityObjectAttachmentsItemThumbnailsItemImage (0 custom class methods, 4 custom properties)
 
 #import "GTLPlusDomainsActivity.h"
@@ -62,11 +92,18 @@
          published, radius, title, updated, url, verb;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       @"etag", @"ETag",
       @"id", @"identifier",
       nil];
+=======
+  NSDictionary *map = @{
+    @"ETag" : @"etag",
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -83,12 +120,22 @@
 //
 
 @implementation GTLPlusDomainsActivityActor
+<<<<<<< HEAD
 @dynamic displayName, identifier, image, name, url;
 
 + (NSDictionary *)propertyToJSONKeyMap {
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"id"
                                 forKey:@"identifier"];
+=======
+@dynamic clientSpecificActorInfo, displayName, identifier, image, name, url,
+         verification;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -105,16 +152,28 @@
          plusoners, replies, resharers, statusForViewer, url;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"id"
                                 forKey:@"identifier"];
+=======
+  NSDictionary *map = @{
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[GTLPlusDomainsActivityObjectAttachmentsItem class]
                                 forKey:@"attachments"];
+=======
+  NSDictionary *map = @{
+    @"attachments" : [GTLPlusDomainsActivityObjectAttachmentsItem class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -133,6 +192,19 @@
 
 // ----------------------------------------------------------------------------
 //
+<<<<<<< HEAD
+=======
+//   GTLPlusDomainsActivityActorClientSpecificActorInfo
+//
+
+@implementation GTLPlusDomainsActivityActorClientSpecificActorInfo
+@dynamic youtubeActorInfo;
+@end
+
+
+// ----------------------------------------------------------------------------
+//
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLPlusDomainsActivityActorImage
 //
 
@@ -153,16 +225,39 @@
 
 // ----------------------------------------------------------------------------
 //
+<<<<<<< HEAD
+=======
+//   GTLPlusDomainsActivityActorVerification
+//
+
+@implementation GTLPlusDomainsActivityActorVerification
+@dynamic adHocVerified;
+@end
+
+
+// ----------------------------------------------------------------------------
+//
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLPlusDomainsActivityObjectActor
 //
 
 @implementation GTLPlusDomainsActivityObjectActor
+<<<<<<< HEAD
 @dynamic displayName, identifier, image, url;
 
 + (NSDictionary *)propertyToJSONKeyMap {
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"id"
                                 forKey:@"identifier"];
+=======
+@dynamic clientSpecificActorInfo, displayName, identifier, image, url,
+         verification;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -179,18 +274,31 @@
          previewThumbnails, thumbnails, url;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"id"
                                 forKey:@"identifier"];
+=======
+  NSDictionary *map = @{
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       [GTLPlusDomainsActivityObjectAttachmentsItemPreviewThumbnailsItem class], @"previewThumbnails",
       [GTLPlusDomainsActivityObjectAttachmentsItemThumbnailsItem class], @"thumbnails",
       nil];
+=======
+  NSDictionary *map = @{
+    @"previewThumbnails" : [GTLPlusDomainsActivityObjectAttachmentsItemPreviewThumbnailsItem class],
+    @"thumbnails" : [GTLPlusDomainsActivityObjectAttachmentsItemThumbnailsItem class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -239,6 +347,29 @@
 
 // ----------------------------------------------------------------------------
 //
+<<<<<<< HEAD
+=======
+//   GTLPlusDomainsActivityActorClientSpecificActorInfoYoutubeActorInfo
+//
+
+@implementation GTLPlusDomainsActivityActorClientSpecificActorInfoYoutubeActorInfo
+@dynamic channelId;
+@end
+
+
+// ----------------------------------------------------------------------------
+//
+//   GTLPlusDomainsActivityObjectActorClientSpecificActorInfo
+//
+
+@implementation GTLPlusDomainsActivityObjectActorClientSpecificActorInfo
+@dynamic youtubeActorInfo;
+@end
+
+
+// ----------------------------------------------------------------------------
+//
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLPlusDomainsActivityObjectActorImage
 //
 
@@ -249,6 +380,19 @@
 
 // ----------------------------------------------------------------------------
 //
+<<<<<<< HEAD
+=======
+//   GTLPlusDomainsActivityObjectActorVerification
+//
+
+@implementation GTLPlusDomainsActivityObjectActorVerification
+@dynamic adHocVerified;
+@end
+
+
+// ----------------------------------------------------------------------------
+//
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLPlusDomainsActivityObjectAttachmentsItemEmbed
 //
 
@@ -296,9 +440,15 @@
 @dynamic descriptionProperty, image, url;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"description"
                                 forKey:@"descriptionProperty"];
+=======
+  NSDictionary *map = @{
+    @"descriptionProperty" : @"description"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -307,6 +457,19 @@
 
 // ----------------------------------------------------------------------------
 //
+<<<<<<< HEAD
+=======
+//   GTLPlusDomainsActivityObjectActorClientSpecificActorInfoYoutubeActorInfo
+//
+
+@implementation GTLPlusDomainsActivityObjectActorClientSpecificActorInfoYoutubeActorInfo
+@dynamic channelId;
+@end
+
+
+// ----------------------------------------------------------------------------
+//
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLPlusDomainsActivityObjectAttachmentsItemThumbnailsItemImage
 //
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Calendar API (calendar/v3)
 // Description:
+<<<<<<< HEAD
 //   Lets you manipulate events and other calendar data.
+=======
+//   Manipulates events and other calendar data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/google-apps/calendar/firstapp
 // Classes:
@@ -42,10 +50,18 @@
 @interface GTLCalendarColorDefinition : GTLObject
 
 // The background color associated with this color definition.
+<<<<<<< HEAD
 @property (copy) NSString *background;
 
 // The foreground color that can be used to write on top of a background with
 // 'background' color.
 @property (copy) NSString *foreground;
+=======
+@property (nonatomic, copy) NSString *background;
+
+// The foreground color that can be used to write on top of a background with
+// 'background' color.
+@property (nonatomic, copy) NSString *foreground;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

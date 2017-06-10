@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,20 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
 //   GTLYouTubeLiveBroadcastContentDetails (0 custom class methods, 8 custom properties)
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+// Documentation:
+//   https://developers.google.com/youtube/v3
+// Classes:
+//   GTLYouTubeLiveBroadcastContentDetails (0 custom class methods, 12 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -46,6 +59,7 @@
 @interface GTLYouTubeLiveBroadcastContentDetails : GTLObject
 
 // This value uniquely identifies the live stream bound to the broadcast.
+<<<<<<< HEAD
 @property (copy) NSString *boundStreamId;
 
 // This setting indicates whether closed captioning is enabled for this
@@ -56,6 +70,26 @@
 // This setting indicates whether YouTube should enable content encryption for
 // the broadcast.
 @property (retain) NSNumber *enableContentEncryption;  // boolValue
+=======
+@property (nonatomic, copy) NSString *boundStreamId;
+
+// The date and time that the live stream referenced by boundStreamId was last
+// updated.
+@property (nonatomic, retain) GTLDateTime *boundStreamLastUpdateTimeMs;
+
+@property (nonatomic, copy) NSString *closedCaptionsType;
+
+// This setting indicates whether HTTP POST closed captioning is enabled for
+// this broadcast. The ingestion URL of the closed captions is returned through
+// the liveStreams API. This is mutually exclusive with using the
+// closed_captions_type property, and is equivalent to setting
+// closed_captions_type to CLOSED_CAPTIONS_HTTP_POST.
+@property (nonatomic, retain) NSNumber *enableClosedCaptions;  // boolValue
+
+// This setting indicates whether YouTube should enable content encryption for
+// the broadcast.
+@property (nonatomic, retain) NSNumber *enableContentEncryption;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // This setting determines whether viewers can access DVR controls while
 // watching the video. DVR controls enable the viewer to control the video
@@ -64,17 +98,35 @@
 // Important: You must set the value to true and also set the enableArchive
 // property's value to true if you want to make playback available immediately
 // after the broadcast ends.
+<<<<<<< HEAD
 @property (retain) NSNumber *enableDvr;  // boolValue
+=======
+@property (nonatomic, retain) NSNumber *enableDvr;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // This setting indicates whether the broadcast video can be played in an
 // embedded player. If you choose to archive the video (using the enableArchive
 // property), this setting will also apply to the archived video.
+<<<<<<< HEAD
 @property (retain) NSNumber *enableEmbed;  // boolValue
+=======
+@property (nonatomic, retain) NSNumber *enableEmbed;  // boolValue
+
+// Indicates whether this broadcast has low latency enabled.
+@property (nonatomic, retain) NSNumber *enableLowLatency;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The monitorStream object contains information about the monitor stream, which
 // the broadcaster can use to review the event content before the broadcast
 // stream is shown publicly.
+<<<<<<< HEAD
 @property (retain) GTLYouTubeMonitorStreamInfo *monitorStream;
+=======
+@property (nonatomic, retain) GTLYouTubeMonitorStreamInfo *monitorStream;
+
+// The projection format of this broadcast. This defaults to rectangular.
+@property (nonatomic, copy) NSString *projection;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Automatically start recording after the event goes live. The default value
 // for this property is true.
@@ -83,13 +135,21 @@
 // you set this property's value to true but do not also set the enableDvr
 // property to true, there may be a delay of around one day before the archived
 // video will be available for playback.
+<<<<<<< HEAD
 @property (retain) NSNumber *recordFromStart;  // boolValue
+=======
+@property (nonatomic, retain) NSNumber *recordFromStart;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // This setting indicates whether the broadcast should automatically begin with
 // an in-stream slate when you update the broadcast's status to live. After
 // updating the status, you then need to send a liveCuepoints.insert request
 // that sets the cuepoint's eventState to end to remove the in-stream slate and
 // make your broadcast stream visible to viewers.
+<<<<<<< HEAD
 @property (retain) NSNumber *startWithSlate;  // boolValue
+=======
+@property (nonatomic, retain) NSNumber *startWithSlate;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

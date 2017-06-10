@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,19 +26,34 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
 //   GTLYouTubeVideo (0 custom class methods, 18 custom properties)
+<<<<<<< HEAD
+=======
+//   GTLYouTubeVideoLocalizations (0 custom class methods, 0 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLYouTubeVideo.h"
 
 #import "GTLYouTubeVideoAgeGating.h"
 #import "GTLYouTubeVideoContentDetails.h"
+<<<<<<< HEAD
 #import "GTLYouTubeVideoConversionPings.h"
 #import "GTLYouTubeVideoFileDetails.h"
 #import "GTLYouTubeVideoLiveStreamingDetails.h"
+=======
+#import "GTLYouTubeVideoFileDetails.h"
+#import "GTLYouTubeVideoLiveStreamingDetails.h"
+#import "GTLYouTubeVideoLocalization.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLYouTubeVideoMonetizationDetails.h"
 #import "GTLYouTubeVideoPlayer.h"
 #import "GTLYouTubeVideoProcessingDetails.h"
@@ -52,17 +71,29 @@
 //
 
 @implementation GTLYouTubeVideo
+<<<<<<< HEAD
 @dynamic ageGating, contentDetails, conversionPings, ETag, fileDetails,
          identifier, kind, liveStreamingDetails, monetizationDetails, player,
+=======
+@dynamic ageGating, contentDetails, ETag, fileDetails, identifier, kind,
+         liveStreamingDetails, localizations, monetizationDetails, player,
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
          processingDetails, projectDetails, recordingDetails, snippet,
          statistics, status, suggestions, topicDetails;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       @"etag", @"ETag",
       @"id", @"identifier",
       nil];
+=======
+  NSDictionary *map = @{
+    @"ETag" : @"etag",
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -71,3 +102,20 @@
 }
 
 @end
+<<<<<<< HEAD
+=======
+
+
+// ----------------------------------------------------------------------------
+//
+//   GTLYouTubeVideoLocalizations
+//
+
+@implementation GTLYouTubeVideoLocalizations
+
++ (Class)classForAdditionalProperties {
+  return [GTLYouTubeVideoLocalization class];
+}
+
+@end
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google+ API (plus/v1)
 // Description:
+<<<<<<< HEAD
 //   The Google+ API enables developers to build on top of the Google+ platform.
+=======
+//   Builds on top of the Google+ platform.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/+/api/
 
@@ -35,7 +43,11 @@
 #endif
 
 // Authorization scope
+<<<<<<< HEAD
 // Know your basic profile info and list of people in your circles.
+=======
+// Know the list of people in your circles, your age range, and language
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 GTL_EXTERN NSString * const kGTLAuthScopePlusLogin;            // "https://www.googleapis.com/auth/plus.login"
 // Know who you are on Google
 GTL_EXTERN NSString * const kGTLAuthScopePlusMe;               // "https://www.googleapis.com/auth/plus.me"
@@ -49,7 +61,10 @@ GTL_EXTERN NSString * const kGTLPlusCollectionConnected;  // "connected"
 GTL_EXTERN NSString * const kGTLPlusCollectionPlusoners;  // "plusoners"
 GTL_EXTERN NSString * const kGTLPlusCollectionPublic;     // "public"
 GTL_EXTERN NSString * const kGTLPlusCollectionResharers;  // "resharers"
+<<<<<<< HEAD
 GTL_EXTERN NSString * const kGTLPlusCollectionVault;      // "vault"
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 GTL_EXTERN NSString * const kGTLPlusCollectionVisible;    // "visible"
 
 // GTLQueryPlus - OrderBy

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -48,6 +57,7 @@
 @interface GTLYouTubeSubscriptionSnippet : GTLObject
 
 // The ID that YouTube uses to uniquely identify the subscriber's channel.
+<<<<<<< HEAD
 @property (copy) NSString *channelId;
 
 // Channel title for the channel that the subscription belongs to.
@@ -64,13 +74,38 @@
 // The id object contains information about the channel that the user subscribed
 // to.
 @property (retain) GTLYouTubeResourceId *resourceId;
+=======
+@property (nonatomic, copy) NSString *channelId;
+
+// Channel title for the channel that the subscription belongs to.
+@property (nonatomic, copy) NSString *channelTitle;
+
+// The subscription's details.
+// Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// The date and time that the subscription was created. The value is specified
+// in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+@property (nonatomic, retain) GTLDateTime *publishedAt;
+
+// The id object contains information about the channel that the user subscribed
+// to.
+@property (nonatomic, retain) GTLYouTubeResourceId *resourceId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // A map of thumbnail images associated with the video. For each object in the
 // map, the key is the name of the thumbnail image, and the value is an object
 // that contains other information about the thumbnail.
+<<<<<<< HEAD
 @property (retain) GTLYouTubeThumbnailDetails *thumbnails;
 
 // The subscription's title.
 @property (copy) NSString *title;
+=======
+@property (nonatomic, retain) GTLYouTubeThumbnailDetails *thumbnails;
+
+// The subscription's title.
+@property (nonatomic, copy) NSString *title;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

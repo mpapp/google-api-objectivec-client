@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +48,7 @@
 @interface GTLDoubleClickBidManagerQuerySchedule : GTLObject
 
 // Datetime to periodically run the query until.
+<<<<<<< HEAD
 @property (retain) NSNumber *endTimeMs;  // longLongValue
 
 // How often the query is run.
@@ -56,5 +61,19 @@
 // Canonical timezone code for report generation time. Defaults to
 // America/New_York.
 @property (copy) NSString *nextRunTimezoneCode;
+=======
+@property (nonatomic, retain) NSNumber *endTimeMs;  // longLongValue
+
+// How often the query is run.
+@property (nonatomic, copy) NSString *frequency;
+
+// Time of day at which a new report will be generated, represented as minutes
+// past midnight. Range is 0 to 1439. Only applies to scheduled reports.
+@property (nonatomic, retain) NSNumber *nextRunMinuteOfDay;  // intValue
+
+// Canonical timezone code for report generation time. Defaults to
+// America/New_York.
+@property (nonatomic, copy) NSString *nextRunTimezoneCode;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

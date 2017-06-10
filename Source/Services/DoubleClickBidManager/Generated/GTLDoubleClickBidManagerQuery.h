@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +53,7 @@
 
 // Identifies what kind of resource this is. Value: the fixed string
 // "doubleclickbidmanager#query".
+<<<<<<< HEAD
 @property (copy) NSString *kind;
 
 // Query metadata.
@@ -59,15 +64,32 @@
 
 // Query ID.
 @property (retain) NSNumber *queryId;  // longLongValue
+=======
+@property (nonatomic, copy) NSString *kind;
+
+// Query metadata.
+@property (nonatomic, retain) GTLDoubleClickBidManagerQueryMetadata *metadata;
+
+// Query parameters.
+@property (nonatomic, retain) GTLDoubleClickBidManagerParameters *params;
+
+// Query ID.
+@property (nonatomic, retain) NSNumber *queryId;  // longLongValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The ending time for the data that is shown in the report. Note,
 // reportDataEndTimeMs is required if metadata.dataRange is CUSTOM_DATES and
 // ignored otherwise.
+<<<<<<< HEAD
 @property (retain) NSNumber *reportDataEndTimeMs;  // longLongValue
+=======
+@property (nonatomic, retain) NSNumber *reportDataEndTimeMs;  // longLongValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The starting time for the data that is shown in the report. Note,
 // reportDataStartTimeMs is required if metadata.dataRange is CUSTOM_DATES and
 // ignored otherwise.
+<<<<<<< HEAD
 @property (retain) NSNumber *reportDataStartTimeMs;  // longLongValue
 
 // Information on how often and when to run a query.
@@ -75,5 +97,14 @@
 
 // Canonical timezone code for report data time. Defaults to America/New_York.
 @property (copy) NSString *timezoneCode;
+=======
+@property (nonatomic, retain) NSNumber *reportDataStartTimeMs;  // longLongValue
+
+// Information on how often and when to run a query.
+@property (nonatomic, retain) GTLDoubleClickBidManagerQuerySchedule *schedule;
+
+// Canonical timezone code for report data time. Defaults to America/New_York.
+@property (nonatomic, copy) NSString *timezoneCode;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

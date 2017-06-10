@@ -23,14 +23,25 @@
 
 @synthesize shouldSkipAuthorization = skipAuthorization_,
             additionalHTTPHeaders = additionalHTTPHeaders_,
+<<<<<<< HEAD
             urlQueryParameters = urlQueryParameters_;
 
 + (id)batchQuery {
+=======
+            urlQueryParameters = urlQueryParameters_,
+            testBlock = testBlock_;
+
++ (instancetype)batchQuery {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   GTLBatchQuery *obj = [[[self alloc] init] autorelease];
   return obj;
 }
 
+<<<<<<< HEAD
 + (id)batchQueryWithQueries:(NSArray *)queries {
+=======
++ (instancetype)batchQueryWithQueries:(NSArray *)queries {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   GTLBatchQuery *obj = [self batchQuery];
   obj.queries = queries;
   return obj;
@@ -44,6 +55,10 @@
   newBatch.queries = copiesOfQueries;
   newBatch.shouldSkipAuthorization = self.shouldSkipAuthorization;
   newBatch.additionalHTTPHeaders = self.additionalHTTPHeaders;
+<<<<<<< HEAD
+=======
+  newBatch.testBlock = self.testBlock;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return newBatch;
 }
 
@@ -52,6 +67,10 @@
   [additionalHTTPHeaders_ release];
   [urlQueryParameters_ release];
   [requestIDMap_ release];
+<<<<<<< HEAD
+=======
+  [testBlock_ release];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
   [super dealloc];
 }

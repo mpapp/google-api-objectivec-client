@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Calendar API (calendar/v3)
 // Description:
+<<<<<<< HEAD
 //   Lets you manipulate events and other calendar data.
+=======
+//   Manipulates events and other calendar data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/google-apps/calendar/firstapp
 // Classes:
@@ -43,6 +51,7 @@
 
 // Description of the calendar. Optional.
 // Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+<<<<<<< HEAD
 @property (copy) NSString *descriptionProperty;
 
 // ETag of the resource.
@@ -63,5 +72,29 @@
 
 // The time zone of the calendar. Optional.
 @property (copy) NSString *timeZone;
+=======
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// ETag of the resource.
+@property (nonatomic, copy) NSString *ETag;
+
+// Identifier of the calendar. To retrieve IDs call the calendarList.list()
+// method.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Type of the resource ("calendar#calendar").
+@property (nonatomic, copy) NSString *kind;
+
+// Geographic location of the calendar as free-form text. Optional.
+@property (nonatomic, copy) NSString *location;
+
+// Title of the calendar.
+@property (nonatomic, copy) NSString *summary;
+
+// The time zone of the calendar. (Formatted as an IANA Time Zone Database name,
+// e.g. "Europe/Zurich".) Optional.
+@property (nonatomic, copy) NSString *timeZone;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Calendar API (calendar/v3)
 // Description:
+<<<<<<< HEAD
 //   Lets you manipulate events and other calendar data.
+=======
+//   Manipulates events and other calendar data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/google-apps/calendar/firstapp
 // Classes:
@@ -58,11 +66,16 @@
 // - "owner" - The user has ownership of the calendar. This role has all of the
 // permissions of the writer role with the additional ability to see and
 // manipulate ACLs.
+<<<<<<< HEAD
 @property (copy) NSString *accessRole;
+=======
+@property (nonatomic, copy) NSString *accessRole;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The default reminders on the calendar for the authenticated user. These
 // reminders apply to all events on this calendar that do not explicitly
 // override them (i.e. do not have reminders.useDefault set to True).
+<<<<<<< HEAD
 @property (retain) NSArray *defaultReminders;  // of GTLCalendarEventReminder
 
 // Description of the calendar. Read-only.
@@ -81,10 +94,31 @@
 // Token used to access the next page of this result. Omitted if no further
 // results are available, in which case nextSyncToken is provided.
 @property (copy) NSString *nextPageToken;
+=======
+@property (nonatomic, retain) NSArray *defaultReminders;  // of GTLCalendarEventReminder
+
+// Description of the calendar. Read-only.
+// Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// ETag of the collection.
+@property (nonatomic, copy) NSString *ETag;
+
+// List of events on the calendar.
+@property (nonatomic, retain) NSArray *items;  // of GTLCalendarEvent
+
+// Type of the collection ("calendar#events").
+@property (nonatomic, copy) NSString *kind;
+
+// Token used to access the next page of this result. Omitted if no further
+// results are available, in which case nextSyncToken is provided.
+@property (nonatomic, copy) NSString *nextPageToken;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Token used at a later point in time to retrieve only the entries that have
 // changed since this result was returned. Omitted if further results are
 // available, in which case nextPageToken is provided.
+<<<<<<< HEAD
 @property (copy) NSString *nextSyncToken;
 
 // Title of the calendar. Read-only.
@@ -95,5 +129,17 @@
 
 // Last modification time of the calendar (as a RFC 3339 timestamp). Read-only.
 @property (retain) GTLDateTime *updated;
+=======
+@property (nonatomic, copy) NSString *nextSyncToken;
+
+// Title of the calendar. Read-only.
+@property (nonatomic, copy) NSString *summary;
+
+// The time zone of the calendar. Read-only.
+@property (nonatomic, copy) NSString *timeZone;
+
+// Last modification time of the calendar (as a RFC3339 timestamp). Read-only.
+@property (nonatomic, retain) GTLDateTime *updated;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

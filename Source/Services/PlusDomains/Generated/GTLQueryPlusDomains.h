@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google+ Domains API (plusDomains/v1)
 // Description:
+<<<<<<< HEAD
 //   The Google+ API enables developers to build on top of the Google+ platform.
+=======
+//   Builds on top of the Google+ platform for Google Apps Domains.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/+/domains/
 // Classes:
@@ -46,11 +54,16 @@
 //
 
 // Selector specifying which fields to include in a partial response.
+<<<<<<< HEAD
 @property (copy) NSString *fields;
+=======
+@property (nonatomic, copy) NSString *fields;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 //
 // Method-specific parameters; see the comments below for more information.
 //
+<<<<<<< HEAD
 @property (copy) NSString *activityId;
 @property (copy) NSString *circleId;
 @property (copy) NSString *collection;
@@ -67,6 +80,23 @@
 
 #pragma mark -
 #pragma mark "activities" methods
+=======
+@property (nonatomic, copy) NSString *activityId;
+@property (nonatomic, copy) NSString *circleId;
+@property (nonatomic, copy) NSString *collection;
+@property (nonatomic, copy) NSString *commentId;
+@property (nonatomic, retain) NSArray *email;  // of NSString
+@property (nonatomic, assign) NSUInteger maxResults;
+@property (nonatomic, copy) NSString *orderBy;
+@property (nonatomic, copy) NSString *pageToken;
+@property (nonatomic, assign) BOOL preview;
+@property (nonatomic, copy) NSString *sortOrder;
+// "userId" has different types for some query methods; see the documentation
+// for the right type for each query method.
+@property (nonatomic, retain) id userId;
+
+#pragma mark - "activities" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryPlusDomains object.
 
 // Method: plusDomains.activities.get
@@ -78,7 +108,11 @@
 //   kGTLAuthScopePlusDomainsPlusMe
 //   kGTLAuthScopePlusDomainsPlusStreamRead
 // Fetches a GTLPlusDomainsActivity.
+<<<<<<< HEAD
 + (id)queryForActivitiesGetWithActivityId:(NSString *)activityId;
+=======
++ (instancetype)queryForActivitiesGetWithActivityId:(NSString *)activityId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.activities.insert
 // Create a new activity for the authenticated user.
@@ -94,8 +128,13 @@
 //   kGTLAuthScopePlusDomainsPlusMe
 //   kGTLAuthScopePlusDomainsPlusStreamWrite
 // Fetches a GTLPlusDomainsActivity.
+<<<<<<< HEAD
 + (id)queryForActivitiesInsertWithObject:(GTLPlusDomainsActivity *)object
                                   userId:(NSString *)userId;
+=======
++ (instancetype)queryForActivitiesInsertWithObject:(GTLPlusDomainsActivity *)object
+                                            userId:(NSString *)userId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.activities.list
 // List all of the activities in the specified collection for a particular user.
@@ -117,11 +156,18 @@
 //   kGTLAuthScopePlusDomainsPlusMe
 //   kGTLAuthScopePlusDomainsPlusStreamRead
 // Fetches a GTLPlusDomainsActivityFeed.
+<<<<<<< HEAD
 + (id)queryForActivitiesListWithUserId:(NSString *)userId
                             collection:(NSString *)collection;
 
 #pragma mark -
 #pragma mark "audiences" methods
+=======
++ (instancetype)queryForActivitiesListWithUserId:(NSString *)userId
+                                      collection:(NSString *)collection;
+
+#pragma mark - "audiences" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryPlusDomains object.
 
 // Method: plusDomains.audiences.list
@@ -141,10 +187,16 @@
 //   kGTLAuthScopePlusDomainsPlusLogin
 //   kGTLAuthScopePlusDomainsPlusMe
 // Fetches a GTLPlusDomainsAudiencesFeed.
+<<<<<<< HEAD
 + (id)queryForAudiencesListWithUserId:(NSString *)userId;
 
 #pragma mark -
 #pragma mark "circles" methods
+=======
++ (instancetype)queryForAudiencesListWithUserId:(NSString *)userId;
+
+#pragma mark - "circles" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryPlusDomains object.
 
 // Method: plusDomains.circles.addPeople
@@ -155,12 +207,20 @@
 //  Optional:
 //   email: Email of the people to add to the circle. Optional, can be repeated.
 //   userId: IDs of the people to add to the circle. Optional, can be repeated.
+<<<<<<< HEAD
 //     Note: For this method, "userId" should be of type NSArray.
+=======
+//     Note: For this method, "userId" should be of type NSArray<NSString>.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //  Authorization scope(s):
 //   kGTLAuthScopePlusDomainsPlusCirclesWrite
 //   kGTLAuthScopePlusDomainsPlusLogin
 // Fetches a GTLPlusDomainsCircle.
+<<<<<<< HEAD
 + (id)queryForCirclesAddPeopleWithCircleId:(NSString *)circleId;
+=======
++ (instancetype)queryForCirclesAddPeopleWithCircleId:(NSString *)circleId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.circles.get
 // Get a circle.
@@ -170,7 +230,11 @@
 //   kGTLAuthScopePlusDomainsPlusCirclesRead
 //   kGTLAuthScopePlusDomainsPlusLogin
 // Fetches a GTLPlusDomainsCircle.
+<<<<<<< HEAD
 + (id)queryForCirclesGetWithCircleId:(NSString *)circleId;
+=======
++ (instancetype)queryForCirclesGetWithCircleId:(NSString *)circleId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.circles.insert
 // Create a new circle for the authenticated user.
@@ -182,8 +246,13 @@
 //   kGTLAuthScopePlusDomainsPlusLogin
 //   kGTLAuthScopePlusDomainsPlusMe
 // Fetches a GTLPlusDomainsCircle.
+<<<<<<< HEAD
 + (id)queryForCirclesInsertWithObject:(GTLPlusDomainsCircle *)object
                                userId:(NSString *)userId;
+=======
++ (instancetype)queryForCirclesInsertWithObject:(GTLPlusDomainsCircle *)object
+                                         userId:(NSString *)userId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.circles.list
 // List all of the circles for a user.
@@ -202,7 +271,11 @@
 //   kGTLAuthScopePlusDomainsPlusLogin
 //   kGTLAuthScopePlusDomainsPlusMe
 // Fetches a GTLPlusDomainsCircleFeed.
+<<<<<<< HEAD
 + (id)queryForCirclesListWithUserId:(NSString *)userId;
+=======
++ (instancetype)queryForCirclesListWithUserId:(NSString *)userId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.circles.patch
 // Update a circle's description. This method supports patch semantics.
@@ -212,8 +285,13 @@
 //   kGTLAuthScopePlusDomainsPlusCirclesWrite
 //   kGTLAuthScopePlusDomainsPlusLogin
 // Fetches a GTLPlusDomainsCircle.
+<<<<<<< HEAD
 + (id)queryForCirclesPatchWithObject:(GTLPlusDomainsCircle *)object
                             circleId:(NSString *)circleId;
+=======
++ (instancetype)queryForCirclesPatchWithObject:(GTLPlusDomainsCircle *)object
+                                      circleId:(NSString *)circleId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.circles.remove
 // Delete a circle.
@@ -222,7 +300,11 @@
 //  Authorization scope(s):
 //   kGTLAuthScopePlusDomainsPlusCirclesWrite
 //   kGTLAuthScopePlusDomainsPlusLogin
+<<<<<<< HEAD
 + (id)queryForCirclesRemoveWithCircleId:(NSString *)circleId;
+=======
++ (instancetype)queryForCirclesRemoveWithCircleId:(NSString *)circleId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.circles.removePeople
 // Remove a person from a circle.
@@ -232,11 +314,19 @@
 //   email: Email of the people to add to the circle. Optional, can be repeated.
 //   userId: IDs of the people to remove from the circle. Optional, can be
 //     repeated.
+<<<<<<< HEAD
 //     Note: For this method, "userId" should be of type NSArray.
 //  Authorization scope(s):
 //   kGTLAuthScopePlusDomainsPlusCirclesWrite
 //   kGTLAuthScopePlusDomainsPlusLogin
 + (id)queryForCirclesRemovePeopleWithCircleId:(NSString *)circleId;
+=======
+//     Note: For this method, "userId" should be of type NSArray<NSString>.
+//  Authorization scope(s):
+//   kGTLAuthScopePlusDomainsPlusCirclesWrite
+//   kGTLAuthScopePlusDomainsPlusLogin
++ (instancetype)queryForCirclesRemovePeopleWithCircleId:(NSString *)circleId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.circles.update
 // Update a circle's description.
@@ -246,11 +336,18 @@
 //   kGTLAuthScopePlusDomainsPlusCirclesWrite
 //   kGTLAuthScopePlusDomainsPlusLogin
 // Fetches a GTLPlusDomainsCircle.
+<<<<<<< HEAD
 + (id)queryForCirclesUpdateWithObject:(GTLPlusDomainsCircle *)object
                              circleId:(NSString *)circleId;
 
 #pragma mark -
 #pragma mark "comments" methods
+=======
++ (instancetype)queryForCirclesUpdateWithObject:(GTLPlusDomainsCircle *)object
+                                       circleId:(NSString *)circleId;
+
+#pragma mark - "comments" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryPlusDomains object.
 
 // Method: plusDomains.comments.get
@@ -261,7 +358,11 @@
 //   kGTLAuthScopePlusDomainsPlusLogin
 //   kGTLAuthScopePlusDomainsPlusStreamRead
 // Fetches a GTLPlusDomainsComment.
+<<<<<<< HEAD
 + (id)queryForCommentsGetWithCommentId:(NSString *)commentId;
+=======
++ (instancetype)queryForCommentsGetWithCommentId:(NSString *)commentId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.comments.insert
 // Create a new comment in reply to an activity.
@@ -271,8 +372,13 @@
 //   kGTLAuthScopePlusDomainsPlusLogin
 //   kGTLAuthScopePlusDomainsPlusStreamWrite
 // Fetches a GTLPlusDomainsComment.
+<<<<<<< HEAD
 + (id)queryForCommentsInsertWithObject:(GTLPlusDomainsComment *)object
                             activityId:(NSString *)activityId;
+=======
++ (instancetype)queryForCommentsInsertWithObject:(GTLPlusDomainsComment *)object
+                                      activityId:(NSString *)activityId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.comments.list
 // List all of the comments for an activity.
@@ -293,10 +399,16 @@
 //   kGTLAuthScopePlusDomainsPlusLogin
 //   kGTLAuthScopePlusDomainsPlusStreamRead
 // Fetches a GTLPlusDomainsCommentFeed.
+<<<<<<< HEAD
 + (id)queryForCommentsListWithActivityId:(NSString *)activityId;
 
 #pragma mark -
 #pragma mark "media" methods
+=======
++ (instancetype)queryForCommentsListWithActivityId:(NSString *)activityId;
+
+#pragma mark - "media" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryPlusDomains object.
 
 // Method: plusDomains.media.insert
@@ -312,6 +424,7 @@
 //   Accepted MIME type(s): image/*, video/*
 //  Authorization scope(s):
 //   kGTLAuthScopePlusDomainsPlusLogin
+<<<<<<< HEAD
 //   kGTLAuthScopePlusDomainsPlusMediaUpload
 // Fetches a GTLPlusDomainsMedia.
 + (id)queryForMediaInsertWithObject:(GTLPlusDomainsMedia *)object
@@ -321,6 +434,17 @@
 
 #pragma mark -
 #pragma mark "people" methods
+=======
+//   kGTLAuthScopePlusDomainsPlusMe
+//   kGTLAuthScopePlusDomainsPlusMediaUpload
+// Fetches a GTLPlusDomainsMedia.
++ (instancetype)queryForMediaInsertWithObject:(GTLPlusDomainsMedia *)object
+                                       userId:(NSString *)userId
+                                   collection:(NSString *)collection
+                             uploadParameters:(GTLUploadParameters *)uploadParametersOrNil;
+
+#pragma mark - "people" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryPlusDomains object.
 
 // Method: plusDomains.people.get
@@ -335,7 +459,11 @@
 //   kGTLAuthScopePlusDomainsUserinfoEmail
 //   kGTLAuthScopePlusDomainsUserinfoProfile
 // Fetches a GTLPlusDomainsPerson.
+<<<<<<< HEAD
 + (id)queryForPeopleGetWithUserId:(NSString *)userId;
+=======
++ (instancetype)queryForPeopleGetWithUserId:(NSString *)userId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.people.list
 // List all of the people in the specified collection.
@@ -362,8 +490,13 @@
 //   kGTLAuthScopePlusDomainsPlusLogin
 //   kGTLAuthScopePlusDomainsPlusMe
 // Fetches a GTLPlusDomainsPeopleFeed.
+<<<<<<< HEAD
 + (id)queryForPeopleListWithUserId:(NSString *)userId
                         collection:(NSString *)collection;
+=======
++ (instancetype)queryForPeopleListWithUserId:(NSString *)userId
+                                  collection:(NSString *)collection;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.people.listByActivity
 // List all of the people in the specified collection for a particular activity.
@@ -387,8 +520,13 @@
 //   kGTLAuthScopePlusDomainsPlusLogin
 //   kGTLAuthScopePlusDomainsPlusStreamRead
 // Fetches a GTLPlusDomainsPeopleFeed.
+<<<<<<< HEAD
 + (id)queryForPeopleListByActivityWithActivityId:(NSString *)activityId
                                       collection:(NSString *)collection;
+=======
++ (instancetype)queryForPeopleListByActivityWithActivityId:(NSString *)activityId
+                                                collection:(NSString *)collection;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plusDomains.people.listByCircle
 // List all of the people who are members of a circle.
@@ -405,6 +543,10 @@
 //   kGTLAuthScopePlusDomainsPlusCirclesRead
 //   kGTLAuthScopePlusDomainsPlusLogin
 // Fetches a GTLPlusDomainsPeopleFeed.
+<<<<<<< HEAD
 + (id)queryForPeopleListByCircleWithCircleId:(NSString *)circleId;
+=======
++ (instancetype)queryForPeopleListByCircleWithCircleId:(NSString *)circleId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

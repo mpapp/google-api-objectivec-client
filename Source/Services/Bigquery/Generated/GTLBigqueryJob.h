@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +28,15 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
 // Classes:
 //   GTLBigqueryJob (0 custom class methods, 8 custom properties)
+=======
+//   https://cloud.google.com/bigquery/
+// Classes:
+//   GTLBigqueryJob (0 custom class methods, 9 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -47,6 +57,7 @@
 @interface GTLBigqueryJob : GTLObject
 
 // [Required] Describes the job configuration.
+<<<<<<< HEAD
 @property (retain) GTLBigqueryJobConfiguration *configuration;
 
 // [Output-only] A hash of this resource.
@@ -72,5 +83,35 @@
 // [Output-only] The status of this job. Examine this value when polling an
 // asynchronous job to see if the job is complete.
 @property (retain) GTLBigqueryJobStatus *status;
+=======
+@property (nonatomic, retain) GTLBigqueryJobConfiguration *configuration;
+
+// [Output-only] A hash of this resource.
+@property (nonatomic, copy) NSString *ETag;
+
+// [Output-only] Opaque ID field of the job
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// [Optional] Reference describing the unique-per-user name of the job.
+@property (nonatomic, retain) GTLBigqueryJobReference *jobReference;
+
+// [Output-only] The type of the resource.
+@property (nonatomic, copy) NSString *kind;
+
+// [Output-only] A URL that can be used to access this resource again.
+@property (nonatomic, copy) NSString *selfLink;
+
+// [Output-only] Information about the job, including starting time and ending
+// time of the job.
+@property (nonatomic, retain) GTLBigqueryJobStatistics *statistics;
+
+// [Output-only] The status of this job. Examine this value when polling an
+// asynchronous job to see if the job is complete.
+@property (nonatomic, retain) GTLBigqueryJobStatus *status;
+
+// [Output-only] Email address of the user who ran the job.
+@property (nonatomic, copy) NSString *userEmail;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

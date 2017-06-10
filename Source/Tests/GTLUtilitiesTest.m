@@ -53,6 +53,7 @@
   XCTAssertEqualObjects(output, @"photo%E5%8F%83.jpg", @"cjk failure");
 }
 
+<<<<<<< HEAD
 - (void)testURLEncodingForURI {
   NSString *input;
   NSString *output;
@@ -82,6 +83,8 @@
   XCTAssertEqualObjects(output, expected, @"all chars to escape");
 }
 
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (void)testURLEncodingForStringParameter {
   NSString *input;
   NSString *output;
@@ -203,11 +206,19 @@
   result = GTL_EnsureNSNumber((NSNumber*)@"-71100000000007780");
   XCTAssertEqual([result longLongValue], -71100000000007780LL);
 
+<<<<<<< HEAD
   NSString *ullongmaxStr = [[NSNumber numberWithUnsignedLongLong:ULLONG_MAX] stringValue];
   result = GTL_EnsureNSNumber((NSNumber*)ullongmaxStr);
   XCTAssertEqual([result unsignedLongLongValue], ULLONG_MAX);
 
   NSString *llongminStr = [[NSNumber numberWithLongLong:LLONG_MIN] stringValue];
+=======
+  NSString *ullongmaxStr = [@(ULLONG_MAX) stringValue];
+  result = GTL_EnsureNSNumber((NSNumber*)ullongmaxStr);
+  XCTAssertEqual([result unsignedLongLongValue], ULLONG_MAX);
+
+  NSString *llongminStr = [@(LLONG_MIN) stringValue];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   result = GTL_EnsureNSNumber((NSNumber*)llongminStr);
   XCTAssertEqual([result longLongValue], LLONG_MIN);
 }

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,12 +26,20 @@
 // Service:
 //   AdSense Management API (adsense/v1.4)
 // Description:
+<<<<<<< HEAD
 //   Gives AdSense publishers access to their inventory and the ability to
 //   generate reports
 // Documentation:
 //   https://developers.google.com/adsense/management/
 // Classes:
 //   GTLAdSenseAdClient (0 custom class methods, 6 custom properties)
+=======
+//   Accesses AdSense publishers' inventory and generates performance reports.
+// Documentation:
+//   https://developers.google.com/adsense/management/
+// Classes:
+//   GTLAdSenseAdClient (0 custom class methods, 5 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -43,6 +55,7 @@
 @interface GTLAdSenseAdClient : GTLObject
 
 // Whether this ad client is opted in to ARC.
+<<<<<<< HEAD
 @property (retain) NSNumber *arcOptIn;  // boolValue
 
 // ARC review mode this ad client is in. Empty if the client is not opted in to
@@ -62,5 +75,22 @@
 
 // Whether this ad client supports being reported on.
 @property (retain) NSNumber *supportsReporting;  // boolValue
+=======
+@property (nonatomic, retain) NSNumber *arcOptIn;  // boolValue
+
+// Unique identifier of this ad client.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Kind of resource this is, in this case adsense#adClient.
+@property (nonatomic, copy) NSString *kind;
+
+// This ad client's product code, which corresponds to the PRODUCT_CODE report
+// dimension.
+@property (nonatomic, copy) NSString *productCode;
+
+// Whether this ad client supports being reported on.
+@property (nonatomic, retain) NSNumber *supportsReporting;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,20 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
 //   GTLYouTubeLiveBroadcast (0 custom class methods, 6 custom properties)
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+// Documentation:
+//   https://developers.google.com/youtube/v3
+// Classes:
+//   GTLYouTubeLiveBroadcast (0 custom class methods, 8 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -36,7 +49,13 @@
 
 @class GTLYouTubeLiveBroadcastContentDetails;
 @class GTLYouTubeLiveBroadcastSnippet;
+<<<<<<< HEAD
 @class GTLYouTubeLiveBroadcastStatus;
+=======
+@class GTLYouTubeLiveBroadcastStatistics;
+@class GTLYouTubeLiveBroadcastStatus;
+@class GTLYouTubeLiveBroadcastTopicDetails;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // ----------------------------------------------------------------------------
 //
@@ -52,6 +71,7 @@
 // content, such as whether the content can be shown in an embedded video player
 // or if it will be archived and therefore available for viewing after the event
 // has concluded.
+<<<<<<< HEAD
 @property (retain) GTLYouTubeLiveBroadcastContentDetails *contentDetails;
 
 // Etag of this resource.
@@ -72,4 +92,33 @@
 // The status object contains information about the event's status.
 @property (retain) GTLYouTubeLiveBroadcastStatus *status;
 
+=======
+@property (nonatomic, retain) GTLYouTubeLiveBroadcastContentDetails *contentDetails;
+
+// Etag of this resource.
+@property (nonatomic, copy) NSString *ETag;
+
+// The ID that YouTube assigns to uniquely identify the broadcast.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Identifies what kind of resource this is. Value: the fixed string
+// "youtube#liveBroadcast".
+@property (nonatomic, copy) NSString *kind;
+
+// The snippet object contains basic details about the event, including its
+// title, description, start time, and end time.
+@property (nonatomic, retain) GTLYouTubeLiveBroadcastSnippet *snippet;
+
+// The statistics object contains info about the event's current stats. These
+// include concurrent viewers and total chat count. Statistics can change (in
+// either direction) during the lifetime of an event. Statistics are only
+// returned while the event is live.
+@property (nonatomic, retain) GTLYouTubeLiveBroadcastStatistics *statistics;
+
+// The status object contains information about the event's status.
+@property (nonatomic, retain) GTLYouTubeLiveBroadcastStatus *status;
+
+@property (nonatomic, retain) GTLYouTubeLiveBroadcastTopicDetails *topicDetails;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end

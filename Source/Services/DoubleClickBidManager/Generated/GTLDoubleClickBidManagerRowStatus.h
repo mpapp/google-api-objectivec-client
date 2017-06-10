@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +48,7 @@
 @interface GTLDoubleClickBidManagerRowStatus : GTLObject
 
 // Whether the stored entity is changed as a result of upload.
+<<<<<<< HEAD
 @property (retain) NSNumber *changed;  // boolValue
 
 // Entity Id.
@@ -60,5 +65,23 @@
 
 // Row number.
 @property (retain) NSNumber *rowNumber;  // intValue
+=======
+@property (nonatomic, retain) NSNumber *changed;  // boolValue
+
+// Entity Id.
+@property (nonatomic, retain) NSNumber *entityId;  // longLongValue
+
+// Entity name.
+@property (nonatomic, copy) NSString *entityName;
+
+// Reasons why the entity can't be uploaded.
+@property (nonatomic, retain) NSArray *errors;  // of NSString
+
+// Whether the entity is persisted.
+@property (nonatomic, retain) NSNumber *persisted;  // boolValue
+
+// Row number.
+@property (nonatomic, retain) NSNumber *rowNumber;  // intValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

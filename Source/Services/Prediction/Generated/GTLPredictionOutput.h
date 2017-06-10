@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +51,7 @@
 
 // The unique name for the predictive model.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+<<<<<<< HEAD
 @property (copy) NSString *identifier;
 
 // What kind of resource this is.
@@ -64,6 +69,25 @@
 
 // A URL to re-request this resource.
 @property (copy) NSString *selfLink;
+=======
+@property (nonatomic, copy) NSString *identifier;
+
+// What kind of resource this is.
+@property (nonatomic, copy) NSString *kind;
+
+// The most likely class label (Categorical models only).
+@property (nonatomic, copy) NSString *outputLabel;
+
+// A list of class labels with their estimated probabilities (Categorical models
+// only).
+@property (nonatomic, retain) NSArray *outputMulti;  // of GTLPredictionOutputOutputMultiItem
+
+// The estimated regression value (Regression models only).
+@property (nonatomic, copy) NSString *outputValue;
+
+// A URL to re-request this resource.
+@property (nonatomic, copy) NSString *selfLink;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -76,9 +100,16 @@
 @interface GTLPredictionOutputOutputMultiItem : GTLObject
 
 // The class label.
+<<<<<<< HEAD
 @property (copy) NSString *label;
 
 // The probability of the class label.
 @property (copy) NSString *score;
+=======
+@property (nonatomic, copy) NSString *label;
+
+// The probability of the class label.
+@property (nonatomic, copy) NSString *score;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

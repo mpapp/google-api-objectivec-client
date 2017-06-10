@@ -29,13 +29,22 @@
             uploadLocationURL = uploadLocationURL_,
             fileURL = fileURL_,
             slug = slug_,
+<<<<<<< HEAD
             shouldSendUploadOnly = shouldSendUploadOnly_;
+=======
+            shouldSendUploadOnly = shouldSendUploadOnly_,
+            useBackgroundSession = useBackgroundSession_;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 + (instancetype)uploadParametersWithData:(NSData *)data
                                 MIMEType:(NSString *)mimeType {
   GTLUploadParameters *params = [[[self alloc] init] autorelease];
   params.data = data;
   params.MIMEType = mimeType;
+<<<<<<< HEAD
+=======
+  params.useBackgroundSession = YES;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return params;
 }
 
@@ -44,6 +53,10 @@
   GTLUploadParameters *params = [[[self alloc] init] autorelease];
   params.fileHandle = fileHandle;
   params.MIMEType = mimeType;
+<<<<<<< HEAD
+=======
+  params.useBackgroundSession = YES;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return params;
 }
 
@@ -52,6 +65,10 @@
   GTLUploadParameters *params = [[[self alloc] init] autorelease];
   params.fileURL = fileURL;
   params.MIMEType = mimeType;
+<<<<<<< HEAD
+=======
+  params.useBackgroundSession = YES;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return params;
 }
 
@@ -64,6 +81,10 @@
   newParams.uploadLocationURL = self.uploadLocationURL;
   newParams.slug = self.slug;
   newParams.shouldSendUploadOnly = self.shouldSendUploadOnly;
+<<<<<<< HEAD
+=======
+  newParams.useBackgroundSession = self.useBackgroundSession;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return newParams;
 }
 
@@ -78,6 +99,10 @@
   [super dealloc];
 }
 
+<<<<<<< HEAD
+=======
+#if DEBUG
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (NSString *)description {
   NSMutableArray *array = [NSMutableArray array];
   NSString *str = [NSString stringWithFormat:@"MIMEType:%@", MIMEType_];
@@ -114,10 +139,21 @@
     [array addObject:@"shouldSendUploadOnly"];
   }
 
+<<<<<<< HEAD
+=======
+  if (useBackgroundSession_) {
+    [array addObject:@"useBackgroundSession"];
+  }
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *descStr = [array componentsJoinedByString:@", "];
   str = [NSString stringWithFormat:@"%@ %p: {%@}",
          [self class], self, descStr];
   return str;
 }
+<<<<<<< HEAD
+=======
+#endif
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

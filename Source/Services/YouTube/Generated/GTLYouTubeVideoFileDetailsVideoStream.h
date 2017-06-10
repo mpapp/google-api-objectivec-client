@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -45,6 +54,7 @@
 
 // The video content's display aspect ratio, which specifies the aspect ratio in
 // which the video should be displayed.
+<<<<<<< HEAD
 @property (retain) NSNumber *aspectRatio;  // doubleValue
 
 // The video stream's bitrate, in bits per second.
@@ -70,5 +80,32 @@
 // The encoded video content's width in pixels. You can calculate the video's
 // encoding aspect ratio as width_pixels / height_pixels.
 @property (retain) NSNumber *widthPixels;  // unsignedIntValue
+=======
+@property (nonatomic, retain) NSNumber *aspectRatio;  // doubleValue
+
+// The video stream's bitrate, in bits per second.
+@property (nonatomic, retain) NSNumber *bitrateBps;  // unsignedLongLongValue
+
+// The video codec that the stream uses.
+@property (nonatomic, copy) NSString *codec;
+
+// The video stream's frame rate, in frames per second.
+@property (nonatomic, retain) NSNumber *frameRateFps;  // doubleValue
+
+// The encoded video content's height in pixels.
+@property (nonatomic, retain) NSNumber *heightPixels;  // unsignedIntValue
+
+// The amount that YouTube needs to rotate the original source content to
+// properly display the video.
+@property (nonatomic, copy) NSString *rotation;
+
+// A value that uniquely identifies a video vendor. Typically, the value is a
+// four-letter vendor code.
+@property (nonatomic, copy) NSString *vendor;
+
+// The encoded video content's width in pixels. You can calculate the video's
+// encoding aspect ratio as width_pixels / height_pixels.
+@property (nonatomic, retain) NSNumber *widthPixels;  // unsignedIntValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

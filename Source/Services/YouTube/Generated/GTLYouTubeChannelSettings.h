@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,20 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
 //   GTLYouTubeChannelSettings (0 custom class methods, 12 custom properties)
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+// Documentation:
+//   https://developers.google.com/youtube/v3
+// Classes:
+//   GTLYouTubeChannelSettings (0 custom class methods, 14 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -43,6 +56,7 @@
 
 @interface GTLYouTubeChannelSettings : GTLObject
 
+<<<<<<< HEAD
 // Which content tab users should see when viewing the channel.
 @property (copy) NSString *defaultTab;
 
@@ -81,5 +95,50 @@
 
 // The trailer of the channel, for users that are not subscribers.
 @property (copy) NSString *unsubscribedTrailer;
+=======
+// The country of the channel.
+@property (nonatomic, copy) NSString *country;
+
+@property (nonatomic, copy) NSString *defaultLanguage;
+
+// Which content tab users should see when viewing the channel.
+@property (nonatomic, copy) NSString *defaultTab;
+
+// Specifies the channel description.
+// Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// Title for the featured channels tab.
+@property (nonatomic, copy) NSString *featuredChannelsTitle;
+
+// The list of featured channels.
+@property (nonatomic, retain) NSArray *featuredChannelsUrls;  // of NSString
+
+// Lists keywords associated with the channel, comma-separated.
+@property (nonatomic, copy) NSString *keywords;
+
+// Whether user-submitted comments left on the channel page need to be approved
+// by the channel owner to be publicly visible.
+@property (nonatomic, retain) NSNumber *moderateComments;  // boolValue
+
+// A prominent color that can be rendered on this channel page.
+@property (nonatomic, copy) NSString *profileColor;
+
+// Whether the tab to browse the videos should be displayed.
+@property (nonatomic, retain) NSNumber *showBrowseView;  // boolValue
+
+// Whether related channels should be proposed.
+@property (nonatomic, retain) NSNumber *showRelatedChannels;  // boolValue
+
+// Specifies the channel title.
+@property (nonatomic, copy) NSString *title;
+
+// The ID for a Google Analytics account to track and measure traffic to the
+// channels.
+@property (nonatomic, copy) NSString *trackingAnalyticsAccountId;
+
+// The trailer of the channel, for users that are not subscribers.
+@property (nonatomic, copy) NSString *unsubscribedTrailer;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

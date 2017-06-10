@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,19 +28,42 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
 
 #import "GTLBigqueryConstants.h"
 
+=======
+//   https://cloud.google.com/bigquery/
+
+#import "GTLBigqueryConstants.h"
+
+#import "GTLBigqueryBigtableColumn.h"
+#import "GTLBigqueryBigtableColumnFamily.h"
+#import "GTLBigqueryBigtableOptions.h"
+#import "GTLBigqueryCsvOptions.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBigqueryDataset.h"
 #import "GTLBigqueryDatasetList.h"
 #import "GTLBigqueryDatasetReference.h"
 #import "GTLBigqueryErrorProto.h"
+<<<<<<< HEAD
 #import "GTLBigqueryGetQueryResultsResponse.h"
 #import "GTLBigqueryJob.h"
 #import "GTLBigqueryJobConfiguration.h"
 #import "GTLBigqueryJobConfigurationExtract.h"
 #import "GTLBigqueryJobConfigurationLink.h"
+=======
+#import "GTLBigqueryExplainQueryStage.h"
+#import "GTLBigqueryExplainQueryStep.h"
+#import "GTLBigqueryExternalDataConfiguration.h"
+#import "GTLBigqueryGetQueryResultsResponse.h"
+#import "GTLBigqueryGoogleSheetsOptions.h"
+#import "GTLBigqueryJob.h"
+#import "GTLBigqueryJobCancelResponse.h"
+#import "GTLBigqueryJobConfiguration.h"
+#import "GTLBigqueryJobConfigurationExtract.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBigqueryJobConfigurationLoad.h"
 #import "GTLBigqueryJobConfigurationQuery.h"
 #import "GTLBigqueryJobConfigurationTableCopy.h"
@@ -45,11 +72,19 @@
 #import "GTLBigqueryJobStatistics.h"
 #import "GTLBigqueryJobStatistics2.h"
 #import "GTLBigqueryJobStatistics3.h"
+<<<<<<< HEAD
+=======
+#import "GTLBigqueryJobStatistics4.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBigqueryJobStatus.h"
 #import "GTLBigqueryJsonObject.h"
 #import "GTLBigqueryProjectList.h"
 #import "GTLBigqueryProjectReference.h"
 #import "GTLBigqueryQueryResponse.h"
+<<<<<<< HEAD
+=======
+#import "GTLBigqueryStreamingbuffer.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBigqueryTable.h"
 #import "GTLBigqueryTableCell.h"
 #import "GTLBigqueryTableDataInsertAllResponse.h"
@@ -59,6 +94,11 @@
 #import "GTLBigqueryTableReference.h"
 #import "GTLBigqueryTableRow.h"
 #import "GTLBigqueryTableSchema.h"
+<<<<<<< HEAD
+=======
+#import "GTLBigqueryTimePartitioning.h"
+#import "GTLBigqueryUserDefinedFunctionResource.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLBigqueryViewDefinition.h"
 
 #import "GTLQueryBigquery.h"

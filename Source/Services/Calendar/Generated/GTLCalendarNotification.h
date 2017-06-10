@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Calendar API (calendar/v3)
 // Description:
+<<<<<<< HEAD
 //   Lets you manipulate events and other calendar data.
+=======
+//   Manipulates events and other calendar data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/google-apps/calendar/firstapp
 // Classes:
@@ -44,8 +52,14 @@
 // The method used to deliver the notification. Possible values are:
 // - "email" - Reminders are sent via email.
 // - "sms" - Reminders are sent via SMS. This value is read-only and is ignored
+<<<<<<< HEAD
 // on inserts and updates.
 @property (copy) NSString *method;
+=======
+// on inserts and updates. SMS reminders are only available for Google Apps for
+// Work, Education, and Government customers.
+@property (nonatomic, copy) NSString *method;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The type of notification. Possible values are:
 // - "eventCreation" - Notification sent when a new event is put on the
@@ -54,6 +68,10 @@
 // - "eventCancellation" - Notification sent when an event is cancelled.
 // - "eventResponse" - Notification sent when an event is changed.
 // - "agenda" - An agenda with the events of the day (sent out in the morning).
+<<<<<<< HEAD
 @property (copy) NSString *type;
+=======
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

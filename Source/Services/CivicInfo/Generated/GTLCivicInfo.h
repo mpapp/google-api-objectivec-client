@@ -20,12 +20,21 @@
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
+<<<<<<< HEAD
 //   Google Civic Information API (civicinfo/v1)
+=======
+//   Google Civic Information API (civicinfo/v2)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Description:
 //   An API for accessing civic information.
 // Documentation:
 //   https://developers.google.com/civic-information
 
+<<<<<<< HEAD
+=======
+#import "GTLCivicInfoConstants.h"
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLCivicInfoAdministrationRegion.h"
 #import "GTLCivicInfoAdministrativeBody.h"
 #import "GTLCivicInfoCandidate.h"
@@ -41,6 +50,10 @@
 #import "GTLCivicInfoOffice.h"
 #import "GTLCivicInfoOfficial.h"
 #import "GTLCivicInfoPollingLocation.h"
+<<<<<<< HEAD
+=======
+#import "GTLCivicInfoRepresentativeInfoData.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLCivicInfoRepresentativeInfoResponse.h"
 #import "GTLCivicInfoSimpleAddressType.h"
 #import "GTLCivicInfoSource.h"

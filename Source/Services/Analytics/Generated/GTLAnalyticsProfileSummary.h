@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,19 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
 //   GTLAnalyticsProfileSummary (0 custom class methods, 4 custom properties)
+=======
+//   Views and manages your Google Analytics data.
+// Documentation:
+//   https://developers.google.com/analytics/
+// Classes:
+//   GTLAnalyticsProfileSummary (0 custom class methods, 5 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -46,6 +58,7 @@
 
 // View (profile) ID.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+<<<<<<< HEAD
 @property (copy) NSString *identifier;
 
 // Resource type for Analytics ProfileSummary.
@@ -56,5 +69,20 @@
 
 // View (Profile) type. Supported types: WEB or APP.
 @property (copy) NSString *type;
+=======
+@property (nonatomic, copy) NSString *identifier;
+
+// Resource type for Analytics ProfileSummary.
+@property (nonatomic, copy) NSString *kind;
+
+// View (profile) name.
+@property (nonatomic, copy) NSString *name;
+
+// Indicates whether this view (profile) is starred or not.
+@property (nonatomic, retain) NSNumber *starred;  // boolValue
+
+// View (Profile) type. Supported types: WEB or APP.
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

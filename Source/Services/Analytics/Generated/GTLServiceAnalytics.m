@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
+=======
+//   Views and manages your Google Analytics data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
@@ -36,6 +44,7 @@
 // Method compiled in debug builds just to check that all the needed support
 // classes are present at link time.
 + (NSArray *)checkClasses {
+<<<<<<< HEAD
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryAnalytics class],
                       [GTLAnalyticsAccount class],
@@ -85,11 +94,67 @@
                       [GTLAnalyticsWebPropertyRef class],
                       [GTLAnalyticsWebPropertySummary class],
                       nil];
+=======
+  NSArray *classes = @[
+    [GTLQueryAnalytics class],
+    [GTLAnalyticsAccount class],
+    [GTLAnalyticsAccountRef class],
+    [GTLAnalyticsAccounts class],
+    [GTLAnalyticsAccountSummaries class],
+    [GTLAnalyticsAccountSummary class],
+    [GTLAnalyticsAccountTicket class],
+    [GTLAnalyticsAdWordsAccount class],
+    [GTLAnalyticsColumn class],
+    [GTLAnalyticsColumns class],
+    [GTLAnalyticsCustomDataSource class],
+    [GTLAnalyticsCustomDataSources class],
+    [GTLAnalyticsCustomDimension class],
+    [GTLAnalyticsCustomDimensions class],
+    [GTLAnalyticsCustomMetric class],
+    [GTLAnalyticsCustomMetrics class],
+    [GTLAnalyticsEntityAdWordsLink class],
+    [GTLAnalyticsEntityAdWordsLinks class],
+    [GTLAnalyticsEntityUserLink class],
+    [GTLAnalyticsEntityUserLinks class],
+    [GTLAnalyticsExperiment class],
+    [GTLAnalyticsExperiments class],
+    [GTLAnalyticsFilter class],
+    [GTLAnalyticsFilterExpression class],
+    [GTLAnalyticsFilterRef class],
+    [GTLAnalyticsFilters class],
+    [GTLAnalyticsGaData class],
+    [GTLAnalyticsGoal class],
+    [GTLAnalyticsGoals class],
+    [GTLAnalyticsMcfData class],
+    [GTLAnalyticsProfile class],
+    [GTLAnalyticsProfileFilterLink class],
+    [GTLAnalyticsProfileFilterLinks class],
+    [GTLAnalyticsProfileRef class],
+    [GTLAnalyticsProfiles class],
+    [GTLAnalyticsProfileSummary class],
+    [GTLAnalyticsRealtimeData class],
+    [GTLAnalyticsSegment class],
+    [GTLAnalyticsSegments class],
+    [GTLAnalyticsUnsampledReport class],
+    [GTLAnalyticsUnsampledReports class],
+    [GTLAnalyticsUpload class],
+    [GTLAnalyticsUploads class],
+    [GTLAnalyticsUserRef class],
+    [GTLAnalyticsWebproperties class],
+    [GTLAnalyticsWebproperty class],
+    [GTLAnalyticsWebPropertyRef class],
+    [GTLAnalyticsWebPropertySummary class]
+  ];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return classes;
 }
 #endif  // DEBUG
 
+<<<<<<< HEAD
 - (id)init {
+=======
+- (instancetype)init {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   self = [super init];
   if (self) {
     // Version from discovery.

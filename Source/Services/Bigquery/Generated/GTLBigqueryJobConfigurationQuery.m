@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,14 +28,27 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
 // Classes:
 //   GTLBigqueryJobConfigurationQuery (0 custom class methods, 10 custom properties)
+=======
+//   https://cloud.google.com/bigquery/
+// Classes:
+//   GTLBigqueryJobConfigurationQuery (0 custom class methods, 14 custom properties)
+//   GTLBigqueryJobConfigurationQueryTableDefinitions (0 custom class methods, 0 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLBigqueryJobConfigurationQuery.h"
 
 #import "GTLBigqueryDatasetReference.h"
+<<<<<<< HEAD
 #import "GTLBigqueryTableReference.h"
+=======
+#import "GTLBigqueryExternalDataConfiguration.h"
+#import "GTLBigqueryTableReference.h"
+#import "GTLBigqueryUserDefinedFunctionResource.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // ----------------------------------------------------------------------------
 //
@@ -40,6 +57,34 @@
 
 @implementation GTLBigqueryJobConfigurationQuery
 @dynamic allowLargeResults, createDisposition, defaultDataset, destinationTable,
+<<<<<<< HEAD
          flattenResults, preserveNulls, priority, query, useQueryCache,
          writeDisposition;
+=======
+         flattenResults, maximumBillingTier, preserveNulls, priority, query,
+         tableDefinitions, useLegacySql, useQueryCache,
+         userDefinedFunctionResources, writeDisposition;
+
++ (NSDictionary *)arrayPropertyToClassMap {
+  NSDictionary *map = @{
+    @"userDefinedFunctionResources" : [GTLBigqueryUserDefinedFunctionResource class]
+  };
+  return map;
+}
+
+@end
+
+
+// ----------------------------------------------------------------------------
+//
+//   GTLBigqueryJobConfigurationQueryTableDefinitions
+//
+
+@implementation GTLBigqueryJobConfigurationQueryTableDefinitions
+
++ (Class)classForAdditionalProperties {
+  return [GTLBigqueryExternalDataConfiguration class];
+}
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end

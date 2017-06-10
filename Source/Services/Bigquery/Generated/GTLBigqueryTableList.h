@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +28,11 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
+=======
+//   https://cloud.google.com/bigquery/
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Classes:
 //   GTLBigqueryTableList (0 custom class methods, 5 custom properties)
 //   GTLBigqueryTableListTablesItem (0 custom class methods, 5 custom properties)
@@ -46,6 +54,7 @@
 @interface GTLBigqueryTableList : GTLObject
 
 // A hash of this page of results.
+<<<<<<< HEAD
 @property (copy) NSString *ETag;
 
 // The type of list.
@@ -59,6 +68,21 @@
 
 // The total number of tables in the dataset.
 @property (retain) NSNumber *totalItems;  // intValue
+=======
+@property (nonatomic, copy) NSString *ETag;
+
+// The type of list.
+@property (nonatomic, copy) NSString *kind;
+
+// A token to request the next page of results.
+@property (nonatomic, copy) NSString *nextPageToken;
+
+// Tables in the requested dataset.
+@property (nonatomic, retain) NSArray *tables;  // of GTLBigqueryTableListTablesItem
+
+// The total number of tables in the dataset.
+@property (nonatomic, retain) NSNumber *totalItems;  // intValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -71,6 +95,7 @@
 @interface GTLBigqueryTableListTablesItem : GTLObject
 
 // The user-friendly name for this table.
+<<<<<<< HEAD
 @property (copy) NSString *friendlyName;
 
 // An opaque ID of the table
@@ -85,5 +110,21 @@
 
 // The type of table. Possible values are: TABLE, VIEW.
 @property (copy) NSString *type;
+=======
+@property (nonatomic, copy) NSString *friendlyName;
+
+// An opaque ID of the table
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The resource type.
+@property (nonatomic, copy) NSString *kind;
+
+// A reference uniquely identifying the table.
+@property (nonatomic, retain) GTLBigqueryTableReference *tableReference;
+
+// The type of table. Possible values are: TABLE, VIEW.
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

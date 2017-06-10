@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +61,7 @@
 // is the 0-based index of this array.
 // - cid: <img src="cid:attachment_id"> where attachment_id is the ID of the
 // attachment.
+<<<<<<< HEAD
 @property (retain) NSArray *attachments;  // of GTLMirrorAttachment
 
 // The bundle ID for this item. Services can specify a bundleId to group many
@@ -72,16 +77,40 @@
 
 // The user or group that created this item.
 @property (retain) GTLMirrorContact *creator;
+=======
+@property (nonatomic, retain) NSArray *attachments;  // of GTLMirrorAttachment
+
+// The bundle ID for this item. Services can specify a bundleId to group many
+// items together. They appear under a single top-level item on the device.
+@property (nonatomic, copy) NSString *bundleId;
+
+// A canonical URL pointing to the canonical/high quality version of the data
+// represented by the timeline item.
+@property (nonatomic, copy) NSString *canonicalUrl;
+
+// The time at which this item was created, formatted according to RFC 3339.
+@property (nonatomic, retain) GTLDateTime *created;
+
+// The user or group that created this item.
+@property (nonatomic, retain) GTLMirrorContact *creator;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The time that should be displayed when this item is viewed in the timeline,
 // formatted according to RFC 3339. This user's timeline is sorted
 // chronologically on display time, so this will also determine where the item
 // is displayed in the timeline. If not set by the service, the display time
 // defaults to the updated time.
+<<<<<<< HEAD
 @property (retain) GTLDateTime *displayTime;
 
 // ETag for this item.
 @property (copy) NSString *ETag;
+=======
+@property (nonatomic, retain) GTLDateTime *displayTime;
+
+// ETag for this item.
+@property (nonatomic, copy) NSString *ETag;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // HTML content for this item. If both text and html are provided for an item,
 // the html will be rendered in the timeline.
@@ -102,16 +131,28 @@
 // - Scripting: applet, script
 // Other elements: Any elements that aren't listed are removed, but their
 // contents are preserved.
+<<<<<<< HEAD
 @property (copy) NSString *html;
 
 // The ID of the timeline item. This is unique within a user's timeline.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
 @property (copy) NSString *identifier;
+=======
+@property (nonatomic, copy) NSString *html;
+
+// The ID of the timeline item. This is unique within a user's timeline.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // If this item was generated as a reply to another item, this field will be set
 // to the ID of the item being replied to. This can be used to attach a reply to
 // the appropriate conversation or post.
+<<<<<<< HEAD
 @property (copy) NSString *inReplyTo;
+=======
+@property (nonatomic, copy) NSString *inReplyTo;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Whether this item is a bundle cover.
 // If an item is marked as a bundle cover, it will be the entry point to the
@@ -122,15 +163,23 @@
 // - Items that do not have a bundleId In a bundle sub-timeline, items that are
 // shown are:
 // - Items that have the bundleId in question AND isBundleCover set to false
+<<<<<<< HEAD
 @property (retain) NSNumber *isBundleCover;  // boolValue
 
 // When true, indicates this item is deleted, and only the ID property is set.
 @property (retain) NSNumber *isDeleted;  // boolValue
+=======
+@property (nonatomic, retain) NSNumber *isBundleCover;  // boolValue
+
+// When true, indicates this item is deleted, and only the ID property is set.
+@property (nonatomic, retain) NSNumber *isDeleted;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // When true, indicates this item is pinned, which means it's grouped alongside
 // "active" items like navigation and hangouts, on the opposite side of the home
 // screen from historical (non-pinned) timeline items. You can allow the user to
 // toggle the value of this property with the TOGGLE_PINNED built-in menu item.
+<<<<<<< HEAD
 @property (retain) NSNumber *isPinned;  // boolValue
 
 // The type of resource. This is always mirror#timelineItem.
@@ -146,10 +195,28 @@
 // Controls how notifications for this item are presented on the device. If this
 // is missing, no notification will be generated.
 @property (retain) GTLMirrorNotificationConfig *notification;
+=======
+@property (nonatomic, retain) NSNumber *isPinned;  // boolValue
+
+// The type of resource. This is always mirror#timelineItem.
+@property (nonatomic, copy) NSString *kind;
+
+// The geographic location associated with this item.
+@property (nonatomic, retain) GTLMirrorLocation *location;
+
+// A list of menu items that will be presented to the user when this item is
+// selected in the timeline.
+@property (nonatomic, retain) NSArray *menuItems;  // of GTLMirrorMenuItem
+
+// Controls how notifications for this item are presented on the device. If this
+// is missing, no notification will be generated.
+@property (nonatomic, retain) GTLMirrorNotificationConfig *notification;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // For pinned items, this determines the order in which the item is displayed in
 // the timeline, with a higher score appearing closer to the clock. Note:
 // setting this field is currently not supported.
+<<<<<<< HEAD
 @property (retain) NSNumber *pinScore;  // intValue
 
 // A list of users or groups that this item has been shared with.
@@ -160,6 +227,18 @@
 
 // Opaque string you can use to map a timeline item to data in your own service.
 @property (copy) NSString *sourceItemId;
+=======
+@property (nonatomic, retain) NSNumber *pinScore;  // intValue
+
+// A list of users or groups that this item has been shared with.
+@property (nonatomic, retain) NSArray *recipients;  // of GTLMirrorContact
+
+// A URL that can be used to retrieve this item.
+@property (nonatomic, copy) NSString *selfLink;
+
+// Opaque string you can use to map a timeline item to data in your own service.
+@property (nonatomic, copy) NSString *sourceItemId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The speakable version of the content of this item. Along with the READ_ALOUD
 // menu item, use this field to provide text that would be clearer when read
@@ -168,7 +247,11 @@
 // Glassware should also specify the speakableType field, which will be spoken
 // before this text in cases where the additional context is useful, for example
 // when the user requests that the item be read aloud following a notification.
+<<<<<<< HEAD
 @property (copy) NSString *speakableText;
+=======
+@property (nonatomic, copy) NSString *speakableText;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // A speakable description of the type of this item. This will be announced to
 // the user prior to reading the content of the item in cases where the
@@ -179,6 +262,7 @@
 // Glassware are encouraged to populate this field for every timeline item, even
 // if the item does not contain speakableText or text so that the user can learn
 // the type of the item without looking at the screen.
+<<<<<<< HEAD
 @property (copy) NSString *speakableType;
 
 // Text content of this item.
@@ -190,5 +274,18 @@
 // The time at which this item was last modified, formatted according to RFC
 // 3339.
 @property (retain) GTLDateTime *updated;
+=======
+@property (nonatomic, copy) NSString *speakableType;
+
+// Text content of this item.
+@property (nonatomic, copy) NSString *text;
+
+// The title of this item.
+@property (nonatomic, copy) NSString *title;
+
+// The time at which this item was last modified, formatted according to RFC
+// 3339.
+@property (nonatomic, retain) GTLDateTime *updated;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

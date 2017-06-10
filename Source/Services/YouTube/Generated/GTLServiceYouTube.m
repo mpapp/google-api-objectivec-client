@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -36,6 +45,7 @@
 // Method compiled in debug builds just to check that all the needed support
 // classes are present at link time.
 + (NSArray *)checkClasses {
+<<<<<<< HEAD
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryYouTube class],
                       [GTLYouTubeAccessPolicy class],
@@ -161,11 +171,188 @@
                       [GTLYouTubeVideoTopicDetails class],
                       [GTLYouTubeWatchSettings class],
                       nil];
+=======
+  NSArray *classes = @[
+    [GTLQueryYouTube class],
+    [GTLYouTubeAccessPolicy class],
+    [GTLYouTubeActivity class],
+    [GTLYouTubeActivityContentDetails class],
+    [GTLYouTubeActivityContentDetailsBulletin class],
+    [GTLYouTubeActivityContentDetailsChannelItem class],
+    [GTLYouTubeActivityContentDetailsComment class],
+    [GTLYouTubeActivityContentDetailsFavorite class],
+    [GTLYouTubeActivityContentDetailsLike class],
+    [GTLYouTubeActivityContentDetailsPlaylistItem class],
+    [GTLYouTubeActivityContentDetailsPromotedItem class],
+    [GTLYouTubeActivityContentDetailsRecommendation class],
+    [GTLYouTubeActivityContentDetailsSocial class],
+    [GTLYouTubeActivityContentDetailsSubscription class],
+    [GTLYouTubeActivityContentDetailsUpload class],
+    [GTLYouTubeActivityListResponse class],
+    [GTLYouTubeActivitySnippet class],
+    [GTLYouTubeCaption class],
+    [GTLYouTubeCaptionListResponse class],
+    [GTLYouTubeCaptionSnippet class],
+    [GTLYouTubeCdnSettings class],
+    [GTLYouTubeChannel class],
+    [GTLYouTubeChannelAuditDetails class],
+    [GTLYouTubeChannelBannerResource class],
+    [GTLYouTubeChannelBrandingSettings class],
+    [GTLYouTubeChannelContentDetails class],
+    [GTLYouTubeChannelContentOwnerDetails class],
+    [GTLYouTubeChannelConversionPing class],
+    [GTLYouTubeChannelConversionPings class],
+    [GTLYouTubeChannelListResponse class],
+    [GTLYouTubeChannelLocalization class],
+    [GTLYouTubeChannelProfileDetails class],
+    [GTLYouTubeChannelSection class],
+    [GTLYouTubeChannelSectionContentDetails class],
+    [GTLYouTubeChannelSectionListResponse class],
+    [GTLYouTubeChannelSectionLocalization class],
+    [GTLYouTubeChannelSectionSnippet class],
+    [GTLYouTubeChannelSectionTargeting class],
+    [GTLYouTubeChannelSettings class],
+    [GTLYouTubeChannelSnippet class],
+    [GTLYouTubeChannelStatistics class],
+    [GTLYouTubeChannelStatus class],
+    [GTLYouTubeChannelTopicDetails class],
+    [GTLYouTubeComment class],
+    [GTLYouTubeCommentListResponse class],
+    [GTLYouTubeCommentSnippet class],
+    [GTLYouTubeCommentThread class],
+    [GTLYouTubeCommentThreadListResponse class],
+    [GTLYouTubeCommentThreadReplies class],
+    [GTLYouTubeCommentThreadSnippet class],
+    [GTLYouTubeContentRating class],
+    [GTLYouTubeFanFundingEvent class],
+    [GTLYouTubeFanFundingEventListResponse class],
+    [GTLYouTubeFanFundingEventSnippet class],
+    [GTLYouTubeGeoPoint class],
+    [GTLYouTubeGuideCategory class],
+    [GTLYouTubeGuideCategoryListResponse class],
+    [GTLYouTubeGuideCategorySnippet class],
+    [GTLYouTubeI18nLanguage class],
+    [GTLYouTubeI18nLanguageListResponse class],
+    [GTLYouTubeI18nLanguageSnippet class],
+    [GTLYouTubeI18nRegion class],
+    [GTLYouTubeI18nRegionListResponse class],
+    [GTLYouTubeI18nRegionSnippet class],
+    [GTLYouTubeImageSettings class],
+    [GTLYouTubeIngestionInfo class],
+    [GTLYouTubeInvideoBranding class],
+    [GTLYouTubeInvideoPosition class],
+    [GTLYouTubeInvideoPromotion class],
+    [GTLYouTubeInvideoTiming class],
+    [GTLYouTubeLanguageTag class],
+    [GTLYouTubeLiveBroadcast class],
+    [GTLYouTubeLiveBroadcastContentDetails class],
+    [GTLYouTubeLiveBroadcastListResponse class],
+    [GTLYouTubeLiveBroadcastSnippet class],
+    [GTLYouTubeLiveBroadcastStatistics class],
+    [GTLYouTubeLiveBroadcastStatus class],
+    [GTLYouTubeLiveBroadcastTopic class],
+    [GTLYouTubeLiveBroadcastTopicDetails class],
+    [GTLYouTubeLiveBroadcastTopicSnippet class],
+    [GTLYouTubeLiveChatBan class],
+    [GTLYouTubeLiveChatBanSnippet class],
+    [GTLYouTubeLiveChatFanFundingEventDetails class],
+    [GTLYouTubeLiveChatMessage class],
+    [GTLYouTubeLiveChatMessageAuthorDetails class],
+    [GTLYouTubeLiveChatMessageDeletedDetails class],
+    [GTLYouTubeLiveChatMessageListResponse class],
+    [GTLYouTubeLiveChatMessageRetractedDetails class],
+    [GTLYouTubeLiveChatMessageSnippet class],
+    [GTLYouTubeLiveChatModerator class],
+    [GTLYouTubeLiveChatModeratorListResponse class],
+    [GTLYouTubeLiveChatModeratorSnippet class],
+    [GTLYouTubeLiveChatTextMessageDetails class],
+    [GTLYouTubeLiveChatUserBannedMessageDetails class],
+    [GTLYouTubeLiveStream class],
+    [GTLYouTubeLiveStreamConfigurationIssue class],
+    [GTLYouTubeLiveStreamContentDetails class],
+    [GTLYouTubeLiveStreamHealthStatus class],
+    [GTLYouTubeLiveStreamListResponse class],
+    [GTLYouTubeLiveStreamSnippet class],
+    [GTLYouTubeLiveStreamStatus class],
+    [GTLYouTubeLocalizedProperty class],
+    [GTLYouTubeLocalizedString class],
+    [GTLYouTubeMonitorStreamInfo class],
+    [GTLYouTubePageInfo class],
+    [GTLYouTubePlaylist class],
+    [GTLYouTubePlaylistContentDetails class],
+    [GTLYouTubePlaylistItem class],
+    [GTLYouTubePlaylistItemContentDetails class],
+    [GTLYouTubePlaylistItemListResponse class],
+    [GTLYouTubePlaylistItemSnippet class],
+    [GTLYouTubePlaylistItemStatus class],
+    [GTLYouTubePlaylistListResponse class],
+    [GTLYouTubePlaylistLocalization class],
+    [GTLYouTubePlaylistPlayer class],
+    [GTLYouTubePlaylistSnippet class],
+    [GTLYouTubePlaylistStatus class],
+    [GTLYouTubePromotedItem class],
+    [GTLYouTubePromotedItemId class],
+    [GTLYouTubePropertyValue class],
+    [GTLYouTubeResourceId class],
+    [GTLYouTubeSearchListResponse class],
+    [GTLYouTubeSearchResult class],
+    [GTLYouTubeSearchResultSnippet class],
+    [GTLYouTubeSponsor class],
+    [GTLYouTubeSponsorListResponse class],
+    [GTLYouTubeSponsorSnippet class],
+    [GTLYouTubeSubscription class],
+    [GTLYouTubeSubscriptionContentDetails class],
+    [GTLYouTubeSubscriptionListResponse class],
+    [GTLYouTubeSubscriptionSnippet class],
+    [GTLYouTubeSubscriptionSubscriberSnippet class],
+    [GTLYouTubeThumbnail class],
+    [GTLYouTubeThumbnailDetails class],
+    [GTLYouTubeThumbnailSetResponse class],
+    [GTLYouTubeTokenPagination class],
+    [GTLYouTubeVideo class],
+    [GTLYouTubeVideoAbuseReport class],
+    [GTLYouTubeVideoAbuseReportReason class],
+    [GTLYouTubeVideoAbuseReportReasonListResponse class],
+    [GTLYouTubeVideoAbuseReportReasonSnippet class],
+    [GTLYouTubeVideoAbuseReportSecondaryReason class],
+    [GTLYouTubeVideoAgeGating class],
+    [GTLYouTubeVideoCategory class],
+    [GTLYouTubeVideoCategoryListResponse class],
+    [GTLYouTubeVideoCategorySnippet class],
+    [GTLYouTubeVideoContentDetails class],
+    [GTLYouTubeVideoContentDetailsRegionRestriction class],
+    [GTLYouTubeVideoFileDetails class],
+    [GTLYouTubeVideoFileDetailsAudioStream class],
+    [GTLYouTubeVideoFileDetailsVideoStream class],
+    [GTLYouTubeVideoGetRatingResponse class],
+    [GTLYouTubeVideoListResponse class],
+    [GTLYouTubeVideoLiveStreamingDetails class],
+    [GTLYouTubeVideoLocalization class],
+    [GTLYouTubeVideoMonetizationDetails class],
+    [GTLYouTubeVideoPlayer class],
+    [GTLYouTubeVideoProcessingDetails class],
+    [GTLYouTubeVideoProcessingDetailsProcessingProgress class],
+    [GTLYouTubeVideoProjectDetails class],
+    [GTLYouTubeVideoRating class],
+    [GTLYouTubeVideoRecordingDetails class],
+    [GTLYouTubeVideoSnippet class],
+    [GTLYouTubeVideoStatistics class],
+    [GTLYouTubeVideoStatus class],
+    [GTLYouTubeVideoSuggestions class],
+    [GTLYouTubeVideoSuggestionsTagSuggestion class],
+    [GTLYouTubeVideoTopicDetails class],
+    [GTLYouTubeWatchSettings class]
+  ];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return classes;
 }
 #endif  // DEBUG
 
+<<<<<<< HEAD
 - (id)init {
+=======
+- (instancetype)init {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   self = [super init];
   if (self) {
     // Version from discovery.

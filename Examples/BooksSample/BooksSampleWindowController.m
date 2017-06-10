@@ -196,6 +196,7 @@ NSString *const kKeychainItemName = @"Books Sample: Google Books";
 - (IBAction)removeAllFromMyLibraryClicked:(id)sender {
   // Make the user confirm that the all books on the shelf should be deleted
   GTLBooksBookshelf *shelf = [self selectedBookshelf];
+<<<<<<< HEAD
   NSBeginAlertSheet(@"Delete All", @"Delete", @"Cancel", nil,
                     [self window], self,
                     @selector(deleteAllSheetDidEnd:returnCode:contextInfo:),
@@ -214,6 +215,23 @@ NSString *const kKeychainItemName = @"Books Sample: Google Books";
 
 - (IBAction)APIConsoleClicked:(id)sender {
   NSURL *url = [NSURL URLWithString:@"https://code.google.com/apis/console"];
+=======
+  NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+  alert.messageText = [NSString stringWithFormat:@"Delete %@ volumes for shelf \"%@\"?",
+                       shelf.volumeCount, shelf.title];
+  [alert addButtonWithTitle:@"Delete"];
+  [alert addButtonWithTitle:@"Cancel"];
+  [alert beginSheetModalForWindow:[self window]
+                completionHandler:^(NSModalResponse returnCode) {
+                  if (returnCode == NSAlertFirstButtonReturn) {
+                    [self removeAllMyVolumes];
+                  }
+                }];
+};
+
+- (IBAction)APIConsoleClicked:(id)sender {
+  NSURL *url = [NSURL URLWithString:@"https://console.developers.google.com/"];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
@@ -340,7 +358,11 @@ NSString *const kKeychainItemName = @"Books Sample: Google Books";
     // Make a pop-up menu item including the bookshelf name and
     // the number of books
     NSString *title = [NSString stringWithFormat:@"%@ (%@)",
+<<<<<<< HEAD
                        shelf.title, shelf.volumeCount];
+=======
+                       shelf.title, shelf.volumeCount ?: @"-"];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
     NSMenuItem *menuItem = [menu addItemWithTitle:title
                                            action:@selector(bookshelfPopupChanged:)
@@ -579,6 +601,10 @@ NSString *const kKeychainItemName = @"Books Sample: Google Books";
 
       // Book image URLs are not https so they can't be authorized
       fetcher.authorizer = nil;
+<<<<<<< HEAD
+=======
+      fetcher.allowedInsecureSchemes = @[ @"http" ];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
       [fetcher setCommentWithFormat:@"image for volume \"%@\"",
        volume.volumeInfo.title];
 
@@ -723,8 +749,16 @@ NSString *const kKeychainItemName = @"Books Sample: Google Books";
                                      arguments:argList] autorelease];
     va_end(argList);
   }
+<<<<<<< HEAD
   NSBeginAlertSheet(title, nil, nil, nil, [self window], nil, nil,
                     nil, nil, @"%@", result);
+=======
+  NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+  alert.messageText = title;
+  alert.informativeText = result;
+  [alert beginSheetModalForWindow:[self window]
+                completionHandler:nil];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark Client ID Sheet
@@ -738,6 +772,7 @@ NSString *const kKeychainItemName = @"Books Sample: Google Books";
 // into the source rather than ask the user for them.
 //
 // The string values are obtained from the API Console,
+<<<<<<< HEAD
 // https://code.google.com/apis/console
 
 - (IBAction)clientIDClicked:(id)sender {
@@ -756,6 +791,17 @@ NSString *const kKeychainItemName = @"Books Sample: Google Books";
 - (void)clientIDSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
   [sheet orderOut:self];
   [self updateUI];
+=======
+// https://console.developers.google.com/
+
+- (IBAction)clientIDClicked:(id)sender {
+  // Show the sheet for developers to enter their client ID and client secret
+  [[self window] beginSheet:clientIDSheet_ completionHandler:nil];
+}
+
+- (IBAction)clientIDDoneClicked:(id)sender {
+  [[self window] endSheet:[sender window]];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark Text field delegate methods

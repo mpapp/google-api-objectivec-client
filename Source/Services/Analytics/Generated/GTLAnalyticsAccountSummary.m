@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,19 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
 //   GTLAnalyticsAccountSummary (0 custom class methods, 4 custom properties)
+=======
+//   Views and manages your Google Analytics data.
+// Documentation:
+//   https://developers.google.com/analytics/
+// Classes:
+//   GTLAnalyticsAccountSummary (0 custom class methods, 5 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLAnalyticsAccountSummary.h"
 
@@ -38,19 +50,34 @@
 //
 
 @implementation GTLAnalyticsAccountSummary
+<<<<<<< HEAD
 @dynamic identifier, kind, name, webProperties;
 
 + (NSDictionary *)propertyToJSONKeyMap {
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"id"
                                 forKey:@"identifier"];
+=======
+@dynamic identifier, kind, name, starred, webProperties;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[GTLAnalyticsWebPropertySummary class]
                                 forKey:@"webProperties"];
+=======
+  NSDictionary *map = @{
+    @"webProperties" : [GTLAnalyticsWebPropertySummary class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

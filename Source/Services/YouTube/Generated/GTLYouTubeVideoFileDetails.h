@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -51,6 +60,7 @@
 
 // A list of audio streams contained in the uploaded video file. Each item in
 // the list contains detailed metadata about an audio stream.
+<<<<<<< HEAD
 @property (retain) NSArray *audioStreams;  // of GTLYouTubeVideoFileDetailsAudioStream
 
 // The uploaded video file's combined (video and audio) bitrate in bits per
@@ -59,6 +69,16 @@
 
 // The uploaded video file's container format.
 @property (copy) NSString *container;
+=======
+@property (nonatomic, retain) NSArray *audioStreams;  // of GTLYouTubeVideoFileDetailsAudioStream
+
+// The uploaded video file's combined (video and audio) bitrate in bits per
+// second.
+@property (nonatomic, retain) NSNumber *bitrateBps;  // unsignedLongLongValue
+
+// The uploaded video file's container format.
+@property (nonatomic, copy) NSString *container;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The date and time when the uploaded video file was created. The value is
 // specified in ISO 8601 format. Currently, the following ISO 8601 formats are
@@ -66,6 +86,7 @@
 // - Date only: YYYY-MM-DD
 // - Naive time: YYYY-MM-DDTHH:MM:SS
 // - Time with timezone: YYYY-MM-DDTHH:MM:SS+HH:MM
+<<<<<<< HEAD
 @property (copy) NSString *creationTime;
 
 // The length of the uploaded video in milliseconds.
@@ -78,10 +99,25 @@
 // The uploaded file's size in bytes. This field is present whether a video file
 // or another type of file was uploaded.
 @property (retain) NSNumber *fileSize;  // unsignedLongLongValue
+=======
+@property (nonatomic, copy) NSString *creationTime;
+
+// The length of the uploaded video in milliseconds.
+@property (nonatomic, retain) NSNumber *durationMs;  // unsignedLongLongValue
+
+// The uploaded file's name. This field is present whether a video file or
+// another type of file was uploaded.
+@property (nonatomic, copy) NSString *fileName;
+
+// The uploaded file's size in bytes. This field is present whether a video file
+// or another type of file was uploaded.
+@property (nonatomic, retain) NSNumber *fileSize;  // unsignedLongLongValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The uploaded file's type as detected by YouTube's video processing engine.
 // Currently, YouTube only processes video files, but this field is present
 // whether a video file or another type of file was uploaded.
+<<<<<<< HEAD
 @property (copy) NSString *fileType;
 
 // Geographic coordinates that identify the place where the uploaded video was
@@ -91,5 +127,16 @@
 // A list of video streams contained in the uploaded video file. Each item in
 // the list contains detailed metadata about a video stream.
 @property (retain) NSArray *videoStreams;  // of GTLYouTubeVideoFileDetailsVideoStream
+=======
+@property (nonatomic, copy) NSString *fileType;
+
+// Geographic coordinates that identify the place where the uploaded video was
+// recorded. Coordinates are defined using WGS 84.
+@property (nonatomic, retain) GTLYouTubeGeoPoint *recordingLocation;
+
+// A list of video streams contained in the uploaded video file. Each item in
+// the list contains detailed metadata about a video stream.
+@property (nonatomic, retain) NSArray *videoStreams;  // of GTLYouTubeVideoFileDetailsVideoStream
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +46,7 @@
 @interface GTLBloggerBlogPerUserInfo : GTLObject
 
 // ID of the Blog resource
+<<<<<<< HEAD
 @property (copy) NSString *blogId;
 
 // True if the user has Admin level access to the blog.
@@ -58,5 +63,23 @@
 
 // ID of the User
 @property (copy) NSString *userId;
+=======
+@property (nonatomic, copy) NSString *blogId;
+
+// True if the user has Admin level access to the blog.
+@property (nonatomic, retain) NSNumber *hasAdminAccess;  // boolValue
+
+// The kind of this entity. Always blogger#blogPerUserInfo
+@property (nonatomic, copy) NSString *kind;
+
+// The Photo Album Key for the user when adding photos to the blog
+@property (nonatomic, copy) NSString *photosAlbumKey;
+
+// Access permissions that the user has for the blog (ADMIN, AUTHOR, or READER).
+@property (nonatomic, copy) NSString *role;
+
+// ID of the User
+@property (nonatomic, copy) NSString *userId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

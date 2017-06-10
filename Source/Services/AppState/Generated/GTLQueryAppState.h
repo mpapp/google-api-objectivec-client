@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +47,16 @@
 //
 
 // Selector specifying which fields to include in a partial response.
+<<<<<<< HEAD
 @property (copy) NSString *fields;
+=======
+@property (nonatomic, copy) NSString *fields;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 //
 // Method-specific parameters; see the comments below for more information.
 //
+<<<<<<< HEAD
 @property (copy) NSString *currentDataVersion;
 @property (copy) NSString *currentStateVersion;
 @property (assign) BOOL includeData;
@@ -55,6 +64,14 @@
 
 #pragma mark -
 #pragma mark "states" methods
+=======
+@property (nonatomic, copy) NSString *currentDataVersion;
+@property (nonatomic, copy) NSString *currentStateVersion;
+@property (nonatomic, assign) BOOL includeData;
+@property (nonatomic, assign) NSInteger stateKey;
+
+#pragma mark - "states" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryAppState object.
 
 // Method: appstate.states.clear
@@ -69,7 +86,11 @@
 //  Authorization scope(s):
 //   kGTLAuthScopeAppState
 // Fetches a GTLAppStateWriteResult.
+<<<<<<< HEAD
 + (id)queryForStatesClearWithStateKey:(NSInteger)stateKey;
+=======
++ (instancetype)queryForStatesClearWithStateKey:(NSInteger)stateKey;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: appstate.states.delete
 // Deletes a key and the data associated with it. The key is removed and no
@@ -81,7 +102,11 @@
 //   stateKey: The key for the data to be retrieved. (0..3)
 //  Authorization scope(s):
 //   kGTLAuthScopeAppState
+<<<<<<< HEAD
 + (id)queryForStatesDeleteWithStateKey:(NSInteger)stateKey;
+=======
++ (instancetype)queryForStatesDeleteWithStateKey:(NSInteger)stateKey;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: appstate.states.get
 // Retrieves the data corresponding to the passed key. If the key does not exist
@@ -91,7 +116,11 @@
 //  Authorization scope(s):
 //   kGTLAuthScopeAppState
 // Fetches a GTLAppStateGetResponse.
+<<<<<<< HEAD
 + (id)queryForStatesGetWithStateKey:(NSInteger)stateKey;
+=======
++ (instancetype)queryForStatesGetWithStateKey:(NSInteger)stateKey;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: appstate.states.list
 // Lists all the states keys, and optionally the state data.
@@ -101,7 +130,11 @@
 //  Authorization scope(s):
 //   kGTLAuthScopeAppState
 // Fetches a GTLAppStateListResponse.
+<<<<<<< HEAD
 + (id)queryForStatesList;
+=======
++ (instancetype)queryForStatesList;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: appstate.states.update
 // Update the data associated with the input key if and only if the passed
@@ -118,7 +151,12 @@
 //  Authorization scope(s):
 //   kGTLAuthScopeAppState
 // Fetches a GTLAppStateWriteResult.
+<<<<<<< HEAD
 + (id)queryForStatesUpdateWithObject:(GTLAppStateUpdateRequest *)object
                             stateKey:(NSInteger)stateKey;
+=======
++ (instancetype)queryForStatesUpdateWithObject:(GTLAppStateUpdateRequest *)object
+                                      stateKey:(NSInteger)stateKey;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

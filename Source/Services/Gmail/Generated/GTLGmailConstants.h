@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Gmail API (gmail/v1)
 // Description:
+<<<<<<< HEAD
 //   The Gmail REST API.
+=======
+//   Access Gmail mailboxes including sending user email.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/gmail/api/
 
@@ -39,10 +47,22 @@
 GTL_EXTERN NSString * const kGTLAuthScopeGmail;          // "https://mail.google.com/"
 // Manage drafts and send emails
 GTL_EXTERN NSString * const kGTLAuthScopeGmailCompose;   // "https://www.googleapis.com/auth/gmail.compose"
+<<<<<<< HEAD
+=======
+// Insert mail into your mailbox
+GTL_EXTERN NSString * const kGTLAuthScopeGmailInsert;    // "https://www.googleapis.com/auth/gmail.insert"
+// Manage mailbox labels
+GTL_EXTERN NSString * const kGTLAuthScopeGmailLabels;    // "https://www.googleapis.com/auth/gmail.labels"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // View and modify but not delete your email
 GTL_EXTERN NSString * const kGTLAuthScopeGmailModify;    // "https://www.googleapis.com/auth/gmail.modify"
 // View your emails messages and settings
 GTL_EXTERN NSString * const kGTLAuthScopeGmailReadonly;  // "https://www.googleapis.com/auth/gmail.readonly"
+<<<<<<< HEAD
+=======
+// Send email on your behalf
+GTL_EXTERN NSString * const kGTLAuthScopeGmailSend;      // "https://www.googleapis.com/auth/gmail.send"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // GTLGmailLabel - LabelListVisibility
 GTL_EXTERN NSString * const kGTLGmailLabel_LabelListVisibility_LabelHide;  // "labelHide"
@@ -58,6 +78,21 @@ GTL_EXTERN NSString * const kGTLGmailLabel_Type_System;  // "system"
 GTL_EXTERN NSString * const kGTLGmailLabel_Type_User;    // "user"
 
 // GTLQueryGmail - Format
+<<<<<<< HEAD
 GTL_EXTERN NSString * const kGTLGmailFormatFull;     // "full"
 GTL_EXTERN NSString * const kGTLGmailFormatMinimal;  // "minimal"
 GTL_EXTERN NSString * const kGTLGmailFormatRaw;      // "raw"
+=======
+GTL_EXTERN NSString * const kGTLGmailFormatFull;      // "full"
+GTL_EXTERN NSString * const kGTLGmailFormatMetadata;  // "metadata"
+GTL_EXTERN NSString * const kGTLGmailFormatMinimal;   // "minimal"
+GTL_EXTERN NSString * const kGTLGmailFormatRaw;       // "raw"
+
+// GTLQueryGmail - InternalDateSource
+GTL_EXTERN NSString * const kGTLGmailInternalDateSourceDateHeader;  // "dateHeader"
+GTL_EXTERN NSString * const kGTLGmailInternalDateSourceReceivedTime;  // "receivedTime"
+
+// GTLQueryGmail - LabelFilterAction
+GTL_EXTERN NSString * const kGTLGmailLabelFilterActionExclude;  // "exclude"
+GTL_EXTERN NSString * const kGTLGmailLabelFilterActionInclude;  // "include"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd

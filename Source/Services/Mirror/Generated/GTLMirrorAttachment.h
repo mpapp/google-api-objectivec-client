@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +49,7 @@
 @interface GTLMirrorAttachment : GTLObject
 
 // The MIME type of the attachment.
+<<<<<<< HEAD
 @property (copy) NSString *contentType;
 
 // The URL for the content.
@@ -53,10 +58,24 @@
 // The ID of the attachment.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
 @property (copy) NSString *identifier;
+=======
+@property (nonatomic, copy) NSString *contentType;
+
+// The URL for the content.
+@property (nonatomic, copy) NSString *contentUrl;
+
+// The ID of the attachment.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Indicates that the contentUrl is not available because the attachment content
 // is still being processed. If the caller wishes to retrieve the content, it
 // should try again later.
+<<<<<<< HEAD
 @property (retain) NSNumber *isProcessingContent;  // boolValue
+=======
+@property (nonatomic, retain) NSNumber *isProcessingContent;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

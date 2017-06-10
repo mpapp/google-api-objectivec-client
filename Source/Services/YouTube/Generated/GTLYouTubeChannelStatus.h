@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,20 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
 //   GTLYouTubeChannelStatus (0 custom class methods, 2 custom properties)
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+// Documentation:
+//   https://developers.google.com/youtube/v3
+// Classes:
+//   GTLYouTubeChannelStatus (0 custom class methods, 3 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -45,9 +58,19 @@
 
 // If true, then the user is linked to either a YouTube username or G+ account.
 // Otherwise, the user doesn't have a public YouTube identity.
+<<<<<<< HEAD
 @property (retain) NSNumber *isLinked;  // boolValue
 
 // Privacy status of the channel.
 @property (copy) NSString *privacyStatus;
+=======
+@property (nonatomic, retain) NSNumber *isLinked;  // boolValue
+
+// The long uploads status of this channel. See
+@property (nonatomic, copy) NSString *longUploadsStatus;
+
+// Privacy status of the channel.
+@property (nonatomic, copy) NSString *privacyStatus;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

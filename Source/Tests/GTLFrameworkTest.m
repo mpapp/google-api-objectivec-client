@@ -23,7 +23,10 @@
 @implementation GTLFrameworkTest
 
 - (void)testFrameworkVersion {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSUInteger major = NSUIntegerMax;
   NSUInteger minor = NSUIntegerMax;
   NSUInteger release = NSUIntegerMax;
@@ -36,6 +39,7 @@
 
   // Check that the Framework bundle's Info.plist has the proper version,
   // matching the GTLFrameworkVersion call
+<<<<<<< HEAD
   //
   // Note: we're assuming that the current directory when this unit
   // test runs is the framework's Source directory/
@@ -52,6 +56,17 @@
 
     XCTAssertEqualObjects(plistVersionStr, binaryVersionStr,
                          @"Binary/plist version mismatch");
+=======
+  NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
+  NSDictionary *infoDict = [testBundle infoDictionary];
+  XCTAssertNotNil(infoDict, @"Could not find GTLFramework-Info.plist at %@", testBundle);
+
+  if (infoDict) {
+    NSString *binaryVersionStr = GTLFrameworkVersionString();
+    NSString *plistVersionStr = [infoDict valueForKey:@"CFBundleVersion"];
+
+    XCTAssertEqualObjects(binaryVersionStr, plistVersionStr);
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   }
 }
 

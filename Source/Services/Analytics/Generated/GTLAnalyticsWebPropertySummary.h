@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,19 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
 //   GTLAnalyticsWebPropertySummary (0 custom class methods, 7 custom properties)
+=======
+//   Views and manages your Google Analytics data.
+// Documentation:
+//   https://developers.google.com/analytics/
+// Classes:
+//   GTLAnalyticsWebPropertySummary (0 custom class methods, 8 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -48,6 +60,7 @@
 
 // Web property ID of the form UA-XXXXX-YY.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+<<<<<<< HEAD
 @property (copy) NSString *identifier;
 
 // Internal ID for this web property.
@@ -67,5 +80,29 @@
 
 // Website url for this web property.
 @property (copy) NSString *websiteUrl;
+=======
+@property (nonatomic, copy) NSString *identifier;
+
+// Internal ID for this web property.
+@property (nonatomic, copy) NSString *internalWebPropertyId;
+
+// Resource type for Analytics WebPropertySummary.
+@property (nonatomic, copy) NSString *kind;
+
+// Level for this web property. Possible values are STANDARD or PREMIUM.
+@property (nonatomic, copy) NSString *level;
+
+// Web property name.
+@property (nonatomic, copy) NSString *name;
+
+// List of profiles under this web property.
+@property (nonatomic, retain) NSArray *profiles;  // of GTLAnalyticsProfileSummary
+
+// Indicates whether this web property is starred or not.
+@property (nonatomic, retain) NSNumber *starred;  // boolValue
+
+// Website url for this web property.
+@property (nonatomic, copy) NSString *websiteUrl;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

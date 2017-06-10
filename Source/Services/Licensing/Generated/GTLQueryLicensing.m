@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +42,7 @@
 
 @dynamic customerId, fields, maxResults, pageToken, productId, skuId, userId;
 
+<<<<<<< HEAD
 #pragma mark -
 #pragma mark "licenseAssignments" methods
 // These create a GTLQueryLicensing object.
@@ -45,6 +50,14 @@
 + (id)queryForLicenseAssignmentsDeleteWithProductId:(NSString *)productId
                                               skuId:(NSString *)skuId
                                              userId:(NSString *)userId {
+=======
+#pragma mark - "licenseAssignments" methods
+// These create a GTLQueryLicensing object.
+
++ (instancetype)queryForLicenseAssignmentsDeleteWithProductId:(NSString *)productId
+                                                        skuId:(NSString *)skuId
+                                                       userId:(NSString *)userId {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"licensing.licenseAssignments.delete";
   GTLQueryLicensing *query = [self queryWithMethodName:methodName];
   query.productId = productId;
@@ -53,9 +66,15 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForLicenseAssignmentsGetWithProductId:(NSString *)productId
                                            skuId:(NSString *)skuId
                                           userId:(NSString *)userId {
+=======
++ (instancetype)queryForLicenseAssignmentsGetWithProductId:(NSString *)productId
+                                                     skuId:(NSString *)skuId
+                                                    userId:(NSString *)userId {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"licensing.licenseAssignments.get";
   GTLQueryLicensing *query = [self queryWithMethodName:methodName];
   query.productId = productId;
@@ -65,9 +84,15 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForLicenseAssignmentsInsertWithObject:(GTLLicensingLicenseAssignmentInsert *)object
                                        productId:(NSString *)productId
                                            skuId:(NSString *)skuId {
+=======
++ (instancetype)queryForLicenseAssignmentsInsertWithObject:(GTLLicensingLicenseAssignmentInsert *)object
+                                                 productId:(NSString *)productId
+                                                     skuId:(NSString *)skuId {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -81,8 +106,13 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForLicenseAssignmentsListForProductWithProductId:(NSString *)productId
                                                  customerId:(NSString *)customerId {
+=======
++ (instancetype)queryForLicenseAssignmentsListForProductWithProductId:(NSString *)productId
+                                                           customerId:(NSString *)customerId {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"licensing.licenseAssignments.listForProduct";
   GTLQueryLicensing *query = [self queryWithMethodName:methodName];
   query.productId = productId;
@@ -91,9 +121,15 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForLicenseAssignmentsListForProductAndSkuWithProductId:(NSString *)productId
                                                             skuId:(NSString *)skuId
                                                        customerId:(NSString *)customerId {
+=======
++ (instancetype)queryForLicenseAssignmentsListForProductAndSkuWithProductId:(NSString *)productId
+                                                                      skuId:(NSString *)skuId
+                                                                 customerId:(NSString *)customerId {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"licensing.licenseAssignments.listForProductAndSku";
   GTLQueryLicensing *query = [self queryWithMethodName:methodName];
   query.productId = productId;
@@ -103,10 +139,17 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForLicenseAssignmentsPatchWithObject:(GTLLicensingLicenseAssignment *)object
                                       productId:(NSString *)productId
                                           skuId:(NSString *)skuId
                                          userId:(NSString *)userId {
+=======
++ (instancetype)queryForLicenseAssignmentsPatchWithObject:(GTLLicensingLicenseAssignment *)object
+                                                productId:(NSString *)productId
+                                                    skuId:(NSString *)skuId
+                                                   userId:(NSString *)userId {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -121,10 +164,17 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForLicenseAssignmentsUpdateWithObject:(GTLLicensingLicenseAssignment *)object
                                        productId:(NSString *)productId
                                            skuId:(NSString *)skuId
                                           userId:(NSString *)userId {
+=======
++ (instancetype)queryForLicenseAssignmentsUpdateWithObject:(GTLLicensingLicenseAssignment *)object
+                                                 productId:(NSString *)productId
+                                                     skuId:(NSString *)skuId
+                                                    userId:(NSString *)userId {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;

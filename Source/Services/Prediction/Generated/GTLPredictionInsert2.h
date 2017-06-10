@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +50,7 @@
 @interface GTLPredictionInsert2 : GTLObject
 
 // Insert time of the model (as a RFC 3339 timestamp).
+<<<<<<< HEAD
 @property (retain) GTLDateTime *created;
 
 // The unique name for the predictive model.
@@ -79,6 +84,41 @@
 // The current status of the training job. This can be one of following:
 // RUNNING; DONE; ERROR; ERROR: TRAINING JOB NOT FOUND
 @property (copy) NSString *trainingStatus;
+=======
+@property (nonatomic, retain) GTLDateTime *created;
+
+// The unique name for the predictive model.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// What kind of resource this is.
+@property (nonatomic, copy) NSString *kind;
+
+// Model metadata.
+@property (nonatomic, retain) GTLPredictionInsert2ModelInfo *modelInfo;
+
+// Type of predictive model (CLASSIFICATION or REGRESSION).
+@property (nonatomic, copy) NSString *modelType;
+
+// A URL to re-request this resource.
+@property (nonatomic, copy) NSString *selfLink;
+
+// Google storage location of the training data file.
+@property (nonatomic, copy) NSString *storageDataLocation;
+
+// Google storage location of the preprocessing pmml file.
+@property (nonatomic, copy) NSString *storagePMMLLocation;
+
+// Google storage location of the pmml model file.
+@property (nonatomic, copy) NSString *storagePMMLModelLocation;
+
+// Training completion time (as a RFC 3339 timestamp).
+@property (nonatomic, retain) GTLDateTime *trainingComplete;
+
+// The current status of the training job. This can be one of following:
+// RUNNING; DONE; ERROR; ERROR: TRAINING JOB NOT FOUND
+@property (nonatomic, copy) NSString *trainingStatus;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -96,6 +136,7 @@
 // the results are accurate enough for your needs. This estimate will be more
 // reliable if your real input data is similar to your training data
 // (Categorical models only).
+<<<<<<< HEAD
 @property (copy) NSString *classificationAccuracy;
 
 // Estimated accuracy of model taking utility weights into account (Categorical
@@ -114,5 +155,25 @@
 
 // Number of class labels in the trained model (Categorical models only).
 @property (retain) NSNumber *numberLabels;  // longLongValue
+=======
+@property (nonatomic, copy) NSString *classificationAccuracy;
+
+// Estimated accuracy of model taking utility weights into account (Categorical
+// models only).
+@property (nonatomic, copy) NSString *classWeightedAccuracy;
+
+// An estimated mean squared error. The can be used to measure the quality of
+// the predicted model (Regression models only).
+@property (nonatomic, copy) NSString *meanSquaredError;
+
+// Type of predictive model (CLASSIFICATION or REGRESSION).
+@property (nonatomic, copy) NSString *modelType;
+
+// Number of valid data instances used in the trained model.
+@property (nonatomic, retain) NSNumber *numberInstances;  // longLongValue
+
+// Number of class labels in the trained model (Categorical models only).
+@property (nonatomic, retain) NSNumber *numberLabels;  // longLongValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,21 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
 //   GTLYouTubeChannel (0 custom class methods, 13 custom properties)
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+// Documentation:
+//   https://developers.google.com/youtube/v3
+// Classes:
+//   GTLYouTubeChannel (0 custom class methods, 14 custom properties)
+//   GTLYouTubeChannelLocalizations (0 custom class methods, 0 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLYouTubeChannel.h"
 
@@ -35,6 +49,10 @@
 #import "GTLYouTubeChannelContentDetails.h"
 #import "GTLYouTubeChannelContentOwnerDetails.h"
 #import "GTLYouTubeChannelConversionPings.h"
+<<<<<<< HEAD
+=======
+#import "GTLYouTubeChannelLocalization.h"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLYouTubeChannelSnippet.h"
 #import "GTLYouTubeChannelStatistics.h"
 #import "GTLYouTubeChannelStatus.h"
@@ -48,6 +66,7 @@
 
 @implementation GTLYouTubeChannel
 @dynamic auditDetails, brandingSettings, contentDetails, contentOwnerDetails,
+<<<<<<< HEAD
          conversionPings, ETag, identifier, invideoPromotion, kind, snippet,
          statistics, status, topicDetails;
 
@@ -57,6 +76,16 @@
       @"etag", @"ETag",
       @"id", @"identifier",
       nil];
+=======
+         conversionPings, ETag, identifier, invideoPromotion, kind,
+         localizations, snippet, statistics, status, topicDetails;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"ETag" : @"etag",
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -65,3 +94,20 @@
 }
 
 @end
+<<<<<<< HEAD
+=======
+
+
+// ----------------------------------------------------------------------------
+//
+//   GTLYouTubeChannelLocalizations
+//
+
+@implementation GTLYouTubeChannelLocalizations
+
++ (Class)classForAdditionalProperties {
+  return [GTLYouTubeChannelLocalization class];
+}
+
+@end
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd

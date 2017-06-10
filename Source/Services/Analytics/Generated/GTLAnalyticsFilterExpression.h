@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,19 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
 //   GTLAnalyticsFilterExpression (0 custom class methods, 5 custom properties)
+=======
+//   Views and manages your Google Analytics data.
+// Documentation:
+//   https://developers.google.com/analytics/
+// Classes:
+//   GTLAnalyticsFilterExpression (0 custom class methods, 6 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -44,6 +56,7 @@
 @interface GTLAnalyticsFilterExpression : GTLObject
 
 // Determines if the filter is case sensitive.
+<<<<<<< HEAD
 @property (retain) NSNumber *caseSensitive;  // boolValue
 
 // Filter expression value
@@ -52,6 +65,14 @@
 // Field to filter. Possible values:
 // - Reserved
 // - UNUSED,
+=======
+@property (nonatomic, retain) NSNumber *caseSensitive;  // boolValue
+
+// Filter expression value
+@property (nonatomic, copy) NSString *expressionValue;
+
+// Field to filter. Possible values:
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // - Content and Traffic
 // - PAGE_REQUEST_URI,
 // - PAGE_HOSTNAME,
@@ -91,7 +112,11 @@
 // - LANGUAGE,
 // - SCREEN_RESOLUTION,
 // - SCREEN_COLORS,
+<<<<<<< HEAD
 // - JAVA_ENABLED,
+=======
+// - JAVA_ENABLED (Boolean Field),
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // - FLASH_VERSION,
 // - GEO_SPEED (Connection speed),
 // - VISITOR_TYPE,
@@ -117,6 +142,7 @@
 // - APP_NAME,
 // - APP_VERSION,
 // - SCREEN,
+<<<<<<< HEAD
 // - IS_APP,
 // - IS_FATAL_EXCEPTION,
 // - EXCEPTION_DESCRIPTION,
@@ -127,6 +153,19 @@
 // - MOBILE_HAS_NFC_SUPPORT,
 // - MOBILE_HAS_CELLULAR_RADIO,
 // - MOBILE_HAS_WIFI_SUPPORT,
+=======
+// - IS_APP (Boolean Field),
+// - IS_FATAL_EXCEPTION (Boolean Field),
+// - EXCEPTION_DESCRIPTION,
+// - Mobile device
+// - IS_MOBILE (Boolean Field, Deprecated. Use DEVICE_CATEGORY=mobile),
+// - IS_TABLET (Boolean Field, Deprecated. Use DEVICE_CATEGORY=tablet),
+// - DEVICE_CATEGORY,
+// - MOBILE_HAS_QWERTY_KEYBOARD (Boolean Field),
+// - MOBILE_HAS_NFC_SUPPORT (Boolean Field),
+// - MOBILE_HAS_CELLULAR_RADIO (Boolean Field),
+// - MOBILE_HAS_WIFI_SUPPORT (Boolean Field),
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // - MOBILE_BRAND_NAME,
 // - MOBILE_MODEL_NAME,
 // - MOBILE_MARKETING_NAME,
@@ -135,6 +174,7 @@
 // - SOCIAL_NETWORK,
 // - SOCIAL_ACTION,
 // - SOCIAL_ACTION_TARGET,
+<<<<<<< HEAD
 @property (copy) NSString *field;
 
 // Kind value for filter expression
@@ -147,5 +187,23 @@
 // filter expressions in the Advanced filter default to MATCHES. User should not
 // set match type for those filters.
 @property (copy) NSString *matchType;
+=======
+// - Custom dimension
+// - CUSTOM_DIMENSION (See accompanying field index),
+@property (nonatomic, copy) NSString *field;
+
+// The Index of the custom dimension. Set only if the field is a is
+// CUSTOM_DIMENSION.
+@property (nonatomic, retain) NSNumber *fieldIndex;  // intValue
+
+// Kind value for filter expression
+@property (nonatomic, copy) NSString *kind;
+
+// Match type for this filter. Possible values are BEGINS_WITH, EQUAL,
+// ENDS_WITH, CONTAINS, or MATCHES. GEO_DOMAIN, GEO_IP_ADDRESS,
+// PAGE_REQUEST_URI, or PAGE_HOSTNAME filters can use any match type; all other
+// filters must use MATCHES.
+@property (nonatomic, copy) NSString *matchType;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

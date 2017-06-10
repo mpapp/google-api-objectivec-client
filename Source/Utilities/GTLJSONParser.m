@@ -19,6 +19,7 @@
 
 #import "GTLJSONParser.h"
 
+<<<<<<< HEAD
 // We can assume NSJSONSerialization is present on Mac OS X 10.7 and iOS 5
 #if !defined(GTL_REQUIRES_NSJSONSERIALIZATION)
 #if (!TARGET_OS_IPHONE && (MAC_OS_X_VERSION_MIN_REQUIRED >= 1070)) || \
@@ -57,6 +58,19 @@
 }
 #endif // DEBUG && !GTL_REQUIRES_NSJSONSERIALIZATION
 
+=======
+static void GTLJSONParserLogDeprecationWarning() {
+#if DEBUG
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    NSLog(@"WARNING: GTLJSONParser is deprecated; use NSJSONSerialization instead.");
+  });
+#endif
+}
+
+@implementation GTLJSONParser
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 + (NSString *)stringWithObject:(id)obj
                  humanReadable:(BOOL)humanReadable
                          error:(NSError **)error {
@@ -74,15 +88,24 @@
 + (NSData *)dataWithObject:(id)obj
              humanReadable:(BOOL)humanReadable
                      error:(NSError **)error {
+<<<<<<< HEAD
+=======
+  GTLJSONParserLogDeprecationWarning();
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (obj == nil) return nil;
 
   const NSUInteger kOpts = humanReadable ? (1UL << 0) : 0; // NSJSONWritingPrettyPrinted
 
+<<<<<<< HEAD
 #if GTL_REQUIRES_NSJSONSERIALIZATION
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSData *data = [NSJSONSerialization dataWithJSONObject:obj
                                                  options:kOpts
                                                    error:error];
   return data;
+<<<<<<< HEAD
 #else
   Class serializer = NSClassFromString(@"NSJSONSerialization");
   if (serializer) {
@@ -106,10 +129,17 @@
     return data;
   }
 #endif
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 + (id)objectWithString:(NSString *)jsonStr
                  error:(NSError **)error {
+<<<<<<< HEAD
+=======
+  GTLJSONParserLogDeprecationWarning();
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
   return [self objectWithData:data
                         error:error];
@@ -117,11 +147,17 @@
 
 + (id)objectWithData:(NSData *)jsonData
                error:(NSError **)error {
+<<<<<<< HEAD
 #if GTL_REQUIRES_NSJSONSERIALIZATION
+=======
+  GTLJSONParserLogDeprecationWarning();
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSMutableDictionary *obj = [NSJSONSerialization JSONObjectWithData:jsonData
                                                              options:NSJSONReadingMutableContainers
                                                                error:error];
   return obj;
+<<<<<<< HEAD
 #else
   Class serializer = NSClassFromString(@"NSJSONSerialization");
   if (serializer) {
@@ -147,6 +183,8 @@
     return obj;
   }
 #endif
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 @end

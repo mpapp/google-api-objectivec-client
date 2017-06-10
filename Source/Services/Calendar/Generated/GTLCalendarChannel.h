@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Calendar API (calendar/v3)
 // Description:
+<<<<<<< HEAD
 //   Lets you manipulate events and other calendar data.
+=======
+//   Manipulates events and other calendar data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/google-apps/calendar/firstapp
 // Classes:
@@ -45,6 +53,7 @@
 @interface GTLCalendarChannel : GTLObject
 
 // The address where notifications are delivered for this channel.
+<<<<<<< HEAD
 @property (copy) NSString *address;
 
 // Date and time of notification channel expiration, expressed as a Unix
@@ -78,6 +87,41 @@
 
 // The type of delivery mechanism used for this channel.
 @property (copy) NSString *type;
+=======
+@property (nonatomic, copy) NSString *address;
+
+// Date and time of notification channel expiration, expressed as a Unix
+// timestamp, in milliseconds. Optional.
+@property (nonatomic, retain) NSNumber *expiration;  // longLongValue
+
+// A UUID or similar unique string that identifies this channel.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Identifies this as a notification channel used to watch for changes to a
+// resource. Value: the fixed string "api#channel".
+@property (nonatomic, copy) NSString *kind;
+
+// Additional parameters controlling delivery channel behavior. Optional.
+@property (nonatomic, retain) GTLCalendarChannelParams *params;
+
+// A Boolean value to indicate whether payload is wanted. Optional.
+@property (nonatomic, retain) NSNumber *payload;  // boolValue
+
+// An opaque ID that identifies the resource being watched on this channel.
+// Stable across different API versions.
+@property (nonatomic, copy) NSString *resourceId;
+
+// A version-specific identifier for the watched resource.
+@property (nonatomic, copy) NSString *resourceUri;
+
+// An arbitrary string delivered to the target address with each notification
+// delivered over this channel. Optional.
+@property (nonatomic, copy) NSString *token;
+
+// The type of delivery mechanism used for this channel.
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 

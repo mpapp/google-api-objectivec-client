@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   QPX Express API (qpxExpress/v1)
 // Description:
+<<<<<<< HEAD
 //   Lets you find the least expensive flights between an origin and a
 //   destination.
+=======
+//   Finds the least expensive flights between an origin and a destination.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   http://developers.google.com/qpx-express
 // Classes:
@@ -48,6 +56,7 @@
 
 // A representation of a type of bag, such as an ATPCo subcode, Commercial Name,
 // or other description.
+<<<<<<< HEAD
 @property (retain) NSArray *bagDescriptor;  // of GTLQPXExpressBagDescriptor
 
 // The maximum number of kilos all the free baggage together may weigh.
@@ -65,5 +74,24 @@
 
 // The number of pounds of free baggage allowed.
 @property (retain) NSNumber *pounds;  // intValue
+=======
+@property (nonatomic, retain) NSArray *bagDescriptor;  // of GTLQPXExpressBagDescriptor
+
+// The maximum number of kilos all the free baggage together may weigh.
+@property (nonatomic, retain) NSNumber *kilos;  // intValue
+
+// The maximum number of kilos any one piece of baggage may weigh.
+@property (nonatomic, retain) NSNumber *kilosPerPiece;  // intValue
+
+// Identifies this as free baggage object, allowed on one segment of a trip.
+// Value: the fixed string qpxexpress#freeBaggageAllowance.
+@property (nonatomic, copy) NSString *kind;
+
+// The number of free pieces of baggage allowed.
+@property (nonatomic, retain) NSNumber *pieces;  // intValue
+
+// The number of pounds of free baggage allowed.
+@property (nonatomic, retain) NSNumber *pounds;  // intValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

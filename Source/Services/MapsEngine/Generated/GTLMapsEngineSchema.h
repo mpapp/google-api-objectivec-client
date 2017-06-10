@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,15 +53,26 @@
 
 // An array of TableColumn objects. The first object in the array must be named
 // geometry and be of type points, lineStrings, polygons, or mixedGeometry.
+<<<<<<< HEAD
 @property (retain) NSArray *columns;  // of GTLMapsEngineTableColumn
+=======
+@property (nonatomic, retain) NSArray *columns;  // of GTLMapsEngineTableColumn
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The name of the column that contains a feature's geometry. This field can be
 // omitted during table create; Google Maps Engine supports only a single
 // geometry column, which must be named geometry and be the first object in the
 // columns array.
+<<<<<<< HEAD
 @property (copy) NSString *primaryGeometry;
 
 // The name of the column that contains the unique identifier of a Feature.
 @property (copy) NSString *primaryKey;
+=======
+@property (nonatomic, copy) NSString *primaryGeometry;
+
+// The name of the column that contains the unique identifier of a Feature.
+@property (nonatomic, copy) NSString *primaryKey;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -29,6 +29,12 @@
   NSInteger offsetSeconds_; // may be NSUndefinedDateComponent
   BOOL isUniversalTime_; // preserves "Z"
   NSTimeZone *timeZone_; // specific time zone by name, if known
+<<<<<<< HEAD
+=======
+
+  NSDate *cachedDate_;
+  NSString *cachedRFC3339String_;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 + (GTLDateTime *)dateTimeWithRFC3339String:(NSString *)str;

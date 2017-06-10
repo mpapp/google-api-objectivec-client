@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -46,7 +55,11 @@
 // The backup ingestion URL that you should use to stream video to YouTube. You
 // have the option of simultaneously streaming the content that you are sending
 // to the ingestionAddress to this URL.
+<<<<<<< HEAD
 @property (copy) NSString *backupIngestionAddress;
+=======
+@property (nonatomic, copy) NSString *backupIngestionAddress;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The primary ingestion URL that you should use to stream video to YouTube. You
 // must stream video to this URL.
@@ -54,9 +67,16 @@
 // you may need to enter the stream URL and stream name separately or you may
 // need to concatenate them in the following format:
 // STREAM_URL/STREAM_NAME
+<<<<<<< HEAD
 @property (copy) NSString *ingestionAddress;
 
 // The HTTP or RTMP stream name that YouTube assigns to the video stream.
 @property (copy) NSString *streamName;
+=======
+@property (nonatomic, copy) NSString *ingestionAddress;
+
+// The HTTP or RTMP stream name that YouTube assigns to the video stream.
+@property (nonatomic, copy) NSString *streamName;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

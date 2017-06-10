@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,12 +52,20 @@
 
 // The geolocation identifies the location at which the spectrum schedule
 // applies. It will always be present.
+<<<<<<< HEAD
 @property (retain) GTLSpectrumGeoLocation *location;
+=======
+@property (nonatomic, retain) GTLSpectrumGeoLocation *location;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // A list of available spectrum profiles and associated times. It will always be
 // present, and at least one schedule must be included (though it may be empty
 // if there is no available spectrum). More than one schedule may be included to
 // represent future changes to the available spectrum.
+<<<<<<< HEAD
 @property (retain) NSArray *spectrumSchedules;  // of GTLSpectrumSchedule
+=======
+@property (nonatomic, retain) NSArray *spectrumSchedules;  // of GTLSpectrumSchedule
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

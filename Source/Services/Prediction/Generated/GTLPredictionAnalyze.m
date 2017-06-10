@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,16 +60,28 @@
 @dynamic dataDescription, errors, identifier, kind, modelDescription, selfLink;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"id"
                                 forKey:@"identifier"];
+=======
+  NSDictionary *map = @{
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[GTLPredictionAnalyzeErrorsItem class]
                                 forKey:@"errors"];
+=======
+  NSDictionary *map = @{
+    @"errors" : [GTLPredictionAnalyzeErrorsItem class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -85,9 +101,15 @@
 @dynamic features, outputFeature;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[GTLPredictionAnalyzeDataDescriptionFeaturesItem class]
                                 forKey:@"features"];
+=======
+  NSDictionary *map = @{
+    @"features" : [GTLPredictionAnalyzeDataDescriptionFeaturesItem class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -137,9 +159,15 @@
 @dynamic numeric, text;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[GTLPredictionAnalyzeDataDescriptionOutputFeatureTextItem class]
                                 forKey:@"text"];
+=======
+  NSDictionary *map = @{
+    @"text" : [GTLPredictionAnalyzeDataDescriptionOutputFeatureTextItem class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -183,9 +211,15 @@
 @dynamic count, values;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[GTLPredictionAnalyzeDataDescriptionFeaturesItemCategoricalValuesItem class]
                                 forKey:@"values"];
+=======
+  NSDictionary *map = @{
+    @"values" : [GTLPredictionAnalyzeDataDescriptionFeaturesItemCategoricalValuesItem class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

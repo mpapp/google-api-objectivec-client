@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -44,6 +53,7 @@
 @interface GTLYouTubeVideoStatus : GTLObject
 
 // This value indicates if the video can be embedded on another website.
+<<<<<<< HEAD
 @property (retain) NSNumber *embeddable;  // boolValue
 
 // This value explains why a video failed to upload. This property is only
@@ -55,23 +65,51 @@
 
 // The video's privacy status.
 @property (copy) NSString *privacyStatus;
+=======
+@property (nonatomic, retain) NSNumber *embeddable;  // boolValue
+
+// This value explains why a video failed to upload. This property is only
+// present if the uploadStatus property indicates that the upload failed.
+@property (nonatomic, copy) NSString *failureReason;
+
+// The video's license.
+@property (nonatomic, copy) NSString *license;
+
+// The video's privacy status.
+@property (nonatomic, copy) NSString *privacyStatus;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // This value indicates if the extended video statistics on the watch page can
 // be viewed by everyone. Note that the view count, likes, etc will still be
 // visible if this is disabled.
+<<<<<<< HEAD
 @property (retain) NSNumber *publicStatsViewable;  // boolValue
+=======
+@property (nonatomic, retain) NSNumber *publicStatsViewable;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The date and time when the video is scheduled to publish. It can be set only
 // if the privacy status of the video is private. The value is specified in ISO
 // 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+<<<<<<< HEAD
 @property (retain) GTLDateTime *publishAt;
+=======
+@property (nonatomic, retain) GTLDateTime *publishAt;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // This value explains why YouTube rejected an uploaded video. This property is
 // only present if the uploadStatus property indicates that the upload was
 // rejected.
+<<<<<<< HEAD
 @property (copy) NSString *rejectionReason;
 
 // The status of the uploaded video.
 @property (copy) NSString *uploadStatus;
+=======
+@property (nonatomic, copy) NSString *rejectionReason;
+
+// The status of the uploaded video.
+@property (nonatomic, copy) NSString *uploadStatus;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

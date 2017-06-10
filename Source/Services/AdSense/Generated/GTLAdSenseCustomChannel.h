@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   AdSense Management API (adsense/v1.4)
 // Description:
+<<<<<<< HEAD
 //   Gives AdSense publishers access to their inventory and the ability to
 //   generate reports
+=======
+//   Accesses AdSense publishers' inventory and generates performance reports.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/adsense/management/
 // Classes:
@@ -46,11 +54,16 @@
 @interface GTLAdSenseCustomChannel : GTLObject
 
 // Code of this custom channel, not necessarily unique across ad clients.
+<<<<<<< HEAD
 @property (copy) NSString *code;
+=======
+@property (nonatomic, copy) NSString *code;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Unique identifier of this custom channel. This should be considered an opaque
 // identifier; it is not safe to rely on it being in any particular format.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+<<<<<<< HEAD
 @property (copy) NSString *identifier;
 
 // Kind of resource this is, in this case adsense#customChannel.
@@ -61,6 +74,18 @@
 
 // The targeting information of this custom channel, if activated.
 @property (retain) GTLAdSenseCustomChannelTargetingInfo *targetingInfo;
+=======
+@property (nonatomic, copy) NSString *identifier;
+
+// Kind of resource this is, in this case adsense#customChannel.
+@property (nonatomic, copy) NSString *kind;
+
+// Name of this custom channel.
+@property (nonatomic, copy) NSString *name;
+
+// The targeting information of this custom channel, if activated.
+@property (nonatomic, retain) GTLAdSenseCustomChannelTargetingInfo *targetingInfo;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -73,6 +98,7 @@
 @interface GTLAdSenseCustomChannelTargetingInfo : GTLObject
 
 // The name used to describe this channel externally.
+<<<<<<< HEAD
 @property (copy) NSString *adsAppearOn;
 
 // The external description of the channel.
@@ -88,5 +114,22 @@
 
 // The language of the sites ads will be displayed on.
 @property (copy) NSString *siteLanguage;
+=======
+@property (nonatomic, copy) NSString *adsAppearOn;
+
+// The external description of the channel.
+// Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// The locations in which ads appear. (Only valid for content and mobile content
+// ads (deprecated)). Acceptable values for content ads are: TOP_LEFT,
+// TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT,
+// BOTTOM_CENTER, BOTTOM_RIGHT, MULTIPLE_LOCATIONS. Acceptable values for mobile
+// content ads (deprecated) are: TOP, MIDDLE, BOTTOM, MULTIPLE_LOCATIONS.
+@property (nonatomic, copy) NSString *location;
+
+// The language of the sites ads will be displayed on.
+@property (nonatomic, copy) NSString *siteLanguage;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

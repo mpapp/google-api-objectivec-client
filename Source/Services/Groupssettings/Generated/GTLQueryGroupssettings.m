@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,11 +40,18 @@
 
 @dynamic fields, groupUniqueId;
 
+<<<<<<< HEAD
 #pragma mark -
 #pragma mark "groups" methods
 // These create a GTLQueryGroupssettings object.
 
 + (id)queryForGroupsGetWithGroupUniqueId:(NSString *)groupUniqueId {
+=======
+#pragma mark - "groups" methods
+// These create a GTLQueryGroupssettings object.
+
++ (instancetype)queryForGroupsGetWithGroupUniqueId:(NSString *)groupUniqueId {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   NSString *methodName = @"groupsSettings.groups.get";
   GTLQueryGroupssettings *query = [self queryWithMethodName:methodName];
   query.groupUniqueId = groupUniqueId;
@@ -48,8 +59,13 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForGroupsPatchWithObject:(GTLGroupssettingsGroups *)object
                       groupUniqueId:(NSString *)groupUniqueId {
+=======
++ (instancetype)queryForGroupsPatchWithObject:(GTLGroupssettingsGroups *)object
+                                groupUniqueId:(NSString *)groupUniqueId {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -62,8 +78,13 @@
   return query;
 }
 
+<<<<<<< HEAD
 + (id)queryForGroupsUpdateWithObject:(GTLGroupssettingsGroups *)object
                        groupUniqueId:(NSString *)groupUniqueId {
+=======
++ (instancetype)queryForGroupsUpdateWithObject:(GTLGroupssettingsGroups *)object
+                                 groupUniqueId:(NSString *)groupUniqueId {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;

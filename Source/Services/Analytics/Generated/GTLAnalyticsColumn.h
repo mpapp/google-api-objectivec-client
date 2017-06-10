@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
+=======
+//   Views and manages your Google Analytics data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
@@ -47,6 +55,7 @@
 @interface GTLAnalyticsColumn : GTLObject
 
 // Map of attribute name and value for this column.
+<<<<<<< HEAD
 @property (retain) GTLAnalyticsColumnAttributes *attributes;
 
 // Column id.
@@ -55,6 +64,16 @@
 
 // Resource type for Analytics column.
 @property (copy) NSString *kind;
+=======
+@property (nonatomic, retain) GTLAnalyticsColumnAttributes *attributes;
+
+// Column id.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Resource type for Analytics column.
+@property (nonatomic, copy) NSString *kind;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 

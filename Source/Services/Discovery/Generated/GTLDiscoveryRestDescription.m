@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +31,11 @@
 // Documentation:
 //   https://developers.google.com/discovery/
 // Classes:
+<<<<<<< HEAD
 //   GTLDiscoveryRestDescription (0 custom class methods, 28 custom properties)
+=======
+//   GTLDiscoveryRestDescription (0 custom class methods, 30 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLDiscoveryRestDescriptionAuth (0 custom class methods, 1 custom properties)
 //   GTLDiscoveryRestDescriptionIcons (0 custom class methods, 2 custom properties)
 //   GTLDiscoveryRestDescriptionMethods (0 custom class methods, 0 custom properties)
@@ -51,6 +59,7 @@
 
 @implementation GTLDiscoveryRestDescription
 @dynamic auth, basePath, baseUrl, batchPath, canonicalName, descriptionProperty,
+<<<<<<< HEAD
          discoveryVersion, documentationLink, ETag, features, icons, identifier,
          kind, labels, methods, name, ownerDomain, ownerName, packagePath,
          parameters, protocol, resources, revision, rootUrl, schemas,
@@ -63,15 +72,36 @@
       @"etag", @"ETag",
       @"id", @"identifier",
       nil];
+=======
+         discoveryVersion, documentationLink, ETag, exponentialBackoffDefault,
+         features, icons, identifier, kind, labels, methods, name, ownerDomain,
+         ownerName, packagePath, parameters, protocol, resources, revision,
+         rootUrl, schemas, servicePath, title, version, versionModule;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"descriptionProperty" : @"description",
+    @"ETag" : @"etag",
+    @"identifier" : @"id",
+    @"versionModule" : @"version_module"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       [NSString class], @"features",
       [NSString class], @"labels",
       nil];
+=======
+  NSDictionary *map = @{
+    @"features" : [NSString class],
+    @"labels" : [NSString class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -191,9 +221,15 @@
 @dynamic descriptionProperty;
 
 + (NSDictionary *)propertyToJSONKeyMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"description"
                                 forKey:@"descriptionProperty"];
+=======
+  NSDictionary *map = @{
+    @"descriptionProperty" : @"description"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

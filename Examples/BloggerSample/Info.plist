@@ -9,7 +9,11 @@
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
+<<<<<<< HEAD
 	<string>com.example.BloggerSample</string>
+=======
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

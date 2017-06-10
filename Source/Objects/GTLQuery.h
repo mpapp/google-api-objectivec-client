@@ -23,12 +23,23 @@
 #import "GTLObject.h"
 #import "GTLUploadParameters.h"
 
+<<<<<<< HEAD
+=======
+// This protocol is just to support passing of either a batch or a single query
+// to a GTLService instance. The library does not expect or support other
+// implementations of the protocol.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @protocol GTLQueryProtocol <NSObject, NSCopying>
 - (BOOL)isBatchQuery;
 - (BOOL)shouldSkipAuthorization;
 - (void)executionDidStop;
+<<<<<<< HEAD
 - (NSDictionary *)additionalHTTPHeaders;
 - (NSDictionary *)urlQueryParameters;
+=======
+- (GTL_NSDictionaryOf(NSString *, NSString *) *)additionalHTTPHeaders;
+- (GTL_NSDictionaryOf(NSString *, NSString *) *)urlQueryParameters;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (GTLUploadParameters *)uploadParameters;
 @end
 
@@ -39,6 +50,25 @@
 @end
 
 @class GTLServiceTicket;
+<<<<<<< HEAD
+=======
+@class GTLQuery;
+
+// The test block enables testing of query execution without any network activity.
+//
+// The test block must finish by calling the response block, passing either an object
+// (GTLObject or GTLBatchResult) or an NSError.
+//
+// The query is available to the test block code as ticket.originalQuery.
+//
+// Because query execution is asynchronous, the test code must wait for a callback,
+// either with GTLService's waitForTicket:timeout:fetchedObject:error: or with XCTestCase's
+// waitForExpectationsWithTimeout:
+//
+// Example usage is available in GTLServiceTest.
+typedef void (^GTLQueryTestResponse)(id object, NSError *error);
+typedef void (^GTLQueryTestBlock)(GTLServiceTicket *testTicket, GTLQueryTestResponse testResponse);
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @interface GTLQuery : NSObject <GTLQueryProtocol> {
  @private
@@ -53,6 +83,10 @@
   Class expectedObjectClass_;
   BOOL skipAuthorization_;
   void (^completionBlock_)(GTLServiceTicket *ticket, id object, NSError *error);
+<<<<<<< HEAD
+=======
+  GTLQueryTestBlock testBlock_;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 // The rpc method name.
@@ -75,14 +109,22 @@
 
 // Any URL query parameters to add to the query (useful for debugging with some
 // services).
+<<<<<<< HEAD
 @property (copy) NSDictionary *urlQueryParameters;
+=======
+@property (copy) GTL_NSDictionaryOf(NSString *, NSString *) *urlQueryParameters;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Any additional HTTP headers for this query.  Not valid when this query
 // is added to a batch.
 //
 // These headers override the same keys from the service object's
 // additionalHTTPHeaders.
+<<<<<<< HEAD
 @property (copy) NSDictionary *additionalHTTPHeaders;
+=======
+@property (copy) GTL_NSDictionaryOf(NSString *, NSString *) *additionalHTTPHeaders;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The GTLObject subclass expected for results (used if the result doesn't
 // include a kind attribute).
@@ -108,11 +150,23 @@
 //   }
 @property (copy) void (^completionBlock)(GTLServiceTicket *ticket, id object, NSError *error);
 
+<<<<<<< HEAD
 // methodName is the RPC method name to use.
 + (id)queryWithMethodName:(NSString *)methodName GTL_NONNULL((1));
 
 // methodName is the RPC method name to use.
 - (id)initWithMethodName:(NSString *)method GTL_NONNULL((1));
+=======
+// Apps may provide a test block on the query or service to avoid network activity
+// during testing.  See the description above for GTLQueryTestBlock.
+@property (copy) GTLQueryTestBlock testBlock;
+
+// methodName is the RPC method name to use.
++ (instancetype)queryWithMethodName:(NSString *)methodName GTL_NONNULL((1));
+
+// methodName is the RPC method name to use.
+- (instancetype)initWithMethodName:(NSString *)method GTL_NONNULL((1));
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // If you need to set a parameter that is not listed as a property for a
 // query class, you can do so via this api.  If you need to clear it after
@@ -128,6 +182,10 @@
 @end
 
 // The library doesn't use GTLQueryCollectionImpl, but it provides a concrete implementation
+<<<<<<< HEAD
 // of the protocol so the methods do not cause a private method error in Xcode.
+=======
+// the protocol so the methods do not cause private method errors in Xcode/AppStore review.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @interface GTLQueryCollectionImpl : GTLQuery <GTLQueryCollectionProtocol>
 @end

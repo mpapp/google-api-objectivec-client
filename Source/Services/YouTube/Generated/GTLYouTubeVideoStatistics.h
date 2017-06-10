@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -45,6 +54,7 @@
 @interface GTLYouTubeVideoStatistics : GTLObject
 
 // The number of comments for the video.
+<<<<<<< HEAD
 @property (retain) NSNumber *commentCount;  // unsignedLongLongValue
 
 // The number of users who have indicated that they disliked the video by giving
@@ -60,5 +70,22 @@
 
 // The number of times the video has been viewed.
 @property (retain) NSNumber *viewCount;  // unsignedLongLongValue
+=======
+@property (nonatomic, retain) NSNumber *commentCount;  // unsignedLongLongValue
+
+// The number of users who have indicated that they disliked the video by giving
+// it a negative rating.
+@property (nonatomic, retain) NSNumber *dislikeCount;  // unsignedLongLongValue
+
+// The number of users who currently have the video marked as a favorite video.
+@property (nonatomic, retain) NSNumber *favoriteCount;  // unsignedLongLongValue
+
+// The number of users who have indicated that they liked the video by giving it
+// a positive rating.
+@property (nonatomic, retain) NSNumber *likeCount;  // unsignedLongLongValue
+
+// The number of times the video has been viewed.
+@property (nonatomic, retain) NSNumber *viewCount;  // unsignedLongLongValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +49,16 @@
 @interface GTLMapsEngineGeoJsonMultiLineString : GTLObject
 
 // An array of at least two GeoJsonLineString coordinate arrays.
+<<<<<<< HEAD
 @property (retain) NSArray *coordinates;  // of NSArray of NSArray of NSNumber (doubleValue)
 
 // Identifies this object as a GeoJsonMultiLineString.
 @property (copy) NSString *type;
+=======
+@property (nonatomic, retain) NSArray *coordinates;  // of NSArray of NSArray of NSNumber (doubleValue)
+
+// Identifies this object as a GeoJsonMultiLineString.
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

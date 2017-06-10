@@ -21,10 +21,18 @@
 
 #import "GTLObject.h"
 #import "GTLRuntimeCommon.h"
+<<<<<<< HEAD
 #import "GTLJSONParser.h"
 
 static NSString *const kUserDataPropertyKey = @"_userData";
 
+=======
+
+static NSString *const kUserDataPropertyKey = @"_userData";
+
+static NSString *const kGTLObjectJSONCoderKey = @"json";
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @interface GTLObject () <GTLRuntimeCommon>
 + (NSMutableArray *)allDeclaredProperties;
 + (NSArray *)allKnownKeys;
@@ -42,11 +50,19 @@ static NSString *const kUserDataPropertyKey = @"_userData";
             surrogates = surrogates_,
             userProperties = userProperties_;
 
+<<<<<<< HEAD
 + (id)object {
   return [[[self alloc] init] autorelease];
 }
 
 + (id)objectWithJSON:(NSMutableDictionary *)dict {
+=======
++ (instancetype)object {
+  return [[[self alloc] init] autorelease];
+}
+
++ (instancetype)objectWithJSON:(NSMutableDictionary *)dict {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   GTLObject *obj = [self object];
   obj.JSON = dict;
   return obj;
@@ -64,6 +80,13 @@ static NSString *const kUserDataPropertyKey = @"_userData";
   return Nil;
 }
 
+<<<<<<< HEAD
+=======
++ (BOOL)isKindValidForClassRegistry {
+  return YES;
+}
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 - (BOOL)isEqual:(GTLObject *)other {
   if (self == other) return YES;
   if (other == nil) return NO;
@@ -113,6 +136,26 @@ static NSString *const kUserDataPropertyKey = @"_userData";
   [super dealloc];
 }
 
+<<<<<<< HEAD
+=======
++ (BOOL)supportsSecureCoding {
+  return YES;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)decoder {
+  self = [super init];
+  if (self) {
+    json_ = [[decoder decodeObjectOfClass:[NSMutableDictionary class]
+                                   forKey:kGTLObjectJSONCoderKey] retain];
+  }
+  return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+  [encoder encodeObject:json_ forKey:kGTLObjectJSONCoderKey];
+}
+
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #pragma mark JSON values
 
 - (void)setJSONValue:(id)obj forKey:(NSString *)key {
@@ -131,6 +174,7 @@ static NSString *const kUserDataPropertyKey = @"_userData";
 
 - (NSString *)JSONString {
   NSError *error = nil;
+<<<<<<< HEAD
   NSString *str = [GTLJSONParser stringWithObject:[self JSON]
                                     humanReadable:YES
                                             error:&error];
@@ -138,6 +182,21 @@ static NSString *const kUserDataPropertyKey = @"_userData";
     return [error description];
   }
   return str;
+=======
+
+  NSDictionary *json = [self JSON];
+  if (!json) return @"";
+
+  NSData *data = [NSJSONSerialization dataWithJSONObject:json
+                                                 options:NSJSONWritingPrettyPrinted
+                                                   error:&error];
+  if (data) {
+    NSString *jsonStr = [[[NSString alloc] initWithData:data
+                                               encoding:NSUTF8StringEncoding] autorelease];
+    return jsonStr;
+  }
+  return [error description];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 - (NSArray *)additionalJSONKeys {
@@ -482,6 +541,7 @@ static NSMutableDictionary *gKindMap = nil;
 
 + (void)registerObjectClassForKind:(NSString *)kind {
   // there's no autorelease pool in place at +load time, so we'll create our own
+<<<<<<< HEAD
   NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
   if (gKindMap == nil) {
@@ -506,6 +566,30 @@ static NSMutableDictionary *gKindMap = nil;
 
   // we drain here to keep the clang static analyzer quiet
   [pool drain];
+=======
+  @autoreleasepool {
+
+    if (gKindMap == nil) {
+      gKindMap = [[NSMutableDictionary alloc] init];
+    }
+
+    Class selfClass = [self class];
+
+#if DEBUG
+    // ensure this is a unique registration
+    if ([gKindMap objectForKey:kind] != nil ) {
+      GTL_DEBUG_LOG(@"%@ (%@) registration conflicts with %@",
+                    selfClass, kind, [gKindMap objectForKey:kind]);
+    }
+    if ([[gKindMap allKeysForObject:selfClass] count] != 0) {
+      GTL_DEBUG_LOG(@"%@ (%@) registration conflicts with %@",
+                    selfClass, kind, [gKindMap allKeysForObject:selfClass]);
+    }
+#endif
+
+    [gKindMap setValue:selfClass forKey:kind];
+  }
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark Object Instantiation
@@ -532,8 +616,15 @@ static NSMutableDictionary *gKindMap = nil;
   // feeds of heterogenous entries can use the defaultClass as a
   // fallback
   Class classToCreate = defaultClass;
+<<<<<<< HEAD
   NSString *kind = nil;
   if ([json isKindOfClass:[NSDictionary class]]) {
+=======
+  BOOL shouldUseKind =
+    (classToCreate == Nil) || [classToCreate isKindValidForClassRegistry];
+  NSString *kind = nil;
+  if (shouldUseKind && [json isKindOfClass:[NSDictionary class]]) {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
     kind = [json valueForKey:@"kind"];
     if ([kind isKindOfClass:[NSString class]] && [kind length] > 0) {
       Class dynamicClass = [GTLObject registeredObjectClassForKind:kind];
@@ -587,10 +678,17 @@ static NSMutableDictionary *gArrayPropertyToClassMapCache = nil;
   // Note that initialize is guaranteed by the runtime to be called in a
   // thread-safe manner
   if (gJSONKeyMapCache == nil) {
+<<<<<<< HEAD
     gJSONKeyMapCache = [GTLUtilities newStaticDictionary];
   }
   if (gArrayPropertyToClassMapCache == nil) {
     gArrayPropertyToClassMapCache = [GTLUtilities newStaticDictionary];
+=======
+    gJSONKeyMapCache = [[NSMutableDictionary alloc] init];
+  }
+  if (gArrayPropertyToClassMapCache == nil) {
+    gArrayPropertyToClassMapCache = [[NSMutableDictionary alloc] init];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   }
 }
 

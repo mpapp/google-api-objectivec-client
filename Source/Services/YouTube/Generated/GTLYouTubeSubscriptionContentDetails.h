@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -44,6 +53,7 @@
 @interface GTLYouTubeSubscriptionContentDetails : GTLObject
 
 // The type of activity this subscription is for (only uploads, everything).
+<<<<<<< HEAD
 @property (copy) NSString *activityType;
 
 // The number of new items in the subscription since its content was last read.
@@ -51,5 +61,14 @@
 
 // The approximate number of items that the subscription points to.
 @property (retain) NSNumber *totalItemCount;  // unsignedIntValue
+=======
+@property (nonatomic, copy) NSString *activityType;
+
+// The number of new items in the subscription since its content was last read.
+@property (nonatomic, retain) NSNumber *newItemCount NS_RETURNS_NOT_RETAINED;  // unsignedIntValue
+
+// The approximate number of items that the subscription points to.
+@property (nonatomic, retain) NSNumber *totalItemCount;  // unsignedIntValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

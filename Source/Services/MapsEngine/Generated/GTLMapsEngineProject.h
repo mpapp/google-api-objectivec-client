@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +44,7 @@
 //   GTLMapsEngineProject
 //
 
+<<<<<<< HEAD
 // A project groups a collection of resources.
 
 @interface GTLMapsEngineProject : GTLObject
@@ -50,5 +55,17 @@
 
 // A user provided name for this project.
 @property (copy) NSString *name;
+=======
+// A Maps Engine project groups a collection of resources.
+
+@interface GTLMapsEngineProject : GTLObject
+
+// An ID used to refer to this Maps Engine project.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// A user provided name for this Maps Engine project.
+@property (nonatomic, copy) NSString *name;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

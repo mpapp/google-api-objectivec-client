@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -45,17 +54,29 @@
 
 // Defines the duration in milliseconds for which the promotion should be
 // displayed. If missing, the client should use the default.
+<<<<<<< HEAD
 @property (retain) NSNumber *durationMs;  // unsignedLongLongValue
+=======
+@property (nonatomic, retain) NSNumber *durationMs;  // unsignedLongLongValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Defines the time at which the promotion will appear. Depending on the value
 // of type the value of the offsetMs field will represent a time offset from the
 // start or from the end of the video, expressed in milliseconds.
+<<<<<<< HEAD
 @property (retain) NSNumber *offsetMs;  // unsignedLongLongValue
+=======
+@property (nonatomic, retain) NSNumber *offsetMs;  // unsignedLongLongValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Describes a timing type. If the value is offsetFromStart, then the offsetMs
 // field represents an offset from the start of the video. If the value is
 // offsetFromEnd, then the offsetMs field represents an offset from the end of
 // the video.
+<<<<<<< HEAD
 @property (copy) NSString *type;
+=======
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Calendar API (calendar/v3)
 // Description:
+<<<<<<< HEAD
 //   Lets you manipulate events and other calendar data.
+=======
+//   Manipulates events and other calendar data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/google-apps/calendar/firstapp
 // Classes:
@@ -42,6 +50,7 @@
 @interface GTLCalendarSetting : GTLObject
 
 // ETag of the resource.
+<<<<<<< HEAD
 @property (copy) NSString *ETag;
 
 // The id of the user setting.
@@ -54,5 +63,19 @@
 // Value of the user setting. The format of the value depends on the ID of the
 // setting. It must always be a UTF-8 string of length up to 1024 characters.
 @property (copy) NSString *value;
+=======
+@property (nonatomic, copy) NSString *ETag;
+
+// The id of the user setting.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Type of the resource ("calendar#setting").
+@property (nonatomic, copy) NSString *kind;
+
+// Value of the user setting. The format of the value depends on the ID of the
+// setting. It must always be a UTF-8 string of length up to 1024 characters.
+@property (nonatomic, copy) NSString *value;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

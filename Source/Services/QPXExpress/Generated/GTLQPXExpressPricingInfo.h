@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +26,12 @@
 // Service:
 //   QPX Express API (qpxExpress/v1)
 // Description:
+<<<<<<< HEAD
 //   Lets you find the least expensive flights between an origin and a
 //   destination.
+=======
+//   Finds the least expensive flights between an origin and a destination.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   http://developers.google.com/qpx-express
 // Classes:
@@ -55,6 +63,7 @@
 // The total fare in the base fare currency (the currency of the country of
 // origin). This element is only present when the sales currency and the
 // currency of the country of commencement are different.
+<<<<<<< HEAD
 @property (copy) NSString *baseFareTotal;
 
 // The fare used to price one or more segments.
@@ -67,18 +76,40 @@
 // Identifies this as a pricing object, representing the price of one or more
 // travel segments. Value: the fixed string qpxexpress#pricingInfo.
 @property (copy) NSString *kind;
+=======
+@property (nonatomic, copy) NSString *baseFareTotal;
+
+// The fare used to price one or more segments.
+@property (nonatomic, retain) NSArray *fare;  // of GTLQPXExpressFareInfo
+
+// The horizontal fare calculation. This is a field on a ticket that displays
+// all of the relevant items that go into the calculation of the fare.
+@property (nonatomic, copy) NSString *fareCalculation;
+
+// Identifies this as a pricing object, representing the price of one or more
+// travel segments. Value: the fixed string qpxexpress#pricingInfo.
+@property (nonatomic, copy) NSString *kind;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The latest ticketing time for this pricing assuming the reservation occurs at
 // ticketing time and there is no change in fares/rules. The time is local to
 // the point of sale (POS).
+<<<<<<< HEAD
 @property (copy) NSString *latestTicketingTime;
 
 // The number of passengers to which this price applies.
 @property (retain) GTLQPXExpressPassengerCounts *passengers;
+=======
+@property (nonatomic, copy) NSString *latestTicketingTime;
+
+// The number of passengers to which this price applies.
+@property (nonatomic, retain) GTLQPXExpressPassengerCounts *passengers;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The passenger type code for this pricing. An alphanumeric code used by a
 // carrier to restrict fares to certain categories of passenger. For instance, a
 // fare might be valid only for senior citizens.
+<<<<<<< HEAD
 @property (copy) NSString *ptc;
 
 // Whether the fares on this pricing are refundable.
@@ -98,5 +129,26 @@
 
 // The taxes used to calculate the tax total per ticket.
 @property (retain) NSArray *tax;  // of GTLQPXExpressTaxInfo
+=======
+@property (nonatomic, copy) NSString *ptc;
+
+// Whether the fares on this pricing are refundable.
+@property (nonatomic, retain) NSNumber *refundable;  // boolValue
+
+// The total fare in the sale or equivalent currency.
+@property (nonatomic, copy) NSString *saleFareTotal;
+
+// The taxes in the sale or equivalent currency.
+@property (nonatomic, copy) NSString *saleTaxTotal;
+
+// Total per-passenger price (fare and tax) in the sale or equivalent currency.
+@property (nonatomic, copy) NSString *saleTotal;
+
+// The per-segment price and baggage information.
+@property (nonatomic, retain) NSArray *segmentPricing;  // of GTLQPXExpressSegmentPricing
+
+// The taxes used to calculate the tax total per ticket.
+@property (nonatomic, retain) NSArray *tax;  // of GTLQPXExpressTaxInfo
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

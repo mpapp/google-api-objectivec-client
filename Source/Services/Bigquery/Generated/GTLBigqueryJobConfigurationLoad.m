@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +28,15 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
 // Classes:
 //   GTLBigqueryJobConfigurationLoad (0 custom class methods, 16 custom properties)
+=======
+//   https://cloud.google.com/bigquery/
+// Classes:
+//   GTLBigqueryJobConfigurationLoad (0 custom class methods, 18 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLBigqueryJobConfigurationLoad.h"
 
@@ -39,6 +49,7 @@
 //
 
 @implementation GTLBigqueryJobConfigurationLoad
+<<<<<<< HEAD
 @dynamic allowJaggedRows, allowQuotedNewlines, createDisposition,
          destinationTable, encoding, fieldDelimiter, ignoreUnknownValues,
          maxBadRecords, quote, schema, schemaInline, schemaInlineFormat,
@@ -48,6 +59,19 @@
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[NSString class]
                                 forKey:@"sourceUris"];
+=======
+@dynamic allowJaggedRows, allowQuotedNewlines, autodetect, createDisposition,
+         destinationTable, encoding, fieldDelimiter, ignoreUnknownValues,
+         maxBadRecords, projectionFields, quote, schema, schemaInline,
+         schemaInlineFormat, skipLeadingRows, sourceFormat, sourceUris,
+         writeDisposition;
+
++ (NSDictionary *)arrayPropertyToClassMap {
+  NSDictionary *map = @{
+    @"projectionFields" : [NSString class],
+    @"sourceUris" : [NSString class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

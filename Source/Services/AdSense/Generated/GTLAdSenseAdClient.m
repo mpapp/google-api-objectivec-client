@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,12 +26,20 @@
 // Service:
 //   AdSense Management API (adsense/v1.4)
 // Description:
+<<<<<<< HEAD
 //   Gives AdSense publishers access to their inventory and the ability to
 //   generate reports
 // Documentation:
 //   https://developers.google.com/adsense/management/
 // Classes:
 //   GTLAdSenseAdClient (0 custom class methods, 6 custom properties)
+=======
+//   Accesses AdSense publishers' inventory and generates performance reports.
+// Documentation:
+//   https://developers.google.com/adsense/management/
+// Classes:
+//   GTLAdSenseAdClient (0 custom class methods, 5 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLAdSenseAdClient.h"
 
@@ -37,6 +49,7 @@
 //
 
 @implementation GTLAdSenseAdClient
+<<<<<<< HEAD
 @dynamic arcOptIn, arcReviewMode, identifier, kind, productCode,
          supportsReporting;
 
@@ -44,6 +57,14 @@
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"id"
                                 forKey:@"identifier"];
+=======
+@dynamic arcOptIn, identifier, kind, productCode, supportsReporting;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

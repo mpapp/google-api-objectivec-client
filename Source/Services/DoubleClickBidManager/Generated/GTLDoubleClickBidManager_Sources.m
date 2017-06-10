@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +39,10 @@
 #import "GTLDoubleClickBidManagerFilterPair.m"
 #import "GTLDoubleClickBidManagerListQueriesResponse.m"
 #import "GTLDoubleClickBidManagerListReportsResponse.m"
+<<<<<<< HEAD
+=======
+#import "GTLDoubleClickBidManagerNote.m"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLDoubleClickBidManagerParameters.m"
 #import "GTLDoubleClickBidManagerQuery.m"
 #import "GTLDoubleClickBidManagerQueryMetadata.m"

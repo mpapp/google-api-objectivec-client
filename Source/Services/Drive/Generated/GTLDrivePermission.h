@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +24,7 @@
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
+<<<<<<< HEAD
 //   Drive API (drive/v2)
 // Description:
 //   The API to interact with Drive.
@@ -27,6 +32,16 @@
 //   https://developers.google.com/drive/
 // Classes:
 //   GTLDrivePermission (0 custom class methods, 14 custom properties)
+=======
+//   Drive API (drive/v3)
+// Description:
+//   Manages files in Drive including uploading, downloading, searching,
+//   detecting changes, and updating sharing permissions.
+// Documentation:
+//   https://developers.google.com/drive/
+// Classes:
+//   GTLDrivePermission (0 custom class methods, 9 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -39,6 +54,7 @@
 //   GTLDrivePermission
 //
 
+<<<<<<< HEAD
 // A permission for a file.
 
 @interface GTLDrivePermission : GTLObject
@@ -89,10 +105,50 @@
 @property (copy) NSString *selfLink;
 
 // The account type. Allowed values are:
+=======
+// A permission for a file. A permission grants a user, group, domain or the
+// world access to a file or a folder hierarchy.
+
+@interface GTLDrivePermission : GTLObject
+
+// Whether the permission allows the file to be discovered through search. This
+// is only applicable for permissions of type domain or anyone.
+@property (nonatomic, retain) NSNumber *allowFileDiscovery;  // boolValue
+
+// A displayable name for users, groups or domains.
+@property (nonatomic, copy) NSString *displayName;
+
+// The domain to which this permission refers.
+@property (nonatomic, copy) NSString *domain;
+
+// The email address of the user or group to which this permission refers.
+@property (nonatomic, copy) NSString *emailAddress;
+
+// The ID of this permission. This is a unique identifier for the grantee, and
+// is published in User resources as permissionId.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// This is always drive#permission.
+@property (nonatomic, copy) NSString *kind;
+
+// A link to the user's profile photo, if available.
+@property (nonatomic, copy) NSString *photoLink;
+
+// The role granted by this permission. Valid values are:
+// - owner
+// - writer
+// - commenter
+// - reader
+@property (nonatomic, copy) NSString *role;
+
+// The type of the grantee. Valid values are:
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // - user
 // - group
 // - domain
 // - anyone
+<<<<<<< HEAD
 @property (copy) NSString *type;
 
 // The email address or domain name for the entity. This is used during inserts
@@ -102,5 +158,8 @@
 
 // Whether the link is required for this permission.
 @property (retain) NSNumber *withLink;  // boolValue
+=======
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

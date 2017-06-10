@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2011 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +28,11 @@
 // Description:
 //   Lets you create, inspect, and manage goo.gl short URLs
 // Documentation:
+<<<<<<< HEAD
 //   http://code.google.com/apis/urlshortener/v1/getting_started.html
+=======
+//   https://developers.google.com/url-shortener/v1/getting_started
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Classes:
 //   GTLUrlshortenerUrlHistory (0 custom class methods, 5 custom properties)
 
@@ -47,6 +55,7 @@
 @interface GTLUrlshortenerUrlHistory : GTLCollectionObject
 
 // A list of URL resources.
+<<<<<<< HEAD
 @property (retain) NSArray *items;  // of GTLUrlshortenerUrl
 
 // Number of items returned with each full "page" of results. Note that the last
@@ -61,5 +70,21 @@
 
 // Total number of short URLs associated with this user (may be approximate).
 @property (retain) NSNumber *totalItems;  // intValue
+=======
+@property (nonatomic, retain) NSArray *items;  // of GTLUrlshortenerUrl
+
+// Number of items returned with each full "page" of results. Note that the last
+// page could have fewer items than the "itemsPerPage" value.
+@property (nonatomic, retain) NSNumber *itemsPerPage;  // intValue
+
+// The fixed string "urlshortener#urlHistory".
+@property (nonatomic, copy) NSString *kind;
+
+// A token to provide to get the next page of results.
+@property (nonatomic, copy) NSString *nextPageToken;
+
+// Total number of short URLs associated with this user (may be approximate).
+@property (nonatomic, retain) NSNumber *totalItems;  // intValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

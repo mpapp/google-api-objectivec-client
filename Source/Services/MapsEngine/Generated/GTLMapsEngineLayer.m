@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +31,11 @@
 // Documentation:
 //   https://developers.google.com/maps-engine/
 // Classes:
+<<<<<<< HEAD
 //   GTLMapsEngineLayer (0 custom class methods, 15 custom properties)
+=======
+//   GTLMapsEngineLayer (0 custom class methods, 20 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLMapsEngineLayer.h"
 
@@ -40,6 +48,7 @@
 //
 
 @implementation GTLMapsEngineLayer
+<<<<<<< HEAD
 @dynamic bbox, creationTime, datasources, datasourceType, descriptionProperty,
          draftAccessList, ETag, identifier, lastModifiedTime, name,
          processingStatus, projectId, publishedAccessList, style, tags;
@@ -51,16 +60,38 @@
       @"etag", @"ETag",
       @"id", @"identifier",
       nil];
+=======
+@dynamic bbox, creationTime, creatorEmail, datasources, datasourceType,
+         descriptionProperty, draftAccessList, ETag, identifier,
+         lastModifiedTime, lastModifierEmail, layerType, name, processingStatus,
+         projectId, publishedAccessList, publishingStatus, style, tags,
+         writersCanEditPermissions;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"descriptionProperty" : @"description",
+    @"ETag" : @"etag",
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObjectsAndKeys:
       [NSNumber class], @"bbox",
       [GTLMapsEngineDatasource class], @"datasources",
       [NSString class], @"tags",
       nil];
+=======
+  NSDictionary *map = @{
+    @"bbox" : [NSNumber class],
+    @"datasources" : [GTLMapsEngineDatasource class],
+    @"tags" : [NSString class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +49,7 @@
 @interface GTLBloggerPostUserInfo : GTLObject
 
 // The kind of this entity. Always blogger#postUserInfo
+<<<<<<< HEAD
 @property (copy) NSString *kind;
 
 // The Post resource.
@@ -52,5 +57,14 @@
 
 // Information about a User for the Post.
 @property (retain) GTLBloggerPostPerUserInfo *postUserInfo;
+=======
+@property (nonatomic, copy) NSString *kind;
+
+// The Post resource.
+@property (nonatomic, retain) GTLBloggerPost *post;
+
+// Information about a User for the Post.
+@property (nonatomic, retain) GTLBloggerPostPerUserInfo *postUserInfo;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Calendar API (calendar/v3)
 // Description:
+<<<<<<< HEAD
 //   Lets you manipulate events and other calendar data.
+=======
+//   Manipulates events and other calendar data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/google-apps/calendar/firstapp
 // Classes:
@@ -42,6 +50,7 @@
 @interface GTLCalendarEventAttendee : GTLObject
 
 // Number of additional guests. Optional. The default is 0.
+<<<<<<< HEAD
 @property (retain) NSNumber *additionalGuests;  // intValue
 
 // The attendee's response comment. Optional.
@@ -67,17 +76,53 @@
 
 // Whether the attendee is a resource. Read-only. The default is False.
 @property (retain) NSNumber *resource;  // boolValue
+=======
+@property (nonatomic, retain) NSNumber *additionalGuests;  // intValue
+
+// The attendee's response comment. Optional.
+@property (nonatomic, copy) NSString *comment;
+
+// The attendee's name, if available. Optional.
+@property (nonatomic, copy) NSString *displayName;
+
+// The attendee's email address, if available. This field must be present when
+// adding an attendee. It must be a valid email address as per RFC5322.
+@property (nonatomic, copy) NSString *email;
+
+// The attendee's Profile ID, if available. It corresponds to theid field in the
+// People collection of the Google+ API
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Whether this is an optional attendee. Optional. The default is False.
+@property (nonatomic, retain) NSNumber *optional;  // boolValue
+
+// Whether the attendee is the organizer of the event. Read-only. The default is
+// False.
+@property (nonatomic, retain) NSNumber *organizer;  // boolValue
+
+// Whether the attendee is a resource. Read-only. The default is False.
+@property (nonatomic, retain) NSNumber *resource;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The attendee's response status. Possible values are:
 // - "needsAction" - The attendee has not responded to the invitation.
 // - "declined" - The attendee has declined the invitation.
 // - "tentative" - The attendee has tentatively accepted the invitation.
 // - "accepted" - The attendee has accepted the invitation.
+<<<<<<< HEAD
 @property (copy) NSString *responseStatus;
+=======
+@property (nonatomic, copy) NSString *responseStatus;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Whether this entry represents the calendar on which this copy of the event
 // appears. Read-only. The default is False.
 // Remapped to 'selfProperty' to avoid language reserved word 'self'.
+<<<<<<< HEAD
 @property (retain) NSNumber *selfProperty;  // boolValue
+=======
+@property (nonatomic, retain) NSNumber *selfProperty;  // boolValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

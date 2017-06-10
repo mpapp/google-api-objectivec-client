@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +30,11 @@
 // Documentation:
 //   https://developers.google.com/blogger/docs/3.0/getting_started
 // Classes:
+<<<<<<< HEAD
 //   GTLBloggerPost (0 custom class methods, 18 custom properties)
+=======
+//   GTLBloggerPost (0 custom class methods, 19 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLBloggerPostAuthor (0 custom class methods, 4 custom properties)
 //   GTLBloggerPostBlog (0 custom class methods, 1 custom properties)
 //   GTLBloggerPostImagesItem (0 custom class methods, 1 custom properties)
@@ -56,6 +64,7 @@
 @interface GTLBloggerPost : GTLObject
 
 // The author of this Post.
+<<<<<<< HEAD
 @property (retain) GTLBloggerPostAuthor *author;
 
 // Data about the blog containing this Post.
@@ -109,6 +118,64 @@
 
 // The URL where this Post is displayed.
 @property (copy) NSString *url;
+=======
+@property (nonatomic, retain) GTLBloggerPostAuthor *author;
+
+// Data about the blog containing this Post.
+@property (nonatomic, retain) GTLBloggerPostBlog *blog;
+
+// The content of the Post. May contain HTML markup.
+@property (nonatomic, copy) NSString *content;
+
+// The JSON meta-data for the Post.
+@property (nonatomic, copy) NSString *customMetaData;
+
+// Etag of the resource.
+@property (nonatomic, copy) NSString *ETag;
+
+// The identifier of this Post.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Display image for the Post.
+@property (nonatomic, retain) NSArray *images;  // of GTLBloggerPostImagesItem
+
+// The kind of this entity. Always blogger#post
+@property (nonatomic, copy) NSString *kind;
+
+// The list of labels this Post was tagged with.
+@property (nonatomic, retain) NSArray *labels;  // of NSString
+
+// The location for geotagged posts.
+@property (nonatomic, retain) GTLBloggerPostLocation *location;
+
+// RFC 3339 date-time when this Post was published.
+@property (nonatomic, retain) GTLDateTime *published;
+
+// Comment control and display setting for readers of this post.
+@property (nonatomic, copy) NSString *readerComments;
+
+// The container of comments on this Post.
+@property (nonatomic, retain) GTLBloggerPostReplies *replies;
+
+// The API REST URL to fetch this resource from.
+@property (nonatomic, copy) NSString *selfLink;
+
+// Status of the post. Only set for admin-level requests
+@property (nonatomic, copy) NSString *status;
+
+// The title of the Post.
+@property (nonatomic, copy) NSString *title;
+
+// The title link URL, similar to atom's related link.
+@property (nonatomic, copy) NSString *titleLink;
+
+// RFC 3339 date-time when this Post was last updated.
+@property (nonatomic, retain) GTLDateTime *updated;
+
+// The URL where this Post is displayed.
+@property (nonatomic, copy) NSString *url;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -121,6 +188,7 @@
 @interface GTLBloggerPostAuthor : GTLObject
 
 // The display name.
+<<<<<<< HEAD
 @property (copy) NSString *displayName;
 
 // The identifier of the Post creator.
@@ -132,6 +200,19 @@
 
 // The URL of the Post creator's Profile page.
 @property (copy) NSString *url;
+=======
+@property (nonatomic, copy) NSString *displayName;
+
+// The identifier of the Post creator.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The Post author's avatar.
+@property (nonatomic, retain) GTLBloggerPostAuthorImage *image;
+
+// The URL of the Post creator's Profile page.
+@property (nonatomic, copy) NSString *url;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -145,7 +226,11 @@
 
 // The identifier of the Blog that contains this Post.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+<<<<<<< HEAD
 @property (copy) NSString *identifier;
+=======
+@property (nonatomic, copy) NSString *identifier;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -156,7 +241,11 @@
 //
 
 @interface GTLBloggerPostImagesItem : GTLObject
+<<<<<<< HEAD
 @property (copy) NSString *url;
+=======
+@property (nonatomic, copy) NSString *url;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @end
 
 
@@ -168,6 +257,7 @@
 @interface GTLBloggerPostLocation : GTLObject
 
 // Location's latitude.
+<<<<<<< HEAD
 @property (retain) NSNumber *lat;  // doubleValue
 
 // Location's longitude.
@@ -178,6 +268,18 @@
 
 // Location's viewport span. Can be used when rendering a map preview.
 @property (copy) NSString *span;
+=======
+@property (nonatomic, retain) NSNumber *lat;  // doubleValue
+
+// Location's longitude.
+@property (nonatomic, retain) NSNumber *lng;  // doubleValue
+
+// Location name.
+@property (nonatomic, copy) NSString *name;
+
+// Location's viewport span. Can be used when rendering a map preview.
+@property (nonatomic, copy) NSString *span;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -193,6 +295,7 @@
 @interface GTLBloggerPostReplies : GTLCollectionObject
 
 // The List of Comments for this Post.
+<<<<<<< HEAD
 @property (retain) NSArray *items;  // of GTLBloggerComment
 
 // The URL of the comments on this post.
@@ -200,6 +303,15 @@
 
 // The count of comments on this post.
 @property (retain) NSNumber *totalItems;  // longLongValue
+=======
+@property (nonatomic, retain) NSArray *items;  // of GTLBloggerComment
+
+// The URL of the comments on this post.
+@property (nonatomic, copy) NSString *selfLink;
+
+// The count of comments on this post.
+@property (nonatomic, retain) NSNumber *totalItems;  // longLongValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -212,6 +324,10 @@
 @interface GTLBloggerPostAuthorImage : GTLObject
 
 // The Post author's avatar URL.
+<<<<<<< HEAD
 @property (copy) NSString *url;
+=======
+@property (nonatomic, copy) NSString *url;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

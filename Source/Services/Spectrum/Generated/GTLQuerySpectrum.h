@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +52,16 @@
 //
 
 // Selector specifying which fields to include in a partial response.
+<<<<<<< HEAD
 @property (copy) NSString *fields;
+=======
+@property (nonatomic, copy) NSString *fields;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 //
 // Method-specific parameters; see the comments below for more information.
 //
+<<<<<<< HEAD
 @property (retain) GTLSpectrumAntennaCharacteristics *antenna;
 @property (retain) GTLSpectrumDeviceCapabilities *capabilities;
 @property (retain) GTLSpectrumDeviceDescriptor *deviceDesc;
@@ -69,6 +78,23 @@
 
 #pragma mark -
 #pragma mark "paws" methods
+=======
+@property (nonatomic, retain) GTLSpectrumAntennaCharacteristics *antenna;
+@property (nonatomic, retain) GTLSpectrumDeviceCapabilities *capabilities;
+@property (nonatomic, retain) GTLSpectrumDeviceDescriptor *deviceDesc;
+@property (nonatomic, retain) NSArray *deviceDescs;  // of GTLSpectrumDeviceDescriptor
+@property (nonatomic, retain) GTLSpectrumDeviceOwner *deviceOwner;
+@property (nonatomic, retain) GTLSpectrumGeoLocation *location;
+@property (nonatomic, retain) NSArray *locations;  // of GTLSpectrumGeoLocation
+@property (nonatomic, retain) GTLSpectrumDeviceDescriptor *masterDeviceDesc;
+@property (nonatomic, retain) GTLSpectrumDeviceOwner *owner;
+@property (nonatomic, copy) NSString *requestType;
+@property (nonatomic, retain) NSArray *spectra;  // of GTLSpectrumMessage
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *version;
+
+#pragma mark - "paws" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQuerySpectrum object.
 
 // Method: spectrum.paws.getSpectrum
@@ -120,7 +146,11 @@
 //   version: The PAWS version. Must be exactly 1.0.
 //     Required field.
 // Fetches a GTLSpectrumPawsGetSpectrumResponse.
+<<<<<<< HEAD
 + (id)queryForPawsGetSpectrum;
+=======
++ (instancetype)queryForPawsGetSpectrum;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: spectrum.paws.getSpectrumBatch
 // The Google Spectrum Database does not support batch requests, so this method
@@ -176,7 +206,11 @@
 //   version: The PAWS version. Must be exactly 1.0.
 //     Required field.
 // Fetches a GTLSpectrumPawsGetSpectrumBatchResponse.
+<<<<<<< HEAD
 + (id)queryForPawsGetSpectrumBatch;
+=======
++ (instancetype)queryForPawsGetSpectrumBatch;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: spectrum.paws.init
 // Initializes the connection between a white space device and the database.
@@ -191,7 +225,11 @@
 //   version: The PAWS version. Must be exactly 1.0.
 //     Required field.
 // Fetches a GTLSpectrumPawsInitResponse.
+<<<<<<< HEAD
 + (id)queryForPawsInit;
+=======
++ (instancetype)queryForPawsInit;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: spectrum.paws.notifySpectrumUse
 // Notifies the database that the device has selected certain frequency ranges
@@ -223,7 +261,11 @@
 //   version: The PAWS version. Must be exactly 1.0.
 //     Required field.
 // Fetches a GTLSpectrumPawsNotifySpectrumUseResponse.
+<<<<<<< HEAD
 + (id)queryForPawsNotifySpectrumUse;
+=======
++ (instancetype)queryForPawsNotifySpectrumUse;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: spectrum.paws.register
 // The Google Spectrum Database implements registration in the getSpectrum
@@ -238,7 +280,11 @@
 //   version: The PAWS version. Must be exactly 1.0.
 //     Required field.
 // Fetches a GTLSpectrumPawsRegisterResponse.
+<<<<<<< HEAD
 + (id)queryForPawsRegister;
+=======
++ (instancetype)queryForPawsRegister;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: spectrum.paws.verifyDevice
 // Validates a device for white space use in accordance with regulatory rules.
@@ -252,6 +298,10 @@
 //   version: The PAWS version. Must be exactly 1.0.
 //     Required field.
 // Fetches a GTLSpectrumPawsVerifyDeviceResponse.
+<<<<<<< HEAD
 + (id)queryForPawsVerifyDevice;
+=======
++ (instancetype)queryForPawsVerifyDevice;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

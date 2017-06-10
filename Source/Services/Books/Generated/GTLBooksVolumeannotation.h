@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +50,7 @@
 @interface GTLBooksVolumeannotation : GTLObject
 
 // The annotation data id for this volume annotation.
+<<<<<<< HEAD
 @property (copy) NSString *annotationDataId;
 
 // Link to get data for this annotation.
@@ -88,6 +93,50 @@
 
 // The Volume this annotation is for.
 @property (copy) NSString *volumeId;
+=======
+@property (nonatomic, copy) NSString *annotationDataId;
+
+// Link to get data for this annotation.
+@property (nonatomic, copy) NSString *annotationDataLink;
+
+// The type of annotation this is.
+@property (nonatomic, copy) NSString *annotationType;
+
+// The content ranges to identify the selected text.
+@property (nonatomic, retain) GTLBooksVolumeannotationContentRanges *contentRanges;
+
+// Data for this annotation.
+@property (nonatomic, copy) NSString *data;
+
+// Indicates that this annotation is deleted.
+@property (nonatomic, retain) NSNumber *deleted;  // boolValue
+
+// Unique id of this volume annotation.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Resource Type
+@property (nonatomic, copy) NSString *kind;
+
+// The Layer this annotation is for.
+@property (nonatomic, copy) NSString *layerId;
+
+// Pages the annotation spans.
+@property (nonatomic, retain) NSArray *pageIds;  // of NSString
+
+// Excerpt from the volume.
+@property (nonatomic, copy) NSString *selectedText;
+
+// URL to this resource.
+@property (nonatomic, copy) NSString *selfLink;
+
+// Timestamp for the last time this anntoation was updated. (RFC 3339 UTC
+// date-time format).
+@property (nonatomic, retain) GTLDateTime *updated;
+
+// The Volume this annotation is for.
+@property (nonatomic, copy) NSString *volumeId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
 
@@ -100,6 +149,7 @@
 @interface GTLBooksVolumeannotationContentRanges : GTLObject
 
 // Range in CFI format for this annotation for version above.
+<<<<<<< HEAD
 @property (retain) GTLBooksAnnotationsRange *cfiRange;
 
 // Content version applicable to ranges below.
@@ -110,5 +160,17 @@
 
 // Range in GB text format for this annotation for version above.
 @property (retain) GTLBooksAnnotationsRange *gbTextRange;
+=======
+@property (nonatomic, retain) GTLBooksAnnotationsRange *cfiRange;
+
+// Content version applicable to ranges below.
+@property (nonatomic, copy) NSString *contentVersion;
+
+// Range in GB image format for this annotation for version above.
+@property (nonatomic, retain) GTLBooksAnnotationsRange *gbImageRange;
+
+// Range in GB text format for this annotation for version above.
+@property (nonatomic, retain) GTLBooksAnnotationsRange *gbTextRange;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

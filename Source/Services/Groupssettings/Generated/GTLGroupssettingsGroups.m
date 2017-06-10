@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +30,11 @@
 // Documentation:
 //   https://developers.google.com/google-apps/groups-settings/get_started
 // Classes:
+<<<<<<< HEAD
 //   GTLGroupssettingsGroups (0 custom class methods, 28 custom properties)
+=======
+//   GTLGroupssettingsGroups (0 custom class methods, 29 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLGroupssettingsGroups.h"
 
@@ -42,6 +50,7 @@
          kind, maxMessageBytes, membersCanPostAsTheGroup, messageDisplayFont,
          messageModerationLevel, name, primaryLanguage, replyTo,
          sendMessageDenyNotification, showInGroupDirectory, spamModerationLevel,
+<<<<<<< HEAD
          whoCanContactOwner, whoCanInvite, whoCanJoin, whoCanLeaveGroup,
          whoCanPostMessage, whoCanViewGroup, whoCanViewMembership;
 
@@ -49,6 +58,16 @@
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"description"
                                 forKey:@"descriptionProperty"];
+=======
+         whoCanAdd, whoCanContactOwner, whoCanInvite, whoCanJoin,
+         whoCanLeaveGroup, whoCanPostMessage, whoCanViewGroup,
+         whoCanViewMembership;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"descriptionProperty" : @"description"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

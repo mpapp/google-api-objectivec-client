@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
+=======
+//   Views and manages your Google Analytics data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
@@ -47,6 +55,7 @@
 @interface GTLAnalyticsProfileFilterLink : GTLObject
 
 // Filter for this link.
+<<<<<<< HEAD
 @property (retain) GTLAnalyticsFilterRef *filterRef;
 
 // Profile filter link ID.
@@ -58,6 +67,19 @@
 
 // View (Profile) for this link.
 @property (retain) GTLAnalyticsProfileRef *profileRef;
+=======
+@property (nonatomic, retain) GTLAnalyticsFilterRef *filterRef;
+
+// Profile filter link ID.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// Resource type for Analytics filter.
+@property (nonatomic, copy) NSString *kind;
+
+// View (Profile) for this link.
+@property (nonatomic, retain) GTLAnalyticsProfileRef *profileRef;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The rank of this profile filter link relative to the other filters linked to
 // the same profile.
@@ -70,9 +92,16 @@
 // link will move all existing filters with the same or lower rank down the
 // list. After the link is inserted/updated/deleted all profile filter links
 // will be renumbered starting at 1.
+<<<<<<< HEAD
 @property (retain) NSNumber *rank;  // intValue
 
 // Link for this profile filter link.
 @property (copy) NSString *selfLink;
+=======
+@property (nonatomic, retain) NSNumber *rank;  // intValue
+
+// Link for this profile filter link.
+@property (nonatomic, copy) NSString *selfLink;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

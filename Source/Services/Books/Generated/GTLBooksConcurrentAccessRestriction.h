@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2012 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +46,7 @@
 @interface GTLBooksConcurrentAccessRestriction : GTLObject
 
 // Whether access is granted for this (user, device, volume).
+<<<<<<< HEAD
 @property (retain) NSNumber *deviceAllowed;  // boolValue
 
 // Resource type.
@@ -74,5 +79,39 @@
 
 // Identifies the volume for which this entry applies.
 @property (copy) NSString *volumeId;
+=======
+@property (nonatomic, retain) NSNumber *deviceAllowed;  // boolValue
+
+// Resource type.
+@property (nonatomic, copy) NSString *kind;
+
+// The maximum number of concurrent access licenses for this volume.
+@property (nonatomic, retain) NSNumber *maxConcurrentDevices;  // intValue
+
+// Error/warning message.
+@property (nonatomic, copy) NSString *message;
+
+// Client nonce for verification. Download access and client-validation only.
+@property (nonatomic, copy) NSString *nonce;
+
+// Error/warning reason code.
+@property (nonatomic, copy) NSString *reasonCode;
+
+// Whether this volume has any concurrent access restrictions.
+@property (nonatomic, retain) NSNumber *restricted;  // boolValue
+
+// Response signature.
+@property (nonatomic, copy) NSString *signature;
+
+// Client app identifier for verification. Download access and client-validation
+// only.
+@property (nonatomic, copy) NSString *source;
+
+// Time in seconds for license auto-expiration.
+@property (nonatomic, retain) NSNumber *timeWindowSeconds;  // intValue
+
+// Identifies the volume for which this entry applies.
+@property (nonatomic, copy) NSString *volumeId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

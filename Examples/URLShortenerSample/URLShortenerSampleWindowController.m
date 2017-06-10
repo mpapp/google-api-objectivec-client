@@ -167,7 +167,11 @@ NSString *const kKeychainItemName = @"URL Shortener Sample: Google URL Shortener
 }
 
 - (IBAction)APIConsoleClicked:(id)sender {
+<<<<<<< HEAD
   NSURL *url = [NSURL URLWithString:@"https://code.google.com/apis/console"];
+=======
+  NSURL *url = [NSURL URLWithString:@"https://console.developers.google.com/"];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
@@ -406,8 +410,16 @@ NSString *const kKeychainItemName = @"URL Shortener Sample: Google URL Shortener
                                      arguments:argList] autorelease];
     va_end(argList);
   }
+<<<<<<< HEAD
   NSBeginAlertSheet(title, nil, nil, nil, [self window], nil, nil,
                     nil, nil, @"%@", result);
+=======
+  NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+  alert.messageText = title;
+  alert.informativeText = result;
+  [alert beginSheetModalForWindow:[self window]
+                completionHandler:nil];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark Client ID Sheet
@@ -421,6 +433,7 @@ NSString *const kKeychainItemName = @"URL Shortener Sample: Google URL Shortener
 // into the source rather than ask the user for them.
 //
 // The string values are obtained from the API Console,
+<<<<<<< HEAD
 // https://code.google.com/apis/console
 //
 
@@ -441,6 +454,18 @@ NSString *const kKeychainItemName = @"URL Shortener Sample: Google URL Shortener
   [sheet orderOut:self];
 
   [self updateUI];
+=======
+// https://console.developers.google.com/
+//
+
+- (IBAction)clientIDClicked:(id)sender {
+  // Show the sheet for developers to enter their client ID and client secret
+  [[self window] beginSheet:clientIDSheet_ completionHandler:nil];
+}
+
+- (IBAction)clientIDDoneClicked:(id)sender {
+  [[self window] endSheet:[sender window]];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 }
 
 #pragma mark Text field delegate methods

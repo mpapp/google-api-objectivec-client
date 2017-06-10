@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -46,19 +55,34 @@
 // The ID that YouTube uses to uniquely identify the referred resource, if that
 // resource is a channel. This property is only present if the resourceId.kind
 // value is youtube#channel.
+<<<<<<< HEAD
 @property (copy) NSString *channelId;
 
 // The type of the API resource.
 @property (copy) NSString *kind;
+=======
+@property (nonatomic, copy) NSString *channelId;
+
+// The type of the API resource.
+@property (nonatomic, copy) NSString *kind;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The ID that YouTube uses to uniquely identify the referred resource, if that
 // resource is a playlist. This property is only present if the resourceId.kind
 // value is youtube#playlist.
+<<<<<<< HEAD
 @property (copy) NSString *playlistId;
+=======
+@property (nonatomic, copy) NSString *playlistId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The ID that YouTube uses to uniquely identify the referred resource, if that
 // resource is a video. This property is only present if the resourceId.kind
 // value is youtube#video.
+<<<<<<< HEAD
 @property (copy) NSString *videoId;
+=======
+@property (nonatomic, copy) NSString *videoId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

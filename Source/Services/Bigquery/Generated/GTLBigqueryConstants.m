@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,13 +28,21 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
+=======
+//   https://cloud.google.com/bigquery/
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLBigqueryConstants.h"
 
 // Authorization scope
 NSString * const kGTLAuthScopeBigquery                      = @"https://www.googleapis.com/auth/bigquery";
 NSString * const kGTLAuthScopeBigqueryCloudPlatform         = @"https://www.googleapis.com/auth/cloud-platform";
+<<<<<<< HEAD
+=======
+NSString * const kGTLAuthScopeBigqueryCloudPlatformReadOnly = @"https://www.googleapis.com/auth/cloud-platform.read-only";
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 NSString * const kGTLAuthScopeBigqueryDevstorageFullControl = @"https://www.googleapis.com/auth/devstorage.full_control";
 NSString * const kGTLAuthScopeBigqueryDevstorageReadOnly    = @"https://www.googleapis.com/auth/devstorage.read_only";
 NSString * const kGTLAuthScopeBigqueryDevstorageReadWrite   = @"https://www.googleapis.com/auth/devstorage.read_write";

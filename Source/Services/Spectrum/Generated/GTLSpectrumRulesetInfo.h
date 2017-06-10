@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +51,11 @@
 // The regulatory domain to which the ruleset belongs is required. It must be a
 // 2-letter country code. The device should use this to determine additional
 // device behavior required by the associated regulatory domain.
+<<<<<<< HEAD
 @property (copy) NSString *authority;
+=======
+@property (nonatomic, copy) NSString *authority;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The maximum location change in meters is required in the initialization
 // response, but optional otherwise. When the device changes location by more
@@ -57,7 +65,11 @@
 // rules for database-managed spectrum. If this value is provided within the
 // context of an available-spectrum response, it takes precedence over the value
 // within the initialization response.
+<<<<<<< HEAD
 @property (retain) NSNumber *maxLocationChange;  // doubleValue
+=======
+@property (nonatomic, retain) NSNumber *maxLocationChange;  // doubleValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The maximum duration, in seconds, between requests for available spectrum. It
 // is required in the initialization response, but optional otherwise. The
@@ -67,7 +79,11 @@
 // of those frequencies under rules for database-managed spectrum. If this value
 // is provided within the context of an available-spectrum response, it takes
 // precedence over the value within the initialization response.
+<<<<<<< HEAD
 @property (retain) NSNumber *maxPollingSecs;  // intValue
+=======
+@property (nonatomic, retain) NSNumber *maxPollingSecs;  // intValue
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The identifiers of the rulesets supported for the device's location. The
 // database should include at least one applicable ruleset in the initialization
@@ -78,6 +94,10 @@
 // included, the device must use the specified ruleset to interpret the
 // response. If the device does not support the indicated ruleset, it must not
 // operate in the spectrum governed by the ruleset.
+<<<<<<< HEAD
 @property (retain) NSArray *rulesetIds;  // of NSString
+=======
+@property (nonatomic, retain) NSArray *rulesetIds;  // of NSString
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

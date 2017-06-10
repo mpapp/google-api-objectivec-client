@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +28,11 @@
 // Description:
 //   A data platform for customers to create, manage, share and query data.
 // Documentation:
+<<<<<<< HEAD
 //   https://developers.google.com/bigquery/docs/overview
+=======
+//   https://cloud.google.com/bigquery/
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Classes:
 //   GTLBigqueryTableFieldSchema (0 custom class methods, 5 custom properties)
 
@@ -43,6 +51,7 @@
 
 @interface GTLBigqueryTableFieldSchema : GTLObject
 
+<<<<<<< HEAD
 // [Optional] The field description.
 // Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
 @property (copy) NSString *descriptionProperty;
@@ -62,5 +71,28 @@
 // FLOAT, BOOLEAN, TIMESTAMP or RECORD (where RECORD indicates that the field
 // contains a nested schema).
 @property (copy) NSString *type;
+=======
+// [Optional] The field description. The maximum length is 16K characters.
+// Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
+@property (nonatomic, copy) NSString *descriptionProperty;
+
+// [Optional] Describes the nested schema fields if the type property is set to
+// RECORD.
+@property (nonatomic, retain) NSArray *fields;  // of GTLBigqueryTableFieldSchema
+
+// [Optional] The field mode. Possible values include NULLABLE, REQUIRED and
+// REPEATED. The default value is NULLABLE.
+@property (nonatomic, copy) NSString *mode;
+
+// [Required] The field name. The name must contain only letters (a-z, A-Z),
+// numbers (0-9), or underscores (_), and must start with a letter or
+// underscore. The maximum length is 128 characters.
+@property (nonatomic, copy) NSString *name;
+
+// [Required] The field data type. Possible values include STRING, BYTES,
+// INTEGER, FLOAT, BOOLEAN, TIMESTAMP or RECORD (where RECORD indicates that the
+// field contains a nested schema).
+@property (nonatomic, copy) NSString *type;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

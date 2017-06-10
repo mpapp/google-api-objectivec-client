@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,10 +53,18 @@
 
 // The event time expresses when the spectrum profile is valid. It will always
 // be present.
+<<<<<<< HEAD
 @property (retain) GTLSpectrumEventTime *eventTime;
 
 // A list of spectrum messages representing the usable profile. It will always
 // be present, but may be empty when there is no available spectrum.
 @property (retain) NSArray *spectra;  // of GTLSpectrumMessage
+=======
+@property (nonatomic, retain) GTLSpectrumEventTime *eventTime;
+
+// A list of spectrum messages representing the usable profile. It will always
+// be present, but may be empty when there is no available spectrum.
+@property (nonatomic, retain) NSArray *spectra;  // of GTLSpectrumMessage
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Calendar API (calendar/v3)
 // Description:
+<<<<<<< HEAD
 //   Lets you manipulate events and other calendar data.
+=======
+//   Manipulates events and other calendar data.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/google-apps/calendar/firstapp
 // Classes:
@@ -36,6 +44,7 @@
 // Method compiled in debug builds just to check that all the needed support
 // classes are present at link time.
 + (NSArray *)checkClasses {
+<<<<<<< HEAD
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryCalendar class],
                       [GTLCalendarAcl class],
@@ -61,11 +70,43 @@
                       [GTLCalendarSettings class],
                       [GTLCalendarTimePeriod class],
                       nil];
+=======
+  NSArray *classes = @[
+    [GTLQueryCalendar class],
+    [GTLCalendarAcl class],
+    [GTLCalendarAclRule class],
+    [GTLCalendarCalendar class],
+    [GTLCalendarCalendarList class],
+    [GTLCalendarCalendarListEntry class],
+    [GTLCalendarChannel class],
+    [GTLCalendarColorDefinition class],
+    [GTLCalendarColors class],
+    [GTLCalendarError class],
+    [GTLCalendarEvent class],
+    [GTLCalendarEventAttachment class],
+    [GTLCalendarEventAttendee class],
+    [GTLCalendarEventDateTime class],
+    [GTLCalendarEventReminder class],
+    [GTLCalendarEvents class],
+    [GTLCalendarFreeBusyCalendar class],
+    [GTLCalendarFreeBusyGroup class],
+    [GTLCalendarFreeBusyRequestItem class],
+    [GTLCalendarFreeBusyResponse class],
+    [GTLCalendarNotification class],
+    [GTLCalendarSetting class],
+    [GTLCalendarSettings class],
+    [GTLCalendarTimePeriod class]
+  ];
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return classes;
 }
 #endif  // DEBUG
 
+<<<<<<< HEAD
 - (id)init {
+=======
+- (instancetype)init {
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   self = [super init];
   if (self) {
     // Version from discovery.

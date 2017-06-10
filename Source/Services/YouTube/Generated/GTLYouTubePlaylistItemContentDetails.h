@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,12 @@
 // Service:
 //   YouTube Data API (youtube/v3)
 // Description:
+<<<<<<< HEAD
 //   Programmatic access to YouTube features.
+=======
+//   Supports core YouTube features, such as uploading videos, creating and
+//   managing playlists, searching for content, and much more.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
@@ -45,19 +54,34 @@
 // should stop playing. (The playlist owner can specify the times when the video
 // should start and stop playing when the video is played in the context of the
 // playlist.) By default, assume that the video.endTime is the end of the video.
+<<<<<<< HEAD
 @property (copy) NSString *endAt;
 
 // A user-generated note for this item.
 @property (copy) NSString *note;
+=======
+@property (nonatomic, copy) NSString *endAt;
+
+// A user-generated note for this item.
+@property (nonatomic, copy) NSString *note;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The time, measured in seconds from the start of the video, when the video
 // should start playing. (The playlist owner can specify the times when the
 // video should start and stop playing when the video is played in the context
 // of the playlist.) The default value is 0.
+<<<<<<< HEAD
 @property (copy) NSString *startAt;
 
 // The ID that YouTube uses to uniquely identify a video. To retrieve the video
 // resource, set the id query parameter to this value in your API request.
 @property (copy) NSString *videoId;
+=======
+@property (nonatomic, copy) NSString *startAt;
+
+// The ID that YouTube uses to uniquely identify a video. To retrieve the video
+// resource, set the id query parameter to this value in your API request.
+@property (nonatomic, copy) NSString *videoId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

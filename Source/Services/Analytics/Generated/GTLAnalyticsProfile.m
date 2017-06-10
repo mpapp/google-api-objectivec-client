@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,19 @@
 // Service:
 //   Google Analytics API (analytics/v3)
 // Description:
+<<<<<<< HEAD
 //   View and manage your Google Analytics data
 // Documentation:
 //   https://developers.google.com/analytics/
 // Classes:
 //   GTLAnalyticsProfile (0 custom class methods, 23 custom properties)
+=======
+//   Views and manages your Google Analytics data.
+// Documentation:
+//   https://developers.google.com/analytics/
+// Classes:
+//   GTLAnalyticsProfile (0 custom class methods, 26 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 //   GTLAnalyticsProfileChildLink (0 custom class methods, 2 custom properties)
 //   GTLAnalyticsProfileParentLink (0 custom class methods, 2 custom properties)
 //   GTLAnalyticsProfilePermissions (0 custom class methods, 1 custom properties)
@@ -39,6 +51,7 @@
 //
 
 @implementation GTLAnalyticsProfile
+<<<<<<< HEAD
 @dynamic accountId, childLink, created, currency, defaultPage,
          eCommerceTracking, excludeQueryParameters, identifier,
          internalWebPropertyId, kind, name, parentLink, permissions, selfLink,
@@ -50,6 +63,20 @@
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"id"
                                 forKey:@"identifier"];
+=======
+@dynamic accountId, botFilteringEnabled, childLink, created, currency,
+         defaultPage, eCommerceTracking, enhancedECommerceTracking,
+         excludeQueryParameters, identifier, internalWebPropertyId, kind, name,
+         parentLink, permissions, selfLink, siteSearchCategoryParameters,
+         siteSearchQueryParameters, starred, stripSiteSearchCategoryParameters,
+         stripSiteSearchQueryParameters, timezone, type, updated, webPropertyId,
+         websiteUrl;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 
@@ -89,9 +116,15 @@
 @dynamic effective;
 
 + (NSDictionary *)arrayPropertyToClassMap {
+<<<<<<< HEAD
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:[NSString class]
                                 forKey:@"effective"];
+=======
+  NSDictionary *map = @{
+    @"effective" : [NSString class]
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

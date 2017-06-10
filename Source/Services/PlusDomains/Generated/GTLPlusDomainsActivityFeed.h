@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +26,11 @@
 // Service:
 //   Google+ Domains API (plusDomains/v1)
 // Description:
+<<<<<<< HEAD
 //   The Google+ API enables developers to build on top of the Google+ platform.
+=======
+//   Builds on top of the Google+ platform for Google Apps Domains.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // Documentation:
 //   https://developers.google.com/+/domains/
 // Classes:
@@ -47,6 +55,7 @@
 @interface GTLPlusDomainsActivityFeed : GTLCollectionObject
 
 // ETag of this response for caching purposes.
+<<<<<<< HEAD
 @property (copy) NSString *ETag;
 
 // The ID of this collection of activities. Deprecated.
@@ -62,10 +71,28 @@
 
 // Link to the next page of activities.
 @property (copy) NSString *nextLink;
+=======
+@property (nonatomic, copy) NSString *ETag;
+
+// The ID of this collection of activities. Deprecated.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (nonatomic, copy) NSString *identifier;
+
+// The activities in this page of results.
+@property (nonatomic, retain) NSArray *items;  // of GTLPlusDomainsActivity
+
+// Identifies this resource as a collection of activities. Value:
+// "plus#activityFeed".
+@property (nonatomic, copy) NSString *kind;
+
+// Link to the next page of activities.
+@property (nonatomic, copy) NSString *nextLink;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // The continuation token, which is used to page through large result sets.
 // Provide this value in a subsequent request to return the next page of
 // results.
+<<<<<<< HEAD
 @property (copy) NSString *nextPageToken;
 
 // Link to this activity resource.
@@ -78,5 +105,19 @@
 // The time at which this collection of activities was last updated. Formatted
 // as an RFC 3339 timestamp.
 @property (retain) GTLDateTime *updated;
+=======
+@property (nonatomic, copy) NSString *nextPageToken;
+
+// Link to this activity resource.
+@property (nonatomic, copy) NSString *selfLink;
+
+// The title of this collection of activities, which is a truncated portion of
+// the content.
+@property (nonatomic, copy) NSString *title;
+
+// The time at which this collection of activities was last updated. Formatted
+// as an RFC 3339 timestamp.
+@property (nonatomic, retain) GTLDateTime *updated;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

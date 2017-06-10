@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,19 @@
 // Service:
 //   Gmail API (gmail/v1)
 // Description:
+<<<<<<< HEAD
 //   The Gmail REST API.
 // Documentation:
 //   https://developers.google.com/gmail/api/
 // Classes:
 //   GTLGmailLabel (0 custom class methods, 5 custom properties)
+=======
+//   Access Gmail mailboxes including sending user email.
+// Documentation:
+//   https://developers.google.com/gmail/api/
+// Classes:
+//   GTLGmailLabel (0 custom class methods, 9 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #import "GTLGmailLabel.h"
 
@@ -36,12 +48,22 @@
 //
 
 @implementation GTLGmailLabel
+<<<<<<< HEAD
 @dynamic identifier, labelListVisibility, messageListVisibility, name, type;
 
 + (NSDictionary *)propertyToJSONKeyMap {
   NSDictionary *map =
     [NSDictionary dictionaryWithObject:@"id"
                                 forKey:@"identifier"];
+=======
+@dynamic identifier, labelListVisibility, messageListVisibility, messagesTotal,
+         messagesUnread, name, threadsTotal, threadsUnread, type;
+
++ (NSDictionary *)propertyToJSONKeyMap {
+  NSDictionary *map = @{
+    @"identifier" : @"id"
+  };
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
   return map;
 }
 

@@ -53,6 +53,11 @@
 #import "GTLMapsEngineGeoJsonPoint.m"
 #import "GTLMapsEngineGeoJsonPolygon.m"
 #import "GTLMapsEngineGeoJsonProperties.m"
+<<<<<<< HEAD
+=======
+#import "GTLMapsEngineIcon.m"
+#import "GTLMapsEngineIconsListResponse.m"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLMapsEngineIconStyle.m"
 #import "GTLMapsEngineLabelStyle.m"
 #import "GTLMapsEngineLayer.m"
@@ -66,11 +71,27 @@
 #import "GTLMapsEngineMapsListResponse.m"
 #import "GTLMapsEngineParent.m"
 #import "GTLMapsEngineParentsListResponse.m"
+<<<<<<< HEAD
+=======
+#import "GTLMapsEnginePermission.m"
+#import "GTLMapsEnginePermissionsBatchDeleteRequest.m"
+#import "GTLMapsEnginePermissionsBatchDeleteResponse.m"
+#import "GTLMapsEnginePermissionsBatchUpdateRequest.m"
+#import "GTLMapsEnginePermissionsBatchUpdateResponse.m"
+#import "GTLMapsEnginePermissionsListResponse.m"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLMapsEnginePointStyle.m"
 #import "GTLMapsEnginePolygonStyle.m"
 #import "GTLMapsEngineProcessResponse.m"
 #import "GTLMapsEngineProject.m"
 #import "GTLMapsEngineProjectsListResponse.m"
+<<<<<<< HEAD
+=======
+#import "GTLMapsEnginePublishedLayer.m"
+#import "GTLMapsEnginePublishedLayersListResponse.m"
+#import "GTLMapsEnginePublishedMap.m"
+#import "GTLMapsEnginePublishedMapsListResponse.m"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLMapsEnginePublishResponse.m"
 #import "GTLMapsEngineRaster.m"
 #import "GTLMapsEngineRasterCollection.m"
@@ -81,10 +102,22 @@
 #import "GTLMapsEngineRasterCollectionsRastersBatchInsertRequest.m"
 #import "GTLMapsEngineRasterCollectionsRastersBatchInsertResponse.m"
 #import "GTLMapsEngineRasterCollectionsRastersListResponse.m"
+<<<<<<< HEAD
 #import "GTLMapsEngineSchema.m"
 #import "GTLMapsEngineTable.m"
 #import "GTLMapsEngineTableColumn.m"
 #import "GTLMapsEngineTablesListResponse.m"
+=======
+#import "GTLMapsEngineRastersListResponse.m"
+#import "GTLMapsEngineScaledShape.m"
+#import "GTLMapsEngineScalingFunction.m"
+#import "GTLMapsEngineSchema.m"
+#import "GTLMapsEngineSizeRange.m"
+#import "GTLMapsEngineTable.m"
+#import "GTLMapsEngineTableColumn.m"
+#import "GTLMapsEngineTablesListResponse.m"
+#import "GTLMapsEngineValueRange.m"
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 #import "GTLMapsEngineVectorStyle.m"
 #import "GTLMapsEngineZoomLevels.m"
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2014 Google Inc.
+=======
+/* Copyright (c) 2016 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +26,19 @@
 // Service:
 //   Google+ API (plus/v1)
 // Description:
+<<<<<<< HEAD
 //   The Google+ API enables developers to build on top of the Google+ platform.
 // Documentation:
 //   https://developers.google.com/+/api/
 // Classes:
 //   GTLQueryPlus (12 custom class methods, 15 custom properties)
+=======
+//   Builds on top of the Google+ platform.
+// Documentation:
+//   https://developers.google.com/+/api/
+// Classes:
+//   GTLQueryPlus (9 custom class methods, 11 custom properties)
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLQuery.h"
@@ -34,8 +46,11 @@
   #import "GTLQuery.h"
 #endif
 
+<<<<<<< HEAD
 @class GTLPlusMoment;
 
+=======
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 @interface GTLQueryPlus : GTLQuery
 
 //
@@ -43,11 +58,16 @@
 //
 
 // Selector specifying which fields to include in a partial response.
+<<<<<<< HEAD
 @property (copy) NSString *fields;
+=======
+@property (nonatomic, copy) NSString *fields;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 //
 // Method-specific parameters; see the comments below for more information.
 //
+<<<<<<< HEAD
 @property (copy) NSString *activityId;
 @property (copy) NSString *collection;
 @property (copy) NSString *commentId;
@@ -66,6 +86,20 @@
 
 #pragma mark -
 #pragma mark "activities" methods
+=======
+@property (nonatomic, copy) NSString *activityId;
+@property (nonatomic, copy) NSString *collection;
+@property (nonatomic, copy) NSString *commentId;
+@property (nonatomic, copy) NSString *language;
+@property (nonatomic, assign) NSUInteger maxResults;
+@property (nonatomic, copy) NSString *orderBy;
+@property (nonatomic, copy) NSString *pageToken;
+@property (nonatomic, copy) NSString *query;
+@property (nonatomic, copy) NSString *sortOrder;
+@property (nonatomic, copy) NSString *userId;
+
+#pragma mark - "activities" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryPlus object.
 
 // Method: plus.activities.get
@@ -76,7 +110,11 @@
 //   kGTLAuthScopePlusLogin
 //   kGTLAuthScopePlusMe
 // Fetches a GTLPlusActivity.
+<<<<<<< HEAD
 + (id)queryForActivitiesGetWithActivityId:(NSString *)activityId;
+=======
++ (instancetype)queryForActivitiesGetWithActivityId:(NSString *)activityId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plus.activities.list
 // List all of the activities in the specified collection for a particular user.
@@ -97,8 +135,13 @@
 //   kGTLAuthScopePlusLogin
 //   kGTLAuthScopePlusMe
 // Fetches a GTLPlusActivityFeed.
+<<<<<<< HEAD
 + (id)queryForActivitiesListWithUserId:(NSString *)userId
                             collection:(NSString *)collection;
+=======
++ (instancetype)queryForActivitiesListWithUserId:(NSString *)userId
+                                      collection:(NSString *)collection;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plus.activities.search
 // Search public activities.
@@ -124,10 +167,16 @@
 //   kGTLAuthScopePlusLogin
 //   kGTLAuthScopePlusMe
 // Fetches a GTLPlusActivityFeed.
+<<<<<<< HEAD
 + (id)queryForActivitiesSearchWithQuery:(NSString *)query;
 
 #pragma mark -
 #pragma mark "comments" methods
+=======
++ (instancetype)queryForActivitiesSearchWithQuery:(NSString *)query;
+
+#pragma mark - "comments" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryPlus object.
 
 // Method: plus.comments.get
@@ -138,7 +187,11 @@
 //   kGTLAuthScopePlusLogin
 //   kGTLAuthScopePlusMe
 // Fetches a GTLPlusComment.
+<<<<<<< HEAD
 + (id)queryForCommentsGetWithCommentId:(NSString *)commentId;
+=======
++ (instancetype)queryForCommentsGetWithCommentId:(NSString *)commentId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plus.comments.list
 // List all of the comments for an activity.
@@ -159,6 +212,7 @@
 //   kGTLAuthScopePlusLogin
 //   kGTLAuthScopePlusMe
 // Fetches a GTLPlusCommentFeed.
+<<<<<<< HEAD
 + (id)queryForCommentsListWithActivityId:(NSString *)activityId;
 
 #pragma mark -
@@ -217,6 +271,11 @@
 
 #pragma mark -
 #pragma mark "people" methods
+=======
++ (instancetype)queryForCommentsListWithActivityId:(NSString *)activityId;
+
+#pragma mark - "people" methods
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 // These create a GTLQueryPlus object.
 
 // Method: plus.people.get
@@ -232,7 +291,11 @@
 //   kGTLAuthScopePlusUserinfoEmail
 //   kGTLAuthScopePlusUserinfoProfile
 // Fetches a GTLPlusPerson.
+<<<<<<< HEAD
 + (id)queryForPeopleGetWithUserId:(NSString *)userId;
+=======
++ (instancetype)queryForPeopleGetWithUserId:(NSString *)userId;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plus.people.list
 // List all of the people in the specified collection.
@@ -261,8 +324,13 @@
 //   kGTLAuthScopePlusLogin
 //   kGTLAuthScopePlusMe
 // Fetches a GTLPlusPeopleFeed.
+<<<<<<< HEAD
 + (id)queryForPeopleListWithUserId:(NSString *)userId
                         collection:(NSString *)collection;
+=======
++ (instancetype)queryForPeopleListWithUserId:(NSString *)userId
+                                  collection:(NSString *)collection;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plus.people.listByActivity
 // List all of the people in the specified collection for a particular activity.
@@ -284,8 +352,13 @@
 //   kGTLAuthScopePlusLogin
 //   kGTLAuthScopePlusMe
 // Fetches a GTLPlusPeopleFeed.
+<<<<<<< HEAD
 + (id)queryForPeopleListByActivityWithActivityId:(NSString *)activityId
                                       collection:(NSString *)collection;
+=======
++ (instancetype)queryForPeopleListByActivityWithActivityId:(NSString *)activityId
+                                                collection:(NSString *)collection;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 // Method: plus.people.search
 // Search all public profiles.
@@ -306,6 +379,10 @@
 //   kGTLAuthScopePlusLogin
 //   kGTLAuthScopePlusMe
 // Fetches a GTLPlusPeopleFeed.
+<<<<<<< HEAD
 + (id)queryForPeopleSearchWithQuery:(NSString *)query;
+=======
++ (instancetype)queryForPeopleSearchWithQuery:(NSString *)query;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013 Google Inc.
+=======
+/* Copyright (c) 2015 Google Inc.
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +50,7 @@
 @interface GTLDoubleClickBidManagerReportMetadata : GTLObject
 
 // The path to the location in Google Cloud Storage where the report is stored.
+<<<<<<< HEAD
 @property (copy) NSString *googleCloudStoragePath;
 
 // The ending time for the data that is shown in the report.
@@ -56,5 +61,17 @@
 
 // Report status.
 @property (retain) GTLDoubleClickBidManagerReportStatus *status;
+=======
+@property (nonatomic, copy) NSString *googleCloudStoragePath;
+
+// The ending time for the data that is shown in the report.
+@property (nonatomic, retain) NSNumber *reportDataEndTimeMs;  // longLongValue
+
+// The starting time for the data that is shown in the report.
+@property (nonatomic, retain) NSNumber *reportDataStartTimeMs;  // longLongValue
+
+// Report status.
+@property (nonatomic, retain) GTLDoubleClickBidManagerReportStatus *status;
+>>>>>>> 0a3d6d635b9db2198f03ed062a7b85824d2930bd
 
 @end
